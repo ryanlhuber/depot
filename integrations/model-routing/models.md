@@ -1,12 +1,12 @@
 # Model routing table
 
-Environment-specific data for `kit-router`. Belongs in `integrations/`, not in a portable skill, because it names models and providers. Replace freely.
+Optional environment-specific data for `kit-router`. It belongs in `integrations/`, not in a portable skill, because it names models and providers, and the router does not bundle it. Point the router at this file, or at your own table in the same shape (one heading per role, models listed best first with family and effort), to get named models. Replace freely.
 
 Last checked: 2026-10-24 against the sources below. Model lineups change often, so recheck before relying on a row. Effort levels are starting defaults to tune, not measured results. Verify availability on your current plans before relying on a row.
 
 Effort: `low` = fast pass, `medium` = normal, `high` = deepest reasoning. Effort follows the step, not the size of the project, so nothing changes when a small project grows. Providers name their levels differently (OpenAI also offers `xhigh` and `max`); map these three onto the nearest level the model accepts.
 
-Each role below is its own table. Models are ordered best first for that job, so the first row is the pick and the rows after it are fallbacks for when you lack access to the one above. The order is a judgment from the sources below, not a measured ranking.
+Each role below is its own table. Models are ordered best first for that job, so the first row is the pick and the rows after it are fallbacks for when you lack access to the one above. The order is a judgment from vendor descriptions and coverage, not a measured ranking. No benchmark comparison was run for this table, and none of its ordering implies one model beats another on a benchmark.
 
 ## How to pick
 
@@ -112,13 +112,17 @@ Availability depends on the plan; confirm in the tool's model picker.
 
 - OpenAI models: Codex and ChatGPT. As of the sources below, Plus includes Sol and Luna in Codex; plan access to Astra was not stated.
 - Anthropic models: Claude apps and the API. Plan access to Fable 5.1 was not checked.
-- Moonshot, Zhipu, and DeepSeek models: OpenCode Go lists `kimi-k3.1-pro`, `glm-5.3`, and `deepseek-v4.1-flash`, selected as `opencode-go/<model-id>`. Go applies per-model monthly dollar limits, so heavy use of one model can run out before the others.
+- Moonshot, Zhipu, and DeepSeek models: OpenCode Go lists `kimi-k3.1-pro`, `glm-5.3`, and `deepseek-v4.1-flash`, selected as `opencode-go/<model-id>`.
+  - Per-model limits: each model has its own 5-hour (20%), weekly (50%), and monthly (100%) allowance, so heavy use of one can run out before the others.
+  - Region setting: DeepSeek V4.1 Flash and V4 Pro are available only after a workspace owner or admin selects Global under Regions in Settings > Privacy. By default Go allows only Europe and the United States. Until that is set, treat DeepSeek rows as unavailable and take the next row.
+  - Workspaces: Go is for single-member workspaces.
+  - Not used here: Muse Spark Contributor models require turning on paid endpoints that train on request data, so no row recommends them.
 
 ## Sources
 
 - OpenAI: [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model), [Models](https://developers.openai.com/api/docs/models), [Codex models](https://developers.openai.com/codex/models), and the [Sol and Luna rollout in Codex](https://9to5mac.com/2026/09/22/openai-upgrading-chatgpt-and-codex-with-two-more-gpt-6-models/).
 - Anthropic: [Models overview](https://platform.claude.com/docs/en/models/overview).
-- OpenCode: [Go](https://opencode.ai/docs/go/) model list.
+- OpenCode: [Go](https://opencode.ai/docs/go/) model list, regions, and limits (checked 2026-10-24).
 - Moonshot: [Kimi K3 launch coverage](https://pulse2.com/moonshot-ai-launches-kimi-k3-for-advanced-reasoning-coding-and-knowledge-work/). K3.1 Pro was confirmed only on the OpenCode Go list.
 - Zhipu (Z.ai): [GLM-5.3 release coverage](https://datanorth.ai/news/z-ai-releases-glm-5-3).
 - DeepSeek: [DeepSeek V4.1 Flash listing](https://llmgateway.io/models/deepseek-v4.1-flash).

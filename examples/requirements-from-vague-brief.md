@@ -17,7 +17,7 @@ Demonstrates [Requirements Definition](../skills/design/requirements-definition/
 | R2 | A visitor can register a child for a lesson session. | Must | "kids' lessons" | Task test: register a child |
 | R3 | A visitor can complete a reservation without creating an account. | Must | "not need an account" | Walkthrough: no sign-in step on the path |
 | R4 | All reservation and registration tasks are completable on a phone-sized screen. | Must | "work on phones" | Task test at a phone viewport |
-| R5 | The system confirms a completed reservation on screen and states the date, time, and lane or session. | Should | Inferred from R1 and R2 | Inspection |
+| R5 | The system confirms a completed reservation on screen and states the date, time, and lane or session. | Unspecified | Inferred from R1 and R2; not stated in the brief | Inspection |
 
 ### Constraints
 | ID | Constraint | Source |
@@ -37,6 +37,7 @@ Demonstrates [Requirements Definition](../skills/design/requirements-definition/
 | Q2 | Are reminders in scope for the first release? | Whether a reminder requirement and contact-consent handling are added | Board |
 | Q3 | How are cancellations and capacity limits handled? | Reservation rules for R1 and R2 | Pool manager |
 | Q4 | Is payment taken on the page? | Scope of R1 and R2 | Board |
+| Q5 | Is on-screen confirmation (R5) required, and at what priority? | Whether R5 becomes a Must, Should, or Could | Pool manager |
 
 ### Non-goals
 - None stated. Payment and cancellation are open (Q3, Q4), not excluded.
@@ -44,4 +45,5 @@ Demonstrates [Requirements Definition](../skills/design/requirements-definition/
 ### Source coverage
 - "Fast, easy" is not testable as written; it is held as Q1 and not given an invented threshold.
 - "Friendly" is a preference. It is not promoted to a requirement and is listed here as something the design stage should interpret with the board.
+- R1 to R4 are Must because the brief states them as the page's purpose or as stated conditions. R5 is an inference, so its priority is Unspecified (Q5).
 - "Maybe add reminders" is an open question (Q2), not a requirement.

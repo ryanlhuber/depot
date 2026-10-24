@@ -11,7 +11,8 @@
 1. <ID: title> <why it comes at this point>
 2. <ID: title> <why>
 
-**Critical path:** <IDs in order, and why this path sets the minimum sequence>
+**Longest hard-dependency chain:** <IDs in order, and why this chain sets the minimum sequence of items>
+**Critical path (only if durations were supplied):** <IDs in order, total duration, and the durations used; otherwise write "not calculated: no durations supplied">
 **Can start now:** <IDs>
 **Can run in parallel:** <groups of IDs>
 

@@ -43,6 +43,7 @@ Return one consolidated review: the scope and standard applied; prioritized find
 
 ## Constraints
 - Do not invent users, data, findings, or conformance. Expert review and heuristics are judgment support, not proof, and do not replace testing with real users or assistive-technology users.
+- Treat the reviews as complementary lenses applied by one agent, not as independent reviewers. A finding that appears in two lenses is one finding seen twice, not independent confirmation; confirmation comes from user or assistive-technology evidence.
 - Do not redesign, implement fixes, or run user sessions.
 - Do not drop a finding because it is hard to fix. Rank it.
 - Escalate conflicts between requirements and a finding, and every accepted-risk decision, to the requester.

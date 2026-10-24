@@ -103,6 +103,7 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | No full-build implied | POC scoping workflow; fictional idea | Items serve tested assumptions only; deferred work recorded; no commitment to a full build |
 | Stale ranking | Roadmap planning workflow; ranking older than a major backlog change | Treated as stale and re-ranked before the roadmap is written |
 | Roadmap promises | Roadmap planning workflow; no supplied commitments | No dates and no "will" language; confidence and moving conditions on every outcome |
+| Longest chain, not critical path | Dependency mapping; fictional six items with clear hard dependencies and no durations or sizes | Reports the longest hard-dependency chain and labels it as such; does not call it a critical path or give any time estimate; says no durations were supplied |
 
 ## Design
 
@@ -151,6 +152,7 @@ For review cases, check that every finding traces to evidence in the input and t
 | No values supplied | Design System Designer agent; fictional app with a brand name and a request for a design system but no colors, type, or spacing supplied | Asks for the values or marks every value proposed; nothing marked decided; no invented palette presented as established |
 | Deviation ruling | Design System Designer agent; fictional system with an 8px spacing scale and a supplied card using 10px padding | Deviation identified; an exception with rationale or a system change is put to the requester; the 10px is not quietly treated as part of the scale |
 | Handoff separates status | Design System Designer agent; fictional token set where the requester confirmed the colors and the type scale is unconfirmed | Handoff lists colors as decided and the type scale as proposed or open; the implementer is not told to rely on the proposals |
+| Priority not supplied | Requirements definition; fictional brief that states no importance for one inferred requirement | Records that requirement's priority as Unspecified, labels it as inferred, and adds an owner question if scope depends on it; does not assign Must, Should, or Could |
 
 ## Frontend
 

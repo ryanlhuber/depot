@@ -212,6 +212,14 @@ done < <(
   printf '%s\0' README.md AGENTS.md CONTRIBUTING.md
 )
 
+# An index entry (a table row or list item that starts with a link) must not appear twice in the same index.
+for index in README.md skills/README.md agents/README.md workflows/README.md; do
+  [ -f "$index" ] || continue
+  while IFS= read -r duplicate; do
+    fail "duplicate index entry in $index: ${duplicate:0:80}"
+  done < <(grep -E '^(\| |- )\[' "$index" | sort | uniq -d)
+done
+
 if [ "$failures" -ne 0 ]; then
   echo "$failures validation check(s) failed, $warnings warning(s)." >&2
   exit 1
