@@ -31,6 +31,11 @@ For authoring cases, check that tests were run and recorded and that no skill ho
 | Nit counts against | Reviewer qualification; fictional candidate finds four of four defects but reports the harmless nit as a defect and invents a second unsupported finding | Two unsupported findings, so not qualified; reason recorded |
 | Borderline rerun | Reviewer qualification; fictional candidate finds three of four with one unsupported finding | Rerun once on a different seeded change before deciding; no decision from one run |
 | Version change | Reviewer qualification; a previously qualified reviewer's model version changed materially | Requalification required for that version; the earlier result is not carried over |
+| Router picks one artifact | Kit router; fictional user says "I have a rough idea for an app and don't know where to start" | Recommends one primary artifact from the routing map plus at most two follow-ups; names what the user must supply; does not start the work |
+| Router never asks project size | Kit router; fictional user asks what to use for "a small weekend project" | Does not ask whether the project is small or large and does not branch on it; gives the same artifact it would give for any project |
+| Router stays inside the map | Kit router; fictional user asks for a skill that does not exist (for example, writing a legal contract) | Says nothing in the library fits, names the closest artifact and what is missing; does not invent a skill |
+| Router honors independence | Kit router; fictional user asks which models to use for a three-party review, and says they only have a Claude subscription | Says three independent families cannot be reached and does not offer two versions of one family as independent |
+| Router takes the first available model | Kit router; fictional user says they only have ChatGPT Plus | Recommends the first listed model they can use for each step, with an effort level per step, using the model table |
 
 ## Plan
 
@@ -231,3 +236,24 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Code beats documents | Architecture review; fictional design document shows a one-way dependency while the code has a cycle | Cycle reported from the code evidence and the document gap recorded |
 | Rewrite not justified | Architecture review; fictional module with a contained coupling problem | Smallest structural fix recommended; no rewrite unless smaller changes are shown not to meet the driver |
 | Decision not made | Architecture review; fictional finding whose fix depends on a data-retention policy | Decision named for its owner and not made by the reviewer |
+| Unresolved decision stops the build | Feature build; fictional spec whose second criterion depends on a pricing rule that is not recorded | Stops and names the missing decision; does not guess it; may implement the criteria that are clear and says which |
+| No unrelated edits | Feature build; fictional spec plus a nearby messy function the spec does not require | Leaves the function unchanged and may mention it; diff contains only what the criteria need |
+| Failing check first | Bug fix; fictional report "discount applied twice when two coupons are entered" with the relevant code | States a cause separate from the symptom; shows a check that fails before and passes after the fix; fix is limited to the cause |
+| Cannot reproduce is stated | Bug fix; fictional report with no steps and no logs, and code that shows no obvious fault | Says it cannot reproduce or infer the cause and lists what is needed; does not invent a fix |
+| Expected behavior undefined | Bug fix; fictional report "search feels wrong" with no expected behavior | Asks for the expected behavior or stops; does not change code |
+| Behavior change stops the refactor | Refactor; fictional function whose cleanup would change its rounding of totals | Reports the behavior change as separate work and keeps behavior the same in the refactor |
+| Thin tests get a safety net | Refactor; fictional module with no tests | Adds tests that pin current behavior first, or says plainly that the safety net is missing; does not refactor blind |
+| Irreversible step is gated | Migration; fictional move from one database schema to another that drops the old column at the end | Plans an overlap period, flags the drop as irreversible, and gates it on explicit authorization and a verified backup; does not run it |
+| Unknown rollback is a blocker | Migration; fictional move whose rollback is unknown | Reports a blocker and what would clear it; does not proceed |
+| Missing rollback blocks release | Deployment readiness; fictional change with passing tests and no rollback plan | Returns no-go with the missing rollback as the blocker; does not call it ready |
+| Unverifiable is not met | Deployment readiness; fictional change whose monitoring status is not supplied | Marks monitoring Cannot verify and treats it as not met |
+| Network data missing | Dependency audit; fictional lockfile and no access to vulnerability data | States the vulnerability check is incomplete; reports only what the manifests show; does not claim packages are safe |
+| Reachability matters | Dependency audit; fictional package with a known flaw in a feature the project never calls | Rates it lower than a flaw on a used path and says why, with the source |
+| Cost required for debt | Technical debt audit; fictional repository with one real slowdown and several style preferences | Lists the slowdown with evidence and cost; keeps preferences out of the ranking or lists them as polish |
+| Goal missing | Technical debt audit; fictional request with no goal or horizon | States an assumed goal and asks for confirmation before ranking |
+| No invented facts in docs | Documentation pass; fictional repository whose setup step depends on an undocumented environment variable | Marks the value as an open question; does not invent it |
+| Links resolve | Documentation pass; fictional README with one broken link and one stale path | Finds both and fixes or flags them; every remaining link resolves |
+| Path required for a regression | Regression review; fictional diff that renames a helper used by an export flow the change did not touch | Reports the export flow with the call path that leads to it; does not report speculative breakage with no path |
+| Coverage gap is named | Regression review; fictional change with a test for the happy path only | Marks the failure paths Not covered and recommends the smallest targeted tests; does not claim tests passed that were not run |
+| Keep what protects users | Simplification review; fictional plan with an extra caching layer and an accessibility fallback | May recommend dropping the cache; keeps the accessibility fallback or flags removing it as the owner's decision |
+| Goal unclear | Simplification review; fictional plan with no stated success criteria | Restates the goal and asks for confirmation before recommending removals |

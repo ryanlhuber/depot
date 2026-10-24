@@ -74,14 +74,16 @@ Building interfaces on the web platform from decided designs: structure, behavio
 
 ### Dev
 
-The process around a software change, from approved specification through independent review to a verified merge, plus audits of a system's security and architecture.
+The process around a software change, from approved specification through building, independent review, and a verified merge and release, plus audits of a system's security, architecture, dependencies, and debt.
 
 | Stage | Skills |
 | --- | --- |
 | Specification | [refine-issue](skills/dev/refine-issue/SKILL.md) |
-| Review | [independent-code-review](skills/dev/independent-code-review/SKILL.md), [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md), [review-reconciliation](skills/dev/review-reconciliation/SKILL.md) |
-| Release | [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md) |
-| Audit | [security-audit](skills/dev/security-audit/SKILL.md), [architecture-review](skills/dev/architecture-review/SKILL.md) |
+| Build | [feature-build](skills/dev/feature-build/SKILL.md), [bug-fix](skills/dev/bug-fix/SKILL.md), [refactor](skills/dev/refactor/SKILL.md), [migration](skills/dev/migration/SKILL.md) |
+| Review | [independent-code-review](skills/dev/independent-code-review/SKILL.md), [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md), [review-reconciliation](skills/dev/review-reconciliation/SKILL.md), [regression-review](skills/dev/regression-review/SKILL.md), [simplification-review](skills/dev/simplification-review/SKILL.md) |
+| Release | [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md), [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |
+| Audit | [security-audit](skills/dev/security-audit/SKILL.md), [architecture-review](skills/dev/architecture-review/SKILL.md), [dependency-audit](skills/dev/dependency-audit/SKILL.md), [technical-debt-audit](skills/dev/technical-debt-audit/SKILL.md) |
+| Documentation | [documentation-pass](skills/dev/documentation-pass/SKILL.md) |
 
 ## Agents
 

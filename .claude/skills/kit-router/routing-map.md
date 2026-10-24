@@ -62,13 +62,23 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
 | A request to make buildable | S `refine-issue` | W `refine-to-merge` |
+| An approved spec to implement | S `feature-build` | S `regression-review` |
+| A reproducible defect | S `bug-fix` | S `regression-review` |
+| Working code that is hard to change | S `refactor` | S `technical-debt-audit` |
+| A system that must move to a new state | S `migration` | S `deployment-readiness` |
 | A change to review | S `independent-code-review` | S `adversarial-code-review` |
 | Two or more review reports | S `review-reconciliation` | A `merge-gatekeeper` |
 | A reviewed change about to merge | S `merge-readiness-check` | A `merge-gatekeeper` |
 | One change, spec to merge | W `refine-to-merge` | |
-| A security question about an area | S `security-audit` | |
+| A change that might have broken something | S `regression-review` | S `independent-code-review` |
+| A change ready to go live | S `deployment-readiness` | S `merge-readiness-check` |
+| Something that looks overbuilt | S `simplification-review` | S `scope-cutting` |
+| A security question about an area | S `security-audit` | S `dependency-audit` |
+| Dependencies to check | S `dependency-audit` | S `security-audit` |
+| Slowing delivery with unclear causes | S `technical-debt-audit` | S `architecture-review` |
+| Docs that are missing, stale, or confusing | S `documentation-pass` | |
 | A structural question about a system | S `architecture-review` | |
 
 ## Known gaps
 
-The library has no skills for writing code itself (bug fixes, feature builds, refactors, migrations). When the user needs one, report the gap and the closest artifact; do not invent one.
+The library has no workflow for feature delivery or defect repair yet. For those, recommend the skills above in order and say that no workflow covers them. When nothing fits, report the gap and the closest artifact; do not invent one.
