@@ -21,7 +21,7 @@ Turn a described situation into a short, justified recommendation: the one artif
 1. Restate the goal in one sentence. Ask at most one question, and only if the answer would change the recommendation. Never ask about project size or type; a project is a project, and the same artifact and model advice apply as it grows.
 2. Place the situation in the [routing map](routing-map.md): find the stage, then the row that matches what the user has in hand.
 3. Choose the smallest artifact that fully owns the need. A **skill** when one capability is enough. An **agent** when a persistent decision owner adds something. A **workflow** when several stages need ordered handoffs.
-4. Recommend one primary artifact, then at most two follow-ups in order or two alternates, each with a one-line reason tied to the user's situation.
+4. Recommend one primary artifact, then at most two more artifacts in total, counting follow-ups and alternates together, each with a one-line reason tied to the user's situation.
 5. Name what the primary artifact needs from the user, so they can start immediately.
 6. Recommend models from the model routing table: two or three at most, each with an effort level (`low`, `medium`, or `high`) for the main step and one for any review step. Reviews that must be independent use different model families.
 7. If nothing fits, say so and name the closest artifact and what is missing. Do not invent a skill.
