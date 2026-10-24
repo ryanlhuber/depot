@@ -6,32 +6,105 @@ Last checked: 2026-10-24 against the sources below. Model lineups change often, 
 
 Effort: `low` = fast pass, `medium` = normal, `high` = deepest reasoning. Effort follows the step, not the size of the project, so nothing changes when a small project grows. Providers name their levels differently (OpenAI also offers `xhigh` and `max`); map these three onto the nearest level the model accepts.
 
-| Role | Model | Family | Effort | Use for |
-| --- | --- | --- | --- | --- |
-| Planner and synthesizer | GPT-6.1 Sol | OpenAI | medium | Discovery, epics and issues, review consolidation |
-| Builder | GPT-6.1 Sol in Codex | OpenAI | medium | Features, bug fixes, remediation in a repository |
-| Cheap builder | GPT-6 Luna | OpenAI | low | Scoped, well-specified implementation and fixes after review |
-| Deep reviewer and architect | Claude Opus 5.5 | Anthropic | high | Architecture review, readiness decisions, hard refactors |
-| Everyday reviewer and writer | Claude Sonnet 5.5 | Anthropic | medium | Code review, documentation, feature work |
-| Dense reviewer | Kimi K3.1 Pro | Moonshot | medium | Code and regression review, acceptance criteria |
-| Spec validator | GLM-5.3 | Zhipu (Z.ai) | medium | Requirements validation, spec sign-off, security-leaning review. Text only |
-| Bulk scanner | DeepSeek V4.1 Flash | DeepSeek | low | Large-context scans, repo audits, high-volume summaries |
+Each role below is its own table. Models are ordered best first for that job, so the first row is the pick and the rows after it are fallbacks for when you lack access to the one above. The order is a judgment from the sources below, not a measured ranking.
 
-Optional escalations, used only when the row above falls short on a hard step:
+## How to pick
 
-| Model | Family | Use for |
+1. Start from the role the step needs.
+2. Take the first model in that role's table that you can use on your current plans.
+3. For independent reviews (for example in `refine-to-merge`), builder, first reviewer, and adversarial reviewer must come from three different families. Skip any model whose family is already used in the set, and take the next row. Versions of one family do not count.
+4. If you cannot reach three families, say so rather than substituting a second model from one family.
+5. Keep the strongest model for decisions and reviews, and run scoped, well-specified build steps on a cheaper one.
+6. To protect usage limits, spend `high` effort only on review and decision steps; lower the effort of the build step before lowering the review's.
+7. Switch models at stage boundaries, after writing a handoff note.
+
+Example independent set with ChatGPT Plus, Claude Pro, and OpenCode Go: builder GPT-6.1 Sol in Codex (OpenAI), first review Kimi K3.1 Pro (Moonshot), adversarial review Claude Opus 5.5 (Anthropic).
+
+## Planner and synthesizer
+
+Discovery, epics and issues, review consolidation.
+
+| Model | Family | Effort |
 | --- | --- | --- |
-| GPT-6 Astra | OpenAI | Most capable OpenAI model; complex reasoning and coding |
-| Claude Fable 5.1 | Anthropic | Demanding reasoning when Opus 5.5 at high effort still falls short |
-| Claude Haiku 5.5 | Anthropic | Cheap, fast classification, extraction, and routing steps |
+| GPT-6.1 Sol | OpenAI | medium |
+| Claude Opus 5.5 | Anthropic | medium |
+| Kimi K3.1 Pro | Moonshot | medium |
+| Claude Sonnet 5.5 | Anthropic | medium |
 
-## Rules
+## Builder
 
-- Independent reviews (for example in `refine-to-merge`) use three different families across builder, first reviewer, and adversarial reviewer. Versions of one family do not count.
-- Example independent set: builder GPT-6.1 Sol in Codex (OpenAI), first review Kimi K3.1 Pro (Moonshot), adversarial review Claude Opus 5.5 (Anthropic).
-- Keep the strongest model for decisions and reviews. Run scoped, well-specified build steps on the cheaper model.
-- To protect usage limits, spend `high` effort only on the review and decision steps; lower the effort of the build step before lowering the review's.
-- Switch models at stage boundaries, after writing a handoff note.
+Features, bug fixes, and remediation in a repository.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| GPT-6.1 Sol (in Codex) | OpenAI | medium |
+| Claude Opus 5.5 | Anthropic | medium |
+| Claude Sonnet 5.5 | Anthropic | medium |
+| GLM-5.3 | Zhipu (Z.ai) | medium |
+
+## Cheap builder
+
+Scoped, well-specified implementation and fixes after review.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| GPT-6 Luna | OpenAI | low |
+| Claude Haiku 5.5 | Anthropic | low |
+| DeepSeek V4.1 Flash | DeepSeek | low |
+
+## Deep reviewer and architect
+
+Architecture review, readiness decisions, hard refactors.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| Claude Opus 5.5 | Anthropic | high |
+| GPT-6.1 Sol | OpenAI | high |
+| Kimi K3.1 Pro | Moonshot | high |
+
+Escalate only when the first choice still falls short on a hard step: Claude Fable 5.1 (Anthropic) or GPT-6 Astra (OpenAI), each the most capable model in its family.
+
+## Everyday reviewer and writer
+
+Code review, documentation, feature work.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| Claude Sonnet 5.5 | Anthropic | medium |
+| GPT-6.1 Sol | OpenAI | medium |
+| Kimi K3.1 Pro | Moonshot | medium |
+
+## Dense reviewer
+
+Code and regression review, acceptance criteria.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| Kimi K3.1 Pro | Moonshot | medium |
+| GLM-5.3 | Zhipu (Z.ai) | medium |
+| GPT-6.1 Sol | OpenAI | medium |
+| Claude Sonnet 5.5 | Anthropic | medium |
+
+## Spec validator
+
+Requirements validation, spec sign-off, security-leaning review. Not for building.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| GLM-5.3 (text only) | Zhipu (Z.ai) | medium |
+| Kimi K3.1 Pro | Moonshot | medium |
+| Claude Sonnet 5.5 | Anthropic | medium |
+| GPT-6.1 Sol | OpenAI | medium |
+
+## Bulk scanner
+
+Large-context scans, repo audits, high-volume summaries.
+
+| Model | Family | Effort |
+| --- | --- | --- |
+| DeepSeek V4.1 Flash | DeepSeek | low |
+| GPT-6 Luna | OpenAI | low |
+| Claude Haiku 5.5 | Anthropic | low |
 
 ## Where each model is reached
 
