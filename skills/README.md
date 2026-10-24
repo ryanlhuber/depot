@@ -134,17 +134,33 @@ The process around a software change, from approved specification to verified me
 
 - [Refine Issue](dev/refine-issue/SKILL.md): refines a work item (issue, ticket, task, or plain request) into an explicitly approved, implementation-ready specification, one decision at a time, without starting development. Works with any tracker, a file, or chat alone.
 
+### Build
+
+- [Feature Build](dev/feature-build/SKILL.md): implements one approved specification as the smallest coherent change and reports each acceptance criterion's status with evidence.
+- [Bug Fix](dev/bug-fix/SKILL.md): finds a defect's smallest cause, repairs it without widening scope, and proves the repair with a check that failed before and passes after.
+- [Refactor](dev/refactor/SKILL.md): improves structure in small steps against a safety net while behavior stays the same.
+- [Migration](dev/migration/SKILL.md): moves a system between technical states in reversible steps with compatibility, data integrity, ordering, and rollback defined.
+
 ### Review
 
 - [Independent Code Review](dev/independent-code-review/SKILL.md): reviews one revision against its specification and returns an evidenced PASS or FAIL report.
 - [Adversarial Code Review](dev/adversarial-code-review/SKILL.md): tries to disprove a revision's correctness, in isolation from other reviews, and records the attacks attempted.
 - [Review Reconciliation](dev/review-reconciliation/SKILL.md): merges independent reports into one finding list with a blocking set and chooses the re-review a repair needs.
+- [Regression Review](dev/regression-review/SKILL.md): traces a change to the flows and contracts it could break and compares existing tests to those risks.
+- [Simplification Review](dev/simplification-review/SKILL.md): finds what an implementation or design can drop, merge, or defer while still meeting its goal.
 
 ### Release
 
 - [Merge Readiness Check](dev/merge-readiness-check/SKILL.md): verifies merge preconditions from evidence and returns ready or not ready with blockers.
+- [Deployment Readiness](dev/deployment-readiness/SKILL.md): decides from evidence whether a change is safe to release to an environment, with the rollout, monitoring, and rollback it needs.
 
 ### Audit
 
 - [Security Audit](dev/security-audit/SKILL.md): audits a defined scope for security weaknesses, traces each from an attacker-reachable entry point to an asset, and returns evidenced findings with a coverage statement.
 - [Architecture Review](dev/architecture-review/SKILL.md): judges whether a system's or design's structure fits its stated goals and constraints, and returns evidenced findings with the cost of leaving each, the smallest fix, and the decisions that belong to others.
+- [Dependency Audit](dev/dependency-audit/SKILL.md): reviews third-party dependencies for vulnerabilities, abandonment, license, and supply-chain risk, with risk-ranked findings.
+- [Technical Debt Audit](dev/technical-debt-audit/SKILL.md): builds a debt register in which every item has evidence, a cost, and a place in a cleanup sequence.
+
+### Documentation
+
+- [Documentation Pass](dev/documentation-pass/SKILL.md): makes documentation usable by a named reader and checks that every reference in it is true.
