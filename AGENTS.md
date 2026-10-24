@@ -1,0 +1,17 @@
+# Instructions for coding agents
+
+These instructions apply throughout the repository. `CLAUDE.md` contains only `@AGENTS.md`.
+
+- Read the relevant directory README and canonical documents in [`docs/`](docs/) before editing.
+- Classify portable artifacts using the [core artifact architecture](docs/core-artifact-architecture.md): focused expertise belongs in `skills/<bucket>/<name>/SKILL.md` (indexed in `skills/README.md`), specialist responsibility in `agents/`, and multi-stage orchestration in `workflows/`.
+- Put a skill in the bucket for the kind of work it supports: `core` (any domain), `plan`, `design`, `frontend`, or `dev`. Skill names are unique across buckets. Do not add a bucket without a concrete approved requirement.
+- Keep portable artifacts independent of providers, models, harnesses, design tools, frameworks, libraries, and platforms. Place concrete adapters in `integrations/` according to the [portability boundary](docs/portability-and-integration-boundaries.md).
+- Write `frontend` skills for the web platform (HTML, CSS, JavaScript, and browser accessibility semantics). Framework, component-library, and styling-tool specifics belong in `integrations/`, never in a skill.
+- A project is a project. Do not add modes or variants of a skill for prototype versus long-term work. A skill scales its rigor to the risk and size of the change in front of it, and nothing about it changes when a small project grows.
+- Follow the [artifact authoring standards](docs/artifact-authoring-standards.md) and [contribution, evidence, and quality standards](docs/contribution-evidence-and-quality-standards.md); link to canonical guidance rather than duplicating it.
+- Edit skills only under `skills/` and agents only under `agents/`; `.agents/skills/`, `.claude/skills/`, and `.claude/agents/` are generated mirrors. After any change to either, run `scripts/sync-adapters.sh` (`--check` reports drift without changing anything).
+- An agent is one `agents/<name>.md` file whose `## Skills` section names skills from this repository in backticks. Do not link to skills from an agent, and do not copy a skill's method into an agent.
+- Keep the repository Markdown-first. Do not introduce build, package, generated-documentation, CI, release, or other infrastructure without a concrete approved requirement. The approved exceptions are `scripts/sync-adapters.sh` (generates the mirrors) and `tests/validate-repository.sh` (checks structure, links, indexes, the router map, and sync); both are single shell scripts with no dependencies. Adapters for other environments belong in `integrations/`.
+- Keep the router accurate. When you add, rename, or remove a skill, agent, or workflow, update [`skills/core/kit-router/routing-map.md`](skills/core/kit-router/routing-map.md); the validator fails on a stale or incomplete map.
+- Before finishing a change, run `tests/validate-repository.sh`. For changes that affect model behavior, also run the relevant [behavioral cases](tests/behavioral-cases.md) and test outcomes, not exact prose. Index every new skill in `skills/README.md` and `README.md`, every new agent in `agents/README.md` and `README.md`, and every new workflow in `workflows/README.md`.
+- Make narrowly scoped changes, preserve explicit ownership boundaries, avoid speculative files or directories, and report the checks performed.
