@@ -8,7 +8,7 @@ Take one goal from a sentence to a ranked set of draft work items that is ready 
 
 - Required: the goal in the requester's words, and a requester who can confirm it and settle trade-offs.
 - Optional: constraints, existing items, the structure of the existing system, a priority criterion, and a preferred item format.
-- Assumptions: no particular tracker or tool is required; items are plain Markdown. If the requester is unavailable, the workflow proceeds with labeled assumptions and says so at the top of its result. It never invents users, measures, deadlines, or effort.
+- Assumptions: no particular tracker or tool is required; items are plain Markdown. If the requester is unavailable, the workflow proceeds with the goal sentence marked unconfirmed and its assumptions labeled, and says so at the top of its result; it stops only when no goal can be stated. It never invents users, measures, deadlines, or effort.
 
 ## Stages
 

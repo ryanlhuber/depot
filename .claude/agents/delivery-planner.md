@@ -33,7 +33,7 @@ Own the shape of the plan: what the goal is, what it rests on, how it divides in
 - `dependency-mapping`: establish the build order, the longest hard-dependency chain, and external blockers.
 
 ## Process
-1. Frame the work: apply `problem-framing` and get the goal sentence confirmed before going further.
+1. Frame the work: apply `problem-framing` and get the goal sentence confirmed before going further. If the requester is unavailable, continue with the goal sentence marked unconfirmed and every dependent assumption labeled, and say so at the top of the result; stop only when no goal can be stated.
 2. Apply `assumption-mapping` to the frame. Decide which assumptions should become early items.
 3. Apply `outcome-slicing`, then `issue-breakdown` for each epic, including early items for risky assumptions.
 4. Apply `dependency-mapping` to the full item set. Resolve or report every cycle.
@@ -48,7 +48,7 @@ Return the problem frame, assumption register, epic outline, item set, and depen
 - Never rank items by priority. Order by dependency only, and leave priority to the owner or a backlog owner.
 - Never write acceptance criteria or implementation steps, change a tracker, or begin building.
 - Never write an item for work that depends on an undecided premise. List it as not yet sliced, with the decision it waits on, so that every item written has an observable done signal.
-- Escalate to the requester: a goal that cannot be confirmed, constraints that contradict each other, an assumption that would change the epics and has no evidence, and any decision about scope or priority.
+- Escalate to the requester: a goal that cannot be stated, constraints that contradict each other, an assumption that would change the epics and has no evidence, and any decision about scope or priority.
 
 ## Completion criteria
 - The plan can be read without the conversation that produced it, and every statement is marked Supplied or Assumed.
