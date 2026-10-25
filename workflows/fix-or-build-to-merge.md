@@ -20,13 +20,13 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 2. **Confirm environment** (performed by the requester or builder, outside this workflow)
    - Assignment: the requester or builder confirms the repository, the target branch read from project configuration (never assumed), the supported runtime, the install, build, and test commands, that the base branch is current, that access is least-privilege, and that no production secrets are in any agent's context.
    - Requires: the approved specification.
-   - Produces: a confirmed environment note. The workflow does not proceed on a guess.
+   - Produces: a confirmed environment note. The workflow does not proceed on a guess. If the recorded test command fails for a reason unrelated to the change, or the recorded branch or runtime is not available, the builder states the substitute used and the requester confirms it before the review; conventions are not edited silently.
 3. **Build or repair** (performed by the builder, outside this workflow)
    - Assignment: the builder applies [Feature Build](../skills/dev/feature-build/SKILL.md) for a feature, or [Bug Fix](../skills/dev/bug-fix/SKILL.md) for a defect, on a feature branch and runs the tests. Reviewers never edit code.
    - Requires: the approved specification and the environment note.
    - Produces: a change, test results, and the revision identifier under review. For a defect: the smallest responsible cause with evidence, and a check that failed before and passes after. If the cause cannot be reproduced or found, the output is the evidence gathered and the questions left open; do not guess a fix.
 4. **Regression review** (required for a defect; for a feature, [Feature Delivery](feature-delivery.md) runs it after the merge)
-   - Assignment: [Regression Review](../skills/dev/regression-review/SKILL.md).
+   - Assignment: [Regression Review](../skills/dev/regression-review/SKILL.md), performed by the builder or another party. When the builder performs it, the reviewers treat it as the builder's own check and verify its coverage claims.
    - Requires: the revision and the surrounding code.
    - Produces: regression risks with coverage status and the missing checks. Add the missing checks to the change, which makes a new revision, or record them as accepted risks.
 5. **Independent review**

@@ -1,0 +1,33 @@
+diff --git a/src/cart.js b/src/cart.js
+index 80b6388..1b2a4e5 100644
+--- a/src/cart.js
++++ b/src/cart.js
+@@ -9,7 +9,7 @@ function applyCoupon(subtotalCents, coupon) {
+     return subtotalCents - Math.round(subtotalCents * coupon.value / 100);
+   }
+   if (coupon.type === 'fixed') {
+-    return subtotalCents - coupon.value;
++    return Math.max(0, subtotalCents - coupon.value);
+   }
+   return subtotalCents;
+ }
+diff --git a/test/cart.test.js b/test/cart.test.js
+index c0d8762..7fca687 100644
+--- a/test/cart.test.js
++++ b/test/cart.test.js
+@@ -11,3 +11,15 @@ test('percent coupon', () => {
+ test('fixed coupon', () => {
+   assert.strictEqual(applyCoupon(1000, {type: 'fixed', value: 300}), 700);
+ });
++test('fixed coupon larger than the cart floors the total at 0', () => {
++  assert.strictEqual(applyCoupon(1000, {type: 'fixed', value: 1500}), 0);
++  assert.strictEqual(cartTotal([{priceCents: 1000, qty: 1}], [{type: 'fixed', value: 1500}]), 0);
++});
++test('fixed coupon equal to the cart gives 0', () => {
++  assert.strictEqual(applyCoupon(1000, {type: 'fixed', value: 1000}), 0);
++});
++test('total stays at 0 when a later coupon follows a floored one', () => {
++  const items = [{priceCents: 1000, qty: 1}];
++  assert.strictEqual(cartTotal(items, [{type: 'fixed', value: 1500}, {type: 'percent', value: 10}]), 0);
++  assert.strictEqual(cartTotal(items, [{type: 'fixed', value: 1500}, {type: 'fixed', value: 200}]), 0);
++});

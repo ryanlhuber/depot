@@ -1,0 +1,28 @@
+diff --git a/src/cart.js b/src/cart.js
+index 80b6388..ca3982b 100644
+--- a/src/cart.js
++++ b/src/cart.js
+@@ -16,7 +16,11 @@ function applyCoupon(subtotalCents, coupon) {
+ 
+ function cartTotal(items, coupons = []) {
+   let total = items.reduce((sum, i) => sum + lineTotal(i), 0);
+-  for (const c of coupons) total = applyCoupon(total, c);
++  for (const c of coupons) {
++    total = applyCoupon(total, c);
++    // Never show a negative total.
++    if (coupons.length === 1 && total < 0) total = 0;
++  }
+   return total;
+ }
+ 
+diff --git a/test/cart.test.js b/test/cart.test.js
+index c0d8762..2c5fcdb 100644
+--- a/test/cart.test.js
++++ b/test/cart.test.js
+@@ -11,3 +11,6 @@ test('percent coupon', () => {
+ test('fixed coupon', () => {
+   assert.strictEqual(applyCoupon(1000, {type: 'fixed', value: 300}), 700);
+ });
++test('fixed coupon larger than the cart floors the total at 0', () => {
++  assert.strictEqual(cartTotal([{priceCents: 1000, qty: 1}], [{type: 'fixed', value: 1500}]), 0);
++});
