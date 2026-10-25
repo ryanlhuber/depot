@@ -12,6 +12,7 @@ Build layouts that adapt to viewport, container, input mode, and user settings a
 - Use when: a responsive layout specification must be implemented.
 - Use when: a layout overflows, clips, or loses content at some widths, zoom levels, or text settings.
 - Do not use when: how the layout adapts is undecided. This work implements decisions. It does not make them.
+- Pairs with: `responsive-layout-planning` decides how the layout adapts; use it first when that is undecided.
 
 ## Inputs
 - Required: how each region or component adapts (reflow order, what collapses, minimum and maximum widths, content that can grow), and the supported viewport range and browsers.

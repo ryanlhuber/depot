@@ -11,6 +11,7 @@ Enumerate and specify every state a screen or component can be in, including wha
 ## When to use
 - Use when: a screen, component, or flow is being specified or reviewed for completeness.
 - Do not use when: the question is visual style only, with no behavior or content variation.
+- Pairs with: `interface-state-implementation` builds the states this skill specifies.
 
 ## Inputs
 - Required: the screen or component, its purpose, and the data or conditions that change what it shows.

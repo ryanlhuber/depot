@@ -12,6 +12,7 @@ Define a consistent set of named design decisions (color, type, spacing, shape, 
 - Use when: establishing or consolidating visual foundations so decisions are reusable and consistent.
 - Use when: auditing a design or build for deviations from an existing set of foundations.
 - Do not use when: a single one-off visual decision is needed with no reuse.
+- Pairs with: `design-token-implementation` puts the defined tokens into code.
 
 ## Inputs
 - Required: the existing visual material or brand constraints, and the contexts the system must serve (platforms, themes, density, locales).

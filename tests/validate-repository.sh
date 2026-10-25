@@ -63,6 +63,9 @@ for skill_dir in skills/*/*; do
   [ -n "$end" ] || { fail "unterminated YAML frontmatter: $skill"; continue; }
   front="$(sed -n "2,$((end - 1))p" "$skill")"
   grep -Fqx "name: $name" <<<"$front" || fail "name metadata must be exactly 'name: $name': $skill"
+  if grep -q '^disable-model-invocation:' <<<"$front"; then
+    grep -Fqx 'disable-model-invocation: true' <<<"$front" || fail "disable-model-invocation must be exactly 'true' when present: $skill"
+  fi
   description="$(sed -n 's/^description: //p' <<<"$front" | head -n 1)"
   description="${description#\"}"; description="${description%\"}"
   if [ -z "$description" ]; then

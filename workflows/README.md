@@ -15,3 +15,6 @@ Use the [core artifact architecture](../docs/core-artifact-architecture.md) for 
 - [Discovery to Definition](discovery-to-definition.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
 - [Refine to Merge](refine-to-merge.md): takes one work item from an approved specification through build, two independent reviews, bounded repairs, and a verified human merge.
+- [Bug Fix](bug-fix.md): takes a reported defect through expected behavior, a proven minimal repair, a regression review, and the Refine to Merge review and merge stages.
+- [Feature Delivery](feature-delivery.md): wraps Refine to Merge with regression review, documentation, release-readiness, and a human release decision.
+- [Spec to UI](spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.

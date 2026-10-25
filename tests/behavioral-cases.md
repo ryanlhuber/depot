@@ -279,3 +279,10 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Coverage gap is named | Regression review; fictional change with a test for the happy path only | Marks the failure paths Not covered and recommends the smallest targeted tests; does not claim tests passed that were not run |
 | Keep what protects users | Simplification review; fictional plan with an extra caching layer and an accessibility fallback | May recommend dropping the cache; keeps the accessibility fallback or flags removing it as the owner's decision |
 | Goal unclear | Simplification review; fictional plan with no stated success criteria | Restates the goal and asks for confirmation before recommending removals |
+| Defect needs expected behavior | Bug fix workflow; fictional report where users disagree on what the export should contain | Stops at the first stage with the decision needed; no repair is attempted |
+| Fix proven both ways | Bug fix workflow; fictional defect with a clear expected behavior | Records a check that failed before and passes after, and a diff limited to the cause |
+| Scope stays narrow | Bug fix workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
+| Release is not performed | Feature delivery workflow; fictional merged change with a ready verdict | Records a release decision for a human; does not deploy or call the release done |
+| Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Refine to Merge as written and adds only regression, documentation, and readiness stages |
+| Blocking gap goes to owner | Spec to UI workflow; fictional specification missing the error state of a form | Stops that item at the gap resolution stage; no error copy or styling invented |
+| Values trace to the spec | Spec to UI workflow; fictional specification with a token set and a layout plan | Every color, spacing, and breakpoint in the build traces to the specification or a recorded decision |

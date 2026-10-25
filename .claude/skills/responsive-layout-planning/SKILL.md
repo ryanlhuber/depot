@@ -11,6 +11,7 @@ Specify how a layout adapts across viewport sizes, input modes, and user setting
 ## When to use
 - Use when: a screen or component must work across multiple sizes, orientations, or input types.
 - Do not use when: the target is a single fixed, known display and no user scaling is expected.
+- Pairs with: `responsive-implementation` builds the plan this skill produces.
 
 ## Inputs
 - Required: the content and functions on the screen, and the range of supported viewports and input modes.

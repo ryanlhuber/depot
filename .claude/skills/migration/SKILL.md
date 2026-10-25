@@ -1,6 +1,7 @@
 ---
 name: migration
 description: "Plans and carries out a move between technical states, such as a framework, dependency, schema, API, or infrastructure change, in reversible steps with compatibility, data integrity, ordering, and rollback defined. Use when a system must change from one state to another. Not for ordinary feature delivery with no state change."
+disable-model-invocation: true
 ---
 
 # Migration

@@ -56,6 +56,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | Screens that only handle the ideal case | S `interface-state-implementation` | |
 | A layout that breaks at some sizes | S `responsive-implementation` | |
 | Raw values to turn into tokens | S `design-token-implementation` | |
+| An approved interface spec to build | W `spec-to-ui` | S `design-spec-intake` |
 
 ## Dev (process around a change)
 
@@ -63,7 +64,9 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | --- | --- | --- |
 | A request to make buildable | S `refine-issue` | W `refine-to-merge` |
 | An approved spec to implement | S `feature-build` | S `regression-review` |
+| A feature to take to release | W `feature-delivery` | W `refine-to-merge` |
 | A reproducible defect | S `bug-fix` | S `regression-review` |
+| A reported defect to fix and merge | W `bug-fix` | W `refine-to-merge` |
 | Working code that is hard to change | S `refactor` | S `technical-debt-audit` |
 | A system that must move to a new state | S `migration` | S `deployment-readiness` |
 | A change to review | S `independent-code-review` | S `adversarial-code-review` |
@@ -83,7 +86,6 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 Not covered today. This inventory is not a plan to add them, and the router must not invent an artifact for them. When one is needed, report the gap and the closest artifact.
 
-- Workflows for feature delivery and defect repair: use the skills above in order and say that no workflow covers them.
 - Designing and writing automated tests as a focused capability (`feature-build` and `bug-fix` add tests for their own change only).
 - Performance measurement and optimization.
 - Executing a deployment or rollback (`deployment-readiness` decides readiness and defines rollback; it does not release).

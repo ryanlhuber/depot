@@ -1,6 +1,7 @@
 ---
 name: deployment-readiness
 description: "Decides from evidence whether a change is safe to release to a target environment, and what rollout, monitoring, and rollback it needs, without deploying. Use when a release, an environment move, or a high-risk change is about to go live. Not for merge decisions or early planning."
+disable-model-invocation: true
 ---
 
 # Deployment Readiness

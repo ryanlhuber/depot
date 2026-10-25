@@ -1,6 +1,7 @@
 ---
 name: repo-conventions-setup
 description: "Records a repository's working conventions for AI agents in its agent instructions file: where work items live, how specifications and notes are laid out, which checks to run, and what agents must not do. Use when a repository first adopts agent skills or its conventions change. Not for installing skills and not for choosing a tracker or toolchain."
+disable-model-invocation: true
 ---
 
 # Repo Conventions Setup
