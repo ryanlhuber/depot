@@ -3,12 +3,12 @@
   "owner": {
     "name": "Ryan Huber"
   },
-  "description": "Depot: composable agent skills, agents, and workflows, as an installable Claude Code plugin.",
+  "description": "Depot: composable agent skills, agents, and workflows, as installable Claude Code plugins: everything at once, or one bucket at a time.",
   "plugins": [
     {
       "name": "depot",
       "source": "./",
-      "description": "Skills, agents, and workflows from idea to verified change.",
+      "description": "Everything: all skills and agents, from idea to verified change. Install this or the bucket plugins, not both.",
       "category": "development",
       "keywords": [
         "skills",
@@ -18,6 +18,73 @@
         "design",
         "frontend",
         "code-review"
+      ]
+    },
+    {
+      "name": "depot-core",
+      "source": "./skills/core",
+      "description": "General skills for any domain: skill authoring, decision interviews, session handoff, repo conventions, simplification review, routing, and reviewer qualification.",
+      "version": "0.4.0",
+      "category": "development",
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "depot-plan",
+      "source": "./skills/plan",
+      "description": "Planning skills: problem framing, assumptions, outcome slicing, work-item breakdown, dependencies, prioritization, roadmaps, and status reports. Needs depot-core.",
+      "version": "0.4.0",
+      "category": "development",
+      "skills": [
+        "./"
+      ],
+      "dependencies": [
+        "depot-core"
+      ]
+    },
+    {
+      "name": "depot-design",
+      "source": "./skills/design",
+      "description": "Interface design skills: research, requirements, flows, information architecture, state and responsive specs, design systems, critique, and usability testing.",
+      "version": "0.4.0",
+      "category": "development",
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "depot-frontend",
+      "source": "./skills/frontend",
+      "description": "Front-end implementation skills: semantic HTML, component APIs, states, responsive CSS, design tokens, and design-spec intake.",
+      "version": "0.4.0",
+      "category": "development",
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "depot-dev",
+      "source": "./skills/dev",
+      "description": "Software delivery skills: refine, build, fix, refactor, migrate, review, reconcile, merge-readiness, security and dependency audits, and release readiness.",
+      "version": "0.4.0",
+      "category": "development",
+      "skills": [
+        "./"
+      ]
+    },
+    {
+      "name": "depot-agents",
+      "source": "./agents",
+      "description": "The five specialist agents (backlog owner, delivery planner, design reviewer, design-system designer, merge gatekeeper). They apply skills from the bucket plugins, so install those too.",
+      "version": "0.4.0",
+      "category": "development",
+      "agents": [
+        "./backlog-owner.md",
+        "./delivery-planner.md",
+        "./design-reviewer.md",
+        "./design-system-designer.md",
+        "./merge-gatekeeper.md"
       ]
     }
   ]

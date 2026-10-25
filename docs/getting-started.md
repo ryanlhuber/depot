@@ -4,7 +4,7 @@ A short path from nothing to a project that agents can work in. Each step is opt
 
 ## 1. Install the skills
 
-Pick one method. In Claude Code, the plugin is the simplest: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot@depot`. Its skills are named `/depot:<skill>`, so the commands below read `/depot:repo-conventions-setup` and `/depot:kit-router`. For any other agent, or for editable copies in your project, run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. Do not use both for the same agent. The installer asks which skills to take; include these two:
+Pick one method. In Claude Code, the plugin is the simplest: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot@depot`. Its skills are named `/depot:<skill>`, so the commands below read `/depot:repo-conventions-setup` and `/depot:kit-router`. To take only some skills, install the bucket plugins instead (for example `depot-dev` and `depot-core`, which has `kit-router`); their names carry the plugin, as in `/depot-dev:bug-fix`. For any other agent, or for editable copies in your project, run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. Do not use both for the same agent. The installer asks which skills to take; include these two:
 
 - `kit-router`, which tells you where to start for a given situation.
 - `repo-conventions-setup`, which records how your project works (step 2).
@@ -31,4 +31,4 @@ Agents and workflows are Markdown files, not skills, so the installer does not p
 
 ## 6. Keep it current
 
-A plugin updates through its marketplace (`claude plugin update depot@depot` updates now). For the installer, re-run it with `update` to refresh what you installed, and re-run `add` to pick up new skills. Pick one method per project (plugin, installer, or sync), because they all put the same skills in your session.
+A plugin updates through its marketplace (`claude plugin update depot@depot`, or the bucket plugin's name, updates now). For the installer, re-run it with `update` to refresh what you installed, and re-run `add` to pick up new skills. Pick one method per project (plugin, installer, or sync), because they all put the same skills in your session.

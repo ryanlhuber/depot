@@ -16,7 +16,25 @@ claude plugin marketplace add ryanlhuber/depot
 claude plugin install depot@depot
 ```
 
-Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The plugin adds about 6,000 tokens of skill descriptions to every session, measured with `claude plugin details depot`.
+Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot`.
+
+**Only what you need.** Each bucket is also its own plugin, so a front-end developer need not carry the planning and design skills. Install the buckets you use instead of `depot`, never both:
+
+| Plugin | Skills | Always-on tokens (approx.) |
+| --- | --- | --- |
+| `depot-core` | 7 general skills, including `kit-router` and `simplification-review` | 555 |
+| `depot-plan` | 9 planning skills (needs `depot-core`, installed with it) | 750 |
+| `depot-design` | 20 design skills | 1,540 |
+| `depot-frontend` | 6 front-end skills | 490 |
+| `depot-dev` | 16 delivery skills | 1,230 |
+| `depot-agents` | the 5 agents, which apply skills from the buckets above | 0 |
+
+```sh
+claude plugin install depot-dev@depot
+claude plugin install depot-agents@depot
+```
+
+Skills are namespaced by the bucket plugin, for example `/depot-dev:bug-fix`. `kit-router` knows every bucket, so it may recommend a skill you did not install. Update a bucket the same way as the full plugin.
 
 </details>
 
