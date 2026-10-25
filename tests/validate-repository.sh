@@ -223,6 +223,22 @@ for index in README.md skills/README.md agents/README.md workflows/README.md; do
   done < <(grep -E '^(\| |- )\[' "$index" | sort | uniq -d)
 done
 
+# --- plugin manifest ---------------------------------------------------------
+# .claude-plugin lists every agent file and points at the generated skill mirror.
+if [ -f .claude-plugin/plugin.json ]; then
+  for agent in agents/*.md; do
+    [ "$(basename "$agent")" = README.md ] && continue
+    grep -Fq "\"./$agent\"" .claude-plugin/plugin.json || fail "agent missing from .claude-plugin/plugin.json: $agent"
+  done
+  while IFS= read -r listed; do
+    [ -f "${listed#./}" ] || fail ".claude-plugin/plugin.json lists an agent that does not exist: $listed"
+  done < <(grep -oE '"\./agents/[a-z0-9-]+\.md"' .claude-plugin/plugin.json | tr -d '"')
+  grep -Fq '"./.claude/skills/"' .claude-plugin/plugin.json || fail ".claude-plugin/plugin.json must point skills at ./.claude/skills/"
+  for manifest in .claude-plugin/plugin.json .claude-plugin/marketplace.json; do
+    python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$manifest" 2>/dev/null || fail "invalid JSON: $manifest"
+  done
+fi
+
 if [ "$failures" -ne 0 ]; then
   echo "$failures validation check(s) failed, $warnings warning(s)." >&2
   exit 1

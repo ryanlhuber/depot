@@ -4,7 +4,7 @@ A short path from nothing to a project that agents can work in. Each step is opt
 
 ## 1. Install the skills
 
-Run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. When prompted, choose the skills you want. Include these two:
+Pick one method. In Claude Code, the plugin is the simplest: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot@depot`. Its skills are named `/depot:<skill>`, so the commands below read `/depot:repo-conventions-setup` and `/depot:kit-router`. For any other agent, or for editable copies in your project, run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. Do not use both for the same agent. The installer asks which skills to take; include these two:
 
 - `kit-router`, which tells you where to start for a given situation.
 - `repo-conventions-setup`, which records how your project works (step 2).
@@ -13,7 +13,7 @@ Skills land in `.agents/skills/`. If you pick an agent with `-a`, the installer 
 
 ## 2. Set up the project once
 
-Start `repo-conventions-setup` by name. It is a manual skill, so the model will not start it on its own. In Claude Code, run `/repo-conventions-setup`; in Codex, mention `$repo-conventions-setup`; in other agents, ask for it by name.
+Start `repo-conventions-setup` by name. It is a manual skill, so the model will not start it on its own. In Claude Code, run `/repo-conventions-setup` (`/depot:repo-conventions-setup` from the plugin); in Codex, mention `$repo-conventions-setup`; in other agents, ask for it by name.
 
 It reads your repository first, asks only what the repository does not already answer (one question at a time), then drafts a short conventions section for your agent instructions file (`AGENTS.md` or `CLAUDE.md`): where work items live, where specifications and notes go, which commands check the work, and what agents must not do. It shows you the change before writing, runs only the check commands that are safe, and lists anything it could not verify. Re-run it when those conventions change.
 
@@ -31,4 +31,4 @@ Agents and workflows are Markdown files, not skills, so the installer does not p
 
 ## 6. Keep it current
 
-Re-run the installer with `update` to refresh what you installed, and re-run `add` to pick up new skills. Pick one method per project (installer or sync), because both write the same skill folders.
+A plugin updates through its marketplace (`claude plugin update depot@depot` updates now). For the installer, re-run it with `update` to refresh what you installed, and re-run `add` to pick up new skills. Pick one method per project (plugin, installer, or sync), because they all put the same skills in your session.

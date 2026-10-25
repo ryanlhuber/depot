@@ -6,9 +6,23 @@ A project is a project. Nothing here switches modes between a weekend prototype 
 
 ## Get the skills
 
-Use a compatible skills installer to choose what you need. Run the command that matches your package manager from the project you want the skills in:
+Pick one method per agent, because installing by plugin and by installer gives you every skill twice. A plugin updates through its marketplace; the installer copies editable files into your project, and you update them yourself.
 
 <details open>
+<summary><strong>Claude Code plugin</strong> (skills and agents; updates through the marketplace)</summary>
+
+```sh
+claude plugin marketplace add ryanlhuber/depot
+claude plugin install depot@depot
+```
+
+Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). The repository is private, so Claude Code needs git credentials that can read it (`gh auth login` is enough for HTTPS). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The plugin adds about 6,000 tokens of skill descriptions to every session, measured with `claude plugin details depot`.
+
+</details>
+
+Use a compatible skills installer to choose what you need, for any agent (or to get editable copies in your project). Run the command that matches your package manager from the project you want the skills in:
+
+<details>
 <summary><strong>npm</strong></summary>
 
 ```sh

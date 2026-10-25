@@ -1,0 +1,19 @@
+{
+  "name": "depot",
+  "version": "0.1.0",
+  "description": "Composable agent skills, agents, and workflows for taking work from an idea to a verified change: planning, interface design, front-end implementation, and software delivery.",
+  "author": {
+    "name": "Ryan Huber"
+  },
+  "repository": "https://github.com/ryanlhuber/depot",
+  "skills": [
+    "./.claude/skills/"
+  ],
+  "agents": [
+    "./agents/backlog-owner.md",
+    "./agents/delivery-planner.md",
+    "./agents/design-reviewer.md",
+    "./agents/design-system-designer.md",
+    "./agents/merge-gatekeeper.md"
+  ]
+}
