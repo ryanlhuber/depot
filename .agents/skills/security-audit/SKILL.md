@@ -1,6 +1,6 @@
 ---
 name: security-audit
-description: "Audits a defined scope of code, configuration, and data handling for security weaknesses, traces each one from an attacker-reachable entry point to an asset, and returns evidenced findings with a coverage statement. Use when a system area needs a security review before release, after changes to authentication, authorization, or data handling, or as part of a repository audit. Not for reviewing one change against its specification and not for package-vulnerability scanning alone."
+description: "Audits a defined scope of code, configuration, and data handling for security weaknesses, tracing each from entry point to asset. Use when preparing a release or after auth or data changes. Not for package scanning alone."
 ---
 
 # Security Audit

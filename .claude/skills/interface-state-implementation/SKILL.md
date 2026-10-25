@@ -1,6 +1,6 @@
 ---
 name: interface-state-implementation
-description: "Implements the states a screen or component can be in beyond the ideal case (loading, empty, partial, error, disabled, offline, long or missing content) from a state specification, so each state is representable, rendered, announced, recoverable, and demonstrable. Use when a screen or component with specified states is being built, or when an existing one handles only the ideal case."
+description: "Implements non-ideal states (loading, empty, error, disabled, offline, long content) from a state specification. Use when building a specified screen or one that only handles the ideal case. Not for deciding states."
 ---
 
 # Interface State Implementation

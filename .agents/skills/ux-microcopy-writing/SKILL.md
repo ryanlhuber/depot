@@ -1,6 +1,6 @@
 ---
 name: ux-microcopy-writing
-description: "Writes and tightens short interface text such as labels, buttons, error messages, empty states, and onboarding copy. Use when drafting or revising interface text for clarity, consistency, or tone."
+description: "Writes and tightens short interface text such as labels, buttons, error messages, empty states, and onboarding copy. Use when drafting or revising interface text. Not for long-form marketing or documentation."
 ---
 
 # UX Microcopy Writing

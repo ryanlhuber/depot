@@ -1,6 +1,6 @@
 ---
 name: requirements-definition
-description: "Turns a vague interface brief into numbered, testable requirements with explicit assumptions and open questions. Use when a brief must be made precise before design or review, or when existing requirements are untestable or conflicting."
+description: "Turns a vague interface brief into numbered, testable requirements with assumptions and open questions. Use when a brief needs precision before design or review, or existing requirements are untestable or conflicting."
 ---
 
 # Requirements Definition

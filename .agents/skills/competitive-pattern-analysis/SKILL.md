@@ -1,6 +1,6 @@
 ---
 name: competitive-pattern-analysis
-description: "Compares how existing products solve the same interface problem and summarizes patterns, tradeoffs, and gaps. Use when a team needs the range of established solutions before designing, not to copy a specific product's look."
+description: "Compares how existing products solve the same interface problem, with patterns, tradeoffs, and gaps. Use when a team needs the range of established solutions before designing. Not for copying a product's look."
 ---
 
 # Competitive Pattern Analysis

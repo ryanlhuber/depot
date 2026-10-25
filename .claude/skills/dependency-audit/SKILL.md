@@ -1,6 +1,6 @@
 ---
 name: dependency-audit
-description: "Reviews third-party dependencies for known vulnerabilities, abandonment, license conflicts, and supply-chain risk, and returns risk-ranked findings with upgrade, removal, or mitigation advice. Use when dependencies change, before a release, or during a repository audit. Not for code style review or for upgrading packages."
+description: "Reviews third-party dependencies for vulnerabilities, abandonment, license conflicts, and supply-chain risk, and ranks findings. Use when dependencies change or before a release. Not for your own code (`security-audit`)."
 ---
 
 # Dependency Audit

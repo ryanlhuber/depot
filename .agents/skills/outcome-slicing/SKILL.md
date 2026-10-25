@@ -1,6 +1,6 @@
 ---
 name: outcome-slicing
-description: "Turns a framed goal into epics, each defined by an outcome, a boundary, and ordered delivery slices that each show something observable, and checks that the epics cover the goal and its success measures. Use when a goal is too large to break straight into work items. Not for writing the work items themselves and not for ranking epics."
+description: "Turns a framed goal into outcome-defined epics with ordered, observable delivery slices, and checks coverage of success measures. Use when a goal is too large to break into items. Not for writing work items."
 ---
 
 # Outcome Slicing

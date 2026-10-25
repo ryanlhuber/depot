@@ -1,6 +1,6 @@
 ---
 name: design-token-implementation
-description: "Turns defined design decisions into a token structure in code: one source of values, layering, theming, naming, a migration from raw values, and a repeatable check that components use tokens. Use when design tokens must be implemented, migrated to, or audited in a codebase."
+description: "Turns defined design decisions into code tokens: one source of values, layering, theming, naming, and migration from raw values. Use when adopting or auditing tokens. Not for deciding token values."
 ---
 
 # Design Token Implementation

@@ -1,6 +1,6 @@
 ---
 name: documentation-pass
-description: "Improves a repository's documentation for a named reader: finds missing, stale, duplicate, or hard-to-navigate guidance, fixes it using real files and commands, and verifies the links. Use when docs are missing or out of date, or before a release or handoff. Not a substitute for implementation, code review, or decisions."
+description: "Fixes missing, stale, or confusing repository docs for a named reader and verifies links and commands. Use when docs are out of date or before a release or handoff. Not for code review or undecided choices."
 ---
 
 # Documentation Pass

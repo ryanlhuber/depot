@@ -1,6 +1,6 @@
 ---
 name: design-token-and-system-definition
-description: "Defines named design decisions (color, type, spacing, shape, elevation, motion) and component rules, and checks designs against them. Use when establishing, consolidating, or auditing visual foundations for reuse and consistency."
+description: "Defines named design decisions (color, type, spacing, shape, elevation, motion) and component rules, and checks designs against them. Use when establishing, consolidating, or auditing visual foundations."
 ---
 
 # Design Token and System Definition

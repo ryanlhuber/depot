@@ -1,6 +1,6 @@
 ---
 name: issue-breakdown
-description: "Slices an epic or small goal into draft work items that are each independently buildable and observable, with a done signal, dependencies, and a relative size band, written as plain Markdown that fits any tracker. Use when an outcome is defined and needs to become items a team can refine and build. Not for writing full acceptance criteria or implementation steps and not for ranking the items."
+description: "Slices an epic or small goal into draft work items, each with a done signal, dependencies, and size band, as plain Markdown. Use when a defined outcome must become items. Not for acceptance criteria or ranking."
 ---
 
 # Issue Breakdown

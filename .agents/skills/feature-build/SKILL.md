@@ -1,6 +1,6 @@
 ---
 name: feature-build
-description: "Implements one approved specification as the smallest coherent change that meets its acceptance criteria, following the repository's own conventions, and reports the evidence. Use when a specification or issue with acceptance criteria is ready to build. Not for unclear requirements, defect repair, behavior-preserving cleanup, or migrations."
+description: "Implements one approved specification as the smallest change that meets its acceptance criteria, and reports evidence. Use when a spec with acceptance criteria is ready to build. Not for defects or unclear requirements."
 ---
 
 # Feature Build

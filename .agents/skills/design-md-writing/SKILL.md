@@ -1,6 +1,6 @@
 ---
 name: design-md-writing
-description: "Writes a DESIGN.md, a single Markdown file stating a product's visual and interaction decisions so designers and AI agents build consistent interfaces from it. Use when a project needs its design decisions recorded in one readable, checkable file."
+description: "Writes a DESIGN.md, one Markdown file recording a product's visual and interaction decisions. Use when design decisions are scattered or a DESIGN.md is stale. Not for defining token values that do not exist yet."
 ---
 
 # DESIGN.md Writing

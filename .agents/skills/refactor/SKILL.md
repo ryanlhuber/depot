@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: "Improves code structure while keeping behavior the same, in small steps each verified against a safety net. Use when code needs decomposition, clearer boundaries, naming, or maintainability work. Not for changing behavior, fixing defects, or choosing an architecture."
+description: "Improves code structure while keeping behavior the same, in small steps verified by tests. Use when code is hard to change, understand, or test. Not for behavior changes (`feature-build`) or defects (`bug-fix`)."
 ---
 
 # Refactor

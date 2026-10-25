@@ -1,6 +1,6 @@
 ---
 name: persona-and-scenario-drafting
-description: "Drafts user personas and usage scenarios grounded in supplied research, labeling every inference. Use when a team needs a shared picture of users and situations and has research material to ground it."
+description: "Drafts user personas and usage scenarios grounded in supplied research, labeling every inference. Use when a team needs a shared picture of users and has research material. Not for inventing personas without sources."
 ---
 
 # Persona and Scenario Drafting

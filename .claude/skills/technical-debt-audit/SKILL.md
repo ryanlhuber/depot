@@ -1,6 +1,6 @@
 ---
 name: technical-debt-audit
-description: "Finds and orders technical debt that slows delivery or threatens reliability, ties each item to its real cost, separates it from optional polish, and sequences cleanup by leverage. Use when major roadmap work is coming, a repository is being audited, or change keeps getting harder. Not for one defect or for judging a single change."
+description: "Finds technical debt that slows delivery, ties each item to its cost, and sequences cleanup by leverage. Use when major work is coming or a repository is being audited. Not for one defect or one change."
 ---
 
 # Technical Debt Audit

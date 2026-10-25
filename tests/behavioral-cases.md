@@ -8,6 +8,8 @@ Where a case seeds a known flaw, the artifact must find it. Where a case withhol
 
 These cases test whether a skill is chosen from its description alone, including requests that should not select any skill. Give the runner only the list of skill names and descriptions (not the skill bodies) and the request, and ask which single skill it would invoke or whether none applies. Check the choice, not the reasoning wording.
 
+The full set, with two requests for every skill, is in the [triggering table](triggering-table.md).
+
 | # | Request | Expected |
 | --- | --- | --- |
 | T1 | "I have a vague idea for a habit-tracking app and I'm not sure what the goals even are." | `problem-framing` |

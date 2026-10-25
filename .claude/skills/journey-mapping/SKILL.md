@@ -1,6 +1,6 @@
 ---
 name: journey-mapping
-description: "Maps a user's end-to-end experience across stages, touchpoints, and channels, including steps outside the product, and identifies pain points and opportunities. Use when the whole experience over time must be understood, not just the path through a single interface."
+description: "Maps a user's end-to-end experience across stages, touchpoints, and channels, with pain points and opportunities. Use when the whole experience over time matters. Not for one interface path; use `user-flow-mapping`."
 ---
 
 # Journey Mapping

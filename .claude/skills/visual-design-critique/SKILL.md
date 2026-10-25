@@ -1,6 +1,6 @@
 ---
 name: visual-design-critique
-description: "Assesses visual hierarchy, spacing, typography, alignment, and consistency, separating requirements, conventions, heuristics, and aesthetic preference. Use when a visual design needs structured feedback."
+description: "Assesses visual hierarchy, spacing, typography, alignment, and consistency, separating requirements, conventions, heuristics, and preference. Use when a visual design needs structured feedback."
 ---
 
 # Visual Design Critique

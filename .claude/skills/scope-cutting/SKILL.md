@@ -1,6 +1,6 @@
 ---
 name: scope-cutting
-description: "Finds the smallest set of items or requirements that still delivers an outcome, proposes a cut line with what is deferred, what each deferral costs, and when to revisit it, and flags any cut that touches safety, security, accessibility, data protection, or legal duties as a decision for the owner. Use when scope must shrink to fit a limit or a proof of concept needs its smallest slice. Not for ranking the whole backlog and not for estimating effort."
+description: "Proposes the smallest set that still delivers an outcome, with each deferral's cost and revisit trigger, and flags protected-area cuts for the owner. Use when scope must shrink. Not for ranking the backlog."
 ---
 
 # Scope Cutting

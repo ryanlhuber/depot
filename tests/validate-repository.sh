@@ -237,6 +237,14 @@ if [ -f .claude-plugin/plugin.json ]; then
   while IFS= read -r listed; do
     [ -f "${listed#./}" ] || fail ".claude-plugin/plugin.json lists an agent that does not exist: $listed"
   done < <(grep -oE '"\./agents/[a-z0-9-]+\.md"' .claude-plugin/plugin.json | tr -d '"')
+  version="$(sed -n 's/.*"version": *"\([^"]*\)".*/\1/p' .claude-plugin/plugin.json | head -n 1)"
+  if [ -z "$version" ]; then
+    fail ".claude-plugin/plugin.json has no version"
+  elif [ -f CHANGELOG.md ]; then
+    grep -Eq "^## ${version//./\\.}\$" CHANGELOG.md || fail "CHANGELOG.md has no '## $version' entry matching .claude-plugin/plugin.json"
+  else
+    fail "CHANGELOG.md is missing"
+  fi
   grep -Fq '"./.claude/skills/"' .claude-plugin/plugin.json || fail ".claude-plugin/plugin.json must point skills at ./.claude/skills/"
   for manifest in .claude-plugin/plugin.json .claude-plugin/marketplace.json; do
     if command -v python3 >/dev/null 2>&1; then

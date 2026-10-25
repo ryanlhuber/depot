@@ -1,6 +1,6 @@
 ---
 name: merge-readiness-check
-description: "Verifies from evidence whether a change meets its merge preconditions and returns ready or not ready with the blockers, without merging. Use when a change has completed review and someone is about to merge it. Not for performing reviews or for the merge itself."
+description: "Verifies from evidence that a change meets its merge preconditions and returns ready or not ready with blockers, without merging. Use when reviews are done and a merge is near. Not for performing reviews."
 disable-model-invocation: true
 ---
 

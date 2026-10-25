@@ -1,6 +1,6 @@
 ---
 name: session-handoff
-description: "Condenses the current work into a self-contained handoff note so a fresh session, another agent, or a person can continue without the conversation history. Use when pausing or ending a session, switching tools or models, running out of context, or passing work to someone else. Not for final reports to stakeholders and not for archiving a full transcript."
+description: "Condenses current work into a self-contained handoff note for a fresh session, agent, or person. Use when pausing, switching tools or models, or running low on context. Not for stakeholder reports or transcripts."
 disable-model-invocation: true
 ---
 

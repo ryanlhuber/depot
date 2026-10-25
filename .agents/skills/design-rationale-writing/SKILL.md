@@ -1,6 +1,6 @@
 ---
 name: design-rationale-writing
-description: "Writes a concise rationale for a design decision covering the problem, options considered, the choice, and supporting evidence. Use when stakeholders who were not in the discussion need to understand or approve a decision."
+description: "Writes a concise rationale for a design decision: problem, options, choice, and evidence. Use when people who missed the discussion must understand or approve a decision. Not for a full design specification."
 ---
 
 # Design Rationale Writing

@@ -1,6 +1,6 @@
 ---
 name: backlog-prioritization
-description: "Ranks candidate work items into Now, Next, Later, and Not now tiers using stated criteria, dependencies, risk reduction, and relative effort, showing the reasoning for each item and the close calls, and stopping short of the decision. Use when a team must choose what to build next or reorder a set of items. Not for estimating effort in time and not for cutting scope within one outcome."
+description: "Ranks items into Now, Next, Later, and Not now using stated criteria, dependencies, and relative effort, with reasons and close calls. Use when choosing what to build next. Not for time estimates or `scope-cutting`."
 ---
 
 # Backlog Prioritization

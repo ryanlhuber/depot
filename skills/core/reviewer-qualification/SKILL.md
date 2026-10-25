@@ -1,6 +1,6 @@
 ---
 name: reviewer-qualification
-description: "Qualifies a reviewer, human or model, for one technical domain by running it on a seeded change with known defects and scoring the result against fixed thresholds. Use when deciding whether a reviewer can be trusted with the review role in a domain, or when a model version changed. Not for reviewing real changes."
+description: "Qualifies a human or model reviewer for one domain by scoring its review of a seeded change with known defects. Use when deciding if a reviewer can be trusted, or after a model change. Not for reviewing real changes."
 disable-model-invocation: true
 ---
 
