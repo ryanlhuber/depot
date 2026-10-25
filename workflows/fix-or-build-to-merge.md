@@ -6,8 +6,8 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 
 ## Inputs
 
-- Required: the work item (an issue, ticket, task, file, plain request, or defect report with symptoms, where it was seen, and any reproduction steps), the repository and project conventions, and a builder plus two reviewers who can be kept independent.
-- Optional: project configuration naming the target branch, a repair-round limit, a review budget, and recorded human approvals; for a defect, logs, recent changes, and the intended behavior.
+- Required: the work item (an issue, ticket, task, file, plain request, or defect report with symptoms, where it was seen, and any reproduction steps), the repository and project conventions (for example the working conventions in the agent instructions file), and a builder plus two reviewers who can be kept independent.
+- Optional: project configuration naming the target branch, runtime, and install, build, and test commands (when the project's conventions record them, read them there instead of asking), a repair-round limit, a review budget, and recorded human approvals; for a defect, logs, recent changes, and the intended behavior.
 - Assumptions: no particular tracker, hosting platform, or tool is required; where the work item or the change lives is the project's choice. One active work item at a time. Independence means a different party for the builder, the first reviewer, and the second reviewer. When the parties are models, they must come from three distinct model families; versions, variants, or reasoning levels of one family, or one family reached through different tools, do not count. If independence cannot be met, the workflow stops and asks; it never weakens the rule silently.
 
 ## Stages
