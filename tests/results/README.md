@@ -43,5 +43,5 @@ Results files:
 - [2026-10-25 workflow cases](2026-10-25-workflow-cases.md) (26 cases across all 8 workflows: 24 pass, 2 partial)
 - [2026-10-25 review path cases](2026-10-25-review-path-cases.md) (5 cases for the light and standard review paths: 5 pass)
 - [2026-10-25 holdout](2026-10-25-holdout.md) (70 untouched triggering requests: 68 correct)
-- [2026-10-25 holdout, four other model families](2026-10-25-holdout-chatgpt.md) (same 70 requests; ChatGPT, DeepSeek, Gemini and Muse Spark: 67, 69, 67 and 67 correct; all 58 natural requests in each)
+- [2026-10-25 holdout, five other model families](2026-10-25-holdout-chatgpt.md) (same 70 requests; ChatGPT, DeepSeek, Gemini and Muse Spark: 67, 69, 67 and 67 correct; Grok 70 with its search setting unconfirmed; all 58 natural requests in each)
 - [2026-10-25 real run](2026-10-25-real-run.md) (scratch repository, real code and tests, light and standard review on a correct and a flawed fix)

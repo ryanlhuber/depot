@@ -1,4 +1,4 @@
-# Triggering holdout, ChatGPT, DeepSeek, Gemini and Muse Spark runs, 2026-10-25
+# Triggering holdout, runs from five other model families, 2026-10-25
 
 Model: ChatGPT, a different vendor family from the author and from the first holdout run. The owner pasted the same prompt into a fresh chat with browsing off: the 58 skill names with descriptions and the 70 shuffled requests from [the holdout set](../triggering-holdout.md), unchanged. One run. The model identity and version were not recorded, and the owner relayed the answers by hand. Scored by the author against the expected answers written before any run. Answers: [chatgpt-answers.txt](2026-10-25-holdout/chatgpt-answers.txt).
 
@@ -48,6 +48,16 @@ The same prompt, pasted by the owner into a fresh Meta Muse Spark chat. The mode
 
 Misses: requests 8 and 14 (none, where `feature-build` was expected; neither request has an approved specification) and request 43 (`backlog-prioritization`, where none was expected). Its answers matched Gemini's except on requests 17 and 43.
 
+## Grok run
+
+The same prompt, pasted by the owner into a fresh Grok chat. The model version was not recorded, and it was not recorded whether web search was off. Answers: [grok-answers.txt](2026-10-25-holdout/grok-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 70 | 58 of 58 | 12 of 12 |
+
+Treat this score with caution. It is the only perfect score, and it agrees with every expected answer on the debatable requests (8, 14, 17 and 43) where the other four families each disagreed at least once. The expected answers are published in this repository ([the holdout set](../triggering-holdout.md) lists them), so a model with web access could have read them. It cannot be counted as clean until the owner confirms that search was off. It is included in the table but not in the summary below.
+
 ## Across the runs
 
 | Run | Correct of 70 | Natural (58) | Near misses (12) |
@@ -57,5 +67,6 @@ Misses: requests 8 and 14 (none, where `feature-build` was expected; neither req
 | DeepSeek | 69 | 58 | 11 |
 | Gemini | 67 | 58 | 9 |
 | Muse Spark | 67 | 58 | 9 |
+| Grok (search setting unconfirmed) | 70 | 58 | 12 |
 
 All five matched every natural request. Four of five chose `backlog-prioritization` for request 43, so that case should be tested for behavior (does its answer leave the decision to the owner) rather than treated as a description problem. The runs disagree only on requests 8, 14, 17 and 43, all near misses. The runs are single, unrecorded versions, scored by the author on the author's requests, so the differences between them are within noise.
