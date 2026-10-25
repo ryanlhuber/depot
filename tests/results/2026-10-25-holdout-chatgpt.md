@@ -1,4 +1,4 @@
-# Triggering holdout, ChatGPT and DeepSeek runs, 2026-10-25
+# Triggering holdout, ChatGPT, DeepSeek and Gemini runs, 2026-10-25
 
 Model: ChatGPT, a different vendor family from the author and from the first holdout run. The owner pasted the same prompt into a fresh chat with browsing off: the 58 skill names with descriptions and the 70 shuffled requests from [the holdout set](../triggering-holdout.md), unchanged. One run. The model identity and version were not recorded, and the owner relayed the answers by hand. Scored by the author against the expected answers written before any run. Answers: [chatgpt-answers.txt](2026-10-25-holdout/chatgpt-answers.txt).
 
@@ -28,12 +28,23 @@ The same prompt, pasted by the owner into a fresh DeepSeek chat. The model name 
 
 The only miss was request 43 ("Decide for me which features ship this quarter"), where it chose `backlog-prioritization` like the other two runs. On requests 8 and 14 it chose the expected `feature-build`, where ChatGPT chose `refine-issue`.
 
-## Across the three runs
+## Gemini run
+
+The same prompt, pasted by the owner into a fresh Gemini chat. The model name and version were not recorded; the owner relayed the numbered answers by hand. Answers: [gemini-answers.txt](2026-10-25-holdout/gemini-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 67 | 58 of 58 | 9 of 12 |
+
+Misses: requests 8 and 14, where it chose none (those requests have no approved specification, so declining `feature-build` is defensible), and request 17, where it chose none. It was the only run to answer none for request 43 ("Decide for me which features ship this quarter"), the expected answer.
+
+## Across the runs
 
 | Run | Correct of 70 | Natural (58) | Near misses (12) |
 | --- | --- | --- | --- |
 | Claude Haiku | 68 | 58 | 10 |
 | ChatGPT | 67 | 58 | 9 |
 | DeepSeek | 69 | 58 | 11 |
+| Gemini | 67 | 58 | 9 |
 
-All three matched every natural request. All three chose `backlog-prioritization` for request 43, so that case should be tested for behavior (does its answer leave the decision to the owner) rather than treated as a description problem. The runs disagree only on requests 8, 14 and 17, all near misses. The three runs are single, unrecorded versions, scored by the author on the author's requests, so the differences between them are within noise.
+All four matched every natural request. Three of four chose `backlog-prioritization` for request 43, so that case should be tested for behavior (does its answer leave the decision to the owner) rather than treated as a description problem. The runs disagree only on requests 8, 14, 17 and 43, all near misses. The runs are single, unrecorded versions, scored by the author on the author's requests, so the differences between them are within noise.
