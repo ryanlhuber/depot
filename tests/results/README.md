@@ -36,3 +36,4 @@ Results files:
 
 - [2026-10-24 initial run](2026-10-24-initial-run.md)
 - [2026-10-24 install check](2026-10-24-install-check.md) (owner-reported install, not a model run)
+- [2026-10-24 workflows run](2026-10-24-workflows-run.md)
