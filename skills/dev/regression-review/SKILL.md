@@ -1,6 +1,6 @@
 ---
 name: regression-review
-description: "Finds behavior a change may have broken by tracing touched surfaces to dependent flows and comparing tests to those risks. Use after a change is built. Not a specification review and not a merge decision."
+description: "Finds behavior a change may have broken by tracing touched surfaces to dependent flows and comparing tests to those risks. Use when a change is built. Not a specification review and not a merge decision."
 ---
 
 # Regression Review

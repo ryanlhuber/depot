@@ -1,6 +1,6 @@
 ---
 name: skill-authoring
-description: "Creates or revises one portable agent skill with a description that triggers correctly, inputs, process, and checks. Use for a new skill or fixing an existing one. Not for agents, workflows, or general docs."
+description: "Creates or revises one portable agent skill with a description that triggers correctly, inputs, process, and checks. Use when creating a new skill or fixing an existing one. Not for agents, workflows, or general docs."
 ---
 
 # Skill Authoring

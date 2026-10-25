@@ -1,6 +1,6 @@
 ---
 name: independent-code-review
-description: "Reviews one revision of a change against its approved specification and returns PASS or FAIL with evidenced findings. Use for a first review before merge by someone other than the builder. Not for attack testing."
+description: "Reviews one revision of a change against its approved specification and returns PASS or FAIL with evidenced findings. Use when a change needs a first review before merge by someone other than the builder. Not for attack testing."
 disable-model-invocation: true
 ---
 

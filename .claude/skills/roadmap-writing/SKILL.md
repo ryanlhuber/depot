@@ -1,6 +1,6 @@
 ---
 name: roadmap-writing
-description: "Writes a one-page Now, Next, Later roadmap of outcomes from a ranked backlog, with confidence and a moving condition each, and no unsupported dates. Use to show direction. Not for ranking or dated commitments."
+description: "Writes a one-page Now, Next, Later roadmap of outcomes from a ranked backlog, with confidence and a moving condition each, and no unsupported dates. Use when others need to see direction. Not for ranking or dated commitments."
 ---
 
 # Roadmap Writing

@@ -1,6 +1,6 @@
 ---
 name: backlog-prioritization
-description: "Ranks items into Now, Next, Later, and Not now using stated criteria, dependencies, and relative effort, with reasons and close calls. Use to choose what to build next. Not for time estimates or `scope-cutting`."
+description: "Ranks items into Now, Next, Later, and Not now using stated criteria, dependencies, and relative effort, with reasons and close calls. Use when choosing what to build next. Not for time estimates or `scope-cutting`."
 ---
 
 # Backlog Prioritization

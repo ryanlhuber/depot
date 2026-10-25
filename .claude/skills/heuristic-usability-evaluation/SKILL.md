@@ -1,6 +1,6 @@
 ---
 name: heuristic-usability-evaluation
-description: "Evaluates an interface against usability heuristics and returns prioritized findings with severity and confidence. Use for an expert review before or alongside user testing. Not a replacement for testing with users."
+description: "Evaluates an interface against usability heuristics and returns prioritized findings with severity and confidence. Use when an expert review is needed before or alongside user testing. Not a replacement for testing with users."
 ---
 
 # Heuristic Usability Evaluation

@@ -1,6 +1,6 @@
 ---
 name: research-synthesis
-description: "Turns raw user research into traceable themes and insights, separating observation from interpretation, with confidence and gaps. Use to consolidate notes, recordings, surveys, or support data. Not for drafting personas."
+description: "Turns raw user research into traceable themes and insights, separating observation from interpretation, with confidence and gaps. Use when consolidating notes, recordings, surveys, or support data. Not for drafting personas."
 ---
 
 # Research Synthesis

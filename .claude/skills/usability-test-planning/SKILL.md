@@ -1,6 +1,6 @@
 ---
 name: usability-test-planning
-description: "Plans a usability test with representative users (goals, participants, tasks, measures, session guide) and summarizes results. Use to validate a design with real users or analyze session results."
+description: "Plans a usability test with representative users (goals, participants, tasks, measures, session guide) and summarizes results. Use when validating a design with real users or analyzing session results."
 ---
 
 # Usability Test Planning

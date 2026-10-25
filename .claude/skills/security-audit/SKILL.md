@@ -1,6 +1,6 @@
 ---
 name: security-audit
-description: "Audits a defined scope of code, configuration, and data handling for security weaknesses, tracing each from entry point to asset. Use before release or after auth or data changes. Not for package scanning alone."
+description: "Audits a defined scope of code, configuration, and data handling for security weaknesses, tracing each from entry point to asset. Use when preparing a release or after auth or data changes. Not for package scanning alone."
 ---
 
 # Security Audit

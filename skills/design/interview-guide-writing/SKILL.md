@@ -1,6 +1,6 @@
 ---
 name: interview-guide-writing
-description: "Writes a user interview guide: objectives, participants, question flow, neutral phrasing, probes. Use to learn users' behavior or needs one-on-one. Not for testing a design; use `usability-test-planning`."
+description: "Writes a user interview guide: objectives, participants, question flow, neutral phrasing, probes. Use when learning users' behavior or needs one-on-one. Not for testing a design; use `usability-test-planning`."
 ---
 
 # Interview Guide Writing
