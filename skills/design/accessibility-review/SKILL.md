@@ -1,6 +1,6 @@
 ---
 name: accessibility-review
-description: "Evaluates an interface against a recognized accessibility standard and returns verified, prioritized findings with remediation guidance. Use when a design, prototype, or build needs an accessibility check; it does not replace testing with assistive-technology users."
+description: "Checks an interface against an accessibility standard and returns verified, prioritized findings with fixes. Use when a design or build needs an accessibility check. Not a substitute for assistive-tech user testing."
 ---
 
 # Accessibility Review

@@ -1,6 +1,6 @@
 ---
 name: decision-interview
-description: "Interviews the requester about a plan, design, or idea one question at a time, offering options and a recommendation, until every material decision is resolved, then restates the decisions for explicit confirmation. Use when a plan is vague, has hidden branches, or needs a shared understanding before work starts. Not for refining a work item into a build specification and not for starting the work."
+description: "Interviews you one question at a time, with options and a recommendation, until every decision in a vague plan is settled, then confirms them. Use when a plan has hidden branches. Not for specs (`refine-issue`)."
 disable-model-invocation: true
 ---
 

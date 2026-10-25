@@ -1,6 +1,6 @@
 ---
 name: dependency-mapping
-description: "Finds the real dependencies among work items, separates hard from soft ones, breaks or reports cycles, and returns a build order with the longest chain of hard dependencies, what can start now, and what is blocked by something outside the set; it names a time-based critical path only when durations are supplied. Use when a set of items needs an order that respects what each one needs. Not for ranking by value and not for scheduling people or dates."
+description: "Finds hard and soft dependencies, resolves cycles, and gives a build order, what can start now, and external blockers. Use when items need an order that respects needs. Not for ranking by value or dates."
 ---
 
 # Dependency Mapping

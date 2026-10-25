@@ -1,6 +1,6 @@
 ---
 name: responsive-implementation
-description: "Implements a responsive layout plan in CSS: fluid layout, breakpoints tied to content, container-based adaptation, resilience to zoom, text-size, and input mode, and verification at defined viewports. Use when a layout specification must be built, or when an existing layout breaks at some sizes, zoom levels, or text settings."
+description: "Implements a responsive layout plan in CSS: fluid layout, content-based breakpoints, container adaptation, zoom and text-size resilience. Use when building a layout spec or fixing breakage. Not for planning layouts."
 ---
 
 # Responsive Implementation

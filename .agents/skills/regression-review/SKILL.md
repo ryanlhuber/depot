@@ -1,6 +1,6 @@
 ---
 name: regression-review
-description: "Looks for behavior a recent change may have broken: maps the changed surfaces to the flows, contracts, and data they touch, then compares the existing tests to those risks and lists the checks that are missing. Use when a feature, fix, migration, or refactor is built and needs a risk check beyond its own criteria. Not a specification review and not a merge decision."
+description: "Finds behavior a change may have broken by tracing touched surfaces to dependent flows and comparing tests to those risks. Use after a change is built. Not a specification review and not a merge decision."
 ---
 
 # Regression Review

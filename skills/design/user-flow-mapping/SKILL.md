@@ -1,6 +1,6 @@
 ---
 name: user-flow-mapping
-description: "Maps the steps, decisions, and outcomes a user follows to reach a goal and identifies friction, dead ends, and missing paths. Use when a multi-screen task path must be understood or verified."
+description: "Maps the steps, decisions, and outcomes a user follows to reach a goal, and finds friction, dead ends, and missing paths. Use when a multi-screen task path must be understood or verified."
 ---
 
 # User Flow Mapping

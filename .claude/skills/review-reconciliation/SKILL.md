@@ -1,6 +1,6 @@
 ---
 name: review-reconciliation
-description: "Combines independent review reports for one revision into a single deduplicated finding list with a blocking set, and chooses how much re-review a repair needs. Use when two or more reviews of a change are complete, or when a repair follows a failed review. Not for performing the reviews or for the final merge decision."
+description: "Combines independent review reports for one revision into one deduplicated finding list with a blocking set, and picks the re-review a repair needs. Use when reviews are complete. Not for the merge decision."
 disable-model-invocation: true
 ---
 

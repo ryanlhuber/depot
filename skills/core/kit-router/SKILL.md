@@ -1,6 +1,6 @@
 ---
 name: kit-router
-description: "Recommends which skill, agent, or workflow from the kit library fits the user's situation, and which models at what effort level to run it with. Use when the user is unsure where to start, describes a goal without naming a skill, or asks what to use next. Recommends only; it does not run the work and does not replace the chosen skill's own method."
+description: "Recommends which skill, agent, or workflow fits the situation, and which models and effort levels to use. Use when unsure where to start or what to use next. Recommends only; it does not run the work."
 ---
 
 # Kit Router

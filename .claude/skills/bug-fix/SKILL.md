@@ -1,6 +1,6 @@
 ---
 name: bug-fix
-description: "Diagnoses a specific defect, finds its smallest responsible cause, repairs it without widening scope, and proves the repair with a check that failed before and passes after. Use when behavior is broken, a test fails, or a reproducible defect is reported. Not for new features, speculative cleanup, or defects whose expected behavior is undefined."
+description: "Finds the smallest cause of one defect, repairs it without widening scope, and proves it with a check that failed before and passes after. Use when behavior is broken or a test fails. Not for new features."
 ---
 
 # Bug Fix

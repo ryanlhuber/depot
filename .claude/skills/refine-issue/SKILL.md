@@ -1,6 +1,6 @@
 ---
 name: refine-issue
-description: "Refines a work item (an issue, ticket, task, or plain request) conversationally into an approved, implementation-ready specification, one decision at a time, without starting development. Use when a request must be made precise and explicitly approved before anyone builds it. Works with any tracker, a file, or chat alone. Not for writing code or choosing who builds it."
+description: "Refines a work item conversationally into an approved specification, one decision at a time, without starting development. Use when a request must be made precise and approved before building. Not for writing code."
 disable-model-invocation: true
 ---
 

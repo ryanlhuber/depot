@@ -1,6 +1,6 @@
 ---
 name: assumption-mapping
-description: "Lists the assumptions a plan rests on, rates how much each would hurt if wrong and how much evidence supports it, and names the cheapest test or the decision-maker for each risky one. Use when a plan or frame is about to be committed to and some of its premises are unverified. Not for validating a finished design and not for risk management of a running project."
+description: "Lists a plan's assumptions, rates impact and evidence, and names the cheapest test or decider for risky ones. Use when a plan is about to be committed to on unverified premises. Not for design validation."
 ---
 
 # Assumption Mapping

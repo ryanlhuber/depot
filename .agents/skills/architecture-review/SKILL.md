@@ -1,6 +1,6 @@
 ---
 name: architecture-review
-description: "Evaluates whether a system's or proposed design's structure fits its stated goals and constraints, and returns evidenced findings with the cost of leaving each one, the smallest fix, and the decisions that belong to others. Use when a design is proposed, before major roadmap work, or when one area keeps causing pain. Not for judging one change against its specification and not for designing a replacement architecture."
+description: "Judges whether a system's or proposed design's structure fits its stated goals, with evidenced findings and smallest fixes. Use when a design is proposed or one area keeps causing pain. Not for judging one change."
 ---
 
 # Architecture Review

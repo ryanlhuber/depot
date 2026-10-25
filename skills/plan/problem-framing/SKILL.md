@@ -1,6 +1,6 @@
 ---
 name: problem-framing
-description: "Turns a vague goal or idea into a one-page frame stating the problem, who has it, the goal, fixed constraints, non-goals, observable success measures, assumptions, and open questions. Use when a project, feature, or proof of concept is about to be planned and its goal is not yet precise. Not for refining one work item into a specification and not for gathering evidence from users."
+description: "Turns a vague goal into a one-page frame: problem, users, constraints, non-goals, success measures, assumptions, open questions. Use when planning starts with an unclear goal. Not for refining one work item."
 ---
 
 # Problem Framing

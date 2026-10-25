@@ -1,6 +1,6 @@
 ---
 name: backlog-health-check
-description: "Inspects a backlog for stale items, duplicates, oversized items, items without an outcome or done signal, broken or circular dependencies, and states that disagree with evidence, and returns findings with a recommended action for each without changing anything. Use when a backlog has grown, before re-prioritizing, or when planning feels unreliable. Not for ranking items and not for editing or closing them."
+description: "Finds stale, duplicate, oversized, no-done-signal, broken-dependency, and state-versus-evidence items, with an action each; changes nothing. Use when a backlog has grown or planning feels off. Not for ranking."
 ---
 
 # Backlog Health Check

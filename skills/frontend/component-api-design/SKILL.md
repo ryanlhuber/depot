@@ -1,6 +1,6 @@
 ---
 name: component-api-design
-description: "Specifies a reusable UI component's public interface: inputs, variants, state ownership, events, composition points, styling hooks, and accessibility contract. Use when a component will be shared across screens or teams, or when an existing component's interface has become inconsistent or hard to use correctly."
+description: "Specifies a reusable component's public interface: inputs, variants, state ownership, events, composition, and accessibility contract. Use when a component is shared or its interface is inconsistent. Not for appearance."
 ---
 
 # Component API Design

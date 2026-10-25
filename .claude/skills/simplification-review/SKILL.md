@@ -1,6 +1,6 @@
 ---
 name: simplification-review
-description: "Finds what an implementation or design can drop, merge, or defer while still delivering its goal, and protects what must stay. Use when something looks overbuilt or a plan has more mechanism than its goal needs. Not for cutting backlog scope (use scope-cutting) and not for changing code."
+description: "Finds what an implementation or design can drop, merge, or defer and still deliver its goal. Use when something looks overbuilt. Not for cutting backlog scope (`scope-cutting`) or changing code."
 ---
 
 # Simplification Review

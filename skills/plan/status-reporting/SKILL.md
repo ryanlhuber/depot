@@ -1,6 +1,6 @@
 ---
 name: status-reporting
-description: "Reports progress on a plan from evidence such as merged changes, test results, and delivered artifacts rather than from item states, separating done, in progress, blocked, and at risk, and showing what changed against the baseline plan. Use when someone needs an honest picture of where work stands. Not for predicting completion dates and not for judging the quality of the work."
+description: "Reports progress against a plan from evidence, not item states, sorting done, in progress, blocked, at risk, and scope changes. Use when someone needs an honest view of where work stands. Not for date forecasts."
 ---
 
 # Status Reporting

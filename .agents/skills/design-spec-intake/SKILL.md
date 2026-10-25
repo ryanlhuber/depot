@@ -1,6 +1,6 @@
 ---
 name: design-spec-intake
-description: "Reads design material before implementation (decision documents, requirements, token definitions, state and behavior specifications, layouts, copy) and reports what is decided, proposed, open, conflicting, or missing, and what can be built now. Use when implementation is about to start from design artifacts, or when a handoff must be checked for build-readiness."
+description: "Reads design material before building and reports what is decided, open, conflicting, or missing, and what can be built now. Use when implementation starts from design artifacts. Not for judging design quality."
 ---
 
 # Design Spec Intake

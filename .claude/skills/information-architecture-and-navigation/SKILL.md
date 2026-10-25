@@ -1,6 +1,6 @@
 ---
 name: information-architecture-and-navigation
-description: "Defines how content and functions are grouped, labeled, and reached, and verifies that key destinations are findable. Use when designing or restructuring a product's organization, or when users struggle to find things."
+description: "Defines how content and functions are grouped, labeled, and reached, and checks that key destinations are findable. Use when designing or restructuring a product's organization, or when users struggle to find things."
 ---
 
 # Information Architecture and Navigation

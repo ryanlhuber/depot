@@ -1,6 +1,6 @@
 ---
 name: adversarial-code-review
-description: "Tries to disprove that a revision of a change is correct, using evidence, without seeing any earlier review, and returns a PASS or FAIL report with the attacks attempted. Use when a change needs a second, isolated review by a reviewer independent of both the builder and the first reviewer. Not for editing code or for a first-pass review."
+description: "Tries to disprove, with evidence and no sight of earlier reviews, that a change is correct; returns PASS or FAIL. Use when a change needs a second isolated review. Not for a first-pass review (`independent-code-review`)."
 disable-model-invocation: true
 ---
 

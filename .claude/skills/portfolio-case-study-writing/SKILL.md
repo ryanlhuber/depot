@@ -1,6 +1,6 @@
 ---
 name: portfolio-case-study-writing
-description: "Gathers a designer's project facts through targeted questions and drafts an honest, decision-focused portfolio case study without inventing metrics. Use when a designer wants a case study written from their own project experience."
+description: "Asks targeted questions about a designer's project and drafts an honest, decision-focused portfolio case study without inventing metrics. Use when a designer wants a case study written from their own project."
 ---
 
 # Portfolio Case Study Writing
