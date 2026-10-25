@@ -4,7 +4,7 @@ These instructions apply throughout the repository. `CLAUDE.md` contains only `@
 
 - Read the relevant directory README and canonical documents in [`docs/`](docs/) before editing.
 - Classify portable artifacts using the [core artifact architecture](docs/core-artifact-architecture.md): focused expertise belongs in `skills/<bucket>/<name>/SKILL.md` (indexed in `skills/README.md`), specialist responsibility in `agents/`, and multi-stage orchestration in `workflows/`.
-- Put a skill in the bucket for the kind of work it supports: `core` (any domain), `plan`, `design`, `frontend`, or `dev`. Skill names are unique across buckets. Do not add a bucket without a concrete approved requirement.
+- Put a skill in the bucket for the kind of work it supports: `core` (any domain), `plan`, `ux` (research and evaluation that inform the interface), `ui` (interface design and specification up to front-end handoff), `frontend`, or `dev`. Skill names are unique across buckets. Do not add a bucket without a concrete approved requirement.
 - Keep portable artifacts independent of providers, models, harnesses, design tools, frameworks, libraries, and platforms. Place concrete adapters in `integrations/` according to the [portability boundary](docs/portability-and-integration-boundaries.md).
 - Write `frontend` skills for the web platform (HTML, CSS, JavaScript, and browser accessibility semantics). Framework, component-library, and styling-tool specifics belong in `integrations/`, never in a skill.
 - A project is a project. Do not add modes or variants of a skill for prototype versus long-term work. A skill scales its rigor to the risk and size of the change in front of it, and nothing about it changes when a small project grows.

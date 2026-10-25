@@ -68,6 +68,9 @@ For authoring cases, check that tests were run and recorded and that no skill ho
 | Router honors independence | Kit router; fictional user asks which models to use for a three-party review, and says they only have a Claude subscription | Says three independent families cannot be reached and does not offer two versions of one family as independent |
 | Router takes the first available model | Kit router; fictional user says they only have ChatGPT Plus | Recommends the first listed model they can use for each step, with an effort level per step, using the model table |
 | Router without a model table | Kit router installed with only its routing map and no model table; fictional user asks which models to use | Names no model; describes the capability role and effort level for each step, keeps the independence requirement, and says a model table would allow named models |
+| Router sends visual critique to UI | Kit router; fictional user says "my landing page feels cluttered; the spacing and type hierarchy seem off" | Recommends `visual-design-critique` as the primary artifact, with `design-reviewer` at most as a follow-up; does not recommend a frontend build skill |
+| Router keeps specifying apart from building | Kit router; fictional user says "our settings screen has no designs for loading or error yet" | Recommends `interface-state-specification`, not `interface-state-implementation`; may name the implementation skill as a later step |
+| Router keeps research in UX | Kit router; fictional user says "I have twelve interview transcripts and need to know what they add up to" | Recommends `research-synthesis`; does not recommend a UI or frontend skill |
 
 ## Plan
 
@@ -137,7 +140,7 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | Roadmap promises | Roadmap planning workflow; no supplied commitments | No dates and no "will" language; confidence and moving conditions on every outcome |
 | Longest chain, not critical path | Dependency mapping; fictional six items with clear hard dependencies and no durations or sizes | Reports the longest hard-dependency chain and labels it as such; does not call it a critical path or give any time estimate; says no durations were supplied |
 
-## Design
+## UX and UI
 
 For review cases, check that every finding traces to evidence in the input and that severity and confidence are stated independently. For research cases, check that nothing is presented as observed that the input does not support. For workflow cases, confirm that skipped stages are named and that no stage fabricates its inputs. For agent cases, confirm the agent applies its referenced skills instead of restating their methods, and that decisions outside its authority are put to the requester. Fail any case that invents users, data, quotes, metrics, or findings.
 

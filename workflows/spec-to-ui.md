@@ -41,7 +41,7 @@ Turn an approved interface specification into working front-end code that matche
    - Requires: the build and the token definitions.
    - Produces: one source of values used by the components, and a repeatable check that raw values are not used.
 8. **Check against the specification**
-   - Assignment: [Design to Implementation QA](../skills/design/design-to-implementation-qa/SKILL.md), performed by someone other than the stage 3 to 7 implementer when possible.
+   - Assignment: [Design to Implementation QA](../skills/ui/design-to-implementation-qa/SKILL.md), performed by someone other than the stage 3 to 7 implementer when possible.
    - Requires: the build, the specification, and the resolved decisions.
    - Produces: mismatches in layout, visual values, content, states, and behavior, each with severity.
 

@@ -13,19 +13,19 @@ Turn a vague interface brief into a traceable definition that design can start f
 ## Stages
 
 1. **Define requirements**
-   - Assignment: [Requirements Definition](../skills/design/requirements-definition/SKILL.md) to make the brief precise.
+   - Assignment: [Requirements Definition](../skills/ux/requirements-definition/SKILL.md) to make the brief precise.
    - Requires: the brief and any constraints.
    - Produces: numbered requirements, constraints, assumptions, open questions, and non-goals.
 2. **Ground users and survey solutions** (independent; run in either order)
-   - Assignment: [Persona and Scenario Drafting](../skills/design/persona-and-scenario-drafting/SKILL.md) for users and situations, and [Competitive Pattern Analysis](../skills/design/competitive-pattern-analysis/SKILL.md) for established solutions to the core problem.
+   - Assignment: [Persona and Scenario Drafting](../skills/ux/persona-and-scenario-drafting/SKILL.md) for users and situations, and [Competitive Pattern Analysis](../skills/ux/competitive-pattern-analysis/SKILL.md) for established solutions to the core problem.
    - Requires: the requirements set, plus user research material for personas and comparison targets or selection criteria for the analysis.
    - Produces: sourced personas and scenarios with research gaps, and named patterns with tradeoffs and limitations.
 3. **Map task flows**
-   - Assignment: [User Flow Mapping](../skills/design/user-flow-mapping/SKILL.md) for each primary user goal.
+   - Assignment: [User Flow Mapping](../skills/ux/user-flow-mapping/SKILL.md) for each primary user goal.
    - Requires: requirement IDs for the goal, the scenarios that describe it, and the pattern options that apply.
    - Produces: ordered flows with branches and failure paths, friction points, and unresolved questions.
 4. **Structure content and navigation**
-   - Assignment: [Information Architecture and Navigation](../skills/design/information-architecture-and-navigation/SKILL.md).
+   - Assignment: [Information Architecture and Navigation](../skills/ux/information-architecture-and-navigation/SKILL.md).
    - Requires: the content and function inventory and the primary tasks drawn from the mapped flows.
    - Produces: hierarchy, navigation mechanisms, labels with rationale, and task-path traces.
 

@@ -27,7 +27,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A need to show direction | S `roadmap-writing` | W `roadmap-planning` |
 | A need to report real progress | S `status-reporting` | |
 
-## Design
+## UX (informs the interface)
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
@@ -37,11 +37,17 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A whole-experience question | S `journey-mapping` | S `user-flow-mapping` |
 | Findability or navigation problems | S `information-architecture-and-navigation` | |
 | A need to see how others solve it | S `competitive-pattern-analysis` | |
-| A screen with unspecified states | S `interface-state-specification` | |
-| A layout that must adapt | S `responsive-layout-planning` | |
-| Visual foundations to define or record | A `design-system-designer` | S `design-token-and-system-definition`, S `design-md-writing` |
 | Interface text to write or tighten | S `ux-microcopy-writing` | |
 | A design to review | A `design-reviewer` | S `heuristic-usability-evaluation`, S `accessibility-review`, S `visual-design-critique` |
+
+## UI (interface design to handoff)
+
+| If the user has... | Start with | Then / alternates |
+| --- | --- | --- |
+| A screen with unspecified states | S `interface-state-specification` | |
+| A layout that must adapt | S `responsive-layout-planning` | |
+| Visual hierarchy, spacing, or type to critique | S `visual-design-critique` | A `design-reviewer` |
+| Visual foundations to define or record | A `design-system-designer` | S `design-token-and-system-definition`, S `design-md-writing` |
 | A decision others must approve | S `design-rationale-writing` | |
 | A build to check against its design | S `design-to-implementation-qa` | W `design-to-validation` |
 | A project to write up for a portfolio | S `portfolio-case-study-writing` | |
