@@ -8,7 +8,7 @@ This workflow adds the stages around Fix or Build to Merge. It does not repeat r
 
 ## Inputs
 
-- Required: the work item, the repository and its conventions, a builder, two independent reviewers, and the target environment.
+- Required: the work item, the repository and its conventions, a builder, the independent reviewers the review path needs (see Fix or Build to Merge), and the target environment.
 - Optional: a regression concern list, the documentation readers who matter, rollout constraints, and recorded human approvals.
 - Assumptions: no particular tracker, platform, or deployment tool is required. Deploying is performed by people or the project's own process, never by this workflow.
 

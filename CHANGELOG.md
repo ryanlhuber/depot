@@ -4,6 +4,10 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.6.0
+
+- `fix-or-build-to-merge` now has two review paths. The standard path is unchanged: both reviews, three distinct model families. It applies to high-risk changes, changes with no recorded risk, and whenever the requester asks. The light path applies to every other change: the independent review only, with the builder and one reviewer from two distinct model families, and the adversarial review skipped and recorded as skipped. The path is set from the risk recommended at stage 1 and recorded before the build; the workflow never lowers the risk, and a repair that reaches a high-risk area moves the item to the standard path. `merge-readiness-check`, its checklist, `review-reconciliation`, and `feature-delivery` follow the path. Independence is still never weakened silently.
+
 ## 0.5.2
 
 - `delivery-planner` and `goal-to-backlog` now agree: when the requester is unavailable, planning continues with the goal marked unconfirmed and assumptions labeled, and stops only when no goal can be stated. The architecture document names `kit-router` as the one skill allowed to recommend other artifacts.
