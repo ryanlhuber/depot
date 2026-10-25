@@ -2,20 +2,21 @@
 
 ## Goal
 
-Take one work item, a feature to build or a defect to fix, from an approved statement of what it must do to a verified, human-merged change, with every approval tied to a named revision and two independent reviews that were not allowed to influence each other. For a defect, success also means the fix is proven by a check that failed before and passes after, and did not widen scope or break nearby behavior. Success means the change merged only after every merge precondition was met by evidence, or the work stopped at a named blocker with the decision still needed.
+Take one work item, a feature to build or a defect to fix, from an approved statement of what it must do to a verified, human-merged change, with every approval tied to a named revision and the independent review the change's risk requires: two reviews that were not allowed to influence each other for a high-risk change, one for any other. For a defect, success also means the fix is proven by a check that failed before and passes after, and did not widen scope or break nearby behavior. Success means the change merged only after every merge precondition was met by evidence, or the work stopped at a named blocker with the decision still needed.
 
 ## Inputs
 
-- Required: the work item (an issue, ticket, task, file, plain request, or defect report with symptoms, where it was seen, and any reproduction steps), the repository and project conventions (for example the working conventions in the agent instructions file), and a builder plus two reviewers who can be kept independent.
+- Required: the work item (an issue, ticket, task, file, plain request, or defect report with symptoms, where it was seen, and any reproduction steps), the repository and project conventions (for example the working conventions in the agent instructions file), and a builder plus the reviewers the review path needs (one for the light path, two for the standard path) who can be kept independent.
 - Optional: project configuration naming the target branch, runtime, and install, build, and test commands (when the project's conventions record them, read them there instead of asking), a repair-round limit, a review budget, and recorded human approvals; for a defect, logs, recent changes, and the intended behavior.
-- Assumptions: no particular tracker, hosting platform, or tool is required; where the work item or the change lives is the project's choice. One active work item at a time. Independence means a different party for the builder, the first reviewer, and the second reviewer. When the parties are models, they must come from three distinct model families; versions, variants, or reasoning levels of one family, or one family reached through different tools, do not count. If independence cannot be met, the workflow stops and asks; it never weakens the rule silently.
+- Assumptions: no particular tracker, hosting platform, or tool is required; where the work item or the change lives is the project's choice. One active work item at a time. Independence means a different party for the builder and each reviewer. When the parties are models, they must come from distinct model families; versions, variants, or reasoning levels of one family, or one family reached through different tools, do not count. If independence cannot be met, the workflow stops and asks; it never weakens the rule silently.
+- Review path: the standard path applies to a high-risk change, to a change whose risk is not recorded, and whenever the requester asks for it. It runs stages 5 and 6 with a builder and two reviewers from three distinct families. The light path applies to every other change. It runs stage 5 only, with a builder and one reviewer from two distinct families, and skips stage 6. The path comes from the risk recommended at stage 1 and is recorded before the build. The requester may raise the risk, never the workflow lower it. A repair that reaches a high-risk area moves the item to the standard path from the next review on.
 
 ## Stages
 
 1. **Define what the change must do**
    - Assignment: [Refine Issue](../skills/dev/refine-issue/SKILL.md). For a defect, only when the correct behavior is not already stated or is disputed; skip when the report states the expected behavior and the requester confirms it.
    - Requires: the work item and the project's conventions.
-   - Produces: a specification (for a defect, the expected behavior and acceptance criteria) that the requester explicitly approved, the Ready check results, and recommended metadata including risk.
+   - Produces: a specification (for a defect, the expected behavior and acceptance criteria) that the requester explicitly approved, the Ready check results, and recommended metadata including risk, which sets the review path.
 2. **Confirm environment** (performed by the requester or builder, outside this workflow)
    - Assignment: the requester or builder confirms the repository, the target branch read from project configuration (never assumed), the supported runtime, the install, build, and test commands, that the base branch is current, that access is least-privilege, and that no production secrets are in any agent's context.
    - Requires: the approved specification.
@@ -32,7 +33,7 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
    - Assignment: [Independent Code Review](../skills/dev/independent-code-review/SKILL.md) by a reviewer independent of the builder.
    - Requires: the specification, diff and context, test results, the regression review when one ran, and the revision.
    - Produces: a saved review report for that revision. Not posted to the change discussion.
-6. **Adversarial review**
+6. **Adversarial review** (standard path only; skip on the light path and record that it was skipped)
    - Assignment: [Adversarial Code Review](../skills/dev/adversarial-code-review/SKILL.md) by a third independent reviewer. It starts without the first review's findings or the change discussion.
    - Requires: the same inputs as stage 5 and the same revision.
    - Produces: a saved review report that states whether any other review output was seen.
@@ -55,7 +56,7 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 - After stage 2, confirm the environment note names the target branch and the test command.
 - After stage 3, for a defect, confirm the failing-before check was observed failing for the stated reason and that the diff touches only what the cause requires.
 - After stage 4, confirm every Not covered risk has a check added or an accepted-risk record.
-- After stage 6, confirm the second reviewer saw no other review output and that both reports name the same revision.
+- After stage 5 on the light path, or after stage 6 on the standard path, confirm the review path was recorded before the build and matches the risk. On the standard path, also confirm the second reviewer saw no other review output and that both reports name the same revision.
 - After stage 7, confirm the verdict names the head revision and that every checklist item has evidence or is marked Cannot verify.
 - Before stage 9, confirm the head revision is the revision the reviews examined, or that the required re-review covered it.
 - On failure: return the failing item to the stage that owns it, with the finding ids or checklist items.
@@ -63,11 +64,12 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 ## Branching and iteration
 
 - If the blocking set is empty after stage 7, go to the readiness check and then stage 9.
-- If the change is high risk, require a recorded human approval before stage 9.
+- If the change is high risk, use the standard path and require a recorded human approval before stage 9.
+- If risk is missing from the specification, use the standard path.
 - If the expected behavior of a defect is undefined and the requester cannot decide, stop at stage 1 with the decision needed. If stage 3 shows the defect is a missing or wrong requirement, return to stage 1.
 - If a repair needs a larger change than the cause justifies (a redesign, a migration), stop and hand it to the requester as a separate work item rather than widening the fix.
 - Allow at most two repair rounds. After the second failed round, mark the item blocked, stop, and escalate with the findings and the decision needed.
-- Pause the work item after three review rounds, or when the budget set before it began is exceeded. A review round is both reviews of one revision (stages 5 and 6); a Tier A check does not count as a round. The requester then decides to continue, simplify, split, or change approach, and the decision is recorded.
+- Pause the work item after three review rounds, or when the budget set before it began is exceeded. A review round is the reviews the path requires for one revision (stage 5, and stage 6 on the standard path); a Tier A check does not count as a round. The requester then decides to continue, simplify, split, or change approach, and the decision is recorded.
 - If a reviewer becomes unavailable, keep independence, record the reason, and invalidate affected approvals. If independence cannot be kept, stop.
 - A new revision invalidates earlier approvals unless a diff-only re-review covers it.
 
@@ -78,11 +80,11 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 
 ## Final output
 
-Return the approved specification, the revision that merged, both review reports, the consolidated findings, the repair and tier record, the completed merge checklist, and a list of unresolved findings, accepted risks, and decisions that were escalated. For a defect, also return the expected behavior, the cause and its evidence, the before and after check results, and the regression review.
+Return the approved specification, the review path used, the revision that merged, the review reports, the consolidated findings, the repair and tier record, the completed merge checklist, and a list of unresolved findings, accepted risks, and decisions that were escalated. For a defect, also return the expected behavior, the cause and its evidence, the before and after check results, and the regression review.
 
 ## Completion criteria
 
 - The change merged only with every checklist item Met for the head revision, or the workflow stopped with the blocker and the decision named.
 - Every approval and re-review is tied to a named revision.
-- No review output reached the second reviewer before its initial report, and no result is reported that was not produced.
+- On the standard path, no review output reached the second reviewer before its initial report, and no result is reported that was not produced.
 - For a defect, a check that failed before the repair passes after it, both results were observed, and the change contains no scope beyond the cause.

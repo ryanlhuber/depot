@@ -27,11 +27,11 @@ Check, item by item and from evidence, that a change may be merged, and return a
 
 ## Rules and heuristics
 - Required: tests pass, with evidence linked. Never accept or report a passing result that was not shown.
-- Required: revision binding and re-review tiers are owned by `review-reconciliation`; this check verifies the record and does not re-derive or relax it. Both reviews are PASS and bound to the head revision, or to an approved revision that a recorded re-review at the tier `review-reconciliation` chose extends to the head revision. Without that record, the head revision is not covered.
-- Required: the second reviewer did not see the first reviewer's output before its initial report.
+- Required: revision binding and re-review tiers are owned by `review-reconciliation`; this check verifies the record and does not re-derive or relax it. Every review the review path requires is PASS and bound to the head revision, or to an approved revision that a recorded re-review at the tier `review-reconciliation` chose extends to the head revision. Without that record, the head revision is not covered.
+- Required: the review path matches the risk. A high-risk change, or one with no recorded risk, needs both reviews; a light-path change needs the independent review only and records that the adversarial review was not required. When two reviews ran, the second reviewer did not see the first reviewer's output before its initial report.
 - Required: the builder and the reviewers are independent, as the process requires. Variants or versions of one model family, or one family used through different tools, are not independent.
 - Required: no Moderate or Major finding is unresolved, and every repair has a tier record from `review-reconciliation` and the re-reviews it requires.
-- Required: both review reports are attached to the change record together, after both reviews finished.
+- Required: the review reports are attached to the change record together, after the reviews the path requires finished.
 - Required: the change targets the correct branch, and required checks and approval rules pass. Never recommend bypassing a required check or rule.
 - Required: a high-risk change has a recorded human approval. The requester, not this check, approves it.
 - Recommended: name the single most important blocker first.
