@@ -52,7 +52,7 @@ Take one goal from a sentence to a ranked set of draft work items that is ready 
 
 ## Branching and iteration
 
-- If an assumption has High impact and no evidence and would change the epics, put its test first and continue with the dependent parts marked provisional.
+- If an assumption has High impact and no evidence and would change the epics, put its test first. Continue with the dependent epics marked provisional, and list their dependent work as not yet sliced, with the decision it waits on, rather than drafting items.
 - If the coverage check fails after stage 3, return to stage 3 once. If it fails again, stop and report the uncovered measures.
 - Allow at most two returns to any one stage. After the second, stop and escalate with the finding and the decision needed.
 - If the requester changes the goal during the workflow, restart from stage 1 and record what was discarded.

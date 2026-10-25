@@ -4,6 +4,10 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.5.1
+
+- `roadmap-planning` stops only for cleanup decisions that later stages depend on, as `backlog-triage` did before the merge. `goal-to-backlog` now lists work that depends on an unsettled assumption as not yet sliced instead of drafting provisional items, matching `delivery-planner`.
+
 ## 0.5.0
 
 - `repo-conventions-setup` now also records the target branch, the supported runtime, and the install and build commands, so `fix-or-build-to-merge` can read them at its environment step instead of asking each run. The target branch is never assumed to be the default branch.

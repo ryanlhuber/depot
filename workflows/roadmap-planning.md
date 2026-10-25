@@ -64,7 +64,7 @@ Bring a backlog to a state that can be trusted and turn it into a one-page now, 
 ## Failure behavior
 
 - Recoverable: a finding lacks evidence, an item lacks a field, or a roadmap entry lacks a confidence, reason, or moving condition. Return it and resume.
-- Stop or escalate when: the owner is unavailable to decide cleanup actions or settle an open trade-off that determines a horizon, or the backlog cannot be read. Do not apply cleanup actions on the owner's behalf, and do not guess dates or commitments.
+- Stop or escalate when: the owner is unavailable to decide cleanup actions that later stages depend on or settle an open trade-off that determines a horizon, or the backlog cannot be read. Do not apply cleanup actions on the owner's behalf, and do not guess dates or commitments.
 
 ## Final output
 
