@@ -49,7 +49,7 @@ Turning a goal into a plan, before a change exists.
 
 - [Outcome Slicing](plan/outcome-slicing/SKILL.md): divides a goal into outcome-defined epics with observable first slices and checks that they cover the success measures.
 - [Issue Breakdown](plan/issue-breakdown/SKILL.md): slices an epic into draft work items with done signals, dependencies, and relative size bands, as plain Markdown that fits any tracker.
-- [Dependency Mapping](plan/dependency-mapping/SKILL.md): finds real dependencies, resolves or reports cycles, and returns a build order with the critical path and external blockers.
+- [Dependency Mapping](plan/dependency-mapping/SKILL.md): finds real dependencies, resolves or reports cycles, and returns a build order with the longest hard-dependency chain and external blockers.
 
 ### Prioritization
 

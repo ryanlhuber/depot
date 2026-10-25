@@ -2,7 +2,7 @@
 
 The maintained files are in [`skills/`](../skills/), grouped into bucket folders (`core`, `plan`, `design`, `frontend`, `dev`). Every skill uses the [Agent Skills `SKILL.md` format](https://agentskills.io/specification) and keeps its supporting files, such as `templates/`, in the same folder. [`.agents/skills/`](../.agents/skills/) and [`.claude/skills/`](../.claude/skills/) are generated flat mirrors, one folder per skill, because harnesses discover skills one folder level deep.
 
-Not sure which skill, agent, or workflow fits? Ask for the [`kit-router`](../skills/core/kit-router/SKILL.md) skill and describe your situation. It recommends one place to start and the models to run it with.
+Not sure which skill, agent, or workflow fits? Ask for the [`kit-router`](../skills/core/kit-router/SKILL.md) skill and describe your situation. It recommends one place to start and the models to run it with. It names specific models only when a model table is available, such as the one in [`integrations/model-routing/`](../integrations/model-routing/models.md) or your own; installing the router alone gives it the routing map but no table, so it then describes the capability each step needs instead.
 
 ## In a clone of this repository
 

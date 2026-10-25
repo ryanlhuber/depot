@@ -18,7 +18,7 @@ See [using skills with an agent](docs/using-skills.md) for how each tool discove
 
 ## Not sure where to start?
 
-Ask for [`kit-router`](skills/core/kit-router/SKILL.md) and describe your situation. It recommends one skill, agent, or workflow to start with, what to chain after it, and which models to run each step with, using the [model routing table](integrations/model-routing/models.md). It recommends only; it never runs the work.
+Ask for [`kit-router`](skills/core/kit-router/SKILL.md) and describe your situation. It recommends one skill, agent, or workflow to start with, what to chain after it, and which models to run each step with. Named models come from a model table: the [model routing table](integrations/model-routing/models.md) in this repository, or your own. The router skill alone does not include a table, and without one it describes the capability needed for each step instead of naming models. It recommends only; it never runs the work.
 
 ## Browse
 
@@ -91,16 +91,11 @@ An agent is a specialist role that owns a decision and applies several skills to
 
 | Agent | Owns |
 | --- | --- |
-| [`agents/`](agents/) | Portable specialist roles and responsibility boundaries, one `<name>.md` per agent (indexed in [`agents/README.md`](agents/README.md)) |
 | [delivery-planner](agents/delivery-planner.md) | The delivery plan for a goal: a framed problem, an assumption register, epics, draft work items, and a dependency order, ready for refinement. It does not rank by priority or build anything. |
 | [backlog-owner](agents/backlog-owner.md) | The proposed order and scope of a backlog: health findings, priority tiers, scope cuts, and a roadmap. It stops at the owner's decision on what ships. |
-| [`agents/`](agents/) | Portable specialist roles and responsibility boundaries, one `<name>.md` per agent (indexed in [`agents/README.md`](agents/README.md)) |
 | [design-reviewer](agents/design-reviewer.md) | A consolidated expert review: applies the usability, accessibility, visual, and specification-conformance reviews that fit and returns one prioritized list, with severity and confidence kept separate. |
 | [design-system-designer](agents/design-system-designer.md) | Design-system decisions: tokens, component rules, states, and responsive behavior, each marked decided, proposed, or open, recorded in one DESIGN.md. |
-| [`agents/`](agents/) | Portable specialist roles and responsibility boundaries, one `<name>.md` per agent (indexed in [`agents/README.md`](agents/README.md)) |
-| [`agents/`](agents/) | Portable specialist roles and responsibility boundaries |
 | [merge-gatekeeper](agents/merge-gatekeeper.md) | The readiness decision for a reviewed change: one blocking set from independent reviews, the re-review a repair needs, and merge preconditions verified from evidence. It stops at the human merge decision. |
-| [`agents/`](agents/) | Portable specialist roles and responsibility boundaries, one `<name>.md` per agent (indexed in [`agents/README.md`](agents/README.md)) |
 
 The [agents index](agents/README.md) explains the file format. Agents are installed the same way as skills; see [skill sync](integrations/skill-sync/README.md) to keep them current in another repository.
 

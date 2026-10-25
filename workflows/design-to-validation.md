@@ -13,7 +13,7 @@ Take a design or prototype and produce evidence-based, prioritized changes: expe
 ## Stages
 
 1. **Expert review**
-   - Assignment: [Design Reviewer](../agents/design-reviewer.md), applying [Heuristic Usability Evaluation](../skills/design/heuristic-usability-evaluation/SKILL.md) for usability concerns, [Accessibility Review](../skills/design/accessibility-review/SKILL.md) against the stated standard, and [Visual Design Critique](../skills/design/visual-design-critique/SKILL.md) for hierarchy and consistency. The three reviews are independent and may run in any order; the agent merges their findings.
+   - Assignment: [Design Reviewer](../agents/design-reviewer.md), applying [Heuristic Usability Evaluation](../skills/design/heuristic-usability-evaluation/SKILL.md) for usability concerns, [Accessibility Review](../skills/design/accessibility-review/SKILL.md) against the stated standard, and [Visual Design Critique](../skills/design/visual-design-critique/SKILL.md) for hierarchy and consistency. The three reviews are complementary lenses on the same design, applied by one agent. They are not independent reviewers: they may run in any order, each can see the others' findings, and a finding that two lenses report counts as one finding, not as corroboration. The agent merges the findings.
    - Requires: the design, the primary tasks, and any requirements and design intent.
    - Produces: one prioritized finding list, each finding with its source review, severity, and confidence, and the findings marked as needing validation with users.
 2. **Plan validation**

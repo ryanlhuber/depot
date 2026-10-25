@@ -5,9 +5,9 @@
 ## Requirements
 | ID | Requirement (testable statement) | Priority | Source | How verified |
 | --- | --- | --- | --- | --- |
-| R1 | The system shall <observable behavior or quality, with a measurable threshold where relevant>. | Must / Should / Could | <where it came from> | <test, inspection, or review> |
+| R1 | The system shall <observable behavior or quality, with a measurable threshold where relevant>. | Must / Should / Could / Unspecified | <where it came from; mark an inference as "inferred"> | <test, inspection, or review> |
 
-Each statement is one testable thing. Split statements that join two conditions with "and".
+Each statement is one testable thing. Split statements that join two conditions with "and". Use Unspecified when the source does not establish a priority; do not guess one.
 
 ## Constraints
 | ID | Constraint | Source |

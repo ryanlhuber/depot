@@ -16,7 +16,7 @@ Shows and hides a block of related content under a visible heading. It does not 
 | --- | --- | --- | --- |
 | U1 | Lesson FAQ | Call site supplied | Several independent items, each opens separately |
 | U2 | Lane rules on booking page | Call site supplied | Parent opens it after a failed booking |
-| U3 | Pricing notes | Call site supplied | Closed by default, no other variation |
+| U3 | Pricing notes | Call site named in the input; no behavior described | None stated (assumed closed by default; see A2) |
 
 ### Inputs
 | Input | Allowed values or type | Default | Required | Effect |
@@ -52,4 +52,5 @@ The names `open` and `toggle`, the controlled and uncontrolled rule, and the hea
 
 ### Assumptions and open decisions
 - A1: No animation is required. If the design calls for one, it needs a separate decision about reduced-motion preferences.
+- A2: The pricing notes block is closed by default. The input names it but does not describe how it behaves today.
 - Q1: Should an exclusive "only one open" group be added later? No current call site needs it, so it is not part of this surface.

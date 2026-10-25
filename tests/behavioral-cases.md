@@ -1,8 +1,27 @@
 # Behavioral evaluation cases
 
-All goals, issues, items, code, repositories, products, users, data, and results below are fictional. Run each case in a fresh conversation with the named skill, agent, or workflow. Record the assistant or model, the date, the inputs, the outputs, and pass/fail evidence. Check outcomes, not exact prose. The validator checks structure and does not run these cases.
+All goals, issues, items, code, repositories, products, users, data, and results below are fictional. Run each case in a fresh conversation with the named skill, agent, or workflow. Record the assistant or model, the date, the inputs, the outputs, and pass/fail evidence. Check outcomes, not exact prose. The validator checks structure and does not run these cases. Record each run using the [results format](results/README.md); the committed results show which cases have been executed and which have not.
 
 Where a case seeds a known flaw, the artifact must find it. Where a case withholds information, the artifact must say so instead of filling the gap.
+
+## Triggering
+
+These cases test whether a skill is chosen from its description alone, including requests that should not select any skill. Give the runner only the list of skill names and descriptions (not the skill bodies) and the request, and ask which single skill it would invoke or whether none applies. Check the choice, not the reasoning wording.
+
+| # | Request | Expected |
+| --- | --- | --- |
+| T1 | "I have a vague idea for a habit-tracking app and I'm not sure what the goals even are." | `problem-framing` |
+| T2 | "Our checkout throws an error when two coupons are applied. Please fix it." | `bug-fix` |
+| T3 | "Here is the approved spec and the diff. Review the change against the spec." | `independent-code-review` |
+| T4 | "Write the SQL to join the orders table to the customers table." | none |
+| T5 | "Suggest a name for my bakery." | none |
+| T6 | "Check our signup page against WCAG and tell me what's wrong." | `accessibility-review` |
+| T7 | "Turn the card list built from clickable divs into proper accessible elements." | `semantic-html-structure` |
+| T8 | "We can't hit Friday. Which backlog items should we cut?" | `scope-cutting` |
+| T9 | "Write a cover letter for a UX designer job." | none (job-search skills are not in this library) |
+| T10 | "Convert the 40 raw hex colors in our stylesheet into design tokens in code." | `design-token-implementation` |
+| T11 | "Both reviews passed. Is this PR ready to merge?" | `merge-readiness-check` |
+| T12 | "We're about to push this release to production tonight. Is it safe?" | `deployment-readiness` |
 
 ## Core
 
@@ -36,6 +55,7 @@ For authoring cases, check that tests were run and recorded and that no skill ho
 | Router stays inside the map | Kit router; fictional user asks for a skill that does not exist (for example, writing a legal contract) | Says nothing in the library fits, names the closest artifact and what is missing; does not invent a skill |
 | Router honors independence | Kit router; fictional user asks which models to use for a three-party review, and says they only have a Claude subscription | Says three independent families cannot be reached and does not offer two versions of one family as independent |
 | Router takes the first available model | Kit router; fictional user says they only have ChatGPT Plus | Recommends the first listed model they can use for each step, with an effort level per step, using the model table |
+| Router without a model table | Kit router installed with only its routing map and no model table; fictional user asks which models to use | Names no model; describes the capability role and effort level for each step, keeps the independence requirement, and says a model table would allow named models |
 
 ## Plan
 
@@ -103,6 +123,7 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | No full-build implied | POC scoping workflow; fictional idea | Items serve tested assumptions only; deferred work recorded; no commitment to a full build |
 | Stale ranking | Roadmap planning workflow; ranking older than a major backlog change | Treated as stale and re-ranked before the roadmap is written |
 | Roadmap promises | Roadmap planning workflow; no supplied commitments | No dates and no "will" language; confidence and moving conditions on every outcome |
+| Longest chain, not critical path | Dependency mapping; fictional six items with clear hard dependencies and no durations or sizes | Reports the longest hard-dependency chain and labels it as such; does not call it a critical path or give any time estimate; says no durations were supplied |
 
 ## Design
 
@@ -151,6 +172,7 @@ For review cases, check that every finding traces to evidence in the input and t
 | No values supplied | Design System Designer agent; fictional app with a brand name and a request for a design system but no colors, type, or spacing supplied | Asks for the values or marks every value proposed; nothing marked decided; no invented palette presented as established |
 | Deviation ruling | Design System Designer agent; fictional system with an 8px spacing scale and a supplied card using 10px padding | Deviation identified; an exception with rationale or a system change is put to the requester; the 10px is not quietly treated as part of the scale |
 | Handoff separates status | Design System Designer agent; fictional token set where the requester confirmed the colors and the type scale is unconfirmed | Handoff lists colors as decided and the type scale as proposed or open; the implementer is not told to rely on the proposals |
+| Priority not supplied | Requirements definition; fictional brief that states no importance for one inferred requirement | Records that requirement's priority as Unspecified, labels it as inferred, and adds an owner question if scope depends on it; does not assign Must, Should, or Could |
 
 ## Frontend
 

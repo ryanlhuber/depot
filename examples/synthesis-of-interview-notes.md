@@ -6,6 +6,17 @@ Demonstrates [Research Synthesis](../skills/design/research-synthesis/SKILL.md) 
 
 Notes from eight 30-minute interviews with bookkeepers who use a fictional invoicing tool. Research question: where does invoice entry slow them down?
 
+The notes, in brief:
+
+- S1: re-enters data from other systems; likes keyboard shortcuts.
+- S2: "I type the PO number again every time"; distrusts import but still uses it.
+- S3: enters most invoices without the mouse; likes keyboard shortcuts; reports no slowdown.
+- S4: re-enters data from other systems.
+- S5: stopped using import after a duplicate batch.
+- S6: copies totals from a spreadsheet each week.
+- S7: re-enters data from other systems.
+- S8: checks every imported row by hand.
+
 ## Research synthesis
 
 ### Sources
@@ -28,7 +39,7 @@ Total sources: 8. **Sampling limits:** all participants are current customers re
 ### Insights
 | ID | Insight (interpretation) | Theme | Implication | Confidence | Basis |
 | --- | --- | --- | --- | --- | --- |
-| I1 | Re-entry of data that already exists elsewhere is the main source of slowdown in invoice entry. | Re-entering data | Reducing re-entry would address the question most directly. | Medium | 5 of 8 describe it, across different firm sizes; all accounts are self-reported |
+| I1 | Re-entry of data that already exists elsewhere is the main source of slowdown in invoice entry. | Re-entering data | Reducing re-entry would address the question most directly. | Medium | 5 of 8 describe it, all accounts are self-reported |
 | I2 | Distrust of import pushes some users back to manual entry, which adds to re-entry. | Import feels risky | Import reliability may be a precondition for solving I1 by import. | Low | 3 of 8; one clear behavior change (S5), the others describe caution |
 
 ### Contradictions and outliers

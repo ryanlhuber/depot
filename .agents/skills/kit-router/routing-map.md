@@ -81,4 +81,10 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 ## Known gaps
 
-The library has no workflow for feature delivery or defect repair yet. For those, recommend the skills above in order and say that no workflow covers them. When nothing fits, report the gap and the closest artifact; do not invent one.
+Not covered today. This inventory is not a plan to add them, and the router must not invent an artifact for them. When one is needed, report the gap and the closest artifact.
+
+- Workflows for feature delivery and defect repair: use the skills above in order and say that no workflow covers them.
+- Designing and writing automated tests as a focused capability (`feature-build` and `bug-fix` add tests for their own change only).
+- Performance measurement and optimization.
+- Executing a deployment or rollback (`deployment-readiness` decides readiness and defines rollback; it does not release).
+- Creating visual interfaces directly (the design and frontend skills specify, review, and implement from a design; they do not originate visual design).

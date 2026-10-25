@@ -30,7 +30,7 @@ Own the shape of the plan: what the goal is, what it rests on, how it divides in
 - `assumption-mapping`: rank the plan's premises and name the cheapest way to settle each risky one.
 - `outcome-slicing`: divide the goal into outcome-defined epics with observable first slices.
 - `issue-breakdown`: slice each epic into draft work items with done signals and relative size bands.
-- `dependency-mapping`: establish the build order, critical path, and external blockers.
+- `dependency-mapping`: establish the build order, the longest hard-dependency chain, and external blockers.
 
 ## Process
 1. Frame the work: apply `problem-framing` and get the goal sentence confirmed before going further.
