@@ -118,13 +118,27 @@ Availability depends on the plan; confirm in the tool's model picker.
   - Workspaces: Go is for single-member workspaces.
   - Not used here: Muse Spark Contributor models require turning on paid endpoints that train on request data, so no row recommends them.
 
+## Verification status
+
+Checked 2026-10-24. "Confirmed" means the model's own vendor documentation was read and describes it as listed here. Availability on your plan is separate and is noted under "Where each model is reached".
+
+| Model | Status | Checked against |
+| --- | --- | --- |
+| GPT-6.1 Sol, GPT-6 Luna, GPT-6 Astra | Confirmed | OpenAI API model guide and models page |
+| Claude Opus 5.5, Sonnet 5.5, Haiku 5.5, Fable 5.1 | Confirmed | Anthropic models overview |
+| Kimi K3.1 Pro | Confirmed | Moonshot's API documentation and the OpenCode Go list |
+| GLM-5.3 | Confirmed | Z.ai developer documentation and the OpenCode Go list |
+| DeepSeek V4.1 Flash | Confirmed | DeepSeek's release notice and the OpenCode Go list |
+| Plan access (Codex on Plus, Astra, Fable 5.1) | Not confirmed from a vendor page | Third-party coverage, or not checked |
+| Role order and effort levels | Judgment | Not measured |
+
+Two vendor details affect effort. Kimi K3.1 Pro and GLM-5.3 always reason and cannot turn thinking off; both accept `low`, `high`, and `max`, so map this table's `medium` to `high` for them. DeepSeek's own API model id is `deepseek-flash`; OpenCode Go lists it as `deepseek-v4.1-flash`.
+
 ## Sources
 
-- OpenAI: [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model), [Models](https://developers.openai.com/api/docs/models), [Codex models](https://developers.openai.com/codex/models), and the [Sol and Luna rollout in Codex](https://9to5mac.com/2026/09/22/openai-upgrading-chatgpt-and-codex-with-two-more-gpt-6-models/).
+- OpenAI: [Using GPT-6](https://developers.openai.com/api/docs/guides/latest-model) and [Models](https://developers.openai.com/api/docs/models). Codex access on Plus comes from a [rollout article](https://9to5mac.com/2026/09/22/openai-upgrading-chatgpt-and-codex-with-two-more-gpt-6-models/), not a vendor page.
 - Anthropic: [Models overview](https://platform.claude.com/docs/en/models/overview).
-- OpenCode: [Go](https://opencode.ai/docs/go/) model list, regions, and limits (checked 2026-10-24).
-- Moonshot: [Kimi K3 launch coverage](https://pulse2.com/moonshot-ai-launches-kimi-k3-for-advanced-reasoning-coding-and-knowledge-work/). K3.1 Pro was confirmed only on the OpenCode Go list.
-- Zhipu (Z.ai): [GLM-5.3 release coverage](https://datanorth.ai/news/z-ai-releases-glm-5-3).
-- DeepSeek: [DeepSeek V4.1 Flash listing](https://llmgateway.io/models/deepseek-v4.1-flash).
-
-The Moonshot, Zhipu, and DeepSeek vendor sites were not reachable from this environment, so those three rows rest on third-party coverage plus the OpenCode list. Check each vendor's own site when you recheck.
+- OpenCode: [Go](https://opencode.ai/docs/go/) model list, regions, and limits.
+- Moonshot: [Kimi K3.1 Pro quickstart](https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart).
+- Zhipu (Z.ai): [GLM-5.3 overview](https://docs.z.ai/guides/llm/glm-5.3).
+- DeepSeek: [DeepSeek-V4.1-Flash release notice](https://api-docs.deepseek.com/news/news260910/).
