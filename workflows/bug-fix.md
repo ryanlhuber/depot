@@ -16,15 +16,19 @@ Take a reported defect to a repaired, reviewed, human-merged change whose fix is
    - Assignment: [Refine Issue](../skills/dev/refine-issue/SKILL.md), only when the correct behavior is not already stated or is disputed.
    - Requires: the defect report.
    - Produces: an approved statement of expected behavior and acceptance criteria. Skip when the report already states the expected behavior and the requester confirms it.
-2. **Diagnose and repair** (performed by the builder)
+2. **Confirm environment** (performed by the requester or builder, outside this workflow)
+   - Assignment: as in stage 2 of [Refine to Merge](refine-to-merge.md): confirm the repository, the target branch read from project configuration, the supported runtime, the install, build, and test commands, that the base branch is current, and that no production secrets are in any agent's context.
+   - Requires: the defect report and the expected behavior.
+   - Produces: a confirmed environment note. The workflow does not proceed on a guess.
+3. **Diagnose and repair** (performed by the builder)
    - Assignment: [Bug Fix](../skills/dev/bug-fix/SKILL.md).
-   - Requires: the defect report, the expected behavior, and the confirmed environment.
+   - Requires: the defect report, the expected behavior, and the environment note.
    - Produces: the smallest responsible cause with evidence, a repair, a check that failed before and passes after, and the revision under review. If the cause cannot be reproduced or found, the output is the evidence gathered and the questions left open; do not guess a fix.
-3. **Regression review**
+4. **Regression review**
    - Assignment: [Regression Review](../skills/dev/regression-review/SKILL.md).
    - Requires: the revision and the surrounding code.
    - Produces: regression risks with coverage status and the missing checks. Add the missing checks to the change or record them as accepted risks.
-4. **Review, reconcile, and merge**
+5. **Review, reconcile, and merge**
    - Assignment: stages 4 to 8 of [Refine to Merge](refine-to-merge.md), applied to this revision without change, including its repair-round limit and independence rules.
    - Requires: the approved expected behavior, the revision, test results, and the regression review.
    - Produces: the outputs Refine to Merge defines, or its named blocker.
@@ -32,14 +36,15 @@ Take a reported defect to a repaired, reviewed, human-merged change whose fix is
 ## Validation
 
 - After stage 1, confirm the requester approved the expected behavior.
-- After stage 2, confirm the failing-before check was observed failing for the stated reason, and that the diff touches only what the cause requires.
-- After stage 3, confirm every Not covered risk has a check added or an accepted-risk record.
-- Before stage 4, confirm the revision named is the one stages 2 and 3 examined.
+- After stage 2, confirm the environment note names the target branch and the test command.
+- After stage 3, confirm the failing-before check was observed failing for the stated reason, and that the diff touches only what the cause requires.
+- After stage 4, confirm every Not covered risk has a check added or an accepted-risk record.
+- Before stage 5, confirm the revision named is the one stages 3 and 4 examined.
 
 ## Branching and iteration
 
 - If the expected behavior is undefined and the requester cannot decide, stop at stage 1 with the decision needed.
-- If stage 2 shows the defect is a missing or wrong requirement, return to stage 1.
+- If stage 3 shows the defect is a missing or wrong requirement, return to stage 1.
 - If the repair needs a larger change than the cause justifies (a redesign, a migration), stop and hand it to the requester as a separate work item rather than widening this fix.
 - Repair rounds after review follow Refine to Merge.
 

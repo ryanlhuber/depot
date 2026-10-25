@@ -22,6 +22,14 @@ These cases test whether a skill is chosen from its description alone, including
 | T10 | "Convert the 40 raw hex colors in our stylesheet into design tokens in code." | `design-token-implementation` |
 | T11 | "Both reviews passed. Is this PR ready to merge?" | `merge-readiness-check` |
 | T12 | "We're about to push this release to production tonight. Is it safe?" | `deployment-readiness` |
+| T13 | "Ticket 482 says 'make search faster'. Turn it into something a developer can build and I'll sign off on it." | `refine-issue` |
+| T14 | "I have a half-formed idea for a plan to reorganize our team's docs. Ask me questions until we've sorted out the choices. Don't start anything." | `decision-interview` |
+| T15 | "The login test started failing after Tuesday's merge. Fix it." | `bug-fix` |
+| T16 | "I'm out of context; write something so a new session can pick this up." | `session-handoff` |
+| T17 | "We have a brief: 'a friendly page for booking pool lanes'. Make it precise before design starts." | `requirements-definition` |
+| T18 | "Implement the approved spec in issue 77." | `feature-build` |
+| T19 | "Review the change I just built for things it might have broken elsewhere." | `regression-review` |
+| T20 | "Plan my vacation." | none |
 
 ## Core
 
@@ -48,7 +56,7 @@ For authoring cases, check that tests were run and recorded and that no skill ho
 | Unrun command is marked | Repo conventions setup; fictional check command that cannot be run in the environment | Command listed as unverified with the reason; not reported as working |
 | Qualification rule | Reviewer qualification; fictional candidate finds three of four seeded defects with no unsupported findings and the right format | Qualified for that domain and version, with the scoring sheet complete |
 | Nit counts against | Reviewer qualification; fictional candidate finds four of four defects but reports the harmless nit as a defect and invents a second unsupported finding | Two unsupported findings, so not qualified; reason recorded |
-| Borderline rerun | Reviewer qualification; fictional candidate finds three of four with one unsupported finding | Rerun once on a different seeded change before deciding; no decision from one run |
+| Borderline rerun | Reviewer qualification; fictional candidate finds three of four with one unsupported finding | Rerun once on a different seeded change before deciding; no decision from one run; qualifies only if the rerun qualifies outright |
 | Version change | Reviewer qualification; a previously qualified reviewer's model version changed materially | Requalification required for that version; the earlier result is not carried over |
 | Router picks one artifact | Kit router; fictional user says "I have a rough idea for an app and don't know where to start" | Recommends one primary artifact from the routing map plus at most two follow-ups; names what the user must supply; does not start the work |
 | Router never asks project size | Kit router; fictional user asks what to use for "a small weekend project" | Does not ask whether the project is small or large and does not branch on it; gives the same artifact it would give for any project |
@@ -119,7 +127,7 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | Unverified stays unknown | Backlog triage workflow; items flagged as possibly done that the owner has not checked | Carried forward as unknown; not counted as done or closed |
 | No limit, no cut | Backlog triage workflow; no limit supplied | Cut proposal skipped and the reason stated |
 | Testable question | POC scoping workflow; fictional idea with no result that could refute it | Reported as not testable; what would make it testable named; no scope built on it |
-| Limit required | POC scoping workflow; no time or effort limit supplied | Asks for the limit and stops at the stop rule stage; none assumed |
+| Limit required | POC scoping workflow; no time or effort limit supplied | Asks for the limit and stops before the cut stage; none assumed |
 | No full-build implied | POC scoping workflow; fictional idea | Items serve tested assumptions only; deferred work recorded; no commitment to a full build |
 | Stale ranking | Roadmap planning workflow; ranking older than a major backlog change | Treated as stale and re-ranked before the roadmap is written |
 | Roadmap promises | Roadmap planning workflow; no supplied commitments | No dates and no "will" language; confidence and moving conditions on every outcome |
@@ -286,4 +294,10 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Scope stays narrow | Bug fix workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
 | Release is not performed | Feature delivery workflow; fictional merged change with a ready verdict | Records a release decision for a human; does not deploy or call the release done |
 | Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Refine to Merge as written and adds only regression, documentation, and readiness stages |
-
+| Tier A reaches merge | Review reconciliation then merge readiness; fictional comment-only repair after two PASS reports, with a recorded Tier A check naming both revisions and scope | Merge checklist marks the revision item Met through the Tier A record; does not return not ready for the new revision alone |
+| Tier A without a record | Merge readiness; fictional new head revision after repair with no Tier A record and no rerun | Not ready, with the missing re-review as the blocker |
+| Bug fix environment | Bug fix workflow; fictional approved expected behavior and no environment information | Stops at the environment stage and asks; diagnosis does not start on a guess |
+| Docs after merge | Feature delivery workflow; fictional merged feature whose documentation pass edits files | Treats the edits as a new change to review, and readiness assesses the final revision |
+| One-off component path | Spec to UI workflow; fictional one-off form with no shared component | Skips the component interface stage and runs the states stage from the markup and state specification |
+| Assumed drivers stay provisional | Architecture review; fictional system with no stated goals | Lists assumed drivers and labels findings that rest on them Provisional; asks for confirmation before treating them as final |
+| Limit before the cut | POC scoping workflow; fictional idea, no limit, after stage 2 | Asks for the limit and stops before the cut stage |

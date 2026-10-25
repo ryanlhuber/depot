@@ -8,7 +8,7 @@ Define a small proof of concept that can settle one question, with the smallest 
 
 - Required: the idea or question in the requester's words, and a requester who can confirm it.
 - Optional: the limit on time or effort, known constraints, the existing system, and what has already been tried.
-- Assumptions: a limit that is not supplied is requested; if none is given the workflow stops at stage 4 and asks. Nothing in the scope is presented as a commitment to build the full product.
+- Assumptions: a limit that is not supplied is requested before stage 3; if none is given the workflow stops there and asks. Nothing in the scope is presented as a commitment to build the full product.
 
 ## Stages
 
@@ -32,7 +32,7 @@ Define a small proof of concept that can settle one question, with the smallest 
 ## Validation
 
 - After stage 1, confirm the question has a result that would refute it, or report that it is not testable.
-- After stage 2, confirm each assumption to be tested has a confirming and a refuting result.
+- After stage 2, confirm each assumption to be tested has a confirming and a refuting result, and that a time or effort limit has been supplied. If not, ask for it now and stop until it is given.
 - After stage 3, confirm every retained item serves a tested assumption and every deferral states its cost.
 - After stage 4, confirm the stop rule names a limit and a decision point, and that no item implies building the full product.
 - On failure: return the failing item to the stage that owns it.

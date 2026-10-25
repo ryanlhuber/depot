@@ -30,7 +30,7 @@ Turn an approved interface specification into working front-end code that matche
    - Produces: the component's inputs, events, state ownership, and accessibility contract.
 5. **States**
    - Assignment: [Interface State Implementation](../skills/frontend/interface-state-implementation/SKILL.md), from the state specification.
-   - Requires: the markup, the component interface, and the state specification.
+   - Requires: the markup and the state specification, and the component interface when stage 4 ran.
    - Produces: each specified state implemented, announced, recoverable, and demonstrable.
 6. **Responsive behavior**
    - Assignment: [Responsive Implementation](../skills/frontend/responsive-implementation/SKILL.md), from the layout plan.

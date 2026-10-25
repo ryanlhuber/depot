@@ -63,6 +63,9 @@ for skill_dir in skills/*/*; do
   [ -n "$end" ] || { fail "unterminated YAML frontmatter: $skill"; continue; }
   front="$(sed -n "2,$((end - 1))p" "$skill")"
   grep -Fqx "name: $name" <<<"$front" || fail "name metadata must be exactly 'name: $name': $skill"
+  while IFS= read -r key; do
+    case "$key" in name|description|disable-model-invocation) ;; *) fail "unsupported frontmatter key '$key' (allowed: name, description, disable-model-invocation): $skill" ;; esac
+  done < <(grep -oE '^[A-Za-z][A-Za-z0-9_-]*:' <<<"$front" | tr -d ':')
   if grep -q '^disable-model-invocation:' <<<"$front"; then
     grep -Fqx 'disable-model-invocation: true' <<<"$front" || fail "disable-model-invocation must be exactly 'true' when present: $skill"
   fi
@@ -105,6 +108,7 @@ done < <(grep -oE 'skills/[a-z0-9-]+/[a-z0-9-]+/SKILL\.md' README.md | sed 's|^s
 for workflow in workflows/*.md; do
   [ "${workflow##*/}" = README.md ] && continue
   grep -Fq "(${workflow##*/})" workflows/README.md || fail "workflow missing from workflows/README.md: $workflow"
+  grep -Fq "(workflows/${workflow##*/})" README.md || fail "workflow missing from README.md: $workflow"
 done
 
 # --- agents ------------------------------------------------------------------
@@ -235,7 +239,11 @@ if [ -f .claude-plugin/plugin.json ]; then
   done < <(grep -oE '"\./agents/[a-z0-9-]+\.md"' .claude-plugin/plugin.json | tr -d '"')
   grep -Fq '"./.claude/skills/"' .claude-plugin/plugin.json || fail ".claude-plugin/plugin.json must point skills at ./.claude/skills/"
   for manifest in .claude-plugin/plugin.json .claude-plugin/marketplace.json; do
-    python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$manifest" 2>/dev/null || fail "invalid JSON: $manifest"
+    if command -v python3 >/dev/null 2>&1; then
+      python3 -c 'import json,sys; json.load(open(sys.argv[1]))' "$manifest" 2>/dev/null || fail "invalid JSON: $manifest"
+    else
+      warn "python3 not found; JSON syntax of $manifest was not checked"
+    fi
   done
 fi
 

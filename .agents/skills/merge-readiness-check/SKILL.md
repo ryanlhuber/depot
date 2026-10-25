@@ -28,7 +28,7 @@ Check, item by item and from evidence, that a change may be merged, and return a
 ## Rules and heuristics
 - Required: tests pass, with evidence linked. Never accept or report a passing result that was not shown.
 - Required: the head revision equals the revision both reviews examined. A newer revision needs re-review at the tier the repair requires, unless a diff-only check covers it.
-- Required: both reviews are PASS, each bound to that revision, and the second reviewer did not see the first reviewer's output before its initial report.
+- Required: both reviews are PASS, each bound to a revision, either the head revision or the approved revision that a recorded Tier A check extends to the head revision, and the second reviewer did not see the first reviewer's output before its initial report.
 - Required: the builder and the reviewers are independent, as the process requires. Variants or versions of one model family, or one family used through different tools, are not independent.
 - Required: no Moderate or Major finding is unresolved, and every repair was re-reviewed at the correct tier.
 - Required: both review reports are attached to the change record together, after both reviews finished.

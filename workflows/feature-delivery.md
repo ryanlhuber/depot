@@ -25,7 +25,7 @@ This workflow adds the stages around Refine to Merge. It does not repeat refinem
 3. **Documentation**
    - Assignment: [Documentation Pass](../skills/dev/documentation-pass/SKILL.md) for the named reader of the feature.
    - Requires: the merged change and the reader.
-   - Produces: updated documentation with verified commands and links, or a list of what could not be verified.
+   - Produces: updated documentation with verified commands and links, or a list of what could not be verified. Edits made here come after the merge, so they are a new change: deliver them through [Refine to Merge](refine-to-merge.md), or through the project's own review rule for documentation-only changes, before stage 4. To avoid this, put the documentation in the specification at stage 1 as an acceptance criterion so it ships in the reviewed revision, and use this stage to verify it.
 4. **Release readiness**
    - Assignment: [Deployment Readiness](../skills/dev/deployment-readiness/SKILL.md) for the target environment.
    - Requires: the merged revision, test and review evidence, and the rollout constraints.
@@ -43,7 +43,7 @@ This workflow adds the stages around Refine to Merge. It does not repeat refinem
 
 ## Branching and iteration
 
-- If stage 2 finds an uncovered risk of high severity, return it to the builder as a new work item through stage 1 before stage 4.
+- If stage 2 finds an uncovered risk of high severity, return it to the builder as a new work item through stage 1 before stage 4. Any change made after stage 1 merged (a regression fix, a documentation edit) is a new revision, so stage 4 assesses the final merged revision, not the first.
 - If stage 4 is not ready, return the blocking items to the stage that owns them. Do not re-run earlier stages that were not affected.
 - Stage 3 may run in parallel with stage 2 when it does not depend on its findings.
 

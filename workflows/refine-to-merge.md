@@ -58,7 +58,7 @@ Take one work item from an approved specification to a verified, human-merged ch
 - If the blocking set is empty after stage 6, go to the readiness check and then stage 8.
 - If the change is high risk, require a recorded human approval before stage 8.
 - Allow at most two repair rounds. After the second failed round, mark the item blocked, stop, and escalate with the findings and the decision needed.
-- Pause the work item after three review runs, or when the budget set before it began is exceeded. The requester then decides to continue, simplify, split, or change approach, and the decision is recorded.
+- Pause the work item after three review rounds, or when the budget set before it began is exceeded. A review round is both reviews of one revision (stages 4 and 5); a Tier A check does not count as a round. The requester then decides to continue, simplify, split, or change approach, and the decision is recorded.
 - If a reviewer becomes unavailable, keep independence, record the reason, and invalidate affected approvals. If independence cannot be kept, stop.
 - A new revision invalidates earlier approvals unless a diff-only re-review covers it.
 

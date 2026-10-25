@@ -9,7 +9,7 @@ Pick one method. In Claude Code, the plugin is the simplest: `claude plugin mark
 - `kit-router`, which tells you where to start for a given situation.
 - `repo-conventions-setup`, which records how your project works (step 2).
 
-Skills land in `.agents/skills/`. If you pick an agent with `-a`, the installer decides the folder. See [install notes](using-skills.md#install-notes) for the `devEngines` error and private-repository access.
+Skills land in `.agents/skills/`. If you pick an agent with `-a`, the installer decides the folder. See [install notes](using-skills.md#install-notes) for the `devEngines` error and git access.
 
 ## 2. Set up the project once
 
