@@ -84,10 +84,10 @@ Turning a goal into a plan, before a change exists: framing the problem, slicing
 
 | Stage | Skills |
 | --- | --- |
-| Framing | [problem-framing](skills/plan/problem-framing/SKILL.md), [assumption-mapping](skills/plan/assumption-mapping/SKILL.md) |
-| Structure | [outcome-slicing](skills/plan/outcome-slicing/SKILL.md), [issue-breakdown](skills/plan/issue-breakdown/SKILL.md), [dependency-mapping](skills/plan/dependency-mapping/SKILL.md) |
-| Prioritization | [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md), [scope-cutting](skills/plan/scope-cutting/SKILL.md) |
-| Upkeep | [backlog-health-check](skills/plan/backlog-health-check/SKILL.md), [roadmap-writing](skills/plan/roadmap-writing/SKILL.md), [status-reporting](skills/plan/status-reporting/SKILL.md) |
+| Framing | • [problem-framing](skills/plan/problem-framing/SKILL.md)<br>• [assumption-mapping](skills/plan/assumption-mapping/SKILL.md) |
+| Structure | • [outcome-slicing](skills/plan/outcome-slicing/SKILL.md)<br>• [issue-breakdown](skills/plan/issue-breakdown/SKILL.md)<br>• [dependency-mapping](skills/plan/dependency-mapping/SKILL.md) |
+| Prioritization | • [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md)<br>• [scope-cutting](skills/plan/scope-cutting/SKILL.md) |
+| Upkeep | • [backlog-health-check](skills/plan/backlog-health-check/SKILL.md)<br>• [roadmap-writing](skills/plan/roadmap-writing/SKILL.md)<br>• [status-reporting](skills/plan/status-reporting/SKILL.md) |
 
 ### Design
 
@@ -95,11 +95,11 @@ Creating and evaluating user experiences and interfaces: research, definition, d
 
 | Stage | Skills |
 | --- | --- |
-| Research | [competitive-pattern-analysis](skills/design/competitive-pattern-analysis/SKILL.md), [persona-and-scenario-drafting](skills/design/persona-and-scenario-drafting/SKILL.md), [interview-guide-writing](skills/design/interview-guide-writing/SKILL.md), [research-synthesis](skills/design/research-synthesis/SKILL.md), [usability-test-planning](skills/design/usability-test-planning/SKILL.md) |
-| Definition | [requirements-definition](skills/design/requirements-definition/SKILL.md), [user-flow-mapping](skills/design/user-flow-mapping/SKILL.md), [journey-mapping](skills/design/journey-mapping/SKILL.md), [information-architecture-and-navigation](skills/design/information-architecture-and-navigation/SKILL.md) |
-| Design and specification | [design-token-and-system-definition](skills/design/design-token-and-system-definition/SKILL.md), [design-md-writing](skills/design/design-md-writing/SKILL.md), [interface-state-specification](skills/design/interface-state-specification/SKILL.md), [responsive-layout-planning](skills/design/responsive-layout-planning/SKILL.md), [ux-microcopy-writing](skills/design/ux-microcopy-writing/SKILL.md) |
-| Review and quality | [accessibility-review](skills/design/accessibility-review/SKILL.md), [heuristic-usability-evaluation](skills/design/heuristic-usability-evaluation/SKILL.md), [visual-design-critique](skills/design/visual-design-critique/SKILL.md), [design-to-implementation-qa](skills/design/design-to-implementation-qa/SKILL.md) |
-| Communication | [design-rationale-writing](skills/design/design-rationale-writing/SKILL.md), [portfolio-case-study-writing](skills/design/portfolio-case-study-writing/SKILL.md) |
+| Research | • [competitive-pattern-analysis](skills/design/competitive-pattern-analysis/SKILL.md)<br>• [persona-and-scenario-drafting](skills/design/persona-and-scenario-drafting/SKILL.md)<br>• [interview-guide-writing](skills/design/interview-guide-writing/SKILL.md)<br>• [research-synthesis](skills/design/research-synthesis/SKILL.md)<br>• [usability-test-planning](skills/design/usability-test-planning/SKILL.md) |
+| Definition | • [requirements-definition](skills/design/requirements-definition/SKILL.md)<br>• [user-flow-mapping](skills/design/user-flow-mapping/SKILL.md)<br>• [journey-mapping](skills/design/journey-mapping/SKILL.md)<br>• [information-architecture-and-navigation](skills/design/information-architecture-and-navigation/SKILL.md) |
+| Design and specification | • [design-token-and-system-definition](skills/design/design-token-and-system-definition/SKILL.md)<br>• [design-md-writing](skills/design/design-md-writing/SKILL.md)<br>• [interface-state-specification](skills/design/interface-state-specification/SKILL.md)<br>• [responsive-layout-planning](skills/design/responsive-layout-planning/SKILL.md)<br>• [ux-microcopy-writing](skills/design/ux-microcopy-writing/SKILL.md) |
+| Review and quality | • [accessibility-review](skills/design/accessibility-review/SKILL.md)<br>• [heuristic-usability-evaluation](skills/design/heuristic-usability-evaluation/SKILL.md)<br>• [visual-design-critique](skills/design/visual-design-critique/SKILL.md)<br>• [design-to-implementation-qa](skills/design/design-to-implementation-qa/SKILL.md) |
+| Communication | • [design-rationale-writing](skills/design/design-rationale-writing/SKILL.md)<br>• [portfolio-case-study-writing](skills/design/portfolio-case-study-writing/SKILL.md) |
 
 ### Frontend
 
@@ -108,7 +108,7 @@ Building interfaces on the web platform from decided designs: structure, behavio
 | Stage | Skills |
 | --- | --- |
 | Intake | [design-spec-intake](skills/frontend/design-spec-intake/SKILL.md) |
-| Interface structure | [component-api-design](skills/frontend/component-api-design/SKILL.md), [semantic-html-structure](skills/frontend/semantic-html-structure/SKILL.md) |
+| Interface structure | • [component-api-design](skills/frontend/component-api-design/SKILL.md)<br>• [semantic-html-structure](skills/frontend/semantic-html-structure/SKILL.md) |
 | Interface behavior | [interface-state-implementation](skills/frontend/interface-state-implementation/SKILL.md) |
 | Layout | [responsive-implementation](skills/frontend/responsive-implementation/SKILL.md) |
 | Styling foundations | [design-token-implementation](skills/frontend/design-token-implementation/SKILL.md) |
@@ -120,10 +120,10 @@ The process around a software change, from approved specification through buildi
 | Stage | Skills |
 | --- | --- |
 | Specification | [refine-issue](skills/dev/refine-issue/SKILL.md) |
-| Build | [feature-build](skills/dev/feature-build/SKILL.md), [bug-fix](skills/dev/bug-fix/SKILL.md), [refactor](skills/dev/refactor/SKILL.md), [migration](skills/dev/migration/SKILL.md) |
-| Review | [independent-code-review](skills/dev/independent-code-review/SKILL.md), [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md), [review-reconciliation](skills/dev/review-reconciliation/SKILL.md), [regression-review](skills/dev/regression-review/SKILL.md), [simplification-review](skills/dev/simplification-review/SKILL.md) |
-| Release | [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md), [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |
-| Audit | [security-audit](skills/dev/security-audit/SKILL.md), [architecture-review](skills/dev/architecture-review/SKILL.md), [dependency-audit](skills/dev/dependency-audit/SKILL.md), [technical-debt-audit](skills/dev/technical-debt-audit/SKILL.md) |
+| Build | • [feature-build](skills/dev/feature-build/SKILL.md)<br>• [bug-fix](skills/dev/bug-fix/SKILL.md)<br>• [refactor](skills/dev/refactor/SKILL.md)<br>• [migration](skills/dev/migration/SKILL.md) |
+| Review | • [independent-code-review](skills/dev/independent-code-review/SKILL.md)<br>• [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md)<br>• [review-reconciliation](skills/dev/review-reconciliation/SKILL.md)<br>• [regression-review](skills/dev/regression-review/SKILL.md)<br>• [simplification-review](skills/dev/simplification-review/SKILL.md) |
+| Release | • [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md)<br>• [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |
+| Audit | • [security-audit](skills/dev/security-audit/SKILL.md)<br>• [architecture-review](skills/dev/architecture-review/SKILL.md)<br>• [dependency-audit](skills/dev/dependency-audit/SKILL.md)<br>• [technical-debt-audit](skills/dev/technical-debt-audit/SKILL.md) |
 | Documentation | [documentation-pass](skills/dev/documentation-pass/SKILL.md) |
 
 ## Agents
