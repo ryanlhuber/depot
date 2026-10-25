@@ -11,6 +11,7 @@ Compare a built interface with its design specification and report mismatches in
 ## When to use
 - Use when: an implementation must be verified against an approved design or specification.
 - Do not use when: no specification exists; use a requirements or usability review instead.
+- Pairs with: `design-spec-intake` checks the material is build-ready before the build starts.
 
 ## Inputs
 - Required: the design specification (visuals, tokens, states, behavior notes) and the implemented interface, observable in a rendered or running form.

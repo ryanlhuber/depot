@@ -12,6 +12,7 @@ Make every specified state real in code: represented in data, rendered distinctl
 - Use when: a screen or component with a state specification is being built.
 - Use when: an existing screen goes blank, stale, or stuck outside the ideal case.
 - Do not use when: the states, copy, or recovery behavior are undecided. This work implements decisions. It does not make them.
+- Pairs with: `interface-state-specification` defines the states to build; use it first when they are not yet specified.
 
 ## Inputs
 - Required: the state specification (each state's trigger, content, actions, and exit) and the shape of the data the interface receives (values, in-flight indication, errors).

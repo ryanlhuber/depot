@@ -35,3 +35,4 @@ Each results file starts with the date, the model and version, how the cases wer
 Results files:
 
 - [2026-10-24 initial run](2026-10-24-initial-run.md)
+- [2026-10-24 install check](2026-10-24-install-check.md) (owner-reported install, not a model run)

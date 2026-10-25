@@ -13,6 +13,7 @@ Turn design material into a build-readiness report so implementation starts only
 - Use when: a design handoff arrived and it is unclear whether it is complete or consistent.
 - Do not use when: no design material exists. Define requirements first.
 - Do not use to judge design quality or to fill gaps. Deciding belongs to the people who own the design.
+- Pairs with: `design-to-implementation-qa` checks the finished build against the same material.
 
 ## Inputs
 - Required: the design material in scope, in any form (decision documents, requirements, token definitions, state and behavior specifications, layouts, copy), and what is to be built.

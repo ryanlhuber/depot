@@ -21,7 +21,7 @@ Take one work item from an approved specification to a verified, human-merged ch
    - Requires: the approved specification.
    - Produces: a confirmed environment note. The workflow does not proceed on a guess.
 3. **Build** (performed by the builder, outside this workflow)
-   - Assignment: the builder implements the specification on a feature branch and runs the tests. Reviewers never edit code.
+   - Assignment: the builder applies [Feature Build](../skills/dev/feature-build/SKILL.md), or [Bug Fix](../skills/dev/bug-fix/SKILL.md) when the item is a defect, on a feature branch and runs the tests. Reviewers never edit code.
    - Requires: the approved specification and the environment note.
    - Produces: a change, test results, and the revision identifier under review.
 4. **Independent review**
@@ -37,7 +37,7 @@ Take one work item from an approved specification to a verified, human-merged ch
    - Requires: both reports, the specification, test evidence, the risk level, and the target branch.
    - Produces: consolidated findings and the blocking set, or the completed merge checklist and a ready or not-ready verdict. After both reports exist, both are attached to the change record together.
 7. **Repair** (only when the blocking set is not empty)
-   - Assignment: the builder fixes the blocking findings; the gatekeeper records the re-review tier through `review-reconciliation`.
+   - Assignment: the builder fixes the blocking findings, again with Feature Build or Bug Fix and without widening scope; the gatekeeper records the re-review tier through `review-reconciliation`.
    - Requires: the consolidated findings and fix order.
    - Produces: a new revision and a tier record. Return to stage 4 and run the reviews the tier requires, then stage 6.
 8. **Merge and close** (performed by a human)

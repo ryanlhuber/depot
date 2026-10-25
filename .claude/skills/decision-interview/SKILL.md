@@ -1,6 +1,7 @@
 ---
 name: decision-interview
 description: "Interviews the requester about a plan, design, or idea one question at a time, offering options and a recommendation, until every material decision is resolved, then restates the decisions for explicit confirmation. Use when a plan is vague, has hidden branches, or needs a shared understanding before work starts. Not for refining a work item into a build specification and not for starting the work."
+disable-model-invocation: true
 ---
 
 # Decision Interview

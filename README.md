@@ -1,6 +1,6 @@
 # Depot
 
-One library of small, composable agent skills for taking work from an idea to a verified change: general agent practice, planning, interface design, interface implementation, and software delivery. It holds 49 skills, 5 agents, and 7 workflows. Each skill is a folder with a `SKILL.md` in the open [Agent Skills format](https://agentskills.io/specification). Everything is Markdown you can read and use directly, with no build step. The skills are for people working with an AI assistant and for AI agents doing the work.
+One library of small, composable agent skills for taking work from an idea to a verified change: general agent practice, planning, interface design, interface implementation, and software delivery. It holds 59 skills, 5 agents, and 10 workflows. Each skill is a folder with a `SKILL.md` in the open [Agent Skills format](https://agentskills.io/specification). Everything is Markdown you can read and use directly, with no build step. The skills are for people working with an AI assistant and for AI agents doing the work.
 
 A project is a project. Nothing here switches modes between a weekend prototype and a long-lived product; each skill scales its rigor to the risk and size of the change in front of it, so a small project that grows needs no rework.
 
@@ -10,7 +10,11 @@ Use a compatible skills installer to choose what you need:
 
 ```sh
 npx skills@latest add ryanlhuber/depot
+# if the project's package.json requires pnpm (devEngines), npx fails; use:
+pnpm dlx skills@latest add ryanlhuber/depot
 ```
+
+Skills land in `.agents/skills/`. The repository is private, so git on your machine must be able to read it. See [using skills](docs/using-skills.md#install-notes) for the pitfalls and what the installer does not copy.
 
 You can also clone this repository and use it directly. The maintained source is [`skills/`](skills/), grouped into bucket folders; [`.agents/skills/`](.agents/skills/) and [`.claude/skills/`](.claude/skills/) are generated flat mirrors that harnesses discover skills from, so a clone works without a setup step. Keep a skill's supporting files (`templates/`) with it when copying.
 
@@ -110,6 +114,9 @@ A workflow assigns skills and agents to ordered stages with handoffs, validation
 - [Discovery to Definition](workflows/discovery-to-definition.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](workflows/design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
 - [Refine to Merge](workflows/refine-to-merge.md): takes one work item from an approved specification through build, two independent reviews, bounded repairs, and a verified human merge.
+- [Bug Fix](workflows/bug-fix.md): takes a reported defect through expected behavior, a proven minimal repair, a regression review, and the Refine to Merge review and merge stages.
+- [Feature Delivery](workflows/feature-delivery.md): wraps Refine to Merge with regression review, documentation, release-readiness, and a human release decision.
+- [Spec to UI](workflows/spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.
 
 ## Start with one skill
 

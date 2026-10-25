@@ -12,6 +12,7 @@ Implement already-decided design tokens in code so components use named values f
 - Use when: token definitions exist and a codebase must adopt them, or an existing token implementation must be restructured.
 - Use when: auditing styles for raw values that bypass tokens.
 - Do not use when: the token roles and values are still undecided. Settle them first; this work implements decisions and does not make them.
+- Pairs with: `design-token-and-system-definition` decides the roles and values; use it first when they are undecided.
 
 ## Inputs
 - Required: the token definitions (names or roles, values per theme) or the design source that holds them, and the codebase's current styling approach and where its styles live.
