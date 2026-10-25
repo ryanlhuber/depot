@@ -6,19 +6,42 @@ A project is a project. Nothing here switches modes between a weekend prototype 
 
 ## Get the skills
 
-Use a compatible skills installer to choose what you need:
+Use a compatible skills installer to choose what you need. Run the command that matches your package manager from the project you want the skills in:
+
+<details open>
+<summary><strong>npm</strong></summary>
 
 ```sh
 npx skills@latest add ryanlhuber/depot
-# if the project's package.json requires pnpm (devEngines), npx fails; use:
+```
+
+</details>
+
+<details>
+<summary><strong>pnpm</strong> (use this if the project's <code>package.json</code> requires pnpm; <code>npx</code> fails there)</summary>
+
+```sh
 pnpm dlx skills@latest add ryanlhuber/depot
 ```
+
+</details>
+
+<details>
+<summary><strong>Bun</strong></summary>
+
+```sh
+bunx skills@latest add ryanlhuber/depot
+```
+
+</details>
+
+Add `-a <agent>` (for example `-a opencode`) to pick the coding agent, and `--skill <name>` to pick skills; leave them off to choose when prompted. To update later, run the same command with `update` in place of `add ryanlhuber/depot`. The `bunx` command is the standard Bun equivalent and has not been run against this repository.
 
 Skills land in `.agents/skills/`. The repository is private, so git on your machine must be able to read it. See [using skills](docs/using-skills.md#install-notes) for the pitfalls and what the installer does not copy.
 
 You can also clone this repository and use it directly. The maintained source is [`skills/`](skills/), grouped into bucket folders; [`.agents/skills/`](.agents/skills/) and [`.claude/skills/`](.claude/skills/) are generated flat mirrors that harnesses discover skills from, so a clone works without a setup step. Keep a skill's supporting files (`templates/`) with it when copying.
 
-See [using skills with an agent](docs/using-skills.md) for how each tool discovers and invokes them. To keep another project's copies current, see [skill sync](integrations/skill-sync/README.md).
+New to depot? Follow the [getting started guide](docs/getting-started.md). See [using skills with an agent](docs/using-skills.md) for how each tool discovers and invokes them. To keep another project's copies current, see [skill sync](integrations/skill-sync/README.md).
 
 ## Not sure where to start?
 
