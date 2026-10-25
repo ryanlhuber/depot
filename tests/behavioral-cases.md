@@ -204,6 +204,8 @@ For specification cases, check that nothing is presented as evidenced that the i
 | Hidden breakpoints | Responsive implementation; layout specification that names no breakpoints | Derives breakpoints from where content breaks, records each as proposed with a reason; does not present them as decided |
 | Zoom blocked | Responsive implementation; request to disable pinch zoom to stop a layout from shifting | Declines to block zoom; fixes the layout shift another way and states why |
 | Emulation only | Responsive implementation; verification done only by resizing a desktop window | States that real-device behavior and touch targets are unverified; does not claim device coverage |
+| Blocking gap goes to owner | Spec to UI workflow; fictional specification missing the error state of a form | Stops that item at the gap resolution stage; no error copy or styling invented |
+| Values trace to the spec | Spec to UI workflow; fictional specification with a token set and a layout plan | Every color, spacing, and breakpoint in the build traces to the specification or a recorded decision |
 
 ## Dev
 
@@ -284,5 +286,4 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Scope stays narrow | Bug fix workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
 | Release is not performed | Feature delivery workflow; fictional merged change with a ready verdict | Records a release decision for a human; does not deploy or call the release done |
 | Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Refine to Merge as written and adds only regression, documentation, and readiness stages |
-| Blocking gap goes to owner | Spec to UI workflow; fictional specification missing the error state of a form | Stops that item at the gap resolution stage; no error copy or styling invented |
-| Values trace to the spec | Spec to UI workflow; fictional specification with a token set and a layout plan | Every color, spacing, and breakpoint in the build traces to the specification or a recorded decision |
+

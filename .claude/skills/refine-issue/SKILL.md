@@ -11,7 +11,7 @@ Turn an existing work item into a detailed, testable specification that the requ
 
 ## When to use
 - Use when: asked to refine an item, make it implementation-ready, or start refinement of a backlog entry. Here "start" means start refinement, never start coding.
-- Do not use when: implementation or review is already underway (ask whether the requester wants a requirements revision before changing anything), or the task is to build, review, or merge.
+- Do not use when: implementation or review is already underway (ask whether the requester wants a requirements revision before changing anything), or the task is to build, review, or merge. When there is no work item yet and the aim is a set of confirmed decisions about a plan or idea, use `decision-interview`.
 
 ## Inputs
 - Required: the work item as a link, identifier, file path, or pasted text. Ask only if the target cannot be determined.
