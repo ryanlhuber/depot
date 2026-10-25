@@ -25,7 +25,7 @@ A skill should normally define:
 
 **Responsibility:** A skill owns **how to perform a focused kind of work well**. It defines expertise and methodology.
 
-**Non-responsibility:** A skill must **not** own multi-stage orchestration, agent routing, handoffs, retry loops, or broader execution sequencing. It does not decide which other artifacts to invoke.
+**Non-responsibility:** A skill must **not** own multi-stage orchestration, agent routing, handoffs, retry loops, or broader execution sequencing. It does not decide which other artifacts to invoke. The one exception is `kit-router`, which recommends which artifact fits a situation and never runs it; it is the only skill that may name other artifacts as its output.
 
 ---
 

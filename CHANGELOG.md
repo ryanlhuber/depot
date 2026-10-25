@@ -4,6 +4,10 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.5.2
+
+- `delivery-planner` and `goal-to-backlog` now agree: when the requester is unavailable, planning continues with the goal marked unconfirmed and assumptions labeled, and stops only when no goal can be stated. The architecture document names `kit-router` as the one skill allowed to recommend other artifacts.
+
 ## 0.5.1
 
 - `roadmap-planning` stops only for cleanup decisions that later stages depend on, as `backlog-triage` did before the merge. `goal-to-backlog` now lists work that depends on an unsettled assumption as not yet sliced instead of drafting provisional items, matching `delivery-planner`.
