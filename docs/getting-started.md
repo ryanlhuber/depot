@@ -4,9 +4,9 @@ A short path from nothing to a project that agents can work in. Each step is opt
 
 ## Short version for one developer
 
-1. Install only `depot-dev` (or the buckets you use), not the full plugin.
-2. Run `repo-conventions-setup` once.
-3. Describe your situation to `kit-router` and do what it recommends.
+1. Install `depot-core` and `depot-dev` (add other buckets only if you use them), not the full plugin: `claude plugin install depot-core@depot` and `claude plugin install depot-dev@depot`. `repo-conventions-setup` and `kit-router` are in `depot-core`.
+2. Run `/depot-core:repo-conventions-setup` once.
+3. Describe your situation to `/depot-core:kit-router` and do what it recommends.
 
 For a small, ordinary change, the light review path in [Fix or Build to Merge](../workflows/fix-or-build-to-merge.md) needs only you and one reviewer from a different model family. The full three-family review applies only to high-risk changes. Everything below is optional.
 

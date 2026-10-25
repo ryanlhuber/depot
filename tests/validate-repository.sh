@@ -290,6 +290,25 @@ elif [ -f .claude-plugin/marketplace.json ]; then
   warn "python3 not found; bucket plugin entries in marketplace.json were not checked"
 fi
 
+# --- quick-start install steps -------------------------------------------------
+# Every skill the short getting-started path names must come from a bucket plugin it installs.
+if [ -f docs/getting-started.md ] && command -v python3 >/dev/null 2>&1; then
+  quick_start_problems=$(python3 - <<'PY'
+import re, glob, os
+text = open('docs/getting-started.md').read()
+m = re.search(r'## Short version for one developer\n(.*?)\n## ', text, re.S)
+if m:
+    sec = m.group(1)
+    installed = set(re.findall(r'depot-([a-z]+)@depot', sec))
+    bucket = {os.path.basename(os.path.dirname(f)): f.split('/')[1] for f in glob.glob('skills/*/*/SKILL.md')}
+    for name in sorted(set(re.findall(r'`/?(?:depot-[a-z]+:)?([a-z][a-z-]+)`', sec))):
+        if name in bucket and bucket[name] not in installed:
+            print(f'getting-started short version names {name} but does not install depot-{bucket[name]}')
+PY
+)
+  if [ -n "$quick_start_problems" ]; then fail "$quick_start_problems"; fi
+fi
+
 if [ "$failures" -ne 0 ]; then
   echo "$failures validation check(s) failed, $warnings warning(s)." >&2
   exit 1
