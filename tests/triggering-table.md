@@ -35,17 +35,17 @@ The requests were drafted by the same model family that wrote the descriptions, 
 | 27 | `design-md-writing` | Our colors, fonts, and button rules live in Figma, a few Slack threads, and one designer's head. I want one file my AI coding agent can read to build screens consistently. | `design-md-writing` |
 | 28 | `design-md-writing` | We have no color or spacing values picked yet. Can you decide the palette, type scale, and spacing steps for our new app? | `design-token-and-system-definition` |
 | 29 | `design-rationale-writing` | The leadership team wasn't in the room when we chose a bottom tab bar over a hamburger menu. Can you write up why we did it so they can sign off? | `design-rationale-writing` |
-| 30 | `design-rationale-writing` | Write the full spec for the tab bar: every size, spacing value, and state. | `interface-state-specification` |
+| 30 | `design-rationale-writing` | Write the full spec for the tab bar: what it shows, what the user can do, the messages, and how they leave it, in every state. | `interface-state-specification` |
 | 31 | `design-spec-intake` | The designer just sent over a Figma export, a requirements doc, and a copy deck for the checkout page. Before I start coding, can you tell me what's settled, what's contradictory, and what I can start on today? | `design-spec-intake` |
 | 32 | `design-spec-intake` | I only have a one-line idea for a checkout page and nothing from design yet. Can you turn it into a numbered list of testable requirements? | `requirements-definition` |
 | 33 | `design-to-implementation-qa` | The dev team shipped the pricing page. Can you go through it next to the approved mockups and list everything that doesn't match? | `design-to-implementation-qa` |
 | 34 | `design-to-implementation-qa` | The developers built the pricing page but I never wrote down what it should do. Can you work out what it needs to do? | `requirements-definition` |
 | 35 | `design-token-and-system-definition` | Our app has fourteen slightly different grays and six corner radii. I want to settle on a small shared set of values and rules for the buttons and cards. | `design-token-and-system-definition` |
-| 36 | `design-token-and-system-definition` | Now turn our approved color and spacing decisions into CSS custom properties in the codebase. | none |
+| 36 | `design-token-and-system-definition` | Now turn our approved color and spacing decisions into CSS custom properties in the codebase. | `design-token-implementation` |
 | 37 | `design-token-implementation` | Our stylesheets are full of hard-coded hex colors and pixel values. The design team gave us final color and spacing decisions, so I want to wire them up as variables with light and dark themes and find the leftovers. | `design-token-implementation` |
 | 38 | `design-token-implementation` | Our color palette is a mess and nobody has decided the semantic color roles or values yet. Can you propose and define them for us? | `design-token-and-system-definition` |
 | 39 | `documentation-pass` | New hires keep getting stuck following our setup instructions because the commands are outdated and some links are dead. Can you clean that up for them? | `documentation-pass` |
-| 40 | `documentation-pass` | Can you write the code for a new CSV export option in the reports page? | `feature-build` |
+| 40 | `documentation-pass` | Here is the approved spec, with acceptance criteria, for a new CSV export option on the reports page. Please implement it. | `feature-build` |
 | 41 | `feature-build` | The ticket for adding a dark-mode toggle to the settings page has been signed off with clear acceptance criteria. Please go ahead and implement it. | `feature-build` |
 | 42 | `feature-build` | The ticket says "make search better" and nothing else. Help me work out exactly what it should do before anyone writes code. | `refine-issue` |
 | 43 | `heuristic-usability-evaluation` | Can you give our signup flow a quick expert look for usability problems, with a sense of how bad each is, before we pay for user sessions? | `heuristic-usability-evaluation` |
@@ -57,7 +57,7 @@ The requests were drafted by the same model family that wrote the descriptions, 
 | 49 | `interface-state-implementation` | The spec for our order list covers loading, empty, offline, and failed-to-load cases, but the page I built just goes blank when anything goes wrong. Can you build those cases properly? | `interface-state-implementation` |
 | 50 | `interface-state-implementation` | I'm designing the order list and haven't worked out what it should show when there are no orders or the network drops. Can you write up every case with messages and ways out? | `interface-state-specification` |
 | 51 | `interface-state-specification` | For the invoice list screen, I need to cover what shows when there are no invoices, when it's loading, when the request fails, and when a name is very long. | `interface-state-specification` |
-| 52 | `interface-state-specification` | Now build the loading, empty, and error states for the invoice list in code from the spec. | none |
+| 52 | `interface-state-specification` | Now build the loading, empty, and error states for the invoice list in code from the spec. | `interface-state-implementation` |
 | 53 | `interview-guide-writing` | I'm about to talk with ten home cooks one-on-one to understand how they plan meals each week. Can you prepare the questions and follow-ups so I don't lead them? | `interview-guide-writing` |
 | 54 | `interview-guide-writing` | I have a clickable meal-planner prototype and want participants to try to complete tasks with it while I watch. Prepare the session. | `usability-test-planning` |
 | 55 | `issue-breakdown` | Our goal is that tenants can pay rent online through the portal. Can you turn that into a set of tickets my team can pick up and discuss? | `issue-breakdown` |
@@ -69,7 +69,7 @@ The requests were drafted by the same model family that wrote the descriptions, 
 | 61 | `merge-readiness-check` | Both reviewers finished on the cart-refactor change. Before I click merge, can you confirm everything required is actually in place? | `merge-readiness-check` |
 | 62 | `merge-readiness-check` | Two reviewers each gave me a list of problems with the cart change. Can you combine them into one list and tell me what has to be fixed first? | `review-reconciliation` |
 | 63 | `migration` | We have to move our app from the old v1 payments API to v2 without downtime and with a way back if it goes badly. Can you plan the steps? | `migration` |
-| 64 | `migration` | Please add a new field to the user profile form and save it in the existing table. | `feature-build` |
+| 64 | `migration` | The approved spec for a new user-profile form field is attached, saving to the existing table. Please build it. | `feature-build` |
 | 65 | `outcome-slicing` | We want to overhaul how our volunteer-scheduling tool works for coordinators and volunteers, and it's far too big to ticket right away. How should we carve it up into major chunks that each deliver something real? | `outcome-slicing` |
 | 66 | `outcome-slicing` | Here are the three major chunks for the volunteer-scheduling overhaul. Break the first one into individual tickets. | `issue-breakdown` |
 | 67 | `persona-and-scenario-drafting` | I've got interview summaries and survey results about our freelance users. Turn them into a few representative user profiles and short stories of a typical day using the app. | `persona-and-scenario-drafting` |
