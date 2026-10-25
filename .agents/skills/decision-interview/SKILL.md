@@ -11,7 +11,7 @@ Turn a loosely stated plan into a short list of confirmed decisions by asking fo
 
 ## When to use
 - Use when: a plan, design, or request has open choices, unclear scope, or dependencies between choices, and the requester is available to answer.
-- Do not use when: the goal is an approved, implementation-ready specification for a work item to build (use a specification-refinement skill), when the answers are all in supplied material, or when the requester wants the work done instead.
+- Do not use when: the goal is an approved, implementation-ready specification for a work item to build (use `refine-issue`), when the answers are all in supplied material, or when the requester wants the work done instead.
 
 ## Inputs
 - Required: the plan, design, or request, and a requester who can answer.

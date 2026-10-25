@@ -48,6 +48,7 @@ Turn an approved interface specification into working front-end code that matche
 ## Validation
 
 - After stage 1, confirm every blocking item has an owner.
+- Before stage 3, confirm any value the build needs that the specification does not give (a breakpoint, a token name, a size) is listed as proposed and, if it affects appearance or behavior, decided at stage 2. A value used before that is labeled proposed in the output.
 - After stages 3 to 7, confirm the build runs and the checks the stage names were actually performed.
 - After stage 8, confirm every mismatch is fixed, accepted by the specification owner, or recorded as a deviation.
 
