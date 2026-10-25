@@ -4,6 +4,12 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.7.0
+
+- Split the `design` bucket into two buckets with clearer names. `ux` holds the 12 skills that inform the interface: research, requirements, journeys, flows, information architecture, heuristic and accessibility evaluation, and microcopy. `ui` holds the 8 skills that design and specify the interface up to front-end handoff: design tokens and system rules, DESIGN.md, state and responsive specifications, visual critique, design-to-implementation QA, design rationale, and portfolio case studies. No skill was renamed and no skill's content changed.
+- **Breaking for bucket-plugin installs:** the `depot-design` plugin is replaced by `depot-ux` and `depot-ui`. If you installed `depot-design`, uninstall it and install either or both new plugins; invocations change from `/depot-design:<skill>` to `/depot-ux:<skill>` or `/depot-ui:<skill>`. The full `depot` plugin and `/depot:<skill>` names are unchanged.
+- `kit-router`'s routing map now has UX and UI sections, and gains a row that routes visual hierarchy, spacing, and type critique straight to `visual-design-critique`.
+
 ## 0.6.2
 
 - Fixed the one-developer quick start in `getting-started` and the README install example: `repo-conventions-setup` and `kit-router` are in `depot-core`, so `depot-core` is installed with `depot-dev`. The validator now checks that every skill the quick start names comes from a plugin it installs.

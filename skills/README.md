@@ -1,6 +1,6 @@
 # Skills
 
-This directory holds every portable, reusable capability in the library: focused expertise, heuristics, procedures, checks, and expected outputs. Each skill is one folder, `skills/<bucket>/<name>/`, with a `SKILL.md` file and any supporting files such as `templates/`. The five buckets group skills by the kind of work they support; the categories below subdivide each bucket and are an index only.
+This directory holds every portable, reusable capability in the library: focused expertise, heuristics, procedures, checks, and expected outputs. Each skill is one folder, `skills/<bucket>/<name>/`, with a `SKILL.md` file and any supporting files such as `templates/`. The six buckets group skills by the kind of work they support; the categories below subdivide each bucket and are an index only.
 
 This directory is the single source of truth. [`.agents/skills/`](../.agents/skills/) and [`.claude/skills/`](../.claude/skills/) are generated, flat mirrors that harnesses discover skills from: edit only under `skills/`, then run `scripts/sync-adapters.sh` to copy them across (`scripts/sync-adapters.sh --check` reports drift and stale copies). Skill names are unique across buckets.
 
@@ -65,44 +65,57 @@ Turning a goal into a plan, before a change exists.
 - [Roadmap Writing](plan/roadmap-writing/SKILL.md): writes a one-page now, next, and later roadmap of outcomes with stated confidence and no unsupported dates.
 - [Status Reporting](plan/status-reporting/SKILL.md): reports progress from evidence rather than item states, separating done, in progress, blocked, and at risk against the baseline.
 
-## Design
+## UX
 
-Creating and evaluating user experiences and interfaces.
+Learning about users and judging whether an experience works for them, to inform the interface design.
 
 ### Research
 
-- [Competitive Pattern Analysis](design/competitive-pattern-analysis/SKILL.md)
-- [Interview Guide Writing](design/interview-guide-writing/SKILL.md)
-- [Persona and Scenario Drafting](design/persona-and-scenario-drafting/SKILL.md)
-- [Research Synthesis](design/research-synthesis/SKILL.md)
-- [Usability Test Planning](design/usability-test-planning/SKILL.md)
+- [Competitive Pattern Analysis](ux/competitive-pattern-analysis/SKILL.md)
+- [Interview Guide Writing](ux/interview-guide-writing/SKILL.md)
+- [Persona and Scenario Drafting](ux/persona-and-scenario-drafting/SKILL.md)
+- [Research Synthesis](ux/research-synthesis/SKILL.md)
+- [Usability Test Planning](ux/usability-test-planning/SKILL.md)
 
 ### Definition
 
-- [Information Architecture and Navigation](design/information-architecture-and-navigation/SKILL.md)
-- [Journey Mapping](design/journey-mapping/SKILL.md)
-- [Requirements Definition](design/requirements-definition/SKILL.md)
-- [User Flow Mapping](design/user-flow-mapping/SKILL.md)
+- [Information Architecture and Navigation](ux/information-architecture-and-navigation/SKILL.md)
+- [Journey Mapping](ux/journey-mapping/SKILL.md)
+- [Requirements Definition](ux/requirements-definition/SKILL.md)
+- [User Flow Mapping](ux/user-flow-mapping/SKILL.md)
 
-### Design and specification
+### Evaluation
 
-- [Design Token and System Definition](design/design-token-and-system-definition/SKILL.md)
-- [DESIGN.md Writing](design/design-md-writing/SKILL.md)
-- [Interface State Specification](design/interface-state-specification/SKILL.md)
-- [Responsive Layout Planning](design/responsive-layout-planning/SKILL.md)
-- [UX Microcopy Writing](design/ux-microcopy-writing/SKILL.md)
+- [Accessibility Review](ux/accessibility-review/SKILL.md)
+- [Heuristic Usability Evaluation](ux/heuristic-usability-evaluation/SKILL.md)
 
-### Review and quality
+### Content
 
-- [Accessibility Review](design/accessibility-review/SKILL.md)
-- [Design-to-Implementation QA](design/design-to-implementation-qa/SKILL.md)
-- [Heuristic Usability Evaluation](design/heuristic-usability-evaluation/SKILL.md)
-- [Visual Design Critique](design/visual-design-critique/SKILL.md)
+- [UX Microcopy Writing](ux/ux-microcopy-writing/SKILL.md)
+
+## UI
+
+Designing the interface and specifying it, ready for front-end handoff.
+
+### Visual foundations
+
+- [Design Token and System Definition](ui/design-token-and-system-definition/SKILL.md)
+- [DESIGN.md Writing](ui/design-md-writing/SKILL.md)
+
+### Specification
+
+- [Interface State Specification](ui/interface-state-specification/SKILL.md)
+- [Responsive Layout Planning](ui/responsive-layout-planning/SKILL.md)
+
+### Review
+
+- [Visual Design Critique](ui/visual-design-critique/SKILL.md)
+- [Design-to-Implementation QA](ui/design-to-implementation-qa/SKILL.md)
 
 ### Communication
 
-- [Design Rationale Writing](design/design-rationale-writing/SKILL.md)
-- [Portfolio Case Study Writing](design/portfolio-case-study-writing/SKILL.md)
+- [Design Rationale Writing](ui/design-rationale-writing/SKILL.md)
+- [Portfolio Case Study Writing](ui/portfolio-case-study-writing/SKILL.md)
 
 ## Frontend
 

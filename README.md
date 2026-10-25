@@ -18,13 +18,14 @@ claude plugin install depot@depot
 
 Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot`.
 
-**Only what you need.** Each bucket is also its own plugin, so a front-end developer need not carry the planning and design skills. Install the buckets you use instead of `depot`, never both:
+**Only what you need.** Each bucket is also its own plugin, so a front-end developer need not carry the planning, UX, and UI skills. Install the buckets you use instead of `depot`, never both:
 
 | Plugin | Skills | Always-on tokens (approx.) |
 | --- | --- | --- |
 | `depot-core` | 7 general skills, including `kit-router` and `simplification-review` | 555 |
 | `depot-plan` | 9 planning skills (needs `depot-core`, installed with it) | 750 |
-| `depot-design` | 20 design skills | 1,540 |
+| `depot-ux` | 12 UX skills | 935 |
+| `depot-ui` | 8 UI skills | 605 |
 | `depot-frontend` | 6 front-end skills | 490 |
 | `depot-dev` | 16 delivery skills | 1,230 |
 | `depot-agents` | the 5 agents, which apply skills from the buckets above | 0 |
@@ -82,7 +83,7 @@ Ask for [`kit-router`](skills/core/kit-router/SKILL.md) and describe your situat
 
 ## Browse
 
-Skills live in five buckets. The [skills index](skills/README.md) has one-line descriptions.
+Skills live in six buckets. The [skills index](skills/README.md) has one-line descriptions.
 
 ### Core
 
@@ -109,17 +110,27 @@ Turning a goal into a plan, before a change exists: framing the problem, slicing
 | Prioritization | [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md) |
 | Upkeep | • [backlog-health-check](skills/plan/backlog-health-check/SKILL.md)<br>• [roadmap-writing](skills/plan/roadmap-writing/SKILL.md)<br>• [status-reporting](skills/plan/status-reporting/SKILL.md) |
 
-### Design
+### UX
 
-Creating and evaluating user experiences and interfaces: research, definition, design specification, review, and communication of decisions.
+Learning about users and judging whether an experience works for them, to inform the interface design: research, definition, evaluation, and interface wording.
 
 | Stage | Skills |
 | --- | --- |
-| Research | • [competitive-pattern-analysis](skills/design/competitive-pattern-analysis/SKILL.md)<br>• [persona-and-scenario-drafting](skills/design/persona-and-scenario-drafting/SKILL.md)<br>• [interview-guide-writing](skills/design/interview-guide-writing/SKILL.md)<br>• [research-synthesis](skills/design/research-synthesis/SKILL.md)<br>• [usability-test-planning](skills/design/usability-test-planning/SKILL.md) |
-| Definition | • [requirements-definition](skills/design/requirements-definition/SKILL.md)<br>• [user-flow-mapping](skills/design/user-flow-mapping/SKILL.md)<br>• [journey-mapping](skills/design/journey-mapping/SKILL.md)<br>• [information-architecture-and-navigation](skills/design/information-architecture-and-navigation/SKILL.md) |
-| Design and specification | • [design-token-and-system-definition](skills/design/design-token-and-system-definition/SKILL.md)<br>• [design-md-writing](skills/design/design-md-writing/SKILL.md)<br>• [interface-state-specification](skills/design/interface-state-specification/SKILL.md)<br>• [responsive-layout-planning](skills/design/responsive-layout-planning/SKILL.md)<br>• [ux-microcopy-writing](skills/design/ux-microcopy-writing/SKILL.md) |
-| Review and quality | • [accessibility-review](skills/design/accessibility-review/SKILL.md)<br>• [heuristic-usability-evaluation](skills/design/heuristic-usability-evaluation/SKILL.md)<br>• [visual-design-critique](skills/design/visual-design-critique/SKILL.md)<br>• [design-to-implementation-qa](skills/design/design-to-implementation-qa/SKILL.md) |
-| Communication | • [design-rationale-writing](skills/design/design-rationale-writing/SKILL.md)<br>• [portfolio-case-study-writing](skills/design/portfolio-case-study-writing/SKILL.md) |
+| Research | • [competitive-pattern-analysis](skills/ux/competitive-pattern-analysis/SKILL.md)<br>• [persona-and-scenario-drafting](skills/ux/persona-and-scenario-drafting/SKILL.md)<br>• [interview-guide-writing](skills/ux/interview-guide-writing/SKILL.md)<br>• [research-synthesis](skills/ux/research-synthesis/SKILL.md)<br>• [usability-test-planning](skills/ux/usability-test-planning/SKILL.md) |
+| Definition | • [requirements-definition](skills/ux/requirements-definition/SKILL.md)<br>• [user-flow-mapping](skills/ux/user-flow-mapping/SKILL.md)<br>• [journey-mapping](skills/ux/journey-mapping/SKILL.md)<br>• [information-architecture-and-navigation](skills/ux/information-architecture-and-navigation/SKILL.md) |
+| Evaluation | • [heuristic-usability-evaluation](skills/ux/heuristic-usability-evaluation/SKILL.md)<br>• [accessibility-review](skills/ux/accessibility-review/SKILL.md) |
+| Content | [ux-microcopy-writing](skills/ux/ux-microcopy-writing/SKILL.md) |
+
+### UI
+
+Designing the interface and specifying it, ready for front-end handoff: visual foundations, states and layout, review against the design, and communication of decisions.
+
+| Stage | Skills |
+| --- | --- |
+| Visual foundations | • [design-token-and-system-definition](skills/ui/design-token-and-system-definition/SKILL.md)<br>• [design-md-writing](skills/ui/design-md-writing/SKILL.md) |
+| Specification | • [interface-state-specification](skills/ui/interface-state-specification/SKILL.md)<br>• [responsive-layout-planning](skills/ui/responsive-layout-planning/SKILL.md) |
+| Review | • [visual-design-critique](skills/ui/visual-design-critique/SKILL.md)<br>• [design-to-implementation-qa](skills/ui/design-to-implementation-qa/SKILL.md) |
+| Communication | • [design-rationale-writing](skills/ui/design-rationale-writing/SKILL.md)<br>• [portfolio-case-study-writing](skills/ui/portfolio-case-study-writing/SKILL.md) |
 
 ### Frontend
 
@@ -190,7 +201,7 @@ Everywhere:
 By bucket:
 
 - **Plan:** plans propose and owners decide. Every item states one observable done signal, and size bands order items against each other without implying time estimates.
-- **Design:** separate observations, standards, heuristics, and preference, and rate severity and confidence independently.
+- **UX and UI:** separate observations, standards, heuristics, and preference, and rate severity and confidence independently.
 - **Frontend:** implement decisions; do not make them. Core skills are written for the web platform (HTML, CSS, JavaScript, and browser accessibility semantics); framework specifics belong in `integrations/`.
 - **Dev:** approvals belong to a revision, and independence between reviewers is never weakened silently.
 

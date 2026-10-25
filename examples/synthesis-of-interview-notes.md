@@ -1,6 +1,6 @@
 # Example: synthesis of interview notes
 
-Demonstrates [Research Synthesis](../skills/design/research-synthesis/SKILL.md) with its [insight table template](../skills/design/research-synthesis/templates/insight-table.md). The product, participants, and quotes are fictional. This example is illustrative and is not canonical guidance.
+Demonstrates [Research Synthesis](../skills/ux/research-synthesis/SKILL.md) with its [insight table template](../skills/ux/research-synthesis/templates/insight-table.md). The product, participants, and quotes are fictional. This example is illustrative and is not canonical guidance.
 
 ## Input
 

@@ -1,6 +1,6 @@
 # Example: heuristic review of a settings flow
 
-Demonstrates [Heuristic Usability Evaluation](../skills/design/heuristic-usability-evaluation/SKILL.md) with its [finding report template](../skills/design/heuristic-usability-evaluation/templates/finding-report.md). The app and screens are fictional. This example is illustrative and is not canonical guidance.
+Demonstrates [Heuristic Usability Evaluation](../skills/ux/heuristic-usability-evaluation/SKILL.md) with its [finding report template](../skills/ux/heuristic-usability-evaluation/templates/finding-report.md). The app and screens are fictional. This example is illustrative and is not canonical guidance.
 
 ## Input
 
