@@ -30,6 +30,7 @@ Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin 
 | `depot-agents` | the 5 agents, which apply skills from the buckets above | 0 |
 
 ```sh
+claude plugin install depot-core@depot
 claude plugin install depot-dev@depot
 claude plugin install depot-agents@depot
 ```
