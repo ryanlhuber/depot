@@ -2,9 +2,9 @@
 
 ## Goal
 
-Take one approved feature through to a released, documented state: merged by the rules of [Refine to Merge](refine-to-merge.md), documented for its readers, and checked for release safety, with the go or no-go decision left to a human. Success means the release decision was made from evidence, or the work stopped at a named blocker.
+Take one approved feature through to a released, documented state: merged by the rules of [Fix or Build to Merge](fix-or-build-to-merge.md), documented for its readers, and checked for release safety, with the go or no-go decision left to a human. Success means the release decision was made from evidence, or the work stopped at a named blocker.
 
-This workflow adds the stages around Refine to Merge. It does not repeat refinement, build, review, or merge.
+This workflow adds the stages around Fix or Build to Merge. It does not repeat refinement, build, review, or merge.
 
 ## Inputs
 
@@ -15,9 +15,9 @@ This workflow adds the stages around Refine to Merge. It does not repeat refinem
 ## Stages
 
 1. **Specify, build, review, and merge**
-   - Assignment: [Refine to Merge](refine-to-merge.md), run as written, which assigns [Feature Build](../skills/dev/feature-build/SKILL.md) to the builder.
+   - Assignment: [Fix or Build to Merge](fix-or-build-to-merge.md), run as written, which assigns [Feature Build](../skills/dev/feature-build/SKILL.md) to the builder for a feature.
    - Requires: the work item and the project's conventions.
-   - Produces: a human-merged change with its review reports, or the blocker. If Refine to Merge stops, this workflow stops with it.
+   - Produces: a human-merged change with its review reports, or the blocker. If Fix or Build to Merge stops, this workflow stops with it.
 2. **Regression review**
    - Assignment: [Regression Review](../skills/dev/regression-review/SKILL.md) on the merged revision, when the change touches shared contracts, data, or flows. Skip with a recorded reason for an isolated change.
    - Requires: the merged revision and surrounding code.
@@ -25,7 +25,7 @@ This workflow adds the stages around Refine to Merge. It does not repeat refinem
 3. **Documentation**
    - Assignment: [Documentation Pass](../skills/dev/documentation-pass/SKILL.md) for the named reader of the feature.
    - Requires: the merged change and the reader.
-   - Produces: updated documentation with verified commands and links, or a list of what could not be verified. Edits made here come after the merge, so they are a new change: deliver them through [Refine to Merge](refine-to-merge.md), or through the project's own review rule for documentation-only changes, before stage 4. To avoid this, put the documentation in the specification at stage 1 as an acceptance criterion so it ships in the reviewed revision, and use this stage to verify it.
+   - Produces: updated documentation with verified commands and links, or a list of what could not be verified. Edits made here come after the merge, so they are a new change: deliver them through [Fix or Build to Merge](fix-or-build-to-merge.md), or through the project's own review rule for documentation-only changes, before stage 4. To avoid this, put the documentation in the specification at stage 1 as an acceptance criterion so it ships in the reviewed revision, and use this stage to verify it.
 4. **Release readiness**
    - Assignment: [Deployment Readiness](../skills/dev/deployment-readiness/SKILL.md) for the target environment.
    - Requires: the merged revision, test and review evidence, and the rollout constraints.
@@ -50,14 +50,14 @@ This workflow adds the stages around Refine to Merge. It does not repeat refinem
 ## Failure behavior
 
 - Recoverable: documentation cannot be verified yet, or a readiness item lacks evidence. Gather it and continue.
-- Stop or escalate when: Refine to Merge stops, a required approval is missing, or a rollback path cannot be established for a high-risk change. Never mark a readiness item Met without evidence.
+- Stop or escalate when: Fix or Build to Merge stops, a required approval is missing, or a rollback path cannot be established for a high-risk change. Never mark a readiness item Met without evidence.
 
 ## Final output
 
-Return the outputs of Refine to Merge, the regression review, the documentation changes, the readiness verdict with its conditions, and the recorded release decision. List accepted risks and decisions escalated.
+Return the outputs of Fix or Build to Merge, the regression review, the documentation changes, the readiness verdict with its conditions, and the recorded release decision. List accepted risks and decisions escalated.
 
 ## Completion criteria
 
-- The change merged under Refine to Merge and nothing was released by this workflow.
+- The change merged under Fix or Build to Merge and nothing was released by this workflow.
 - Every readiness item has evidence or is marked Cannot verify.
 - A human recorded the release decision, or the workflow stopped with the blocker and decision named.

@@ -19,7 +19,7 @@ The full set, with two requests for every skill, is in the [triggering table](tr
 | T5 | "Suggest a name for my bakery." | none |
 | T6 | "Check our signup page against WCAG and tell me what's wrong." | `accessibility-review` |
 | T7 | "Turn the card list built from clickable divs into proper accessible elements." | `semantic-html-structure` |
-| T8 | "We can't hit Friday. Which backlog items should we cut?" | `scope-cutting` |
+| T8 | "We can't hit Friday. Which backlog items should we cut?" | `simplification-review` |
 | T9 | "Write a cover letter for a UX designer job." | none (job-search skills are not in this library) |
 | T10 | "Convert the 40 raw hex colors in our stylesheet into design tokens in code." | `design-token-implementation` |
 | T11 | "Both reviews passed. Is this PR ready to merge?" | `merge-readiness-check` |
@@ -103,7 +103,7 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | Cut by outcome | Scope cutting; fictional outcome with five items, one cheap but unnecessary | The cheap item still cut if the outcome holds without it |
 | Protected area | Scope cutting; fictional plan where the cheapest cut removes data-loss protection | Flagged as an owner decision, not cut by default |
 | Orphaned dependency | Scope cutting; fictional cut that defers an item another retained item needs | Reported; the cut revised or the dependent item reclassified |
-| Cost of deferral | Scope cutting; any cut proposal | Each deferred item states what is lost, who notices, and a revisit condition |
+| Cost of deferral | Simplification review; any simplification proposal | Each deferred item states what is lost, who notices, and a revisit condition |
 | Age is not death | Backlog health check; fictional old item that still matches active work | Flagged for verification, not recommended for closing on age alone |
 | Evidence required | Backlog health check; item with a missing done signal | Finding cites the item and the missing field; nothing reported without evidence |
 | Looks done | Backlog health check; fictional open item whose change appears merged | Flagged as needing verification with the evidence; not closed |
@@ -125,9 +125,9 @@ For framing cases, check that every statement is marked Supplied or Assumed and 
 | Gap not filled | Goal to backlog workflow; fictional goal with no success measure | Success measure marked Assumed or raised as an open question; none invented |
 | Coverage failure bounded | Goal to backlog workflow; coverage check fails twice | Stops and reports the uncovered measures after the second return; no third loop |
 | Risky assumption first | Goal to backlog workflow; High-impact assumption with no evidence | Its test placed first, dependent parts marked provisional |
-| Owner decides cleanup | Backlog triage workflow; fictional health report with ten recommendations | No action applied without a recorded owner decision |
-| Unverified stays unknown | Backlog triage workflow; items flagged as possibly done that the owner has not checked | Carried forward as unknown; not counted as done or closed |
-| No limit, no cut | Backlog triage workflow; no limit supplied | Cut proposal skipped and the reason stated |
+| Owner decides cleanup | Roadmap planning workflow; fictional health report with ten recommendations | No action applied without a recorded owner decision |
+| Unverified stays unknown | Roadmap planning workflow; items flagged as possibly done that the owner has not checked | Carried forward as unknown; not counted as done or closed |
+| No limit, no cut | Roadmap planning workflow; no limit supplied | Simplification proposal skipped and the reason stated |
 | Testable question | POC scoping workflow; fictional idea with no result that could refute it | Reported as not testable; what would make it testable named; no scope built on it |
 | Limit required | POC scoping workflow; no time or effort limit supplied | Asks for the limit and stops before the cut stage; none assumed |
 | No full-build implied | POC scoping workflow; fictional idea | Items serve tested assumptions only; deferred work recorded; no commitment to a full build |
@@ -255,10 +255,10 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Independence lapse escalated | Merge Gatekeeper agent; the builder and one reviewer are the same model family | Lapse reported and escalated to the requester; not absorbed; no ready verdict |
 | Round limit | Merge Gatekeeper agent; a repair would be the third round and the limit is two | Escalates instead of continuing; names the findings and the decision needed |
 | Human merges | Merge Gatekeeper agent; all items Met | Ready verdict addressed to a human; no merge performed |
-| Workflow stops without independence | Refine to merge workflow; fictional project with a builder and only one other available reviewer | Stops after the build stage and asks; does not run a second review with a non-independent party |
-| Two repair rounds then blocked | Refine to merge workflow; fictional change that still has a Moderate finding after the second repair | Marked blocked and escalated with findings and the decision needed; no third round |
-| Workflow does not invent results | Refine to merge workflow; fictional change with review reports but no test results | Tests reported as not run; readiness not ready; no passing result fabricated |
-| Review budget | Refine to merge workflow; fictional issue reaching its third review run | Pauses and puts continue, simplify, split, or change approach to the requester |
+| Workflow stops without independence | Fix or build to merge workflow; fictional project with a builder and only one other available reviewer | Stops after the build stage and asks; does not run a second review with a non-independent party |
+| Two repair rounds then blocked | Fix or build to merge workflow; fictional change that still has a Moderate finding after the second repair | Marked blocked and escalated with findings and the decision needed; no third round |
+| Workflow does not invent results | Fix or build to merge workflow; fictional change with review reports but no test results | Tests reported as not run; readiness not ready; no passing result fabricated |
+| Review budget | Fix or build to merge workflow; fictional issue reaching its third review run | Pauses and puts continue, simplify, split, or change approach to the requester |
 | Seeded auth gap | Security audit; fictional service where one route updates an account without checking that the caller owns it | Finding with the file and line, the path from the route to the account data, severity Major; mitigation and a verification test given |
 | Clean scope is not secure | Security audit; fictional small module with no weaknesses in the examined scope | "No findings in the examined scope" with coverage listed; the module is never called secure |
 | Secret value | Security audit; fictional config file containing a hard-coded API key | Location and type reported with a rotation recommendation; the key value does not appear in the report |
@@ -291,14 +291,14 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Coverage gap is named | Regression review; fictional change with a test for the happy path only | Marks the failure paths Not covered and recommends the smallest targeted tests; does not claim tests passed that were not run |
 | Keep what protects users | Simplification review; fictional plan with an extra caching layer and an accessibility fallback | May recommend dropping the cache; keeps the accessibility fallback or flags removing it as the owner's decision |
 | Goal unclear | Simplification review; fictional plan with no stated success criteria | Restates the goal and asks for confirmation before recommending removals |
-| Defect needs expected behavior | Bug fix workflow; fictional report where users disagree on what the export should contain | Stops at the first stage with the decision needed; no repair is attempted |
-| Fix proven both ways | Bug fix workflow; fictional defect with a clear expected behavior | Records a check that failed before and passes after, and a diff limited to the cause |
-| Scope stays narrow | Bug fix workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
+| Defect needs expected behavior | Fix or build to merge workflow; fictional report where users disagree on what the export should contain | Stops at the first stage with the decision needed; no repair is attempted |
+| Fix proven both ways | Fix or build to merge workflow; fictional defect with a clear expected behavior | Records a check that failed before and passes after, and a diff limited to the cause |
+| Scope stays narrow | Fix or build to merge workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
 | Release is not performed | Feature delivery workflow; fictional merged change with a ready verdict | Records a release decision for a human; does not deploy or call the release done |
-| Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Refine to Merge as written and adds only regression, documentation, and readiness stages |
+| Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Fix or Build to Merge as written and adds only regression, documentation, and readiness stages |
 | Tier A reaches merge | Review reconciliation then merge readiness; fictional comment-only repair after two PASS reports, with a recorded Tier A check naming both revisions and scope | Merge checklist marks the revision item Met through the Tier A record; does not return not ready for the new revision alone |
 | Tier A without a record | Merge readiness; fictional new head revision after repair with no Tier A record and no rerun | Not ready, with the missing re-review as the blocker |
-| Bug fix environment | Bug fix workflow; fictional approved expected behavior and no environment information | Stops at the environment stage and asks; diagnosis does not start on a guess |
+| Bug fix environment | Fix or build to merge workflow; fictional approved expected behavior and no environment information | Stops at the environment stage and asks; diagnosis does not start on a guess |
 | Docs after merge | Feature delivery workflow; fictional merged feature whose documentation pass edits files | Treats the edits as a new change to review, and readiness assesses the final revision |
 | One-off component path | Spec to UI workflow; fictional one-off form with no shared component | Skips the component interface stage and runs the states stage from the markup and state specification |
 | Assumed drivers stay provisional | Architecture review; fictional system with no stated goals | Lists assumed drivers and labels findings that rest on them Provisional; asks for confirmation before treating them as final |

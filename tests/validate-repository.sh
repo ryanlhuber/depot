@@ -255,6 +255,41 @@ if [ -f .claude-plugin/plugin.json ]; then
   done
 fi
 
+# The bucket plugins and the agents plugin in the marketplace: one entry per skills/ bucket,
+# one entry listing every agent, and every entry on the same version as plugin.json.
+if [ -f .claude-plugin/marketplace.json ] && command -v python3 >/dev/null 2>&1; then
+  while IFS= read -r problem; do
+    [ -n "$problem" ] && fail "$problem"
+  done < <(python3 - <<'PY'
+import glob, json, os
+m = json.load(open('.claude-plugin/marketplace.json'))
+version = json.load(open('.claude-plugin/plugin.json')).get('version')
+entries = {e['name']: e for e in m.get('plugins', [])}
+for bucket in sorted(d for d in os.listdir('skills') if os.path.isdir(os.path.join('skills', d))):
+    e = entries.get('depot-' + bucket)
+    if not e:
+        print(f'.claude-plugin/marketplace.json has no depot-{bucket} entry for skills/{bucket}')
+    elif e.get('source') != f'./skills/{bucket}' or e.get('skills') != ['./']:
+        print(f'depot-{bucket} must have source ./skills/{bucket} and skills ["./"]')
+agents = entries.get('depot-agents')
+if not agents:
+    print('.claude-plugin/marketplace.json has no depot-agents entry')
+else:
+    listed = set(agents.get('agents', []))
+    actual = {'./' + os.path.basename(f) for f in glob.glob('agents/*.md') if not f.endswith('README.md')}
+    for missing in sorted(actual - listed):
+        print(f'depot-agents does not list agent {missing}')
+    for extra in sorted(listed - actual):
+        print(f'depot-agents lists an agent that does not exist: {extra}')
+for name, e in entries.items():
+    if name != 'depot' and e.get('version') != version:
+        print(f'{name} version {e.get("version")} does not match plugin.json version {version}')
+PY
+)
+elif [ -f .claude-plugin/marketplace.json ]; then
+  warn "python3 not found; bucket plugin entries in marketplace.json were not checked"
+fi
+
 if [ "$failures" -ne 0 ]; then
   echo "$failures validation check(s) failed, $warnings warning(s)." >&2
   exit 1
