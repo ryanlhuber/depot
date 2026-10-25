@@ -56,7 +56,7 @@ Bring a backlog to a state that can be trusted and turn it into a one-page now, 
 - If a clean, current backlog is supplied, or stage 1 finds no problems above the threshold, skip stage 2; skip stage 1 as well when the owner states the backlog was checked recently.
 - If a current ranking and dependency map are supplied, skip stages 3 and 4.
 - If no limit is supplied, skip the simplification proposal in stage 4.
-- If items the owner flagged as needing verification remain unverified, carry them forward as unknown, not as done or dead.
+- If items the owner flagged as needing verification remain unverified, carry them forward as unknown, not as done or dead. List them under an Unknown heading beside the priority table, not inside a tier, with what would verify each, and show them in the roadmap as unknown.
 - Run stage 1 again at most once if the cleanup changes the set substantially; then continue with what exists.
 - If the roadmap would place an outcome before its dependency, return to stage 3 once to resolve the conflict, then report it as an owner decision if unresolved.
 - Allow at most one return to any other stage. After that, stop and escalate with the finding and the decision needed.

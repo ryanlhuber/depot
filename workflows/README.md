@@ -13,6 +13,6 @@ Use the [core artifact architecture](../docs/core-artifact-architecture.md) for 
 - [Roadmap Planning](roadmap-planning.md): cleans and re-ranks an existing backlog, then turns it into a now/next/later roadmap with confidence stated, plus an optional status report.
 - [Discovery to Definition](discovery-to-definition.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
-- [Fix or Build to Merge](fix-or-build-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, two independent reviews, bounded repairs, and a verified human merge.
+- [Fix or Build to Merge](fix-or-build-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, one independent review for ordinary changes or two for high-risk ones, bounded repairs, and a verified human merge.
 - [Feature Delivery](feature-delivery.md): wraps Fix or Build to Merge with regression review, documentation, release-readiness, and a human release decision.
 - [Spec to UI](spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.
