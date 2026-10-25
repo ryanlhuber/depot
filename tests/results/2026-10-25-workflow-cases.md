@@ -22,3 +22,17 @@ Scope: 26 cases across the 8 workflows: `goal-to-backlog` (g1-g4), `roadmap-plan
 ## Limits
 
 Single runs, same vendor family as the author, judged by the author, and read-only. This shows the workflows are followable and their stops are found, not that they work end to end on a real repository.
+
+## Rerun after the fixes
+
+After the wording fixes in 0.5.1 and the unavailable-requester change in 0.5.2, cases g1 to g4 were rerun, and s1 was rerun with a complete fixture (labels, required fields, and state copy). Same method and same limits as above; outputs are in [rerun/](2026-10-25-workflow-cases/rerun/).
+
+| Case | Result |
+| --- | --- |
+| g1 Goal changes mid-run | Pass: restarted at stage 1, discarded work recorded, asked for confirmation because the requester was available |
+| g2 Goal with no success measure, requester unavailable | Pass: proceeded with the goal marked unconfirmed and assumptions labeled, invented no measure, drafted only the two early items. It described the result as a stop at a named decision after stage 6, which reads inconsistently with having run the stages; the workflow text could be clearer |
+| g3 Coverage check fails twice | Pass: stopped after the second failure and reported the uncovered measure |
+| g4 Risky assumption with no evidence | Pass: test first, dependent epics provisional, dependent work listed as not yet sliced without drafting items |
+| s1 One-off component path | Pass: skipped the component interface stage and ran the states stage from the markup and state specification |
+
+With these, all 26 cases pass on their latest run. f6 ("Fix proven both ways") is still the one a read-only run cannot fully observe; the [real run](2026-10-25-real-run.md) observed a failing-before and passing-after check with real tests.
