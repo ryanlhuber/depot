@@ -15,11 +15,11 @@
 | Severity classified correctly? | Yes / Partly / No |
 
 ## Decision
-Rule: qualifies with at least 3 of 4 defects found, no more than 1 unsupported finding, and the report format followed.
+Rule: qualifies with at least 3 of 4 defects found, no unsupported finding, and the report format followed.
 
 - [ ] Qualified for <domain> at <version>
 - [ ] Not qualified
-- [ ] Borderline (3 of 4 with 1 unsupported, or 2 of 4): rerun once on a different seeded change before deciding
+- [ ] Borderline (3 of 4 with exactly 1 unsupported, or 2 of 4): rerun once on a different seeded change; qualifies only if the rerun qualifies outright
 
 Decided by: <name> Rationale: <one or two lines>
 

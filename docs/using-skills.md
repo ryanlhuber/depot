@@ -70,7 +70,7 @@ npx skills@latest add ryanlhuber/depot -a opencode --skill <skill-name> --copy
 
 - **Package manager.** If the project's `package.json` sets `devEngines` to require pnpm, `npx` fails with `EBADDEVENGINES`. Run `pnpm dlx skills@latest add ryanlhuber/depot` instead.
 - **Location.** The installer wrote skills to `.agents/skills/`, one folder per skill, with `templates/` and other supporting files beside `SKILL.md`.
-- **Private repository.** The installer clones over git, so the machine must have access to the repository. A failed clone is an access problem, not a broken skill.
+- **Git access.** The installer clones over git. The repository is public, so no credentials are needed unless your network or git configuration requires them; a failed clone is an access problem, not a broken skill.
 - **Router without a model table.** `kit-router` still works when `integrations/model-routing/models.md` is not installed: it gives capability-role advice and names no model. Add the table to your own instructions if you want model names.
 - **Not installed.** Agents and workflows were not verified to install this way; copy them or use the sync approach.
 

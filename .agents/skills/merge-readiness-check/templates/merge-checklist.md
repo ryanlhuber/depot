@@ -8,7 +8,7 @@ Mark each item Met, Not met, or Cannot verify, and give the evidence. Cannot ver
 | Item | Status | Evidence |
 | --- | --- | --- |
 | Required tests pass | | <link or output> |
-| Head revision equals the revision both reviews examined | | <revisions> |
+| Head revision equals the revision both reviews examined, or a Tier A check covers the difference (approved revision, repair revision, and verified scope named) | | <revisions, and the Tier A record if used> |
 | First review: PASS, bound to that revision | | <report> |
 | Second review: PASS, bound to that revision | | <report> |
 | Second reviewer did not see the first review's output before its initial report | | <report statement> |

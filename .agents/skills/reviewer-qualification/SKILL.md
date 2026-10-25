@@ -27,8 +27,8 @@ Decide, from evidence, whether a candidate reviewer reliably finds real defects 
 6. Apply the qualification rule and record the result with its date and the candidate's version.
 
 ## Rules and heuristics
-- Required: a candidate qualifies when it finds at least three of the four defects, produces no more than one unsupported finding, and follows the report format. Reporting the harmless nit as a defect counts as an unsupported finding.
-- Required: a borderline result (three of four with one unsupported finding, or two of four) is rerun once on a different seeded change before deciding.
+- Required: a candidate qualifies when it finds at least three of the four defects, produces no unsupported finding, and follows the report format. Reporting the harmless nit as a defect counts as an unsupported finding.
+- Required: a borderline result (three of four with exactly one unsupported finding, or two of four) is rerun once on a different seeded change. The candidate qualifies only if the rerun qualifies by the rule above; otherwise it does not qualify. Any other result is not qualified without a rerun.
 - Required: qualification applies only to the tested domain and the tested version. Requalify when the version changes materially.
 - Required: never lower the bar to fill a role. If too few candidates qualify for what a process requires, report the shortfall and stop.
 - Required: the thresholds are screening criteria, not a guarantee of review quality.
