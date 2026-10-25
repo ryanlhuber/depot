@@ -40,3 +40,4 @@ Results files:
 - [2026-10-24 triggering table](2026-10-24-triggering-table.md) (all 59 skills, before and after shortening descriptions)
 - [2026-10-25 merge consolidation](2026-10-25-merge-consolidation.md) (18 triggering rows near the merged skills)
 - [2026-10-25 conventions setup](2026-10-25-conventions-setup.md) (target branch and runtime cases)
+- [2026-10-25 workflow cases](2026-10-25-workflow-cases.md) (26 cases across all 8 workflows: 24 pass, 2 partial)
