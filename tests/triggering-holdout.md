@@ -2,7 +2,7 @@
 
 70 requests written once, before any run, and not edited afterward: one natural request for each of the 58 skills (phrased differently from [the triggering table](triggering-table.md)) and 12 near misses. The skill descriptions were not changed in response to this set. If a later run shows a miss here, change the description or note the miss, but do not change a request or its expected answer. Write a new holdout set for the next round instead.
 
-Run: 2026-10-25, one fresh Claude Haiku run that saw only the 58 names with their descriptions and the shuffled requests. Same vendor family as the author, one run, scored by the author. See [the result](results/2026-10-25-holdout.md).
+Run 1: 2026-10-25, one fresh Claude Haiku run that saw only the 58 names with their descriptions and the shuffled requests. Same vendor family as the author, one run, scored by the author. See [the result](results/2026-10-25-holdout.md). Run 2: the same prompt in a fresh ChatGPT chat, see [that result](results/2026-10-25-holdout-chatgpt.md).
 
 | # | Request | Expected | Chosen | Match |
 | --- | --- | --- | --- | --- |

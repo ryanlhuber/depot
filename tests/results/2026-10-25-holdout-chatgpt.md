@@ -1,0 +1,76 @@
+# Triggering holdout, runs from five other model families, 2026-10-25
+
+Model: ChatGPT, a different vendor family from the author and from the first holdout run. The owner pasted the same prompt into a fresh chat, reported as having browsing off: the 58 skill names with descriptions and the 70 shuffled requests from [the holdout set](../triggering-holdout.md), unchanged. One run. The model identity and version were not recorded, and the owner relayed the answers by hand. Scored by the author against the expected answers written before any run. Answers: [chatgpt-answers.txt](2026-10-25-holdout/chatgpt-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 67 | 58 of 58 | 9 of 12 |
+
+Compared with the [first run](2026-10-25-holdout.md) (68 of 70, Claude Haiku):
+
+- Request 17 (brand colors from scratch): ChatGPT chose the expected `design-token-and-system-definition`; the first run chose none.
+- Requests 8 and 14, both near misses: ChatGPT chose `refine-issue` where the expected answer was `feature-build`.
+  - 8, "Change how discounts are calculated so loyalty members get 5% extra," and 14, "Add a dark mode toggle to settings," are plain requests with no approved specification. `feature-build` says it builds one approved specification and is not for unclear requirements, so `refine-issue` is a defensible, arguably better, choice. The expected answers stay as written; this points to a weak expectation in two requests, not a description fault.
+  - Request 8 was meant as a near miss for `refactor` and 14 as a near miss for `bug-fix`, but neither request says a spec exists.
+- Request 43 ("Decide for me which features ship this quarter"): both runs chose `backlog-prioritization`. Two families agreeing suggests the description invites it. The skill stops short of the decision, so the useful test is whether its answer leaves the decision to the owner; that is a behavior case to add, not a description change.
+
+No description was changed because of either run. All three misses are near misses; every natural request matched in both runs.
+
+Limits: one run per family, the author's requests and expectations, and no record of which ChatGPT model answered. This is the first run from outside the Claude family, which is the independence the earlier runs lacked, but it is still 70 requests and says nothing about workflow behavior or harness support.
+
+## DeepSeek run
+
+The same prompt, pasted by the owner into a fresh DeepSeek chat in the mobile app, with web search turned on. Because search was on, the model could have read the expected answers published in this repository, so this score is not clean. The model name and version were not recorded; the owner relayed the numbered answers by hand. Scored the same way. Answers: [deepseek-answers.txt](2026-10-25-holdout/deepseek-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 69 | 58 of 58 | 11 of 12 |
+
+The only miss was request 43 ("Decide for me which features ship this quarter"), where it chose `backlog-prioritization` like the other two runs. On requests 8 and 14 it chose the expected `feature-build`, where ChatGPT chose `refine-issue`.
+
+## Gemini run
+
+The same prompt, pasted by the owner into a fresh Gemini chat. The model name and version were not recorded; the owner relayed the numbered answers by hand. Answers: [gemini-answers.txt](2026-10-25-holdout/gemini-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 67 | 58 of 58 | 9 of 12 |
+
+Misses: requests 8 and 14, where it chose none (those requests have no approved specification, so declining `feature-build` is defensible), and request 17, where it chose none. It was the only run to answer none for request 43 ("Decide for me which features ship this quarter"), the expected answer.
+
+## Muse Spark run
+
+The same prompt, pasted by the owner into a fresh Meta Muse Spark chat. The model version was not recorded beyond the name; the owner relayed the numbered answers by hand. Answers: [muse-spark-answers.txt](2026-10-25-holdout/muse-spark-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 67 | 58 of 58 | 9 of 12 |
+
+Misses: requests 8 and 14 (none, where `feature-build` was expected; neither request has an approved specification) and request 43 (`backlog-prioritization`, where none was expected). Its answers matched Gemini's except on requests 17 and 43.
+
+## Grok run
+
+The same prompt, pasted by the owner into a fresh Grok chat. The model version was not recorded, and it was not recorded whether web search was off. Answers: [grok-answers.txt](2026-10-25-holdout/grok-answers.txt).
+
+| Correct of 70 | Natural requests (58) | Near misses (12) |
+| --- | --- | --- |
+| 70 | 58 of 58 | 12 of 12 |
+
+Treat this score with caution. It is the only perfect score, and it agrees with every expected answer on the debatable requests (8, 14, 17 and 43) where the other four families each disagreed at least once. The expected answers are published in this repository ([the holdout set](../triggering-holdout.md) lists them), so a model with web access could have read them. It cannot be counted as clean until the owner confirms that search was off. It is included in the table but not in the summary below.
+
+## Across the runs
+
+| Run | Correct of 70 | Natural (58) | Near misses (12) |
+| --- | --- | --- | --- |
+| Claude Haiku | 68 | 58 | 10 |
+| ChatGPT (browsing reported off) | 67 | 58 | 9 |
+| DeepSeek (search on) | 69 | 58 | 11 |
+| Gemini (search unknown) | 67 | 58 | 9 |
+| Muse Spark (search unknown) | 67 | 58 | 9 |
+| Grok (search unknown) | 70 | 58 | 12 |
+
+All five matched every natural request. Four of five chose `backlog-prioritization` for request 43, so that case should be tested for behavior (does its answer leave the decision to the owner) rather than treated as a description problem. The runs disagree only on requests 8, 14, 17 and 43, all near misses. The runs are single, unrecorded versions, scored by the author on the author's requests, so the differences between them are within noise.
+
+## How much weight to put on these runs
+
+The owner used each vendor's mobile app and did not control the search setting, except that DeepSeek's search was on. Only the first run (Claude Haiku, no tools, given only the prompt) and the ChatGPT run (browsing reported off) are controlled. For the others, the web search setting is unknown or on, and the expected answers are public in this repository, so a model with search could have read them. The scores of 67 to 69, with different misses in each run, look like unaided answers rather than lookups, and the natural-request result (58 of 58 in every run) is the same in all of them. But that is an inference, not something these runs verify. A clean cross-family run needs the prompt run through an API or a chat with search disabled, and the expected answers kept out of the public repository until after scoring.
