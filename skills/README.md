@@ -28,6 +28,10 @@ General skills for working well with AI agents in any domain.
 
 - [Repo Conventions Setup](core/repo-conventions-setup/SKILL.md): records where work items live, how documents are laid out, which checks to run, and what needs approval, in the repository's agent instructions file.
 
+### Simplifying
+
+- [Simplification Review](core/simplification-review/SKILL.md): finds the smallest version of a backlog, plan, design, or implementation that still delivers its outcome, with what to keep, remove, or defer, what each costs, and protected-area cuts flagged as owner decisions.
+
 ### Routing
 
 - [Kit Router](core/kit-router/SKILL.md): recommends which skill, agent, or workflow fits a described situation, and which models at what effort level to run it with. It recommends only and never runs the work.
@@ -54,7 +58,6 @@ Turning a goal into a plan, before a change exists.
 ### Prioritization
 
 - [Backlog Prioritization](plan/backlog-prioritization/SKILL.md): ranks items into Now, Next, Later, and Not now tiers with reasoning, dependency overrides, and close calls, stopping short of the decision.
-- [Scope Cutting](plan/scope-cutting/SKILL.md): proposes the smallest set that still delivers an outcome, with what each deferral costs and a revisit trigger, and flags protected-area cuts as owner decisions.
 
 ### Upkeep
 
@@ -147,7 +150,6 @@ The process around a software change, from approved specification to verified me
 - [Adversarial Code Review](dev/adversarial-code-review/SKILL.md): tries to disprove a revision's correctness, in isolation from other reviews, and records the attacks attempted.
 - [Review Reconciliation](dev/review-reconciliation/SKILL.md): merges independent reports into one finding list with a blocking set and chooses the re-review a repair needs.
 - [Regression Review](dev/regression-review/SKILL.md): traces a change to the flows and contracts it could break and compares existing tests to those risks.
-- [Simplification Review](dev/simplification-review/SKILL.md): finds what an implementation or design can drop, merge, or defer while still meeting its goal.
 
 ### Release
 

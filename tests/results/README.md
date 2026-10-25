@@ -38,3 +38,4 @@ Results files:
 - [2026-10-24 install check](2026-10-24-install-check.md) (owner-reported install, not a model run)
 - [2026-10-24 workflows run](2026-10-24-workflows-run.md)
 - [2026-10-24 triggering table](2026-10-24-triggering-table.md) (all 59 skills, before and after shortening descriptions)
+- [2026-10-25 merge consolidation](2026-10-25-merge-consolidation.md) (18 triggering rows near the merged skills)

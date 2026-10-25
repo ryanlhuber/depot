@@ -2,7 +2,17 @@
 
 User-visible changes to depot: skills, agents, workflows, install steps, and the plugin. Each release matches `version` in [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json), which Claude Code reads to decide whether an installed plugin has an update. Bump it, and add an entry here, in any change that alters what a user installs or what a skill, agent, or workflow does. Documentation-only and test-only changes do not need a bump.
 
-The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior.
+The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
+
+## 0.3.0
+
+Fewer artifacts, same coverage: 59 skills, 5 agents, and 10 workflows became 58 skills, 5 agents, and 8 workflows. Names below were removed or renamed, so update any saved references.
+
+- Merged skill `scope-cutting` into `simplification-review`, which now covers shrinking a backlog or plan as well as trimming an overbuilt design or implementation, with keep, remove, and defer lists, costs, revisit conditions, and owner flags for protected areas. It moved from the dev bucket to core, and its template is now `simplification-proposal.md`.
+- Merged workflow `refine-to-merge` and workflow `bug-fix` into `fix-or-build-to-merge`: one path from work item to human merge for a feature or a defect. Defects keep their expected-behavior step, regression review, and before-and-after proof. The `bug-fix` skill is unchanged. `feature-delivery` now runs the merged workflow.
+- Merged workflow `backlog-triage` into `roadmap-planning`: it now cleans and re-ranks a backlog before writing the roadmap, and each earlier step is skipped when its inputs are supplied.
+- `review-reconciliation` now owns revision binding and re-review tiers; `merge-readiness-check` verifies the record instead of restating the rules.
+- The triggering table has 116 rows (58 skills); row numbers changed.
 
 ## 0.2.0
 

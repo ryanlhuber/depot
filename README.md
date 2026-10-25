@@ -1,6 +1,6 @@
 # Depot
 
-One library of small, composable agent skills for taking work from an idea to a verified change: general agent practice, planning, interface design, interface implementation, and software delivery. It holds 59 skills, 5 agents, and 10 workflows. Each skill is a folder with a `SKILL.md` in the open [Agent Skills format](https://agentskills.io/specification). Everything is Markdown you can read and use directly, with no build step. The skills are for people working with an AI assistant and for AI agents doing the work.
+One library of small, composable agent skills for taking work from an idea to a verified change: general agent practice, planning, interface design, interface implementation, and software delivery. It holds 58 skills, 5 agents, and 8 workflows. Each skill is a folder with a `SKILL.md` in the open [Agent Skills format](https://agentskills.io/specification). Everything is Markdown you can read and use directly, with no build step. The skills are for people working with an AI assistant and for AI agents doing the work.
 
 A project is a project. Nothing here switches modes between a weekend prototype and a long-lived product; each skill scales its rigor to the risk and size of the change in front of it, so a small project that grows needs no rework.
 
@@ -67,7 +67,7 @@ Skills live in five buckets. The [skills index](skills/README.md) has one-line d
 
 ### Core
 
-General skills for working well with AI agents in any domain: authoring skills, interviewing for decisions, handing work between sessions, recording a repository's conventions, qualifying reviewers, and choosing where to start.
+General skills for working well with AI agents in any domain: authoring skills, interviewing for decisions, handing work between sessions, recording a repository's conventions, simplifying scope, qualifying reviewers, and choosing where to start.
 
 | Area | Skills |
 | --- | --- |
@@ -75,6 +75,7 @@ General skills for working well with AI agents in any domain: authoring skills, 
 | Decisions | [decision-interview](skills/core/decision-interview/SKILL.md) |
 | Continuity | [session-handoff](skills/core/session-handoff/SKILL.md) |
 | Setup | [repo-conventions-setup](skills/core/repo-conventions-setup/SKILL.md) |
+| Simplifying | [simplification-review](skills/core/simplification-review/SKILL.md) |
 | Routing | [kit-router](skills/core/kit-router/SKILL.md) |
 | Tuning | [reviewer-qualification](skills/core/reviewer-qualification/SKILL.md) |
 
@@ -86,7 +87,7 @@ Turning a goal into a plan, before a change exists: framing the problem, slicing
 | --- | --- |
 | Framing | • [problem-framing](skills/plan/problem-framing/SKILL.md)<br>• [assumption-mapping](skills/plan/assumption-mapping/SKILL.md) |
 | Structure | • [outcome-slicing](skills/plan/outcome-slicing/SKILL.md)<br>• [issue-breakdown](skills/plan/issue-breakdown/SKILL.md)<br>• [dependency-mapping](skills/plan/dependency-mapping/SKILL.md) |
-| Prioritization | • [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md)<br>• [scope-cutting](skills/plan/scope-cutting/SKILL.md) |
+| Prioritization | [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md) |
 | Upkeep | • [backlog-health-check](skills/plan/backlog-health-check/SKILL.md)<br>• [roadmap-writing](skills/plan/roadmap-writing/SKILL.md)<br>• [status-reporting](skills/plan/status-reporting/SKILL.md) |
 
 ### Design
@@ -121,7 +122,7 @@ The process around a software change, from approved specification through buildi
 | --- | --- |
 | Specification | [refine-issue](skills/dev/refine-issue/SKILL.md) |
 | Build | • [feature-build](skills/dev/feature-build/SKILL.md)<br>• [bug-fix](skills/dev/bug-fix/SKILL.md)<br>• [refactor](skills/dev/refactor/SKILL.md)<br>• [migration](skills/dev/migration/SKILL.md) |
-| Review | • [independent-code-review](skills/dev/independent-code-review/SKILL.md)<br>• [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md)<br>• [review-reconciliation](skills/dev/review-reconciliation/SKILL.md)<br>• [regression-review](skills/dev/regression-review/SKILL.md)<br>• [simplification-review](skills/dev/simplification-review/SKILL.md) |
+| Review | • [independent-code-review](skills/dev/independent-code-review/SKILL.md)<br>• [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md)<br>• [review-reconciliation](skills/dev/review-reconciliation/SKILL.md)<br>• [regression-review](skills/dev/regression-review/SKILL.md) |
 | Release | • [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md)<br>• [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |
 | Audit | • [security-audit](skills/dev/security-audit/SKILL.md)<br>• [architecture-review](skills/dev/architecture-review/SKILL.md)<br>• [dependency-audit](skills/dev/dependency-audit/SKILL.md)<br>• [technical-debt-audit](skills/dev/technical-debt-audit/SKILL.md) |
 | Documentation | [documentation-pass](skills/dev/documentation-pass/SKILL.md) |
@@ -145,14 +146,12 @@ The [agents index](agents/README.md) explains the file format. Agents are instal
 A workflow assigns skills and agents to ordered stages with handoffs, validation, and stopping rules. Workflows are optional; any skill works on its own. See the [workflows index](workflows/README.md).
 
 - [Goal to Backlog](workflows/goal-to-backlog.md): takes a goal from framing through epics, draft work items, dependency order, and a ranked backlog, ready to hand to refinement.
-- [Backlog Triage](workflows/backlog-triage.md): a recurring pass over an existing backlog: health check, re-ranking, scope cuts, and a status report.
 - [POC Scoping](workflows/poc-scoping.md): frames a question worth testing and cuts the work to the smallest slice that can answer it.
-- [Roadmap Planning](workflows/roadmap-planning.md): turns a ranked backlog into a now/next/later roadmap with confidence stated.
+- [Roadmap Planning](workflows/roadmap-planning.md): cleans and re-ranks an existing backlog, then turns it into a now/next/later roadmap with confidence stated, plus an optional status report.
 - [Discovery to Definition](workflows/discovery-to-definition.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](workflows/design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
-- [Refine to Merge](workflows/refine-to-merge.md): takes one work item from an approved specification through build, two independent reviews, bounded repairs, and a verified human merge.
-- [Bug Fix](workflows/bug-fix.md): takes a reported defect through expected behavior, a proven minimal repair, a regression review, and the Refine to Merge review and merge stages.
-- [Feature Delivery](workflows/feature-delivery.md): wraps Refine to Merge with regression review, documentation, release-readiness, and a human release decision.
+- [Fix or Build to Merge](workflows/fix-or-build-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, two independent reviews, bounded repairs, and a verified human merge.
+- [Feature Delivery](workflows/feature-delivery.md): wraps Fix or Build to Merge with regression review, documentation, release-readiness, and a human release decision.
 - [Spec to UI](workflows/spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.
 
 ## Start with one skill

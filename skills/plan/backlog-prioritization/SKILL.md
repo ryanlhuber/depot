@@ -1,6 +1,6 @@
 ---
 name: backlog-prioritization
-description: "Ranks items into Now, Next, Later, and Not now using stated criteria, dependencies, and relative effort, with reasons and close calls. Use when choosing what to build next. Not for time estimates or `scope-cutting`."
+description: "Ranks items into Now, Next, Later, and Not now using stated criteria, dependencies, and relative effort, with reasons and close calls. Use when choosing what to build next. Not for time estimates or `simplification-review`."
 ---
 
 # Backlog Prioritization
@@ -10,7 +10,7 @@ Produce a ranked, explained order for candidate items, so that the person who ow
 
 ## When to use
 - Use when: items must be ordered for what to build next, or an existing order needs revisiting after something changed.
-- Do not use when: the question is what to remove from a single outcome (use `scope-cutting`), or effort must be estimated in time.
+- Do not use when: the question is what to remove from a single outcome (use `simplification-review`), or effort must be estimated in time.
 
 ## Inputs
 - Required: the items, each with an outcome, and the criteria that matter now (for example user value, risk reduction, cost of delay, strategic fit).

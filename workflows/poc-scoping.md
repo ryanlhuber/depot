@@ -21,12 +21,12 @@ Define a small proof of concept that can settle one question, with the smallest 
    - Requires: the problem frame.
    - Produces: a register with the assumptions the proof of concept must test, ordered by risk.
 3. **Cut to the smallest slice**
-   - Assignment: [Scope Cutting](../skills/plan/scope-cutting/SKILL.md).
+   - Assignment: [Simplification Review](../skills/core/simplification-review/SKILL.md).
    - Requires: the frame, the register, and the limit.
-   - Produces: a cut proposal retaining only what is needed to test the riskiest assumptions, with deferred work and revisit triggers.
+   - Produces: a simplification proposal retaining only what is needed to test the riskiest assumptions, with deferred work and revisit triggers.
 4. **Break down and set the stop rule**
    - Assignment: the Delivery Planner, applying [Issue Breakdown](../skills/plan/issue-breakdown/SKILL.md) to the retained slice.
-   - Requires: the cut proposal and the limit.
+   - Requires: the simplification proposal and the limit.
    - Produces: a small item set and a stop rule: the limit, and what result or lack of result ends the proof of concept.
 
 ## Validation
@@ -50,7 +50,7 @@ Define a small proof of concept that can settle one question, with the smallest 
 
 ## Final output
 
-Return the problem frame, the register of assumptions to test, the cut proposal, the item set, and the stop rule, with the owner decisions and anything deferred and why.
+Return the problem frame, the register of assumptions to test, the simplification proposal, the item set, and the stop rule, with the owner decisions and anything deferred and why.
 
 ## Completion criteria
 

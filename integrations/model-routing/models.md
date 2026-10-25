@@ -12,7 +12,7 @@ Each role below is its own table. Models are ordered best first for that job, so
 
 1. Start from the role the step needs.
 2. Take the first model in that role's table that you can use on your current plans.
-3. For independent reviews (for example in `refine-to-merge`), builder, first reviewer, and adversarial reviewer must come from three different families. Skip any model whose family is already used in the set, and take the next row. Versions of one family do not count.
+3. For independent reviews (for example in `fix-or-build-to-merge`), builder, first reviewer, and adversarial reviewer must come from three different families. Skip any model whose family is already used in the set, and take the next row. Versions of one family do not count.
 4. If you cannot reach three families, say so rather than substituting a second model from one family.
 5. Keep the strongest model for decisions and reviews, and run scoped, well-specified build steps on a cheaper one.
 6. To protect usage limits, spend `high` effort only on review and decision steps; lower the effort of the build step before lowering the review's.

@@ -1,6 +1,6 @@
 # Triggering table
 
-One request that should select each skill, and one near miss that should select another skill or none, for all 59 skills (118 requests). Run it the way the [triggering cases](behavioral-cases.md#triggering) are run: give a fresh runner only the skill names and descriptions plus the requests, and ask which single skill each request selects, or none. Score a row as a pass when the answer equals the expected value. Record each run, with the model, the date, and the descriptions used, in [`results/`](results/README.md).
+One request that should select each skill, and one near miss that should select another skill or none, for all 58 skills (116 requests). Run it the way the [triggering cases](behavioral-cases.md#triggering) are run: give a fresh runner only the skill names and descriptions plus the requests, and ask which single skill each request selects, or none. Score a row as a pass when the answer equals the expected value. Record each run, with the model, the date, and the descriptions used, in [`results/`](results/README.md). `simplification-review` has two should-trigger requests (shrinking scope, and trimming something overbuilt) because its description covers both jobs; row 12 tests it as the near miss from `backlog-prioritization`. Row numbers changed in 0.3.0 when `scope-cutting` was merged into it, so the run records in `results/` use the numbering of the table as it was run.
 
 The requests were drafted by the same model family that wrote the descriptions, so a high score here is weaker evidence than a score from an unrelated family.
 
@@ -17,7 +17,7 @@ The requests were drafted by the same model family that wrote the descriptions, 
 | 9 | `backlog-health-check` | Our tracker has about 300 tickets from the last two years and I think half are dead or repeats. Can you go through them and tell me what needs attention, without touching anything? | `backlog-health-check` |
 | 10 | `backlog-health-check` | Here are 40 tickets for our garden-planner app. Put them in the order we should tackle them this quarter. | `backlog-prioritization` |
 | 11 | `backlog-prioritization` | We have twelve candidate features for the kayak-rental site and room for maybe three this month. Help me decide what goes first and explain why. | `backlog-prioritization` |
-| 12 | `backlog-prioritization` | We have twelve kayak-rental features and only two weeks left. Which ones can we drop and still launch something that works? | `scope-cutting` |
+| 12 | `backlog-prioritization` | We have twelve kayak-rental features and only two weeks left. Which ones can we drop and still launch something that works? | `simplification-review` |
 | 13 | `bug-fix` | Customers in the Pacific time zone see their appointment shown one day early. Here are the repro steps and a failing test. Please track down why and correct it. | `bug-fix` |
 | 14 | `bug-fix` | Add a way for customers to reschedule an appointment from the confirmation email. The ticket has acceptance criteria and is approved. | `feature-build` |
 | 15 | `competitive-pattern-analysis` | Before we design our seat picker, I want to see how five different ticketing apps let people choose seats and what each one does well or badly. | `competitive-pattern-analysis` |
@@ -100,27 +100,25 @@ The requests were drafted by the same model family that wrote the descriptions, 
 | 92 | `reviewer-qualification` | Here's a pull request for the login form. Please review it against the ticket and tell me if it passes. | `independent-code-review` |
 | 93 | `roadmap-writing` | Our investors and partner teams keep asking where the pet-adoption platform is heading. I need a single page that shows direction without a pile of tickets or fake dates. | `roadmap-writing` |
 | 94 | `roadmap-writing` | Our pet-adoption platform team needs a Gantt-style delivery schedule with a firm launch date for each feature that we can promise to the shelters. | none |
-| 95 | `scope-cutting` | The conference-badge printing project is overrunning, and the venue opens in three weeks. What's the least we can build and still check people in? | `scope-cutting` |
-| 96 | `scope-cutting` | I need a list of everything the conference-badge project could still do, in the order of importance to the organizers. | `backlog-prioritization` |
-| 97 | `security-audit` | Before launch, I'd like someone to look at our API's code and config for weaknesses, like missing access checks or leaked secrets, and show how an attacker would reach them. | `security-audit` |
-| 98 | `security-audit` | Which of our npm packages are out of date or carry known CVEs? | `dependency-audit` |
-| 99 | `semantic-html-structure` | Our settings page is all divs with click handlers. Can you rewrite the markup with proper headings, regions, real buttons, and labeled form fields? | `semantic-html-structure` |
-| 100 | `semantic-html-structure` | We shipped our settings page last month. Can you check it against WCAG and give me a prioritized list of problems? | `accessibility-review` |
-| 101 | `session-handoff` | I'm almost out of context and need to stop for the night. Write up where things stand so a brand new chat can pick up tomorrow. | `session-handoff` |
-| 102 | `session-handoff` | Write a progress update for our executives on where the project stands against plan. | `status-reporting` |
-| 103 | `simplification-review` | Our import feature has a plugin layer, three config formats, and a queue, but it only reads one CSV. What could we drop and still do the job? | `simplification-review` |
-| 104 | `simplification-review` | We have forty tickets for the import feature and only two weeks. Which tickets should we cut? | `scope-cutting` |
-| 105 | `skill-authoring` | I do the same release-notes routine every week. Can you turn it into a reusable skill that other AI assistants can follow, and fix why it never triggers? | `skill-authoring` |
-| 106 | `skill-authoring` | I want a new reviewer agent with its own role and responsibilities for our security checks. | none |
-| 107 | `status-reporting` | The board wants to know how the warehouse-scanning rollout is going. Our tracker says most things are done, but I don't trust it. Can you tell me where things really stand? | `status-reporting` |
-| 108 | `status-reporting` | Based on how the warehouse-scanning rollout has gone so far, tell me the exact date we'll finish. | none |
-| 109 | `technical-debt-audit` | Every change in this codebase takes longer than the last. Before the big rewrite quarter, list what is slowing us down, what it costs, and what to clean up first. | `technical-debt-audit` |
-| 110 | `technical-debt-audit` | Which of the tickets in our backlog are stale, duplicated, or missing a done signal? | `backlog-health-check` |
-| 111 | `usability-test-planning` | I want to watch six new users try to book a hotel on our prototype. Plan who to recruit, what tasks to give, and how we'll judge success. | `usability-test-planning` |
-| 112 | `usability-test-planning` | I want to know whether 10,000 shoppers would pay more for next-day delivery. | none |
-| 113 | `user-flow-mapping` | Walk me through every step and branch a person takes in our app to return an item, and point out dead ends or places they'd get stuck. | `user-flow-mapping` |
-| 114 | `user-flow-mapping` | Map how a shopper feels from seeing an ad through delivery, return, and a follow-up support call. | `journey-mapping` |
-| 115 | `ux-microcopy-writing` | The error under the password field just says "Invalid input". Can you rewrite that, plus the button and the empty-inbox message, so they sound friendly and clear? | `ux-microcopy-writing` |
-| 116 | `ux-microcopy-writing` | Write the 800-word launch announcement blog post for our new inbox feature. | none |
-| 117 | `visual-design-critique` | Here's my landing page mockup. Does the hierarchy work, is the spacing consistent, and does the type feel right? Please separate real problems from just taste. | `visual-design-critique` |
-| 118 | `visual-design-critique` | Does my landing page mockup meet WCAG contrast and keyboard requirements? | `accessibility-review` |
+| 95 | `simplification-review` | The conference-badge printing project is overrunning, and the venue opens in three weeks. What's the least we can build and still check people in? | `simplification-review` |
+| 96 | `security-audit` | Before launch, I'd like someone to look at our API's code and config for weaknesses, like missing access checks or leaked secrets, and show how an attacker would reach them. | `security-audit` |
+| 97 | `security-audit` | Which of our npm packages are out of date or carry known CVEs? | `dependency-audit` |
+| 98 | `semantic-html-structure` | Our settings page is all divs with click handlers. Can you rewrite the markup with proper headings, regions, real buttons, and labeled form fields? | `semantic-html-structure` |
+| 99 | `semantic-html-structure` | We shipped our settings page last month. Can you check it against WCAG and give me a prioritized list of problems? | `accessibility-review` |
+| 100 | `session-handoff` | I'm almost out of context and need to stop for the night. Write up where things stand so a brand new chat can pick up tomorrow. | `session-handoff` |
+| 101 | `session-handoff` | Write a progress update for our executives on where the project stands against plan. | `status-reporting` |
+| 102 | `simplification-review` | Our import feature has a plugin layer, three config formats, and a queue, but it only reads one CSV. What could we drop and still do the job? | `simplification-review` |
+| 103 | `skill-authoring` | I do the same release-notes routine every week. Can you turn it into a reusable skill that other AI assistants can follow, and fix why it never triggers? | `skill-authoring` |
+| 104 | `skill-authoring` | I want a new reviewer agent with its own role and responsibilities for our security checks. | none |
+| 105 | `status-reporting` | The board wants to know how the warehouse-scanning rollout is going. Our tracker says most things are done, but I don't trust it. Can you tell me where things really stand? | `status-reporting` |
+| 106 | `status-reporting` | Based on how the warehouse-scanning rollout has gone so far, tell me the exact date we'll finish. | none |
+| 107 | `technical-debt-audit` | Every change in this codebase takes longer than the last. Before the big rewrite quarter, list what is slowing us down, what it costs, and what to clean up first. | `technical-debt-audit` |
+| 108 | `technical-debt-audit` | Which of the tickets in our backlog are stale, duplicated, or missing a done signal? | `backlog-health-check` |
+| 109 | `usability-test-planning` | I want to watch six new users try to book a hotel on our prototype. Plan who to recruit, what tasks to give, and how we'll judge success. | `usability-test-planning` |
+| 110 | `usability-test-planning` | I want to know whether 10,000 shoppers would pay more for next-day delivery. | none |
+| 111 | `user-flow-mapping` | Walk me through every step and branch a person takes in our app to return an item, and point out dead ends or places they'd get stuck. | `user-flow-mapping` |
+| 112 | `user-flow-mapping` | Map how a shopper feels from seeing an ad through delivery, return, and a follow-up support call. | `journey-mapping` |
+| 113 | `ux-microcopy-writing` | The error under the password field just says "Invalid input". Can you rewrite that, plus the button and the empty-inbox message, so they sound friendly and clear? | `ux-microcopy-writing` |
+| 114 | `ux-microcopy-writing` | Write the 800-word launch announcement blog post for our new inbox feature. | none |
+| 115 | `visual-design-critique` | Here's my landing page mockup. Does the hierarchy work, is the spacing consistent, and does the type feel right? Please separate real problems from just taste. | `visual-design-critique` |
+| 116 | `visual-design-critique` | Does my landing page mockup meet WCAG contrast and keyboard requirements? | `accessibility-review` |

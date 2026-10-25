@@ -31,7 +31,7 @@ Turn separate, independently produced review reports into one finding list the b
 - Required: re-review tiers. Tier A is a diff-only check by the reviewer who raised the finding, allowed only for demonstrably non-behavioral changes such as comments and formatting. Tier B reruns both reviews for behavioral changes: logic, tests, security, accessibility, runtime behavior, and instructions an agent reads. Tier C is for major or uncertain changes: full reviews by both, plus tests.
 - Required: any change to a file an agent reads as instructions (prompts, skill files, agent configurations, review prompts) is at least Tier B, never Tier A.
 - Required: a Tier A check must name the approved revision, the repair revision, and the verified scope. If the scope cannot be established, do a full re-review. When unsure, use the stricter tier.
-- Required: an approval is tied to one revision. A new revision invalidates earlier approvals unless a Tier A check covers it.
+- Required: this skill owns revision binding and the re-review tiers. An approval is tied to one revision, and a new revision invalidates earlier approvals unless a recorded Tier A check covers it. `merge-readiness-check` verifies this record; it does not restate or change it.
 - Required: never drop, merge away, or downgrade a finding to reach a PASS. A concern without evidence stays in remaining uncertainty.
 - Recommended: group findings by cause so one fix can close several.
 

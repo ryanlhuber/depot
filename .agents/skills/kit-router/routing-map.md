@@ -13,6 +13,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A repeated task to make reusable | S `skill-authoring` | S `reviewer-qualification` if it judges others |
 | A new repo that agents will work in | S `repo-conventions-setup` | |
 | A model or reviewer to trust with a review role | S `reviewer-qualification` | |
+| Too much scope for a limit, or something that looks overbuilt | S `simplification-review` | S `backlog-prioritization` |
 
 ## Plan
 
@@ -20,10 +21,9 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | --- | --- | --- |
 | A goal that is not yet precise | S `problem-framing` | S `assumption-mapping` |
 | A frame to turn into a plan | A `delivery-planner` or W `goal-to-backlog` | S `outcome-slicing`, S `issue-breakdown` |
-| An idea to test with the smallest slice of work | W `poc-scoping` | S `scope-cutting` |
+| An idea to test with the smallest slice of work | W `poc-scoping` | S `simplification-review` |
 | Epics or items needing an order | S `dependency-mapping` | S `backlog-prioritization` |
-| A messy or stale backlog | W `backlog-triage` | S `backlog-health-check`, A `backlog-owner` |
-| Too much scope for a limit | S `scope-cutting` | S `backlog-prioritization` |
+| A messy or stale backlog | W `roadmap-planning` | S `backlog-health-check`, A `backlog-owner` |
 | A need to show direction | S `roadmap-writing` | W `roadmap-planning` |
 | A need to report real progress | S `status-reporting` | |
 
@@ -62,20 +62,19 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
-| A request to make buildable | S `refine-issue` | W `refine-to-merge` |
+| A request to make buildable | S `refine-issue` | W `fix-or-build-to-merge` |
 | An approved spec to implement | S `feature-build` | S `regression-review` |
-| A feature to take to release | W `feature-delivery` | W `refine-to-merge` |
+| A feature to take to release | W `feature-delivery` | W `fix-or-build-to-merge` |
 | A reproducible defect | S `bug-fix` | S `regression-review` |
-| A reported defect to fix and merge | W `bug-fix` | W `refine-to-merge` |
+| A reported defect to fix and merge | W `fix-or-build-to-merge` | S `bug-fix` |
 | Working code that is hard to change | S `refactor` | S `technical-debt-audit` |
 | A system that must move to a new state | S `migration` | S `deployment-readiness` |
 | A change to review | S `independent-code-review` | S `adversarial-code-review` |
 | Two or more review reports | S `review-reconciliation` | A `merge-gatekeeper` |
 | A reviewed change about to merge | S `merge-readiness-check` | A `merge-gatekeeper` |
-| One change, spec to merge | W `refine-to-merge` | |
+| One change, spec to merge | W `fix-or-build-to-merge` | |
 | A change that might have broken something | S `regression-review` | S `independent-code-review` |
 | A change ready to go live | S `deployment-readiness` | S `merge-readiness-check` |
-| Something that looks overbuilt | S `simplification-review` | S `scope-cutting` |
 | A security question about an area | S `security-audit` | S `dependency-audit` |
 | Dependencies to check | S `dependency-audit` | S `security-audit` |
 | Slowing delivery with unclear causes | S `technical-debt-audit` | S `architecture-review` |
