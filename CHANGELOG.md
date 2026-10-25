@@ -4,6 +4,10 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.5.0
+
+- `repo-conventions-setup` now also records the target branch, the supported runtime, and the install and build commands, so `fix-or-build-to-merge` can read them at its environment step instead of asking each run. The target branch is never assumed to be the default branch.
+
 ## 0.4.0
 
 - Added a plugin per bucket to the Claude Code marketplace: `depot-core`, `depot-plan`, `depot-design`, `depot-frontend`, and `depot-dev`, plus `depot-agents` for the five agents. Install the buckets you use instead of `depot` to keep fewer skills in every session; the full plugin is unchanged and still adds about 4,400 tokens. `depot-plan` depends on `depot-core`. The validator checks the entries.
