@@ -1,6 +1,6 @@
 # Triggering holdout, runs from five other model families, 2026-10-25
 
-Model: ChatGPT, a different vendor family from the author and from the first holdout run. The owner pasted the same prompt into a fresh chat with browsing off: the 58 skill names with descriptions and the 70 shuffled requests from [the holdout set](../triggering-holdout.md), unchanged. One run. The model identity and version were not recorded, and the owner relayed the answers by hand. Scored by the author against the expected answers written before any run. Answers: [chatgpt-answers.txt](2026-10-25-holdout/chatgpt-answers.txt).
+Model: ChatGPT, a different vendor family from the author and from the first holdout run. The owner pasted the same prompt into a fresh chat, reported as having browsing off: the 58 skill names with descriptions and the 70 shuffled requests from [the holdout set](../triggering-holdout.md), unchanged. One run. The model identity and version were not recorded, and the owner relayed the answers by hand. Scored by the author against the expected answers written before any run. Answers: [chatgpt-answers.txt](2026-10-25-holdout/chatgpt-answers.txt).
 
 | Correct of 70 | Natural requests (58) | Near misses (12) |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ Limits: one run per family, the author's requests and expectations, and no recor
 
 ## DeepSeek run
 
-The same prompt, pasted by the owner into a fresh DeepSeek chat. The model name and version were not recorded; the owner relayed the numbered answers by hand. Scored the same way. Answers: [deepseek-answers.txt](2026-10-25-holdout/deepseek-answers.txt).
+The same prompt, pasted by the owner into a fresh DeepSeek chat in the mobile app, with web search turned on. Because search was on, the model could have read the expected answers published in this repository, so this score is not clean. The model name and version were not recorded; the owner relayed the numbered answers by hand. Scored the same way. Answers: [deepseek-answers.txt](2026-10-25-holdout/deepseek-answers.txt).
 
 | Correct of 70 | Natural requests (58) | Near misses (12) |
 | --- | --- | --- |
@@ -63,10 +63,14 @@ Treat this score with caution. It is the only perfect score, and it agrees with 
 | Run | Correct of 70 | Natural (58) | Near misses (12) |
 | --- | --- | --- | --- |
 | Claude Haiku | 68 | 58 | 10 |
-| ChatGPT | 67 | 58 | 9 |
-| DeepSeek | 69 | 58 | 11 |
-| Gemini | 67 | 58 | 9 |
-| Muse Spark | 67 | 58 | 9 |
-| Grok (search setting unconfirmed) | 70 | 58 | 12 |
+| ChatGPT (browsing reported off) | 67 | 58 | 9 |
+| DeepSeek (search on) | 69 | 58 | 11 |
+| Gemini (search unknown) | 67 | 58 | 9 |
+| Muse Spark (search unknown) | 67 | 58 | 9 |
+| Grok (search unknown) | 70 | 58 | 12 |
 
 All five matched every natural request. Four of five chose `backlog-prioritization` for request 43, so that case should be tested for behavior (does its answer leave the decision to the owner) rather than treated as a description problem. The runs disagree only on requests 8, 14, 17 and 43, all near misses. The runs are single, unrecorded versions, scored by the author on the author's requests, so the differences between them are within noise.
+
+## How much weight to put on these runs
+
+The owner used each vendor's mobile app and did not control the search setting, except that DeepSeek's search was on. Only the first run (Claude Haiku, no tools, given only the prompt) and the ChatGPT run (browsing reported off) are controlled. For the others, the web search setting is unknown or on, and the expected answers are public in this repository, so a model with search could have read them. The scores of 67 to 69, with different misses in each run, look like unaided answers rather than lookups, and the natural-request result (58 of 58 in every run) is the same in all of them. But that is an inference, not something these runs verify. A clean cross-family run needs the prompt run through an API or a chat with search disabled, and the expected answers kept out of the public repository until after scoring.
