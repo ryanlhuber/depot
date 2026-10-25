@@ -45,3 +45,4 @@ Results files:
 - [2026-10-25 holdout](2026-10-25-holdout.md) (70 untouched triggering requests: 68 correct)
 - [2026-10-25 holdout, five other model families](2026-10-25-holdout-chatgpt.md) (same 70 requests; ChatGPT, DeepSeek, Gemini and Muse Spark: 67, 69, 67 and 67 correct; Grok 70 with its search setting unconfirmed; all 58 natural requests in each)
 - [2026-10-25 real run](2026-10-25-real-run.md) (scratch repository, real code and tests, light and standard review on a correct and a flawed fix)
+- [2026-10-25 router UX and UI cases](2026-10-25-router-ux-ui-cases.md) (3 router cases added with the bucket split: 3 pass)
