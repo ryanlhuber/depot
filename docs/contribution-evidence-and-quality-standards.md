@@ -128,6 +128,8 @@ Repository-wide findings keep these fields distinct so downstream critique, revi
 
 Severity, confidence, and evidence strength are independent. A severe potential issue may have low confidence and need validation; a high-confidence observation may have negligible impact. Domain-specific reviews may add fields while preserving these distinctions.
 
+Skills restate this separation in one line instead of linking here, so a skill still works when its folder is copied alone. Keep those lines consistent with this section.
+
 ## Evaluating evidence
 
 Claim type, evidence basis, and confidence are separate dimensions. Do not turn the considerations below into a mechanical hierarchy or universal score. Evaluate material evidence for:

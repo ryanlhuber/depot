@@ -37,7 +37,7 @@ Evaluate an interface against a recognized accessibility standard and return ver
 - Every in-scope element and state is accounted for as pass, fail, not applicable, or unverified.
 - Each finding has a requirement reference, evidence, severity, and remediation.
 - Unverified items state what verification is needed.
-- Finding fields follow the [repository finding structure](../../../docs/contribution-evidence-and-quality-standards.md#review-finding-structure).
+- Observation, classification, impact and severity, evidence, confidence, and recommended action stay separate fields; severity and confidence are independent.
 
 ## Output
 Return the scope and standard, prioritized findings (observation, classification, impact and severity, evidence, confidence, recommended action), unverified items with required verification, and a coverage summary. Use the [finding report](templates/finding-report.md).

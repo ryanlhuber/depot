@@ -42,7 +42,7 @@ Plan a usability test with representative users, covering goals, participants, t
 - Each task has a success definition.
 - Participant criteria match the target users and the questions.
 - Reported findings cite the evidence and the number of participants affected.
-- Findings follow the [repository finding structure](../../../docs/contribution-evidence-and-quality-standards.md#review-finding-structure) where applicable.
+- Where findings are reported, observation, classification, impact and severity, evidence, confidence, and recommended action stay separate fields.
 
 ## Output
 Return a test plan (questions, participants, tasks with success definitions, measures, session guide, logistics) and, after sessions, a results summary with prioritized findings, evidence, confidence, limitations, and recommended next steps. Use the [test plan](templates/test-plan.md).
