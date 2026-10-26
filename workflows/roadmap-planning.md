@@ -25,7 +25,7 @@ Bring a backlog to a state that can be trusted and turn it into a one-page now, 
    - Requires: the cleaned item set.
    - Produces: a dependency map with the build order, external blockers, and no remaining cycle.
 4. **Confirm the ranking is current**
-   - Assignment: the Backlog Owner, applying [Backlog Prioritization](../skills/plan/backlog-prioritization/SKILL.md) when no current ranking exists or the supplied one is stale, and [Simplification Review](../skills/core/simplification-review/SKILL.md) when a limit applies.
+   - Assignment: the Backlog Owner, applying [Backlog Prioritization](../skills/plan/backlog-prioritization/SKILL.md) when no current ranking exists or the supplied one is stale, and [Simplification Review](../skills/plan/simplification-review/SKILL.md) when a limit applies.
    - Requires: the cleaned set, the dependency map, the criteria that matter now, and any limit.
    - Produces: a current priority table and, when a limit applies, a simplification proposal with owner decisions flagged.
 5. **Report status** (optional: when progress evidence exists or a report is wanted)

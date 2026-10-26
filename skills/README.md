@@ -24,14 +24,6 @@ General skills for working well with AI agents in any domain.
 
 - [Session Handoff](core/session-handoff/SKILL.md): condenses current work into a self-contained note so a fresh session, agent, or person can continue without the conversation.
 
-### Setup
-
-- [Repo Conventions Setup](core/repo-conventions-setup/SKILL.md): records where work items live, how documents are laid out, which checks to run, and what needs approval, in the repository's agent instructions file.
-
-### Simplifying
-
-- [Simplification Review](core/simplification-review/SKILL.md): finds the smallest version of a backlog, plan, design, or implementation that still delivers its outcome, with what to keep, remove, or defer, what each costs, and protected-area cuts flagged as owner decisions.
-
 ### Routing
 
 - [Kit Router](core/kit-router/SKILL.md): recommends which skill, agent, or workflow fits a described situation, and which models at what effort level to run it with. It recommends only and never runs the work.
@@ -42,7 +34,7 @@ General skills for working well with AI agents in any domain.
 
 ## Plan
 
-Turning a goal into a plan, before a change exists.
+Turning a goal into a plan before a change exists, through to an approved specification for each item.
 
 ### Framing
 
@@ -59,11 +51,19 @@ Turning a goal into a plan, before a change exists.
 
 - [Backlog Prioritization](plan/backlog-prioritization/SKILL.md): ranks items into Now, Next, Later, and Not now tiers with reasoning, dependency overrides, and close calls, stopping short of the decision.
 
+### Scope
+
+- [Simplification Review](plan/simplification-review/SKILL.md): finds the smallest version of a backlog, plan, design, or implementation that still delivers its outcome, with what to keep, remove, or defer, what each costs, and protected-area cuts flagged as owner decisions.
+
 ### Upkeep
 
 - [Backlog Health Check](plan/backlog-health-check/SKILL.md): finds stale, duplicate, oversized, ill-formed, and misreported items and recommends an action for each without changing anything.
 - [Roadmap Writing](plan/roadmap-writing/SKILL.md): writes a one-page now, next, and later roadmap of outcomes with stated confidence and no unsupported dates.
 - [Status Reporting](plan/status-reporting/SKILL.md): reports progress from evidence rather than item states, separating done, in progress, blocked, and at risk against the baseline.
+
+### Specification
+
+- [Refine Issue](plan/refine-issue/SKILL.md): refines a work item (issue, ticket, task, or plain request) into an explicitly approved, implementation-ready specification, one decision at a time, without starting development. Works with any tracker, a file, or chat alone.
 
 ## UX
 
@@ -115,7 +115,6 @@ Designing the interface and specifying it, ready for front-end handoff.
 ### Communication
 
 - [Design Rationale Writing](ui/design-rationale-writing/SKILL.md)
-- [Portfolio Case Study Writing](ui/portfolio-case-study-writing/SKILL.md)
 
 ## Frontend
 
@@ -146,9 +145,9 @@ Building interfaces on the web platform from design decisions.
 
 The process around a software change, from approved specification to verified merge, plus system audits.
 
-### Specification
+### Setup
 
-- [Refine Issue](dev/refine-issue/SKILL.md): refines a work item (issue, ticket, task, or plain request) into an explicitly approved, implementation-ready specification, one decision at a time, without starting development. Works with any tracker, a file, or chat alone.
+- [Repo Conventions Setup](dev/repo-conventions-setup/SKILL.md): records where work items live, how documents are laid out, which checks to run, and what needs approval, in the repository's agent instructions file.
 
 ### Build
 

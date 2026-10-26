@@ -2,6 +2,8 @@
 
 One request that should select each skill, and one near miss that should select another skill or none, for all 58 skills (116 requests). Run it the way the [triggering cases](behavioral-cases.md#triggering) are run: give a fresh runner only the skill names and descriptions plus the requests, and ask which single skill each request selects, or none. Score a row as a pass when the answer equals the expected value. Record each run, with the model, the date, and the descriptions used, in [`results/`](results/README.md). `simplification-review` has two should-trigger requests (shrinking scope, and trimming something overbuilt) because its description covers both jobs; row 12 tests it as the near miss from `backlog-prioritization`. Row numbers changed in 0.3.0 when `scope-cutting` was merged into it, so the run records in `results/` use the numbering of the table as it was run.
 
+Since 0.8.0, `portfolio-case-study-writing` lives in [kit-work](https://github.com/ryanlhuber/kit-work), not depot. The rows that expect it are left as they were run; a rerun against depot alone should expect none for them.
+
 The requests were drafted by the same model family that wrote the descriptions, so a high score here is weaker evidence than a score from an unrelated family.
 
 | # | Skill under test | Request | Expected |

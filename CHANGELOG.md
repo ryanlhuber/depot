@@ -4,6 +4,16 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.8.0
+
+- Moved three skills to the bucket that matches their work. No skill was renamed and no skill's content changed.
+  - `repo-conventions-setup`: `core` → `dev`. Most of what it records (runtime, install, build and test commands, branch rules) serves the delivery workflows.
+  - `simplification-review`: `core` → `plan`. Its users are the planning workflows and the Backlog Owner agent.
+  - `refine-issue`: `dev` → `plan`. Planning now runs through to an approved specification for each item; `dev` starts from that specification.
+- **Removed** `portfolio-case-study-writing` from depot. It moves to [kit-work](https://github.com/ryanlhuber/kit-work), next to the job-search skills it works with, because a portfolio case study is career writing rather than project work. Install it from kit-work.
+- **Breaking for bucket-plugin installs:** invocations change to `/depot-dev:repo-conventions-setup`, `/depot-plan:simplification-review`, and `/depot-plan:refine-issue`. Fix or Build to Merge starts with `refine-issue`, so the one-developer quick start now installs `depot-plan` as well as `depot-core` and `depot-dev`. The full `depot` plugin and `/depot:<skill>` names are unchanged, apart from the removed skill.
+- `kit-router`'s routing map moves the three rows with their skills and drops the case-study row.
+
 ## 0.7.0
 
 - Split the `design` bucket into two buckets with clearer names. `ux` holds the 12 skills that inform the interface: research, requirements, journeys, flows, information architecture, heuristic and accessibility evaluation, and microcopy. `ui` holds the 8 skills that design and specify the interface up to front-end handoff: design tokens and system rules, DESIGN.md, state and responsive specifications, visual critique, design-to-implementation QA, design rationale, and portfolio case studies. No skill was renamed and no skill's content changed.

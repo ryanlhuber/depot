@@ -11,9 +11,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A vague plan with hidden branches | S `decision-interview` | W `goal-to-backlog` once decided |
 | A long session to pause or pass on | S `session-handoff` | |
 | A repeated task to make reusable | S `skill-authoring` | S `reviewer-qualification` if it judges others |
-| A new repo that agents will work in | S `repo-conventions-setup` | |
 | A model or reviewer to trust with a review role | S `reviewer-qualification` | |
-| Too much scope for a limit, or something that looks overbuilt | S `simplification-review` | S `backlog-prioritization` |
 
 ## Plan
 
@@ -26,6 +24,8 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A messy or stale backlog | W `roadmap-planning` | S `backlog-health-check`, A `backlog-owner` |
 | A need to show direction | S `roadmap-writing` | W `roadmap-planning` |
 | A need to report real progress | S `status-reporting` | |
+| Too much scope for a limit, or something that looks overbuilt | S `simplification-review` | S `backlog-prioritization` |
+| A request to make buildable | S `refine-issue` | W `fix-or-build-to-merge` |
 
 ## UX (informs the interface)
 
@@ -50,7 +50,6 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | Visual foundations to define or record | A `design-system-designer` | S `design-token-and-system-definition`, S `design-md-writing` |
 | A decision others must approve | S `design-rationale-writing` | |
 | A build to check against its design | S `design-to-implementation-qa` | W `design-to-validation` |
-| A project to write up for a portfolio | S `portfolio-case-study-writing` | |
 
 ## Frontend (build)
 
@@ -68,7 +67,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
-| A request to make buildable | S `refine-issue` | W `fix-or-build-to-merge` |
+| A new repo that agents will work in | S `repo-conventions-setup` | |
 | An approved spec to implement | S `feature-build` | S `regression-review` |
 | A feature to take to release | W `feature-delivery` | W `fix-or-build-to-merge` |
 | A reproducible defect | S `bug-fix` | S `regression-review` |
