@@ -14,7 +14,7 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
 ## Stages
 
 1. **Define what the change must do**
-   - Assignment: [Refine Issue](../skills/dev/refine-issue/SKILL.md). For a defect, only when the correct behavior is not already stated or is disputed; skip when the report states the expected behavior and the requester confirms it.
+   - Assignment: [Refine Issue](../skills/plan/refine-issue/SKILL.md). For a defect, only when the correct behavior is not already stated or is disputed; skip when the report states the expected behavior and the requester confirms it.
    - Requires: the work item and the project's conventions.
    - Produces: a specification (for a defect, the expected behavior and acceptance criteria) that the requester explicitly approved, the Ready check results, and recommended metadata including risk, which sets the review path.
 2. **Confirm environment** (performed by the requester or builder, outside this workflow)

@@ -21,7 +21,7 @@ Define a small proof of concept that can settle one question, with the smallest 
    - Requires: the problem frame.
    - Produces: a register with the assumptions the proof of concept must test, ordered by risk.
 3. **Cut to the smallest slice**
-   - Assignment: [Simplification Review](../skills/core/simplification-review/SKILL.md).
+   - Assignment: [Simplification Review](../skills/plan/simplification-review/SKILL.md).
    - Requires: the frame, the register, and the limit.
    - Produces: a simplification proposal retaining only what is needed to test the riskiest assumptions, with deferred work and revisit triggers.
 4. **Break down and set the stop rule**

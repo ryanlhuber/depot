@@ -16,22 +16,23 @@ claude plugin marketplace add ryanlhuber/depot
 claude plugin install depot@depot
 ```
 
-Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot`.
+Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot` before 0.8.0 moved one skill out (now about 4,300, estimated).
 
 **Only what you need.** Each bucket is also its own plugin, so a front-end developer need not carry the planning, UX, and UI skills. Install the buckets you use instead of `depot`, never both:
 
 | Plugin | Skills | Always-on tokens (approx.) |
 | --- | --- | --- |
-| `depot-core` | 7 general skills, including `kit-router` and `simplification-review` | 555 |
-| `depot-plan` | 9 planning skills (needs `depot-core`, installed with it) | 750 |
+| `depot-core` | 5 general skills, including `kit-router` and `decision-interview` | 395 |
+| `depot-plan` | 11 planning skills, including `refine-issue` (needs `depot-core`, installed with it) | 905 |
 | `depot-ux` | 12 UX skills | 935 |
-| `depot-ui` | 8 UI skills | 605 |
+| `depot-ui` | 7 UI skills | 525 |
 | `depot-frontend` | 6 front-end skills | 490 |
-| `depot-dev` | 16 delivery skills | 1,230 |
+| `depot-dev` | 16 delivery skills, including `repo-conventions-setup` | 1,235 |
 | `depot-agents` | the 5 agents, which apply skills from the buckets above | 0 |
 
 ```sh
 claude plugin install depot-core@depot
+claude plugin install depot-plan@depot
 claude plugin install depot-dev@depot
 claude plugin install depot-agents@depot
 ```
@@ -87,28 +88,28 @@ Skills live in six buckets. The [skills index](skills/README.md) has one-line de
 
 ### Core
 
-General skills for working well with AI agents in any domain: authoring skills, interviewing for decisions, handing work between sessions, recording a repository's conventions, simplifying scope, qualifying reviewers, and choosing where to start.
+General skills for working well with AI agents in any domain: authoring skills, interviewing for decisions, handing work between sessions, qualifying reviewers, and choosing where to start.
 
 | Area | Skills |
 | --- | --- |
 | Authoring | [skill-authoring](skills/core/skill-authoring/SKILL.md) |
 | Decisions | [decision-interview](skills/core/decision-interview/SKILL.md) |
 | Continuity | [session-handoff](skills/core/session-handoff/SKILL.md) |
-| Setup | [repo-conventions-setup](skills/core/repo-conventions-setup/SKILL.md) |
-| Simplifying | [simplification-review](skills/core/simplification-review/SKILL.md) |
 | Routing | [kit-router](skills/core/kit-router/SKILL.md) |
 | Tuning | [reviewer-qualification](skills/core/reviewer-qualification/SKILL.md) |
 
 ### Plan
 
-Turning a goal into a plan, before a change exists: framing the problem, slicing outcomes into draft work items, ordering them, ranking what to build next, and keeping the backlog honest.
+Turning a goal into a plan before a change exists: framing the problem, slicing outcomes into draft work items, ordering them, ranking and trimming what to build next, keeping the backlog honest, and refining each item into an approved specification.
 
 | Stage | Skills |
 | --- | --- |
 | Framing | • [problem-framing](skills/plan/problem-framing/SKILL.md)<br>• [assumption-mapping](skills/plan/assumption-mapping/SKILL.md) |
 | Structure | • [outcome-slicing](skills/plan/outcome-slicing/SKILL.md)<br>• [issue-breakdown](skills/plan/issue-breakdown/SKILL.md)<br>• [dependency-mapping](skills/plan/dependency-mapping/SKILL.md) |
 | Prioritization | [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md) |
+| Scope | [simplification-review](skills/plan/simplification-review/SKILL.md) |
 | Upkeep | • [backlog-health-check](skills/plan/backlog-health-check/SKILL.md)<br>• [roadmap-writing](skills/plan/roadmap-writing/SKILL.md)<br>• [status-reporting](skills/plan/status-reporting/SKILL.md) |
+| Specification | [refine-issue](skills/plan/refine-issue/SKILL.md) |
 
 ### UX
 
@@ -130,7 +131,7 @@ Designing the interface and specifying it, ready for front-end handoff: visual f
 | Visual foundations | • [design-token-and-system-definition](skills/ui/design-token-and-system-definition/SKILL.md)<br>• [design-md-writing](skills/ui/design-md-writing/SKILL.md) |
 | Specification | • [interface-state-specification](skills/ui/interface-state-specification/SKILL.md)<br>• [responsive-layout-planning](skills/ui/responsive-layout-planning/SKILL.md) |
 | Review | • [visual-design-critique](skills/ui/visual-design-critique/SKILL.md)<br>• [design-to-implementation-qa](skills/ui/design-to-implementation-qa/SKILL.md) |
-| Communication | • [design-rationale-writing](skills/ui/design-rationale-writing/SKILL.md)<br>• [portfolio-case-study-writing](skills/ui/portfolio-case-study-writing/SKILL.md) |
+| Communication | [design-rationale-writing](skills/ui/design-rationale-writing/SKILL.md) |
 
 ### Frontend
 
@@ -146,11 +147,11 @@ Building interfaces on the web platform from decided designs: structure, behavio
 
 ### Dev
 
-The process around a software change, from approved specification through building, independent review, and a verified merge and release, plus audits of a system's security, architecture, dependencies, and debt.
+The process around a software change, from recording a repository's conventions and an approved specification through building, independent review, and a verified merge and release, plus audits of a system's security, architecture, dependencies, and debt.
 
 | Stage | Skills |
 | --- | --- |
-| Specification | [refine-issue](skills/dev/refine-issue/SKILL.md) |
+| Setup | [repo-conventions-setup](skills/dev/repo-conventions-setup/SKILL.md) |
 | Build | • [feature-build](skills/dev/feature-build/SKILL.md)<br>• [bug-fix](skills/dev/bug-fix/SKILL.md)<br>• [refactor](skills/dev/refactor/SKILL.md)<br>• [migration](skills/dev/migration/SKILL.md) |
 | Review | • [independent-code-review](skills/dev/independent-code-review/SKILL.md)<br>• [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md)<br>• [review-reconciliation](skills/dev/review-reconciliation/SKILL.md)<br>• [regression-review](skills/dev/regression-review/SKILL.md) |
 | Release | • [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md)<br>• [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |

@@ -4,15 +4,15 @@ A short path from nothing to a project that agents can work in. Each step is opt
 
 ## Short version for one developer
 
-1. Install `depot-core` and `depot-dev` (add other buckets only if you use them), not the full plugin: `claude plugin install depot-core@depot` and `claude plugin install depot-dev@depot`. `repo-conventions-setup` and `kit-router` are in `depot-core`.
-2. Run `/depot-core:repo-conventions-setup` once.
+1. Install `depot-core`, `depot-plan`, and `depot-dev` (add other buckets only if you use them), not the full plugin: `claude plugin install depot-core@depot`, `claude plugin install depot-plan@depot`, and `claude plugin install depot-dev@depot`. `kit-router` is in `depot-core`, `refine-issue` (the first step of Fix or Build to Merge) is in `depot-plan`, and `repo-conventions-setup` is in `depot-dev`.
+2. Run `/depot-dev:repo-conventions-setup` once.
 3. Describe your situation to `/depot-core:kit-router` and do what it recommends.
 
 For a small, ordinary change, the light review path in [Fix or Build to Merge](../workflows/fix-or-build-to-merge.md) needs only you and one reviewer from a different model family. The full three-family review applies only to high-risk changes. Everything below is optional.
 
 ## 1. Install the skills
 
-Pick one method. In Claude Code, the plugin is the simplest: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot@depot`. Its skills are named `/depot:<skill>`, so the commands below read `/depot:repo-conventions-setup` and `/depot:kit-router`. To take only some skills, install the bucket plugins instead (for example `depot-dev` and `depot-core`, which has `kit-router`); their names carry the plugin, as in `/depot-dev:bug-fix`. For any other agent, or for editable copies in your project, run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. Do not use both for the same agent. The installer asks which skills to take; include these two:
+Pick one method. In Claude Code, the plugin is the simplest: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot@depot`. Its skills are named `/depot:<skill>`, so the commands below read `/depot:repo-conventions-setup` and `/depot:kit-router`. To take only some skills, install the bucket plugins instead (for example `depot-core`, which has `kit-router`, plus `depot-plan` and `depot-dev`); their names carry the plugin, as in `/depot-dev:bug-fix`. For any other agent, or for editable copies in your project, run the command for your package manager from the project, as shown in the [README](../README.md#get-the-skills): `npx`, `pnpm dlx`, or `bunx`. Do not use both for the same agent. The installer asks which skills to take; include these two:
 
 - `kit-router`, which tells you where to start for a given situation.
 - `repo-conventions-setup`, which records how your project works (step 2).
