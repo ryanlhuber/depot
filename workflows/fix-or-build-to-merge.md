@@ -25,7 +25,7 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
    - Assignment: the builder applies [Build Feature](../skills/dev/build-feature/SKILL.md) for a feature, or [Fix Bug](../skills/dev/fix-bug/SKILL.md) for a defect, on a feature branch and runs the tests. Reviewers never edit code.
    - Requires: the approved specification and the environment note.
    - Produces: a change, test results, and the revision identifier under review. For a defect: the smallest responsible cause with evidence, and a check that failed before and passes after. If the cause cannot be reproduced or found, the output is the evidence gathered and the questions left open; do not guess a fix.
-4. **Regression review** (required for a defect; for a feature, [Feature Delivery](feature-delivery.md) runs it after the merge)
+4. **Regression review** (required for a defect; for a feature, [Feature to Release](feature-to-release.md) runs it after the merge)
    - Assignment: [Review Regressions](../skills/dev/review-regressions/SKILL.md), performed by the builder or another party. When the builder performs it, the reviewers treat it as the builder's own check and verify its coverage claims.
    - Requires: the revision and the surrounding code.
    - Produces: regression risks with coverage status and the missing checks. Add the missing checks to the change, which makes a new revision, or record them as accepted risks.

@@ -1,4 +1,4 @@
-# Discovery to Definition
+# Brief to Requirements
 
 ## Goal
 

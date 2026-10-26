@@ -167,7 +167,7 @@ An agent is a specialist role that owns a decision and applies several skills to
 | [delivery-planner](agents/delivery-planner.md) | The delivery plan for a goal: a framed problem, an assumption register, epics, draft work items, and a dependency order, ready for refinement. It does not rank by priority or build anything. |
 | [backlog-owner](agents/backlog-owner.md) | The proposed order and scope of a backlog: health findings, priority tiers, scope cuts, and a roadmap. It stops at the owner's decision on what ships. |
 | [design-reviewer](agents/design-reviewer.md) | A consolidated expert review: applies the usability, accessibility, visual, and specification-conformance reviews that fit and returns one prioritized list, with severity and confidence kept separate. |
-| [design-system-designer](agents/design-system-designer.md) | Design-system decisions: tokens, component rules, states, and responsive behavior, each marked decided, proposed, or open, recorded in one DESIGN.md. |
+| [design-system-owner](agents/design-system-owner.md) | Design-system decisions: tokens, component rules, states, and responsive behavior, each marked decided, proposed, or open, recorded in one DESIGN.md. |
 | [merge-gatekeeper](agents/merge-gatekeeper.md) | The readiness decision for a reviewed change: one blocking set from independent reviews, the re-review a repair needs, and merge preconditions verified from evidence. It stops at the human merge decision. |
 
 The [agents index](agents/README.md) explains the file format. Agents are installed the same way as skills; see [skill sync](integrations/skill-sync/README.md) to keep them current in another repository.
@@ -177,12 +177,12 @@ The [agents index](agents/README.md) explains the file format. Agents are instal
 A workflow assigns skills and agents to ordered stages with handoffs, validation, and stopping rules. Workflows are optional; any skill works on its own. See the [workflows index](workflows/README.md).
 
 - [Goal to Backlog](workflows/goal-to-backlog.md): takes a goal from framing through epics, draft work items, dependency order, and a ranked backlog, ready to hand to refinement.
-- [POC Scoping](workflows/poc-scoping.md): frames a question worth testing and cuts the work to the smallest slice that can answer it.
-- [Roadmap Planning](workflows/roadmap-planning.md): cleans and re-ranks an existing backlog, then turns it into a now/next/later roadmap with confidence stated, plus an optional status report.
-- [Discovery to Definition](workflows/discovery-to-definition.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
+- [Idea to POC](workflows/idea-to-poc.md): frames a question worth testing and cuts the work to the smallest slice that can answer it.
+- [Backlog to Roadmap](workflows/backlog-to-roadmap.md): cleans and re-ranks an existing backlog, then turns it into a now/next/later roadmap with confidence stated, plus an optional status report.
+- [Brief to Requirements](workflows/brief-to-requirements.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](workflows/design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
 - [Fix or Build to Merge](workflows/fix-or-build-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, one independent review for ordinary changes or two for high-risk ones, bounded repairs, and a verified human merge.
-- [Feature Delivery](workflows/feature-delivery.md): wraps Fix or Build to Merge with regression review, documentation, release-readiness, and a human release decision.
+- [Feature to Release](workflows/feature-to-release.md): wraps Fix or Build to Merge with regression review, documentation, release-readiness, and a human release decision.
 - [Spec to UI](workflows/spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.
 
 ## Start with one skill

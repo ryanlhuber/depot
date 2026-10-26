@@ -9,6 +9,7 @@ The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent,
 - Renamed 55 of the 57 skills so each name is a verb phrase that says what the skill does, with the same verb family used for the same kind of work: `write-`, `draft-`, `define-`, `specify-`, and `implement-` for producing things; `review-`, `check-`, and `audit-` for judging them; `map-` and `sequence-` for mapping and ordering. `refine-issue` and `refactor` keep their names. No skill's method, inputs, or outputs changed, and no skill moved between buckets.
 - **Breaking:** every renamed skill is invoked by its new name (for example `/depot-dev:fix-bug` instead of `/depot-dev:bug-fix`), including in bucket plugins, installer selections, and sync lists such as `skills-depot.txt` in a project that syncs from depot. The full `depot` plugin's `/depot:<skill>` names change in the same way. Replace old names with new ones using the table below.
 - Titles, the skills index, the README tables, the routing map, workflow and example links, agent skill lists, the docs, and the behavioral cases all use the new names. Earlier changelog entries, `tests/results/`, and the triggering tables keep the names they were run with.
+- Also renamed one agent and four workflows. Workflows keep the "X to Y" form, and the agent keeps a role noun. The other four agents and four workflows keep their names. Links, indexes, the routing map, and the plugin manifests use the new names.
 
 | Bucket | Old name | New name |
 | --- | --- | --- |
@@ -67,6 +68,14 @@ The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent,
 | dev | `security-audit` | `audit-security` |
 | dev | `dependency-audit` | `audit-dependencies` |
 | dev | `technical-debt-audit` | `audit-tech-debt` |
+
+| Type | Old name | New name |
+| --- | --- | --- |
+| agent | `design-system-designer` | `design-system-owner` |
+| workflow | `discovery-to-definition` | `brief-to-requirements` |
+| workflow | `feature-delivery` | `feature-to-release` |
+| workflow | `poc-scoping` | `idea-to-poc` |
+| workflow | `roadmap-planning` | `backlog-to-roadmap` |
 
 ## 0.8.0
 

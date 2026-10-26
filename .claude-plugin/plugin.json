@@ -13,7 +13,7 @@
     "./agents/backlog-owner.md",
     "./agents/delivery-planner.md",
     "./agents/design-reviewer.md",
-    "./agents/design-system-designer.md",
+    "./agents/design-system-owner.md",
     "./agents/merge-gatekeeper.md"
   ]
 }

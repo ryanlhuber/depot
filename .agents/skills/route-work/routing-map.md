@@ -19,10 +19,10 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | --- | --- | --- |
 | A goal that is not yet precise | S `frame-problem` | S `map-assumptions` |
 | A frame to turn into a plan | A `delivery-planner` or W `goal-to-backlog` | S `define-epics`, S `draft-issues` |
-| An idea to test with the smallest slice of work | W `poc-scoping` | S `simplify-scope` |
+| An idea to test with the smallest slice of work | W `idea-to-poc` | S `simplify-scope` |
 | Epics or items needing an order | S `sequence-work` | S `prioritize-backlog` |
-| A messy or stale backlog | W `roadmap-planning` | S `audit-backlog`, A `backlog-owner` |
-| A need to show direction | S `write-roadmap` | W `roadmap-planning` |
+| A messy or stale backlog | W `backlog-to-roadmap` | S `audit-backlog`, A `backlog-owner` |
+| A need to show direction | S `write-roadmap` | W `backlog-to-roadmap` |
 | A need to report real progress | S `report-status` | |
 | Too much scope for a limit, or something that looks overbuilt | S `simplify-scope` | S `prioritize-backlog` |
 | A request to make buildable | S `refine-issue` | W `fix-or-build-to-merge` |
@@ -31,7 +31,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
-| A vague interface brief | S `define-requirements` | W `discovery-to-definition` |
+| A vague interface brief | S `define-requirements` | W `brief-to-requirements` |
 | Raw research notes | S `synthesize-research` | S `draft-personas` |
 | A need to learn from users | S `write-user-interview-guide` | S `plan-usability-test` |
 | A whole-experience question | S `map-user-journey` | S `map-user-flow` |
@@ -47,7 +47,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A screen with unspecified states | S `specify-interface-states` | |
 | A layout that must adapt | S `specify-responsive-layout` | |
 | Visual hierarchy, spacing, or type to critique | S `review-visual-design` | A `design-reviewer` |
-| Visual foundations to define or record | A `design-system-designer` | S `define-design-system`, S `write-design-md` |
+| Visual foundations to define or record | A `design-system-owner` | S `define-design-system`, S `write-design-md` |
 | A decision others must approve | S `write-design-rationale` | |
 | A build to check against its design | S `review-ui-fidelity` | W `design-to-validation` |
 
@@ -69,7 +69,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | --- | --- | --- |
 | A new repo that agents will work in | S `record-repo-conventions` | |
 | An approved spec to implement | S `build-feature` | S `review-regressions` |
-| A feature to take to release | W `feature-delivery` | W `fix-or-build-to-merge` |
+| A feature to take to release | W `feature-to-release` | W `fix-or-build-to-merge` |
 | A reproducible defect | S `fix-bug` | S `review-regressions` |
 | A reported defect to fix and merge | W `fix-or-build-to-merge` | S `fix-bug` |
 | Working code that is hard to change | S `refactor` | S `audit-tech-debt` |

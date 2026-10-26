@@ -1,4 +1,4 @@
-# POC Scoping
+# Idea to POC
 
 ## Goal
 
