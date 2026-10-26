@@ -13,11 +13,11 @@ Take a design or prototype and produce evidence-based, prioritized changes: expe
 ## Stages
 
 1. **Expert review**
-   - Assignment: [Design Reviewer](../agents/design-reviewer.md), applying [Heuristic Usability Evaluation](../skills/ux/heuristic-usability-evaluation/SKILL.md) for usability concerns, [Accessibility Review](../skills/ux/accessibility-review/SKILL.md) against the stated standard, and [Visual Design Critique](../skills/ui/visual-design-critique/SKILL.md) for hierarchy and consistency. The three reviews are complementary lenses on the same design, applied by one agent. They are not independent reviewers: they may run in any order, each can see the others' findings, and a finding that two lenses report counts as one finding, not as corroboration. The agent merges the findings.
+   - Assignment: [Design Reviewer](../agents/design-reviewer.md), applying [Run Heuristic Evaluation](../skills/ux/run-heuristic-evaluation/SKILL.md) for usability concerns, [Review Accessibility](../skills/ux/review-accessibility/SKILL.md) against the stated standard, and [Review Visual Design](../skills/ui/review-visual-design/SKILL.md) for hierarchy and consistency. The three reviews are complementary lenses on the same design, applied by one agent. They are not independent reviewers: they may run in any order, each can see the others' findings, and a finding that two lenses report counts as one finding, not as corroboration. The agent merges the findings.
    - Requires: the design, the primary tasks, and any requirements and design intent.
    - Produces: one prioritized finding list, each finding with its source review, severity, and confidence, and the findings marked as needing validation with users.
 2. **Plan validation**
-   - Assignment: [Usability Test Planning](../skills/ux/usability-test-planning/SKILL.md).
+   - Assignment: [Plan Usability Test](../skills/ux/plan-usability-test/SKILL.md).
    - Requires: the design, the primary tasks, and the findings from stage 1 that need validation with users.
    - Produces: a test plan whose questions and tasks cover each finding that needs validation.
 3. **Run sessions** (performed by people, outside this workflow)
@@ -25,11 +25,11 @@ Take a design or prototype and produce evidence-based, prioritized changes: expe
    - Requires: the test plan.
    - Produces: session notes and observations. The workflow pauses here until they are supplied; it does not fabricate session results.
 4. **Analyze results**
-   - Assignment: [Usability Test Planning](../skills/ux/usability-test-planning/SKILL.md), results summary. It owns task-level results because they are judged against the success definitions in the plan: task success, errors, effort, and severity. When the sessions also produced substantial open-ended material, such as interview answers or free comments, add [Research Synthesis](../skills/ux/research-synthesis/SKILL.md) to consolidate it into traceable themes before findings are prioritized.
+   - Assignment: [Plan Usability Test](../skills/ux/plan-usability-test/SKILL.md), results summary. It owns task-level results because they are judged against the success definitions in the plan: task success, errors, effort, and severity. When the sessions also produced substantial open-ended material, such as interview answers or free comments, add [Synthesize Research](../skills/ux/synthesize-research/SKILL.md) to consolidate it into traceable themes before findings are prioritized.
    - Requires: the test plan and session notes recorded per participant per task.
    - Produces: prioritized findings with evidence, confidence, and limitations, and a list of tasks the notes do not cover.
 5. **Record decisions**
-   - Assignment: [Design Rationale Writing](../skills/ui/design-rationale-writing/SKILL.md) for each significant change or accepted risk.
+   - Assignment: [Write Design Rationale](../skills/ui/write-design-rationale/SKILL.md) for each significant change or accepted risk.
    - Requires: the stage 1 and stage 4 findings and the design intent.
    - Produces: a short rationale per decision covering the problem, options, choice, and evidence.
 

@@ -1,6 +1,6 @@
 # Example: requirements from a vague brief
 
-Demonstrates [Requirements Definition](../skills/ux/requirements-definition/SKILL.md) with its [requirements set template](../skills/ux/requirements-definition/templates/requirements-set.md). The product, people, and numbers are fictional. This example is illustrative and is not canonical guidance.
+Demonstrates [Define Requirements](../skills/ux/define-requirements/SKILL.md) with its [requirements set template](../skills/ux/define-requirements/templates/requirements-set.md). The product, people, and numbers are fictional. This example is illustrative and is not canonical guidance.
 
 ## Input brief
 

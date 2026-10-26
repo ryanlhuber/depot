@@ -13,27 +13,27 @@ Take one goal from a sentence to a ranked set of draft work items that is ready 
 ## Stages
 
 1. **Frame**
-   - Assignment: [Delivery Planner](../agents/delivery-planner.md), applying [Problem Framing](../skills/plan/problem-framing/SKILL.md).
+   - Assignment: [Delivery Planner](../agents/delivery-planner.md), applying [Frame Problem](../skills/plan/frame-problem/SKILL.md).
    - Requires: the goal.
    - Produces: a problem frame with a confirmed or unconfirmed goal sentence, success measures, assumptions, and open questions.
 2. **Test the premises**
-   - Assignment: the Delivery Planner, applying [Assumption Mapping](../skills/plan/assumption-mapping/SKILL.md).
+   - Assignment: the Delivery Planner, applying [Map Assumptions](../skills/plan/map-assumptions/SKILL.md).
    - Requires: the problem frame.
    - Produces: an assumption register and a list of assumptions that should become early items.
 3. **Slice the outcomes**
-   - Assignment: the Delivery Planner, applying [Outcome Slicing](../skills/plan/outcome-slicing/SKILL.md).
+   - Assignment: the Delivery Planner, applying [Define Epics](../skills/plan/define-epics/SKILL.md).
    - Requires: the problem frame and the register.
    - Produces: an epic outline with a coverage check.
 4. **Break down**
-   - Assignment: the Delivery Planner, applying [Issue Breakdown](../skills/plan/issue-breakdown/SKILL.md) to each epic.
+   - Assignment: the Delivery Planner, applying [Draft Issues](../skills/plan/draft-issues/SKILL.md) to each epic.
    - Requires: the epic outline, the early items from stage 2, and any existing items.
    - Produces: the draft item set.
 5. **Order by dependency**
-   - Assignment: the Delivery Planner, applying [Dependency Mapping](../skills/plan/dependency-mapping/SKILL.md).
+   - Assignment: the Delivery Planner, applying [Sequence Work](../skills/plan/sequence-work/SKILL.md).
    - Requires: the item set.
    - Produces: a dependency map with the build order and external blockers.
 6. **Rank**
-   - Assignment: [Backlog Owner](../agents/backlog-owner.md), applying [Backlog Prioritization](../skills/plan/backlog-prioritization/SKILL.md).
+   - Assignment: [Backlog Owner](../agents/backlog-owner.md), applying [Prioritize Backlog](../skills/plan/prioritize-backlog/SKILL.md).
    - Requires: the item set, the dependency map, and the criteria that matter now.
    - Produces: a priority table, the close calls, and the decisions the requester must make.
 7. **Approve and hand off** (performed by the requester, outside this workflow)

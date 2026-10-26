@@ -21,7 +21,7 @@ An Agent applies Skills by name, so install the Skills an Agent lists under its 
 
 1. Clone this repository next to the consuming repository, so that `../depot` exists. Another location works if you pass its path to the script.
 2. Copy [`sync-depot.sh`](sync-depot.sh) into the consuming repository's `scripts/` folder and make it executable.
-3. Create `skills-depot.txt` in its root and list the Skills you want. Names are the skill folder names under [`skills/`](../../skills/), without the bucket: `skills/dev/security-audit/` is listed as `security-audit`. To use Agents, also create `agents-depot.txt` and list them, and make sure every Skill each Agent names is in the Skills list.
+3. Create `skills-depot.txt` in its root and list the Skills you want. Names are the skill folder names under [`skills/`](../../skills/), without the bucket: `skills/dev/audit-security/` is listed as `audit-security`. To use Agents, also create `agents-depot.txt` and list them, and make sure every Skill each Agent names is in the Skills list.
 4. From its root, run `scripts/sync-depot.sh`.
 5. If it has a formatter or linter, exclude `.agents/` and `.claude/`, so the copies stay identical to this repository.
 6. Add the [agent instructions](#agent-instructions) to its `AGENTS.md`.

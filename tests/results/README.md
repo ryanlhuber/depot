@@ -46,3 +46,5 @@ Results files:
 - [2026-10-25 holdout, five other model families](2026-10-25-holdout-chatgpt.md) (same 70 requests; ChatGPT, DeepSeek, Gemini and Muse Spark: 67, 69, 67 and 67 correct; Grok 70 with its search setting unconfirmed; all 58 natural requests in each)
 - [2026-10-25 real run](2026-10-25-real-run.md) (scratch repository, real code and tests, light and standard review on a correct and a flawed fix)
 - [2026-10-25 router UX and UI cases](2026-10-25-router-ux-ui-cases.md) (3 router cases added with the bucket split: 3 pass)
+- [2026-10-26 router cases after the rename](2026-10-26-rename-router-cases.md) (the same 3 router cases against the 0.9.0 names: 3 pass)
+- [2026-10-26 holdout after the rename](2026-10-26-rename-holdout.md) (same 70 requests, new names, one Claude Haiku run: 66 correct in three runs, two new near misses that repeat)

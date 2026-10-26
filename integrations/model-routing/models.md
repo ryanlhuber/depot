@@ -1,6 +1,6 @@
 # Model routing table
 
-Optional environment-specific data for `kit-router`. It belongs in `integrations/`, not in a portable skill, because it names models and providers, and the router does not bundle it. Point the router at this file, or at your own table in the same shape (one heading per role, models listed best first with family and effort), to get named models. Replace freely.
+Optional environment-specific data for `route-work`. It belongs in `integrations/`, not in a portable skill, because it names models and providers, and the router does not bundle it. Point the router at this file, or at your own table in the same shape (one heading per role, models listed best first with family and effort), to get named models. Replace freely.
 
 Last checked: 2026-10-24 against the sources below. Model lineups change often, so recheck before relying on a row. Effort levels are starting defaults to tune, not measured results. Verify availability on your current plans before relying on a row.
 
