@@ -22,33 +22,33 @@ Take one work item, a feature to build or a defect to fix, from an approved stat
    - Requires: the approved specification.
    - Produces: a confirmed environment note. The workflow does not proceed on a guess. If the recorded test command fails for a reason unrelated to the change, or the recorded branch or runtime is not available, the builder states the substitute used and the requester confirms it before the review; conventions are not edited silently.
 3. **Build or repair** (performed by the builder, outside this workflow)
-   - Assignment: the builder applies [Feature Build](../skills/dev/feature-build/SKILL.md) for a feature, or [Bug Fix](../skills/dev/bug-fix/SKILL.md) for a defect, on a feature branch and runs the tests. Reviewers never edit code.
+   - Assignment: the builder applies [Build Feature](../skills/dev/build-feature/SKILL.md) for a feature, or [Fix Bug](../skills/dev/fix-bug/SKILL.md) for a defect, on a feature branch and runs the tests. Reviewers never edit code.
    - Requires: the approved specification and the environment note.
    - Produces: a change, test results, and the revision identifier under review. For a defect: the smallest responsible cause with evidence, and a check that failed before and passes after. If the cause cannot be reproduced or found, the output is the evidence gathered and the questions left open; do not guess a fix.
 4. **Regression review** (required for a defect; for a feature, [Feature Delivery](feature-delivery.md) runs it after the merge)
-   - Assignment: [Regression Review](../skills/dev/regression-review/SKILL.md), performed by the builder or another party. When the builder performs it, the reviewers treat it as the builder's own check and verify its coverage claims.
+   - Assignment: [Review Regressions](../skills/dev/review-regressions/SKILL.md), performed by the builder or another party. When the builder performs it, the reviewers treat it as the builder's own check and verify its coverage claims.
    - Requires: the revision and the surrounding code.
    - Produces: regression risks with coverage status and the missing checks. Add the missing checks to the change, which makes a new revision, or record them as accepted risks.
 5. **Independent review**
-   - Assignment: [Independent Code Review](../skills/dev/independent-code-review/SKILL.md) by a reviewer independent of the builder.
+   - Assignment: [Review Code Independently](../skills/dev/review-code-independently/SKILL.md) by a reviewer independent of the builder.
    - Requires: the specification, diff and context, test results, the regression review when one ran, and the revision.
    - Produces: a saved review report for that revision. Not posted to the change discussion.
 6. **Adversarial review** (standard path only; skip on the light path and record that it was skipped)
-   - Assignment: [Adversarial Code Review](../skills/dev/adversarial-code-review/SKILL.md) by a third independent reviewer. It starts without the first review's findings or the change discussion.
+   - Assignment: [Review Code Adversarially](../skills/dev/review-code-adversarially/SKILL.md) by a third independent reviewer. It starts without the first review's findings or the change discussion.
    - Requires: the same inputs as stage 5 and the same revision.
    - Produces: a saved review report that states whether any other review output was seen.
 7. **Reconcile and decide**
-   - Assignment: [Merge Gatekeeper](../agents/merge-gatekeeper.md), applying `review-reconciliation` and, when nothing blocks, `merge-readiness-check`.
+   - Assignment: [Merge Gatekeeper](../agents/merge-gatekeeper.md), applying `reconcile-reviews` and, when nothing blocks, `check-merge-readiness`.
    - Requires: both reports, the specification, test evidence, the risk level, and the target branch.
    - Produces: consolidated findings and the blocking set, or the completed merge checklist and a ready or not-ready verdict. After both reports exist, both are attached to the change record together.
 8. **Repair** (only when the blocking set is not empty)
-   - Assignment: the builder fixes the blocking findings, again with Feature Build or Bug Fix and without widening scope; the gatekeeper records the re-review tier through `review-reconciliation`.
+   - Assignment: the builder fixes the blocking findings, again with Build Feature or Fix Bug and without widening scope; the gatekeeper records the re-review tier through `reconcile-reviews`.
    - Requires: the consolidated findings and fix order.
    - Produces: a new revision and a tier record. Return to stage 5 and run the reviews the tier requires, then stage 7.
 9. **Merge and close** (performed by a human)
    - Assignment: the requester merges after the verdict is ready and any required high-risk approval is recorded. Merging is never automated here.
    - Requires: a ready verdict for the current head revision.
-   - Produces: a merged change, the post-merge checks from `merge-readiness-check`, the work item marked done where a status is kept, and a completed execution record.
+   - Produces: a merged change, the post-merge checks from `check-merge-readiness`, the work item marked done where a status is kept, and a completed execution record.
 
 ## Validation
 

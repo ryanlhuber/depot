@@ -2,16 +2,16 @@
 
 The maintained files are in [`skills/`](../skills/), grouped into bucket folders (`core`, `plan`, `ux`, `ui`, `frontend`, `dev`). Every skill uses the [Agent Skills `SKILL.md` format](https://agentskills.io/specification) and keeps its supporting files, such as `templates/`, in the same folder. [`.agents/skills/`](../.agents/skills/) and [`.claude/skills/`](../.claude/skills/) are generated flat mirrors, one folder per skill, because harnesses discover skills one folder level deep.
 
-Not sure which skill, agent, or workflow fits? Ask for the [`kit-router`](../skills/core/kit-router/SKILL.md) skill and describe your situation. It recommends one place to start and the models to run it with. It names specific models only when a model table is available, such as the one in [`integrations/model-routing/`](../integrations/model-routing/models.md) or your own; installing the router alone gives it the routing map but no table, so it then describes the capability each step needs instead.
+Not sure which skill, agent, or workflow fits? Ask for the [`route-work`](../skills/core/route-work/SKILL.md) skill and describe your situation. It recommends one place to start and the models to run it with. It names specific models only when a model table is available, such as the one in [`integrations/model-routing/`](../integrations/model-routing/models.md) or your own; installing the router alone gives it the routing map but no table, so it then describes the capability each step needs instead.
 
 ## In a clone of this repository
 
 | Agent | Discovery path | How to start |
 | --- | --- | --- |
-| Codex | [`.agents/skills/`](../.agents/skills/) | Mention a skill with `$`, such as `$independent-code-review`, or use `/skills`. [Codex skills docs](https://learn.chatgpt.com/docs/build-skills) |
+| Codex | [`.agents/skills/`](../.agents/skills/) | Mention a skill with `$`, such as `$review-code-independently`, or use `/skills`. [Codex skills docs](https://learn.chatgpt.com/docs/build-skills) |
 | OpenCode | [`.agents/skills/`](../.agents/skills/) | Ask for the task or load a skill with its skill tool. [OpenCode skills docs](https://opencode.ai/docs/skills) |
-| Hermes Agent | [`.agents/skills/`](../.agents/skills/) | Run `hermes skills trust` once for this checkout, then invoke `/independent-code-review` or describe the task. [Hermes project skills docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/) |
-| Claude Code | [`.claude/skills/`](../.claude/skills/) | Invoke `/independent-code-review` or describe the task. [Claude Code skills docs](https://code.claude.com/docs/en/skills) |
+| Hermes Agent | [`.agents/skills/`](../.agents/skills/) | Run `hermes skills trust` once for this checkout, then invoke `/review-code-independently` or describe the task. [Hermes project skills docs](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/) |
+| Claude Code | [`.claude/skills/`](../.claude/skills/) | Invoke `/review-code-independently` or describe the task. [Claude Code skills docs](https://code.claude.com/docs/en/skills) |
 
 The discovery folders contain the full skill files as regular files, so no symlink support or setup step is needed in a clone.
 
@@ -19,16 +19,16 @@ The discovery folders contain the full skill files as regular files, so no symli
 
 Skills fall into two groups. **Automatic** skills are focused craft skills that a model may load whenever your request matches the description. **Manual** skills are loaded only when you ask for one by name. A skill is manual when a surprise run would be costly or would defeat its purpose:
 
-- the review and gate skills (`independent-code-review`, `adversarial-code-review`, `review-reconciliation`, `merge-readiness-check`, `reviewer-qualification`), which are only independent when you start each one deliberately in a fresh session;
-- long interactive skills that take over the conversation (`refine-issue`, `decision-interview`, `session-handoff`);
-- skills that touch release or repository setup (`migration`, `deployment-readiness`, `repo-conventions-setup`).
+- the review and gate skills (`review-code-independently`, `review-code-adversarially`, `reconcile-reviews`, `check-merge-readiness`, `qualify-reviewer`), which are only independent when you start each one deliberately in a fresh session;
+- long interactive skills that take over the conversation (`refine-issue`, `decide-plan`, `hand-off-session`);
+- skills that touch release or repository setup (`migrate-system`, `check-deployment-readiness`, `record-repo-conventions`).
 
 A manual skill carries `disable-model-invocation: true` in its frontmatter. Claude Code honors it: the model cannot choose the skill, its description is kept out of context, and you start it with `/<name>`. Other harnesses ignore the unknown field (OpenCode documents this), so set the same intent in each harness's own configuration:
 
 | Harness | Make a skill manual |
 | --- | --- |
 | Claude Code | Already set in the skill's frontmatter. `skillOverrides` in settings can change it per project. |
-| OpenCode | In `opencode.json`, deny the model's access: `{"permission": {"skill": {"independent-code-review": "deny"}}}`, or `"ask"` to confirm each use. Patterns such as `"*-review"` work. |
+| OpenCode | In `opencode.json`, deny the model's access: `{"permission": {"skill": {"review-code-independently": "deny"}}}`, or `"ask"` to confirm each use. Patterns such as `"*-review"` work. |
 | Codex | Add `agents/openai.yaml` beside the skill's `SKILL.md` with `policy:` then `allow_implicit_invocation: false`; mention the skill with `$name` to run it. |
 
 To make an automatic skill manual in your own copy, add the same line or configuration. To let the model run a manual one, delete the line. The change is local to your copy; the Codex and OpenCode settings are not generated by this repository and were not tested here.
@@ -39,7 +39,7 @@ Each skill states its required and optional inputs, what it returns, and when no
 
 ## Keep qualification honest
 
-[Reviewer qualification](../skills/core/reviewer-qualification/SKILL.md) only measures a candidate when the answer key stays out of its context. Run each candidate in a fresh conversation, give it only the inputs the skill lists, and save its report as a file before scoring it.
+[Qualify Reviewer](../skills/core/qualify-reviewer/SKILL.md) only measures a candidate when the answer key stays out of its context. Run each candidate in a fresh conversation, give it only the inputs the skill lists, and save its report as a file before scoring it.
 
 ## Keep reviews independent
 
@@ -71,7 +71,7 @@ npx skills@latest add ryanlhuber/depot -a opencode --skill <skill-name> --copy
 - **Package manager.** If the project's `package.json` sets `devEngines` to require pnpm, `npx` fails with `EBADDEVENGINES`. Run `pnpm dlx skills@latest add ryanlhuber/depot` instead.
 - **Location.** The installer wrote skills to `.agents/skills/`, one folder per skill, with `templates/` and other supporting files beside `SKILL.md`.
 - **Git access.** The installer clones over git. The repository is public, so no credentials are needed unless your network or git configuration requires them; a failed clone is an access problem, not a broken skill.
-- **Router without a model table.** `kit-router` still works when `integrations/model-routing/models.md` is not installed: it gives capability-role advice and names no model. Add the table to your own instructions if you want model names.
+- **Router without a model table.** `route-work` still works when `integrations/model-routing/models.md` is not installed: it gives capability-role advice and names no model. Add the table to your own instructions if you want model names.
 - **Not installed.** Agents and workflows were not verified to install this way; copy them or use the sync approach.
 
 Agent and workflow files are not skills, so copy them by hand or use the sync approach linked above, which also pins the depot commit. Pick one method per project: both write the same skill folders.

@@ -13,7 +13,7 @@ Turn an approved interface specification into working front-end code that matche
 ## Stages
 
 1. **Read the specification**
-   - Assignment: [Design Spec Intake](../skills/frontend/design-spec-intake/SKILL.md).
+   - Assignment: [Check Design Handoff](../skills/frontend/check-design-handoff/SKILL.md).
    - Requires: the specification material.
    - Produces: what is decided, proposed, open, conflicting, or missing, and what can be built now.
 2. **Resolve gaps** (performed by the specification owner)
@@ -21,27 +21,27 @@ Turn an approved interface specification into working front-end code that matche
    - Requires: the intake report.
    - Produces: decisions recorded against the specification. The workflow does not proceed on a guess for a blocking item.
 3. **Structure**
-   - Assignment: [Semantic HTML Structure](../skills/frontend/semantic-html-structure/SKILL.md).
+   - Assignment: [Write Semantic HTML](../skills/frontend/write-semantic-html/SKILL.md).
    - Requires: the specification and the resolved decisions.
    - Produces: markup with landmarks, headings, native elements, and accessible names.
 4. **Component interface**
-   - Assignment: [Component API Design](../skills/frontend/component-api-design/SKILL.md), only for a component that will be shared. One-off parts skip this stage.
+   - Assignment: [Design Component API](../skills/frontend/design-component-api/SKILL.md), only for a component that will be shared. One-off parts skip this stage.
    - Requires: the markup and the intended uses.
    - Produces: the component's inputs, events, state ownership, and accessibility contract.
 5. **States**
-   - Assignment: [Interface State Implementation](../skills/frontend/interface-state-implementation/SKILL.md), from the state specification.
+   - Assignment: [Implement Interface States](../skills/frontend/implement-interface-states/SKILL.md), from the state specification.
    - Requires: the markup and the state specification, and the component interface when stage 4 ran.
    - Produces: each specified state implemented, announced, recoverable, and demonstrable.
 6. **Responsive behavior**
-   - Assignment: [Responsive Implementation](../skills/frontend/responsive-implementation/SKILL.md), from the layout plan.
+   - Assignment: [Implement Responsive Layout](../skills/frontend/implement-responsive-layout/SKILL.md), from the layout plan.
    - Requires: the markup and the layout plan.
    - Produces: layout that holds at the defined viewports, zoom, and text sizes, with the verification performed.
 7. **Tokens**
-   - Assignment: [Design Token Implementation](../skills/frontend/design-token-implementation/SKILL.md), from the token definitions.
+   - Assignment: [Implement Design Tokens](../skills/frontend/implement-design-tokens/SKILL.md), from the token definitions.
    - Requires: the build and the token definitions.
    - Produces: one source of values used by the components, and a repeatable check that raw values are not used.
 8. **Check against the specification**
-   - Assignment: [Design to Implementation QA](../skills/ui/design-to-implementation-qa/SKILL.md), performed by someone other than the stage 3 to 7 implementer when possible.
+   - Assignment: [Review UI Fidelity](../skills/ui/review-ui-fidelity/SKILL.md), performed by someone other than the stage 3 to 7 implementer when possible.
    - Requires: the build, the specification, and the resolved decisions.
    - Produces: mismatches in layout, visual values, content, states, and behavior, each with severity.
 

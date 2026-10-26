@@ -16,18 +16,18 @@ claude plugin marketplace add ryanlhuber/depot
 claude plugin install depot@depot
 ```
 
-Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:kit-router`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot` before 0.8.0 moved one skill out (now about 4,300, estimated).
+Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin install depot@depot`. Skills are namespaced by the plugin, for example `/depot:route-work`; the five agents appear as `depot:<agent>`. Workflows are Markdown files that the plugin does not load as a component, so read or copy them from [`workflows/`](workflows/). Third-party marketplaces do not auto-update by default; turn it on in `/plugin` under Marketplaces. The full plugin adds about 4,400 tokens of skill descriptions to every session, measured with `claude plugin details depot` before 0.8.0 moved one skill out (now about 4,300, estimated).
 
 **Only what you need.** Each bucket is also its own plugin, so a front-end developer need not carry the planning, UX, and UI skills. Install the buckets you use instead of `depot`, never both:
 
 | Plugin | Skills | Always-on tokens (approx.) |
 | --- | --- | --- |
-| `depot-core` | 5 general skills, including `kit-router` and `decision-interview` | 395 |
+| `depot-core` | 5 general skills, including `route-work` and `decide-plan` | 395 |
 | `depot-plan` | 11 planning skills, including `refine-issue` (needs `depot-core`, installed with it) | 905 |
 | `depot-ux` | 12 UX skills | 935 |
 | `depot-ui` | 7 UI skills | 525 |
 | `depot-frontend` | 6 front-end skills | 490 |
-| `depot-dev` | 16 delivery skills, including `repo-conventions-setup` | 1,235 |
+| `depot-dev` | 16 delivery skills, including `record-repo-conventions` | 1,235 |
 | `depot-agents` | the 5 agents, which apply skills from the buckets above | 0 |
 
 ```sh
@@ -37,7 +37,7 @@ claude plugin install depot-dev@depot
 claude plugin install depot-agents@depot
 ```
 
-Skills are namespaced by the bucket plugin, for example `/depot-dev:bug-fix`. `kit-router` knows every bucket, so it may recommend a skill you did not install. Update a bucket the same way as the full plugin.
+Skills are namespaced by the bucket plugin, for example `/depot-dev:fix-bug`. `route-work` knows every bucket, so it may recommend a skill you did not install. Update a bucket the same way as the full plugin.
 
 </details>
 
@@ -80,7 +80,7 @@ New to depot? Follow the [getting started guide](docs/getting-started.md). See [
 
 ## Not sure where to start?
 
-Ask for [`kit-router`](skills/core/kit-router/SKILL.md) and describe your situation. It recommends one skill, agent, or workflow to start with, what to chain after it, and which models to run each step with. Named models come from a model table: the [model routing table](integrations/model-routing/models.md) in this repository, or your own. The router skill alone does not include a table, and without one it describes the capability needed for each step instead of naming models. It recommends only; it never runs the work.
+Ask for [`route-work`](skills/core/route-work/SKILL.md) and describe your situation. It recommends one skill, agent, or workflow to start with, what to chain after it, and which models to run each step with. Named models come from a model table: the [model routing table](integrations/model-routing/models.md) in this repository, or your own. The router skill alone does not include a table, and without one it describes the capability needed for each step instead of naming models. It recommends only; it never runs the work.
 
 ## Browse
 
@@ -92,11 +92,11 @@ General skills for working well with AI agents in any domain: authoring skills, 
 
 | Area | Skills |
 | --- | --- |
-| Authoring | [skill-authoring](skills/core/skill-authoring/SKILL.md) |
-| Decisions | [decision-interview](skills/core/decision-interview/SKILL.md) |
-| Continuity | [session-handoff](skills/core/session-handoff/SKILL.md) |
-| Routing | [kit-router](skills/core/kit-router/SKILL.md) |
-| Tuning | [reviewer-qualification](skills/core/reviewer-qualification/SKILL.md) |
+| Authoring | [write-skill](skills/core/write-skill/SKILL.md) |
+| Decisions | [decide-plan](skills/core/decide-plan/SKILL.md) |
+| Continuity | [hand-off-session](skills/core/hand-off-session/SKILL.md) |
+| Routing | [route-work](skills/core/route-work/SKILL.md) |
+| Tuning | [qualify-reviewer](skills/core/qualify-reviewer/SKILL.md) |
 
 ### Plan
 
@@ -104,11 +104,11 @@ Turning a goal into a plan before a change exists: framing the problem, slicing 
 
 | Stage | Skills |
 | --- | --- |
-| Framing | • [problem-framing](skills/plan/problem-framing/SKILL.md)<br>• [assumption-mapping](skills/plan/assumption-mapping/SKILL.md) |
-| Structure | • [outcome-slicing](skills/plan/outcome-slicing/SKILL.md)<br>• [issue-breakdown](skills/plan/issue-breakdown/SKILL.md)<br>• [dependency-mapping](skills/plan/dependency-mapping/SKILL.md) |
-| Prioritization | [backlog-prioritization](skills/plan/backlog-prioritization/SKILL.md) |
-| Scope | [simplification-review](skills/plan/simplification-review/SKILL.md) |
-| Upkeep | • [backlog-health-check](skills/plan/backlog-health-check/SKILL.md)<br>• [roadmap-writing](skills/plan/roadmap-writing/SKILL.md)<br>• [status-reporting](skills/plan/status-reporting/SKILL.md) |
+| Framing | • [frame-problem](skills/plan/frame-problem/SKILL.md)<br>• [map-assumptions](skills/plan/map-assumptions/SKILL.md) |
+| Structure | • [define-epics](skills/plan/define-epics/SKILL.md)<br>• [draft-issues](skills/plan/draft-issues/SKILL.md)<br>• [sequence-work](skills/plan/sequence-work/SKILL.md) |
+| Prioritization | [prioritize-backlog](skills/plan/prioritize-backlog/SKILL.md) |
+| Scope | [simplify-scope](skills/plan/simplify-scope/SKILL.md) |
+| Upkeep | • [audit-backlog](skills/plan/audit-backlog/SKILL.md)<br>• [write-roadmap](skills/plan/write-roadmap/SKILL.md)<br>• [report-status](skills/plan/report-status/SKILL.md) |
 | Specification | [refine-issue](skills/plan/refine-issue/SKILL.md) |
 
 ### UX
@@ -117,10 +117,10 @@ Learning about users and judging whether an experience works for them, to inform
 
 | Stage | Skills |
 | --- | --- |
-| Research | • [competitive-pattern-analysis](skills/ux/competitive-pattern-analysis/SKILL.md)<br>• [persona-and-scenario-drafting](skills/ux/persona-and-scenario-drafting/SKILL.md)<br>• [interview-guide-writing](skills/ux/interview-guide-writing/SKILL.md)<br>• [research-synthesis](skills/ux/research-synthesis/SKILL.md)<br>• [usability-test-planning](skills/ux/usability-test-planning/SKILL.md) |
-| Definition | • [requirements-definition](skills/ux/requirements-definition/SKILL.md)<br>• [user-flow-mapping](skills/ux/user-flow-mapping/SKILL.md)<br>• [journey-mapping](skills/ux/journey-mapping/SKILL.md)<br>• [information-architecture-and-navigation](skills/ux/information-architecture-and-navigation/SKILL.md) |
-| Evaluation | • [heuristic-usability-evaluation](skills/ux/heuristic-usability-evaluation/SKILL.md)<br>• [accessibility-review](skills/ux/accessibility-review/SKILL.md) |
-| Content | [ux-microcopy-writing](skills/ux/ux-microcopy-writing/SKILL.md) |
+| Research | • [compare-patterns](skills/ux/compare-patterns/SKILL.md)<br>• [draft-personas](skills/ux/draft-personas/SKILL.md)<br>• [write-user-interview-guide](skills/ux/write-user-interview-guide/SKILL.md)<br>• [synthesize-research](skills/ux/synthesize-research/SKILL.md)<br>• [plan-usability-test](skills/ux/plan-usability-test/SKILL.md) |
+| Definition | • [define-requirements](skills/ux/define-requirements/SKILL.md)<br>• [map-user-flow](skills/ux/map-user-flow/SKILL.md)<br>• [map-user-journey](skills/ux/map-user-journey/SKILL.md)<br>• [design-navigation](skills/ux/design-navigation/SKILL.md) |
+| Evaluation | • [run-heuristic-evaluation](skills/ux/run-heuristic-evaluation/SKILL.md)<br>• [review-accessibility](skills/ux/review-accessibility/SKILL.md) |
+| Content | [write-microcopy](skills/ux/write-microcopy/SKILL.md) |
 
 ### UI
 
@@ -128,10 +128,10 @@ Designing the interface and specifying it, ready for front-end handoff: visual f
 
 | Stage | Skills |
 | --- | --- |
-| Visual foundations | • [design-token-and-system-definition](skills/ui/design-token-and-system-definition/SKILL.md)<br>• [design-md-writing](skills/ui/design-md-writing/SKILL.md) |
-| Specification | • [interface-state-specification](skills/ui/interface-state-specification/SKILL.md)<br>• [responsive-layout-planning](skills/ui/responsive-layout-planning/SKILL.md) |
-| Review | • [visual-design-critique](skills/ui/visual-design-critique/SKILL.md)<br>• [design-to-implementation-qa](skills/ui/design-to-implementation-qa/SKILL.md) |
-| Communication | [design-rationale-writing](skills/ui/design-rationale-writing/SKILL.md) |
+| Visual foundations | • [define-design-system](skills/ui/define-design-system/SKILL.md)<br>• [write-design-md](skills/ui/write-design-md/SKILL.md) |
+| Specification | • [specify-interface-states](skills/ui/specify-interface-states/SKILL.md)<br>• [specify-responsive-layout](skills/ui/specify-responsive-layout/SKILL.md) |
+| Review | • [review-visual-design](skills/ui/review-visual-design/SKILL.md)<br>• [review-ui-fidelity](skills/ui/review-ui-fidelity/SKILL.md) |
+| Communication | [write-design-rationale](skills/ui/write-design-rationale/SKILL.md) |
 
 ### Frontend
 
@@ -139,11 +139,11 @@ Building interfaces on the web platform from decided designs: structure, behavio
 
 | Stage | Skills |
 | --- | --- |
-| Intake | [design-spec-intake](skills/frontend/design-spec-intake/SKILL.md) |
-| Interface structure | • [component-api-design](skills/frontend/component-api-design/SKILL.md)<br>• [semantic-html-structure](skills/frontend/semantic-html-structure/SKILL.md) |
-| Interface behavior | [interface-state-implementation](skills/frontend/interface-state-implementation/SKILL.md) |
-| Layout | [responsive-implementation](skills/frontend/responsive-implementation/SKILL.md) |
-| Styling foundations | [design-token-implementation](skills/frontend/design-token-implementation/SKILL.md) |
+| Intake | [check-design-handoff](skills/frontend/check-design-handoff/SKILL.md) |
+| Interface structure | • [design-component-api](skills/frontend/design-component-api/SKILL.md)<br>• [write-semantic-html](skills/frontend/write-semantic-html/SKILL.md) |
+| Interface behavior | [implement-interface-states](skills/frontend/implement-interface-states/SKILL.md) |
+| Layout | [implement-responsive-layout](skills/frontend/implement-responsive-layout/SKILL.md) |
+| Styling foundations | [implement-design-tokens](skills/frontend/implement-design-tokens/SKILL.md) |
 
 ### Dev
 
@@ -151,12 +151,12 @@ The process around a software change, from recording a repository's conventions 
 
 | Stage | Skills |
 | --- | --- |
-| Setup | [repo-conventions-setup](skills/dev/repo-conventions-setup/SKILL.md) |
-| Build | • [feature-build](skills/dev/feature-build/SKILL.md)<br>• [bug-fix](skills/dev/bug-fix/SKILL.md)<br>• [refactor](skills/dev/refactor/SKILL.md)<br>• [migration](skills/dev/migration/SKILL.md) |
-| Review | • [independent-code-review](skills/dev/independent-code-review/SKILL.md)<br>• [adversarial-code-review](skills/dev/adversarial-code-review/SKILL.md)<br>• [review-reconciliation](skills/dev/review-reconciliation/SKILL.md)<br>• [regression-review](skills/dev/regression-review/SKILL.md) |
-| Release | • [merge-readiness-check](skills/dev/merge-readiness-check/SKILL.md)<br>• [deployment-readiness](skills/dev/deployment-readiness/SKILL.md) |
-| Audit | • [security-audit](skills/dev/security-audit/SKILL.md)<br>• [architecture-review](skills/dev/architecture-review/SKILL.md)<br>• [dependency-audit](skills/dev/dependency-audit/SKILL.md)<br>• [technical-debt-audit](skills/dev/technical-debt-audit/SKILL.md) |
-| Documentation | [documentation-pass](skills/dev/documentation-pass/SKILL.md) |
+| Setup | [record-repo-conventions](skills/dev/record-repo-conventions/SKILL.md) |
+| Build | • [build-feature](skills/dev/build-feature/SKILL.md)<br>• [fix-bug](skills/dev/fix-bug/SKILL.md)<br>• [refactor](skills/dev/refactor/SKILL.md)<br>• [migrate-system](skills/dev/migrate-system/SKILL.md) |
+| Review | • [review-code-independently](skills/dev/review-code-independently/SKILL.md)<br>• [review-code-adversarially](skills/dev/review-code-adversarially/SKILL.md)<br>• [reconcile-reviews](skills/dev/reconcile-reviews/SKILL.md)<br>• [review-regressions](skills/dev/review-regressions/SKILL.md) |
+| Release | • [check-merge-readiness](skills/dev/check-merge-readiness/SKILL.md)<br>• [check-deployment-readiness](skills/dev/check-deployment-readiness/SKILL.md) |
+| Audit | • [audit-security](skills/dev/audit-security/SKILL.md)<br>• [review-architecture](skills/dev/review-architecture/SKILL.md)<br>• [audit-dependencies](skills/dev/audit-dependencies/SKILL.md)<br>• [audit-tech-debt](skills/dev/audit-tech-debt/SKILL.md) |
+| Documentation | [fix-docs](skills/dev/fix-docs/SKILL.md) |
 
 ## Agents
 
@@ -187,7 +187,7 @@ A workflow assigns skills and agents to ordered stages with handoffs, validation
 
 ## Start with one skill
 
-Pick the skill that matches what you have in hand. For example, give [independent-code-review](skills/dev/independent-code-review/SKILL.md) an approved specification, a diff, test results, and a commit hash and it returns a PASS or FAIL report with evidenced findings and the tests that were not run. Each skill states its required inputs, what it returns, and when not to use it. See the [worked examples](examples/README.md) for what good output looks like.
+Pick the skill that matches what you have in hand. For example, give [review-code-independently](skills/dev/review-code-independently/SKILL.md) an approved specification, a diff, test results, and a commit hash and it returns a PASS or FAIL report with evidenced findings and the tests that were not run. Each skill states its required inputs, what it returns, and when not to use it. See the [worked examples](examples/README.md) for what good output looks like.
 
 ## Principles
 

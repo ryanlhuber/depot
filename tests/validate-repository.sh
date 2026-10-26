@@ -169,9 +169,9 @@ while IFS= read -r indexed; do
 done < <(grep -oE '\]\(agents/[a-z0-9-]+\.md\)' README.md | sed 's|^](agents/||; s|\.md)$||' | sort -u)
 
 # --- router map ----------------------------------------------------------------
-# skills/core/kit-router/routing-map.md may recommend only artifacts that exist, and
+# skills/core/route-work/routing-map.md may recommend only artifacts that exist, and
 # must mention every skill, agent, and workflow (the router itself excepted).
-map=skills/core/kit-router/routing-map.md
+map=skills/core/route-work/routing-map.md
 if [ -f "$map" ]; then
   while read -r kind token; do
     ref="${token//\`/}"
@@ -182,7 +182,7 @@ if [ -f "$map" ]; then
     esac
   done < <(grep -oE '\b[SAW] `[a-z0-9-]+`' "$map" | sort -u)
   for name in $names; do
-    [ "$name" = kit-router ] && continue
+    [ "$name" = route-work ] && continue
     grep -Fq "\`$name\`" "$map" || fail "skill missing from routing map: $name"
   done
   for agent_name in $agent_names; do

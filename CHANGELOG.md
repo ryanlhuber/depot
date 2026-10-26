@@ -4,6 +4,70 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.9.0
+
+- Renamed 55 of the 57 skills so each name is a verb phrase that says what the skill does, with the same verb family used for the same kind of work: `write-`, `draft-`, `define-`, `specify-`, and `implement-` for producing things; `review-`, `check-`, and `audit-` for judging them; `map-` and `sequence-` for mapping and ordering. `refine-issue` and `refactor` keep their names. No skill's method, inputs, or outputs changed, and no skill moved between buckets.
+- **Breaking:** every renamed skill is invoked by its new name (for example `/depot-dev:fix-bug` instead of `/depot-dev:bug-fix`), including in bucket plugins, installer selections, and sync lists such as `skills-depot.txt` in a project that syncs from depot. The full `depot` plugin's `/depot:<skill>` names change in the same way. Replace old names with new ones using the table below.
+- Titles, the skills index, the README tables, the routing map, workflow and example links, agent skill lists, the docs, and the behavioral cases all use the new names. Earlier changelog entries, `tests/results/`, and the triggering tables keep the names they were run with.
+
+| Bucket | Old name | New name |
+| --- | --- | --- |
+| core | `skill-authoring` | `write-skill` |
+| core | `decision-interview` | `decide-plan` |
+| core | `session-handoff` | `hand-off-session` |
+| core | `kit-router` | `route-work` |
+| core | `reviewer-qualification` | `qualify-reviewer` |
+| plan | `problem-framing` | `frame-problem` |
+| plan | `assumption-mapping` | `map-assumptions` |
+| plan | `outcome-slicing` | `define-epics` |
+| plan | `issue-breakdown` | `draft-issues` |
+| plan | `dependency-mapping` | `sequence-work` |
+| plan | `backlog-prioritization` | `prioritize-backlog` |
+| plan | `simplification-review` | `simplify-scope` |
+| plan | `backlog-health-check` | `audit-backlog` |
+| plan | `roadmap-writing` | `write-roadmap` |
+| plan | `status-reporting` | `report-status` |
+| ux | `competitive-pattern-analysis` | `compare-patterns` |
+| ux | `interview-guide-writing` | `write-user-interview-guide` |
+| ux | `persona-and-scenario-drafting` | `draft-personas` |
+| ux | `research-synthesis` | `synthesize-research` |
+| ux | `usability-test-planning` | `plan-usability-test` |
+| ux | `information-architecture-and-navigation` | `design-navigation` |
+| ux | `journey-mapping` | `map-user-journey` |
+| ux | `requirements-definition` | `define-requirements` |
+| ux | `user-flow-mapping` | `map-user-flow` |
+| ux | `accessibility-review` | `review-accessibility` |
+| ux | `heuristic-usability-evaluation` | `run-heuristic-evaluation` |
+| ux | `ux-microcopy-writing` | `write-microcopy` |
+| ui | `design-token-and-system-definition` | `define-design-system` |
+| ui | `design-md-writing` | `write-design-md` |
+| ui | `interface-state-specification` | `specify-interface-states` |
+| ui | `responsive-layout-planning` | `specify-responsive-layout` |
+| ui | `visual-design-critique` | `review-visual-design` |
+| ui | `design-to-implementation-qa` | `review-ui-fidelity` |
+| ui | `design-rationale-writing` | `write-design-rationale` |
+| frontend | `design-spec-intake` | `check-design-handoff` |
+| frontend | `component-api-design` | `design-component-api` |
+| frontend | `semantic-html-structure` | `write-semantic-html` |
+| frontend | `interface-state-implementation` | `implement-interface-states` |
+| frontend | `responsive-implementation` | `implement-responsive-layout` |
+| frontend | `design-token-implementation` | `implement-design-tokens` |
+| dev | `repo-conventions-setup` | `record-repo-conventions` |
+| dev | `feature-build` | `build-feature` |
+| dev | `bug-fix` | `fix-bug` |
+| dev | `migration` | `migrate-system` |
+| dev | `independent-code-review` | `review-code-independently` |
+| dev | `adversarial-code-review` | `review-code-adversarially` |
+| dev | `regression-review` | `review-regressions` |
+| dev | `review-reconciliation` | `reconcile-reviews` |
+| dev | `merge-readiness-check` | `check-merge-readiness` |
+| dev | `deployment-readiness` | `check-deployment-readiness` |
+| dev | `documentation-pass` | `fix-docs` |
+| dev | `architecture-review` | `review-architecture` |
+| dev | `security-audit` | `audit-security` |
+| dev | `dependency-audit` | `audit-dependencies` |
+| dev | `technical-debt-audit` | `audit-tech-debt` |
+
 ## 0.8.0
 
 - Moved three skills to the bucket that matches their work. No skill was renamed and no skill's content changed.

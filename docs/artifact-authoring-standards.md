@@ -243,7 +243,7 @@ These fragments demonstrate decisions, not production artifacts.
 
 **Avoid:** Embedding all contrast measurement steps in a UI Review Agent.
 
-**Prefer:** “Apply the Accessibility Review Skill to identify and verify barriers. Own prioritization of its findings and return the prioritized findings, evidence, and unresolved decisions in the review handoff.”
+**Prefer:** “Apply the Review Accessibility Skill to identify and verify barriers. Own prioritization of its findings and return the prioritized findings, evidence, and unresolved decisions in the review handoff.”
 
 The Skill retains reusable method; the Agent owns the specialist decision and handoff.
 

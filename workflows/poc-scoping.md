@@ -13,19 +13,19 @@ Define a small proof of concept that can settle one question, with the smallest 
 ## Stages
 
 1. **Frame the question**
-   - Assignment: [Delivery Planner](../agents/delivery-planner.md), applying [Problem Framing](../skills/plan/problem-framing/SKILL.md).
+   - Assignment: [Delivery Planner](../agents/delivery-planner.md), applying [Frame Problem](../skills/plan/frame-problem/SKILL.md).
    - Requires: the idea or question.
    - Produces: a problem frame whose success measure can fail, naming the result that would confirm and the result that would refute.
 2. **Find what must be tested**
-   - Assignment: the Delivery Planner, applying [Assumption Mapping](../skills/plan/assumption-mapping/SKILL.md).
+   - Assignment: the Delivery Planner, applying [Map Assumptions](../skills/plan/map-assumptions/SKILL.md).
    - Requires: the problem frame.
    - Produces: a register with the assumptions the proof of concept must test, ordered by risk.
 3. **Cut to the smallest slice**
-   - Assignment: [Simplification Review](../skills/plan/simplification-review/SKILL.md).
+   - Assignment: [Simplify Scope](../skills/plan/simplify-scope/SKILL.md).
    - Requires: the frame, the register, and the limit.
    - Produces: a simplification proposal retaining only what is needed to test the riskiest assumptions, with deferred work and revisit triggers.
 4. **Break down and set the stop rule**
-   - Assignment: the Delivery Planner, applying [Issue Breakdown](../skills/plan/issue-breakdown/SKILL.md) to the retained slice.
+   - Assignment: the Delivery Planner, applying [Draft Issues](../skills/plan/draft-issues/SKILL.md) to the retained slice.
    - Requires: the simplification proposal and the limit.
    - Produces: a small item set and a stop rule: the limit, and what result or lack of result ends the proof of concept.
 

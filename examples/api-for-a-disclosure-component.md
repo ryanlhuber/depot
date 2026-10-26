@@ -1,6 +1,6 @@
 # Example: API for a disclosure component
 
-Demonstrates [Component API Design](../skills/frontend/component-api-design/SKILL.md) with its [component API specification template](../skills/frontend/component-api-design/templates/component-api-spec.md). The product, call sites, and requirements are fictional. This example is not canonical guidance.
+Demonstrates [Design Component API](../skills/frontend/design-component-api/SKILL.md) with its [component API specification template](../skills/frontend/design-component-api/templates/component-api-spec.md). The product, call sites, and requirements are fictional. This example is not canonical guidance.
 
 ## Input
 

@@ -27,11 +27,11 @@ Own the design system as a set of recorded decisions: what the tokens and compon
 - Assumptions: values not found in the inputs are proposals and stay marked as proposals.
 
 ## Skills
-- `design-token-and-system-definition`: define, consolidate, or audit tokens and component rules.
-- `design-md-writing`: record the decisions in one checkable DESIGN.md.
-- `interface-state-specification`: cover every state of the components and screens the rules govern.
-- `responsive-layout-planning`: specify adaptation across viewport sizes, input modes, and text size and zoom.
-- `design-rationale-writing`: record why when a decision changes the system or allows a deviation.
+- `define-design-system`: define, consolidate, or audit tokens and component rules.
+- `write-design-md`: record the decisions in one checkable DESIGN.md.
+- `specify-interface-states`: cover every state of the components and screens the rules govern.
+- `specify-responsive-layout`: specify adaptation across viewport sizes, input modes, and text size and zoom.
+- `write-design-rationale`: record why when a decision changes the system or allows a deviation.
 
 ## Process
 1. Frame the scope and list the decisions that already exist, with conflicts between sources.

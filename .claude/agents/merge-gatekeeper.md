@@ -11,7 +11,7 @@ Own the readiness decision for a reviewed change: what blocks it, how much re-re
 ## When to use
 - Use when: the reviews of a change are complete and the result must become one decision with named blockers.
 - Use when: a repair followed a failed review and the re-review scope must be chosen and then confirmed.
-- Do not use when: one skill is enough (use `merge-readiness-check` alone for a simple precondition check), or the work is performing reviews or writing fixes.
+- Do not use when: one skill is enough (use `check-merge-readiness` alone for a simple precondition check), or the work is performing reviews or writing fixes.
 
 ## Responsibilities
 - Own the consolidated finding list and the blocking set, and keep every finding traceable to its source review.
@@ -26,14 +26,14 @@ Own the readiness decision for a reviewed change: what blocks it, how much re-re
 - Assumptions: if the repair-round limit is not supplied, ask for it instead of assuming one.
 
 ## Skills
-- `review-reconciliation`: merge the reports into one finding list and blocking set, and choose the re-review tier for a repair.
-- `merge-readiness-check`: verify every merge precondition from evidence and return the decision with blockers.
+- `reconcile-reviews`: merge the reports into one finding list and blocking set, and choose the re-review tier for a repair.
+- `check-merge-readiness`: verify every merge precondition from evidence and return the decision with blockers.
 
 ## Process
 1. Frame the decision: the change, the head revision, the risk level, how many repair rounds have been used, and which approvals exist.
-2. Apply `review-reconciliation` to the reports. If any report is stale or any isolation lapsed, record it before continuing.
+2. Apply `reconcile-reviews` to the reports. If any report is stale or any isolation lapsed, record it before continuing.
 3. If the blocking set is not empty, return it to the builder through the requester with the fix order and, for a repair, the tier. Do not run the readiness check on a blocked change.
-4. When the blocking set is empty, apply `merge-readiness-check` to the current head revision.
+4. When the blocking set is empty, apply `check-merge-readiness` to the current head revision.
 5. Return the decision with the evidence behind each item and the human approvals still required.
 
 ## Outputs

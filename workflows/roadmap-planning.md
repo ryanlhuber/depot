@@ -13,7 +13,7 @@ Bring a backlog to a state that can be trusted and turn it into a one-page now, 
 ## Stages
 
 1. **Check health**
-   - Assignment: [Backlog Owner](../agents/backlog-owner.md), applying [Backlog Health Check](../skills/plan/backlog-health-check/SKILL.md).
+   - Assignment: [Backlog Owner](../agents/backlog-owner.md), applying [Audit Backlog](../skills/plan/audit-backlog/SKILL.md).
    - Requires: the items, the snapshot date, and any threshold or evidence.
    - Produces: a health report with evidenced findings and one recommended action each.
 2. **Apply cleanup** (performed by the owner, outside this workflow)
@@ -21,19 +21,19 @@ Bring a backlog to a state that can be trusted and turn it into a one-page now, 
    - Requires: the health report.
    - Produces: the cleaned item set and a record of the decisions made.
 3. **Confirm the order**
-   - Assignment: [Dependency Mapping](../skills/plan/dependency-mapping/SKILL.md) on the cleaned set, when no current dependency map exists.
+   - Assignment: [Sequence Work](../skills/plan/sequence-work/SKILL.md) on the cleaned set, when no current dependency map exists.
    - Requires: the cleaned item set.
    - Produces: a dependency map with the build order, external blockers, and no remaining cycle.
 4. **Confirm the ranking is current**
-   - Assignment: the Backlog Owner, applying [Backlog Prioritization](../skills/plan/backlog-prioritization/SKILL.md) when no current ranking exists or the supplied one is stale, and [Simplification Review](../skills/plan/simplification-review/SKILL.md) when a limit applies.
+   - Assignment: the Backlog Owner, applying [Prioritize Backlog](../skills/plan/prioritize-backlog/SKILL.md) when no current ranking exists or the supplied one is stale, and [Simplify Scope](../skills/plan/simplify-scope/SKILL.md) when a limit applies.
    - Requires: the cleaned set, the dependency map, the criteria that matter now, and any limit.
    - Produces: a current priority table and, when a limit applies, a simplification proposal with owner decisions flagged.
 5. **Report status** (optional: when progress evidence exists or a report is wanted)
-   - Assignment: [Status Reporting](../skills/plan/status-reporting/SKILL.md).
+   - Assignment: [Report Status](../skills/plan/report-status/SKILL.md).
    - Requires: the cleaned set, the priority table, and available evidence of progress.
    - Produces: a status report that lists decisions needed, risks, and unknowns.
 6. **Write the roadmap**
-   - Assignment: the Backlog Owner, applying [Roadmap Writing](../skills/plan/roadmap-writing/SKILL.md).
+   - Assignment: the Backlog Owner, applying [Write Roadmap](../skills/plan/write-roadmap/SKILL.md).
    - Requires: the priority table, the dependency map, supplied dates, and the audience.
    - Produces: a one-page roadmap with confidence and moving conditions.
 7. **Review and approve** (performed by the owner, outside this workflow)

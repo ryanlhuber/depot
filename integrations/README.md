@@ -9,4 +9,4 @@ Use the canonical [portability and integration boundaries](../docs/portability-a
 ## Current integrations
 
 - [Skill sync](skill-sync/README.md): keeps copies of these skills and agents in another repository up to date.
-- [Model routing](model-routing/models.md): the short list of models, families, and effort levels that `kit-router` recommends from. It names models, so it lives here rather than in a portable skill.
+- [Model routing](model-routing/models.md): the short list of models, families, and effort levels that `route-work` recommends from. It names models, so it lives here rather than in a portable skill.

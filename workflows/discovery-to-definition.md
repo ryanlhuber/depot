@@ -13,19 +13,19 @@ Turn a vague interface brief into a traceable definition that design can start f
 ## Stages
 
 1. **Define requirements**
-   - Assignment: [Requirements Definition](../skills/ux/requirements-definition/SKILL.md) to make the brief precise.
+   - Assignment: [Define Requirements](../skills/ux/define-requirements/SKILL.md) to make the brief precise.
    - Requires: the brief and any constraints.
    - Produces: numbered requirements, constraints, assumptions, open questions, and non-goals.
 2. **Ground users and survey solutions** (independent; run in either order)
-   - Assignment: [Persona and Scenario Drafting](../skills/ux/persona-and-scenario-drafting/SKILL.md) for users and situations, and [Competitive Pattern Analysis](../skills/ux/competitive-pattern-analysis/SKILL.md) for established solutions to the core problem.
+   - Assignment: [Draft Personas](../skills/ux/draft-personas/SKILL.md) for users and situations, and [Compare Patterns](../skills/ux/compare-patterns/SKILL.md) for established solutions to the core problem.
    - Requires: the requirements set, plus user research material for personas and comparison targets or selection criteria for the analysis.
    - Produces: sourced personas and scenarios with research gaps, and named patterns with tradeoffs and limitations.
 3. **Map task flows**
-   - Assignment: [User Flow Mapping](../skills/ux/user-flow-mapping/SKILL.md) for each primary user goal.
+   - Assignment: [Map User Flow](../skills/ux/map-user-flow/SKILL.md) for each primary user goal.
    - Requires: requirement IDs for the goal, the scenarios that describe it, and the pattern options that apply.
    - Produces: ordered flows with branches and failure paths, friction points, and unresolved questions.
 4. **Structure content and navigation**
-   - Assignment: [Information Architecture and Navigation](../skills/ux/information-architecture-and-navigation/SKILL.md).
+   - Assignment: [Design Navigation](../skills/ux/design-navigation/SKILL.md).
    - Requires: the content and function inventory and the primary tasks drawn from the mapped flows.
    - Produces: hierarchy, navigation mechanisms, labels with rationale, and task-path traces.
 
@@ -37,7 +37,7 @@ Turn a vague interface brief into a traceable definition that design can start f
 
 ## Branching and iteration
 
-- If no user research material exists, skip personas and carry forward the assumptions-and-research-needs list that Persona and Scenario Drafting returns instead.
+- If no user research material exists, skip personas and carry forward the assumptions-and-research-needs list that Draft Personas returns instead.
 - If no comparison targets or selection criteria exist, skip the competitive analysis and record the gap.
 - If the scope is a single flow with no content inventory, skip stage 4.
 - Retry a failed validation at most once. If requirements are still unaddressed, stop and return a partial result.

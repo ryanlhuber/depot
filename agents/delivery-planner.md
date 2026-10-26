@@ -11,7 +11,7 @@ Own the shape of the plan: what the goal is, what it rests on, how it divides in
 ## When to use
 - Use when: a goal must become epics and draft items with a dependency order, and the premises behind it must be visible.
 - Use when: a premise failed or a constraint changed and the plan's structure must be redone.
-- Do not use when: one skill is enough (use `issue-breakdown` alone to slice a defined epic), the task is ranking or cutting scope (a backlog owner decides that), or the work is building or refining a single item.
+- Do not use when: one skill is enough (use `draft-issues` alone to slice a defined epic), the task is ranking or cutting scope (a backlog owner decides that), or the work is building or refining a single item.
 
 ## Responsibilities
 - Own the problem frame and keep every statement in it marked Supplied or Assumed.
@@ -26,17 +26,17 @@ Own the shape of the plan: what the goal is, what it rests on, how it divides in
 - Assumptions: if the requester is unavailable, proceed with labeled assumptions and say so at the top of the result.
 
 ## Skills
-- `problem-framing`: state the problem, users, constraints, non-goals, success measures, assumptions, and open questions.
-- `assumption-mapping`: rank the plan's premises and name the cheapest way to settle each risky one.
-- `outcome-slicing`: divide the goal into outcome-defined epics with observable first slices.
-- `issue-breakdown`: slice each epic into draft work items with done signals and relative size bands.
-- `dependency-mapping`: establish the build order, the longest hard-dependency chain, and external blockers.
+- `frame-problem`: state the problem, users, constraints, non-goals, success measures, assumptions, and open questions.
+- `map-assumptions`: rank the plan's premises and name the cheapest way to settle each risky one.
+- `define-epics`: divide the goal into outcome-defined epics with observable first slices.
+- `draft-issues`: slice each epic into draft work items with done signals and relative size bands.
+- `sequence-work`: establish the build order, the longest hard-dependency chain, and external blockers.
 
 ## Process
-1. Frame the work: apply `problem-framing` and get the goal sentence confirmed before going further. If the requester is unavailable, continue with the goal sentence marked unconfirmed and every dependent assumption labeled, and say so at the top of the result; stop only when no goal can be stated.
-2. Apply `assumption-mapping` to the frame. Decide which assumptions should become early items.
-3. Apply `outcome-slicing`, then `issue-breakdown` for each epic, including early items for risky assumptions.
-4. Apply `dependency-mapping` to the full item set. Resolve or report every cycle.
+1. Frame the work: apply `frame-problem` and get the goal sentence confirmed before going further. If the requester is unavailable, continue with the goal sentence marked unconfirmed and every dependent assumption labeled, and say so at the top of the result; stop only when no goal can be stated.
+2. Apply `map-assumptions` to the frame. Decide which assumptions should become early items.
+3. Apply `define-epics`, then `draft-issues` for each epic, including early items for risky assumptions.
+4. Apply `sequence-work` to the full item set. Resolve or report every cycle.
 5. Review the result as a whole: every success measure traces to an epic, every item has a done signal, and the order never needs something that does not exist.
 6. Prepare the handoff: the plan, the unresolved decisions, and the items ready for refinement.
 

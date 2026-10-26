@@ -6,7 +6,7 @@ Reusable expertise does not belong here; place it in [`skills/`](../skills/). Wo
 
 Use the [core artifact architecture](../docs/core-artifact-architecture.md) to justify an Agent and the [artifact authoring standards](../docs/artifact-authoring-standards.md) to author one.
 
-Each Agent is one Markdown file, `agents/<name>.md`, with `name` (matching the file name) and `description` in its frontmatter. List the Skills it applies under `## Skills` by name in backticks, for example `` `merge-readiness-check` ``, rather than by link, so the file keeps working when it is copied into another repository. Every Skill named must exist in this repository. Edit agents only here: [`.claude/agents/`](../.claude/agents/) is a generated mirror for Claude Code, refreshed by `scripts/sync-adapters.sh`.
+Each Agent is one Markdown file, `agents/<name>.md`, with `name` (matching the file name) and `description` in its frontmatter. List the Skills it applies under `## Skills` by name in backticks, for example `` `check-merge-readiness` ``, rather than by link, so the file keeps working when it is copied into another repository. Every Skill named must exist in this repository. Edit agents only here: [`.claude/agents/`](../.claude/agents/) is a generated mirror for Claude Code, refreshed by `scripts/sync-adapters.sh`.
 
 ## Index
 

@@ -1,6 +1,6 @@
 ---
 name: refactor
-description: "Improves code structure while keeping behavior the same, in small steps verified by tests. Use when code is hard to change, understand, or test. Not for behavior changes (`feature-build`) or defects (`bug-fix`)."
+description: "Improves code structure while keeping behavior the same, in small steps verified by tests. Use when code is hard to change, understand, or test. Not for behavior changes (`build-feature`) or defects (`fix-bug`)."
 ---
 
 # Refactor
@@ -10,7 +10,7 @@ Reduce the cost of future change in specific code without changing what it does.
 
 ## When to use
 - Use when: named code is hard to change, understand, or test and the outcome wanted is structural.
-- Do not use when: behavior is meant to change (use `feature-build`), the problem is a defect (use `bug-fix`), or the structure question is system-wide (use `architecture-review`).
+- Do not use when: behavior is meant to change (use `build-feature`), the problem is a defect (use `fix-bug`), or the structure question is system-wide (use `review-architecture`).
 
 ## Inputs
 - Required: the target code and the maintainability outcome wanted.

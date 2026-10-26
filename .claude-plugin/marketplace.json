@@ -25,7 +25,7 @@
       "name": "depot-core",
       "source": "./skills/core",
       "description": "General skills for any domain: skill authoring, decision interviews, session handoff, routing, and reviewer qualification.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -35,7 +35,7 @@
       "name": "depot-plan",
       "source": "./skills/plan",
       "description": "Planning skills: problem framing, assumptions, outcome slicing, work-item breakdown, dependencies, prioritization, simplification, roadmaps, status reports, and refining an item into an approved specification. Needs depot-core.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -48,7 +48,7 @@
       "name": "depot-ux",
       "source": "./skills/ux",
       "description": "UX skills that inform the interface: user research, requirements, journeys, flows, information architecture, usability and accessibility evaluation, and microcopy.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -58,7 +58,7 @@
       "name": "depot-ui",
       "source": "./skills/ui",
       "description": "UI design skills up to front-end handoff: design tokens and system rules, DESIGN.md, state and responsive specifications, visual critique, design-to-implementation QA, and design rationale.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -68,7 +68,7 @@
       "name": "depot-frontend",
       "source": "./skills/frontend",
       "description": "Front-end implementation skills: semantic HTML, component APIs, states, responsive CSS, design tokens, and design-spec intake.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -78,7 +78,7 @@
       "name": "depot-dev",
       "source": "./skills/dev",
       "description": "Software delivery skills: repo conventions setup, build, fix, refactor, migrate, review, reconcile, merge-readiness, security and dependency audits, and release readiness.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "skills": [
         "./"
@@ -88,7 +88,7 @@
       "name": "depot-agents",
       "source": "./agents",
       "description": "The five specialist agents (backlog owner, delivery planner, design reviewer, design-system designer, merge gatekeeper). They apply skills from the bucket plugins, so install those too.",
-      "version": "0.8.0",
+      "version": "0.9.0",
       "category": "development",
       "agents": [
         "./backlog-owner.md",

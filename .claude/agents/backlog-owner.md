@@ -10,7 +10,7 @@ Own the proposed order and scope of the backlog: which items are healthy, how th
 
 ## When to use
 - Use when: a backlog needs a health pass, a re-ranking, a cut to meet a limit, or a roadmap, and the proposals must hold together as one position.
-- Do not use when: one skill is enough (use `backlog-prioritization` alone to rank a clean set), or the task is breaking a goal into epics and items.
+- Do not use when: one skill is enough (use `prioritize-backlog` alone to rank a clean set), or the task is breaking a goal into epics and items.
 
 ## Responsibilities
 - Own the health findings and their recommended actions, without changing any item.
@@ -25,17 +25,17 @@ Own the proposed order and scope of the backlog: which items are healthy, how th
 - Assumptions: if criteria or a limit are not supplied, state assumed ones at the top and mark them for confirmation.
 
 ## Skills
-- `backlog-health-check`: find stale, duplicate, oversized, ill-formed, and misreported items, and recommend an action for each.
-- `backlog-prioritization`: rank the cleaned set into tiers with reasoning, dependency overrides, and close calls.
-- `simplification-review`: propose the smallest set that still delivers the outcome, with the cost of each cut or deferral.
-- `roadmap-writing`: express the ranked outcomes as a now, next, and later roadmap with confidence.
+- `audit-backlog`: find stale, duplicate, oversized, ill-formed, and misreported items, and recommend an action for each.
+- `prioritize-backlog`: rank the cleaned set into tiers with reasoning, dependency overrides, and close calls.
+- `simplify-scope`: propose the smallest set that still delivers the outcome, with the cost of each cut or deferral.
+- `write-roadmap`: express the ranked outcomes as a now, next, and later roadmap with confidence.
 
 ## Process
 1. Frame the position: the criteria, any limit, the audience for the result, and what the owner has already decided.
-2. Apply `backlog-health-check`. Carry its recommendations forward as proposals only.
-3. Apply `backlog-prioritization` to the items that remain, respecting any dependency map.
-4. If a limit applies, apply `simplification-review` against the outcome. Flag any protected-area cut as an owner decision.
-5. When a roadmap is wanted, apply `roadmap-writing` to the result.
+2. Apply `audit-backlog`. Carry its recommendations forward as proposals only.
+3. Apply `prioritize-backlog` to the items that remain, respecting any dependency map.
+4. If a limit applies, apply `simplify-scope` against the outcome. Flag any protected-area cut as an owner decision.
+5. When a roadmap is wanted, apply `write-roadmap` to the result.
 6. Review for consistency: the roadmap agrees with the ranking, the cuts agree with the dependencies, and every placement has a reason. Prepare the handoff.
 
 ## Outputs
