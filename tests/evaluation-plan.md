@@ -33,4 +33,4 @@ On realistic repositories, does delivering a change with the depot workflow (`is
 
 ## Cost and approval
 
-This is the largest piece of work in this repository's backlog. It needs Ryan's go-ahead before it starts, an agreed budget, and a decision on which repositories to use.
+This is a large piece of work. It needs Ryan's go-ahead before it starts, an agreed budget, and a decision on which repositories to use.
