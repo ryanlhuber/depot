@@ -17,7 +17,7 @@ Own the readiness decision for a reviewed change: what blocks it, how much re-re
 - Own the consolidated finding list and the blocking set, and keep every finding traceable to its source review.
 - Own the choice of re-review tier after a repair, and the record of approved revision, repair revision, and verified scope.
 - Own the readiness verdict: ready, not ready, or blocked, each with its basis.
-- Keep reviewer independence intact. Report any lapse; never absorb it silently. On the light path, a reviewer from the builder's family, recorded with the reason that no other family was reachable, is a same-family review, not a lapse, and its limitation goes to the human with the verdict.
+- Keep reviewer independence intact. Report any lapse; never absorb it silently. On the light path, a reviewer from the builder's family, recorded with its reason (no other family reachable, or the requester's explicit choice despite one being reachable), is a same-family review, not a lapse, and its limitation goes to the human with the verdict.
 - Stop at the human decision and name what the human must decide.
 
 ## Inputs
