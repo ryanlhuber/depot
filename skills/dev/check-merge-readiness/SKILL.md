@@ -29,7 +29,7 @@ Check, item by item and from evidence, that a change may be merged, and return a
 - Required: tests pass, with evidence linked. Never accept or report a passing result that was not shown.
 - Required: revision binding and re-review tiers are owned by `reconcile-reviews`; this check verifies the record and does not re-derive or relax it. Every review the review path requires is PASS and bound to the head revision, or to an approved revision that a recorded re-review at the tier `reconcile-reviews` chose extends to the head revision. Without that record, the head revision is not covered.
 - Required: the review path matches the risk. A high-risk change, or one with no recorded risk, needs both reviews; a light-path change needs the independent review only and records that the adversarial review was not required. When two reviews ran, the second reviewer did not see the first reviewer's output before its initial report.
-- Required: the builder and the reviewers are independent, as the process requires. Variants or versions of one model family, or one family used through different tools, are not independent.
+- Required: the builder and the reviewers are independent parties: each reviewer is a fresh session that did not see the builder's context, and on the standard path did not see the other review's output. On the standard path the parties are also from distinct model families. On the light path a distinct family is preferred and suggested, not required: when the reviewer is in the builder's family, mark the item Met only if the review is recorded as a same-family review with its reason (no other family reachable, or the requester's explicit choice despite one being reachable), and carry the limitation into the decision for the human, saying plainly when another family was reachable. Variants or versions of one model family, or one family used through different tools, are never reported as distinct families.
 - Required: no Moderate or Major finding is unresolved, and every repair has a tier record from `reconcile-reviews` and the re-reviews it requires.
 - Required: the review reports are attached to the change record together, after the reviews the path requires finished.
 - Required: the change targets the correct branch, and required checks and approval rules pass. Never recommend bypassing a required check or rule.
@@ -42,7 +42,7 @@ Check, item by item and from evidence, that a change may be merged, and return a
 - Each blocker names what would clear it.
 
 ## Output
-Return the completed merge checklist, the decision (ready or not ready), the blockers ordered by importance, the human approvals still needed, and, after a merge, the post-merge results. Use the [merge checklist](templates/merge-checklist.md).
+Return the completed merge checklist, the decision (ready or not ready), the blockers ordered by importance, the human approvals still needed, any same-family review limitation, and, after a merge, the post-merge results. Use the [merge checklist](templates/merge-checklist.md).
 
 ## Completion criteria
 - The decision is ready only if every item is Met, and not ready otherwise.

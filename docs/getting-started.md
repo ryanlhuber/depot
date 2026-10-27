@@ -8,7 +8,7 @@ A short path from nothing to a project that agents can work in. Each step is opt
 2. Run `/depot-dev:record-repo-conventions` once.
 3. Describe your situation to `/depot-core:route-work` and do what it recommends.
 
-For a small, ordinary change, the light review path in [Issue to Merge](../workflows/issue-to-merge.md) needs only you and one reviewer from a different model family. The full three-family review applies only to high-risk changes. Everything below is optional.
+For a small, ordinary change, the light review path in [Issue to Merge](../workflows/issue-to-merge.md) needs only you and one reviewer. A reviewer from a different model family than the builder is preferred, because it is less likely to share the builder's blind spots. If you have access to only one family, use a fresh session with no builder context as the reviewer; the review is recorded as a same-family review and the merge checklist names that limitation. The full three-family review is required only for high-risk changes. Everything below is optional.
 
 ## 1. Install the skills
 

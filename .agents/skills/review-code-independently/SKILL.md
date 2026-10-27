@@ -11,7 +11,7 @@ Review a specific revision of a change against its approved specification and re
 
 ## When to use
 - Use when: a change has an approved specification, a diff, and a revision identifier, and a reviewer independent of the builder is available.
-- Do not use when: the reviewer is the builder or shares the builder's blind spots, no specification exists (ask for one), or the goal is to try to break the change (use `review-code-adversarially`).
+- Do not use when: the reviewer is the builder or has seen the builder's context or reasoning (a reviewer from the builder's model family is fine when the workflow allows a same-family review, and the report says so), no specification exists (ask for one), or the goal is to try to break the change (use `review-code-adversarially`).
 
 ## Inputs
 - Required: the approved specification with its acceptance criteria, the diff and the repository context needed to judge it, test results, and the revision identifier under review (for example a commit hash).

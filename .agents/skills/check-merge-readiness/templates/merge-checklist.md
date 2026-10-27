@@ -12,7 +12,7 @@ Mark each item Met, Not met, or Cannot verify, and give the evidence. Cannot ver
 | First review: PASS, bound to that revision | | <report> |
 | Second review: PASS, bound to that revision (standard path; mark Met as "Not required" with the recorded light-path risk on the light path) | | <report, or the recorded risk> |
 | Second reviewer did not see the first review's output before its initial report (standard path) | | <report statement> |
-| Builder and every reviewer are independent | | <who, and family if models> |
+| Builder and every reviewer are independent parties; distinct families required on the standard path, preferred on the light path | | <who, and family if models; for a light-path same-family review, state "same-family review", its reason (no other family reachable, or the requester's choice although one was), and the limitation> |
 | No unresolved Moderate or Major finding | | <consolidated findings> |
 | Every repair has a tier record and the re-reviews it requires | | <tier record> |
 | Reports attached to the change record together | | <link> |
