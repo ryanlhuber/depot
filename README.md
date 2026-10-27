@@ -41,34 +41,44 @@ Skills are namespaced by the bucket plugin, for example `/depot-dev:fix-bug`. `r
 
 </details>
 
+<details open>
+<summary><strong>Codex plugin</strong> (skills; updates through the marketplace)</summary>
+
+```sh
+codex plugin marketplace add ryanlhuber/depot
+codex plugin add depot@depot
+```
+
+Codex reads the same marketplace file as Claude Code, so there is nothing else to set up. Skills are namespaced by the plugin, for example `depot:route-work`; mention one with `$` or browse them with `/skills`. Codex loads the skills only. The five agents and the workflows are Markdown files that it does not load, so read or copy them from [`agents/`](agents/) and [`workflows/`](workflows/).
+
+```sh
+codex plugin marketplace upgrade depot   # refresh the marketplace to the latest depot
+codex plugin remove depot@depot          # uninstall
+```
+
+This was run against Codex CLI 0.164.0: the full `depot` plugin installed and every skill loaded. The bucket plugins (`depot-core` and the rest) also install there, but their skills did not load when tested, so for a subset use the installer below. The update command was run, but not across a version change.
+
+</details>
+
 Use a compatible skills installer to choose what you need, for any agent (or to get editable copies in your project). Run the command that matches your package manager from the project you want the skills in:
 
-<details>
-<summary><strong>npm</strong></summary>
+**npm**
 
 ```sh
 npx skills@latest add ryanlhuber/depot
 ```
 
-</details>
-
-<details>
-<summary><strong>pnpm</strong> (use this if the project's <code>package.json</code> requires pnpm; <code>npx</code> fails there)</summary>
+**pnpm**
 
 ```sh
 pnpm dlx skills@latest add ryanlhuber/depot
 ```
 
-</details>
-
-<details>
-<summary><strong>Bun</strong></summary>
+**Bun**
 
 ```sh
 bunx skills@latest add ryanlhuber/depot
 ```
-
-</details>
 
 Add `-a <agent>` (for example `-a opencode`) to pick the coding agent, and `--skill <name>` to pick skills; leave them off to choose when prompted. To update later, run the same command with `update` in place of `add ryanlhuber/depot`. The `bunx` command is the standard Bun equivalent and has not been run against this repository.
 
