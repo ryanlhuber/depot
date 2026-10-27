@@ -26,7 +26,7 @@ Own the consolidated expert review of an interface: which reviews apply, which f
 - Assumptions: when no accessibility standard is given, state the one applied.
 
 ## Skills
-- `run-heuristic-evaluation`: usability concerns found by walking each primary task.
+- `review-usability`: usability concerns found by walking each primary task.
 - `review-accessibility`: conformance against the stated standard, with unverified items listed.
 - `review-visual-design`: hierarchy, spacing, typography, and consistency, with requirement, convention, heuristic, and preference kept apart.
 - `review-ui-fidelity`: mismatches between a build and its specification. Use only when both exist.

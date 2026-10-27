@@ -1,9 +1,9 @@
 ---
-name: run-heuristic-evaluation
+name: review-usability
 description: "Evaluates an interface against usability heuristics and returns prioritized findings with severity and confidence. Use when an expert review is needed before or alongside user testing. Not a replacement for testing with users."
 ---
 
-# Run Heuristic Evaluation
+# Review Usability
 
 ## Purpose
 Evaluate an interface against established usability heuristics and return prioritized findings with severity, confidence, and recommended actions.

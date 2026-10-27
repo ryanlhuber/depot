@@ -1,10 +1,10 @@
 ---
-name: decide-plan
+name: settle-decisions
 description: "Interviews you one question at a time, with options and a recommendation, until every decision in a vague plan is settled, then confirms them. Use when a plan has hidden branches. Not for specs (`refine-issue`)."
 disable-model-invocation: true
 ---
 
-# Decide Plan
+# Settle Decisions
 
 ## Purpose
 Turn a loosely stated plan into a short list of confirmed decisions by asking focused questions in order, so nothing material is assumed silently.
