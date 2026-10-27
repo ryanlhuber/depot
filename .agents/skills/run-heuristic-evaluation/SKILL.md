@@ -38,7 +38,7 @@ Evaluate an interface against established usability heuristics and return priori
 - Every in-scope task was walked through.
 - Each finding has an observation, heuristic, impact, severity, confidence, and action.
 - No finding is presented as proven without evidence.
-- Fields follow the [repository finding structure](../../../docs/contribution-evidence-and-quality-standards.md#review-finding-structure).
+- Observation, classification, impact, severity, confidence, and action stay separate fields; severity and confidence are independent.
 
 ## Output
 Return the scope and heuristic set, prioritized findings, strengths worth preserving, and the findings that need user validation with a suggested validation approach. Use the [finding report](templates/finding-report.md).

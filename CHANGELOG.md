@@ -4,6 +4,10 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.9.1
+
+- Fixed a broken link in four skills (`review-accessibility`, `run-heuristic-evaluation`, `plan-usability-test`, `review-visual-design`). Each linked to a document in the repository's `docs/` folder, which is missing when a skill is installed alone, for example from a bucket plugin or the skills installer. Each now states the finding-field rule in one line. No skill's method, inputs, or outputs changed.
+
 ## 0.9.0
 
 - Renamed 55 of the 57 skills so each name is a verb phrase that says what the skill does, with the same verb family used for the same kind of work: `write-`, `draft-`, `define-`, `specify-`, and `implement-` for producing things; `review-`, `check-`, and `audit-` for judging them; `map-` and `sequence-` for mapping and ordering. `refine-issue` and `refactor` keep their names. No skill's method, inputs, or outputs changed, and no skill moved between buckets.

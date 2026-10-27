@@ -38,7 +38,7 @@ Assess visual hierarchy, spacing, typography, alignment, and consistency, and re
 - Each finding names the element, the effect, the classification, and a suggested change.
 - No preference is phrased as a requirement or fact.
 - Findings are prioritized by effect on the primary goal.
-- Fields follow the [repository finding structure](../../../docs/contribution-evidence-and-quality-standards.md#review-finding-structure).
+- Observation, classification, effect, importance, confidence, and suggested change stay separate fields; importance and confidence are independent.
 
 ## Output
 Return a goal summary, prioritized findings with classification, strengths, and questions that need design-intent clarification. Use the [critique report](templates/critique-report.md).
