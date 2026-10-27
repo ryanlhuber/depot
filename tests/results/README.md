@@ -59,4 +59,5 @@ Results files:
 - [2026-10-25 router UX and UI cases](2026-10-25-router-ux-ui-cases.md) (3 router cases added with the bucket split: 3 pass)
 - [2026-10-26 router cases after the rename](2026-10-26-rename-router-cases.md) (the same 3 router cases against the 0.9.0 names: 3 pass)
 - [2026-10-26 holdout after the rename](2026-10-26-rename-holdout.md) (same 70 requests, new names, one Claude Haiku run: 66 correct in three runs, two new near misses that repeat)
+- [2026-10-27 same-family light-path cases](2026-10-27-same-family-cases.md) (6 cases for the 0.11.0 independence change, one Claude Sonnet run each: 6 pass; same family as the author, read-only, author-written fixtures)
 - [2026-10-27 trigger cases after the 0.10.0 rename](2026-10-27-naming-cases.md) (20 requests for the two renamed skills and their neighbors, three Haiku runs: 20, 20, and 19 correct; both renamed skills chosen every time, one miss on a no-skill request)
