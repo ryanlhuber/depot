@@ -4,11 +4,11 @@ A short path from nothing to a project that agents can work in. Each step is opt
 
 ## Short version for one developer
 
-1. Install `depot-core`, `depot-plan`, and `depot-dev` (add other buckets only if you use them), not the full plugin: `claude plugin install depot-core@depot`, `claude plugin install depot-plan@depot`, and `claude plugin install depot-dev@depot`. `route-work` is in `depot-core`, `refine-issue` (the first step of Fix or Build to Merge) is in `depot-plan`, and `record-repo-conventions` is in `depot-dev`.
+1. Install `depot-core`, `depot-plan`, and `depot-dev` (add other buckets only if you use them), not the full plugin: `claude plugin install depot-core@depot`, `claude plugin install depot-plan@depot`, and `claude plugin install depot-dev@depot`. `route-work` is in `depot-core`, `refine-issue` (the first step of Issue to Merge) is in `depot-plan`, and `record-repo-conventions` is in `depot-dev`.
 2. Run `/depot-dev:record-repo-conventions` once.
 3. Describe your situation to `/depot-core:route-work` and do what it recommends.
 
-For a small, ordinary change, the light review path in [Fix or Build to Merge](../workflows/fix-or-build-to-merge.md) needs only you and one reviewer from a different model family. The full three-family review applies only to high-risk changes. Everything below is optional.
+For a small, ordinary change, the light review path in [Issue to Merge](../workflows/issue-to-merge.md) needs only you and one reviewer from a different model family. The full three-family review applies only to high-risk changes. Everything below is optional.
 
 ## 1. Install the skills
 

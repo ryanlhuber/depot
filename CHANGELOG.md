@@ -4,6 +4,19 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.10.0
+
+- Renamed two skills and one workflow so each name fits the convention for its artifact type. No method, inputs, or outputs changed, and nothing moved between buckets. `run-heuristic-evaluation` dropped the filler verb "run" and now sits with the other `review-` skills. `decide-plan` read like "pick a plan" but interviews you through a plan's open decisions. `fix-or-build-to-merge` used verbs and "or" where a workflow name should be two nouns, and "issue" is the word the planning skills already use for a work item.
+- **Breaking:** invoke the renamed skills by their new names (for example `/depot-ux:review-usability`), including in bucket plugins, installer selections, and sync lists such as `skills-depot.txt` in a project that syncs from depot. Replace old names with new ones using the table below. `depot-core`, `depot-ux`, and the full `depot` plugin carry the renamed skills; the workflow is referenced by name from `feature-to-release`, the routing map, and the docs.
+- Added a Naming section to `README.md` that records the convention for each artifact type: skills are `verb-object`, agents are `domain-role`, and workflows are `input-to-output`. `AGENTS.md` points to it. The five agents and the other seven workflows already fit and keep their names.
+- Titles, the skills and workflow indexes, the README tables, the routing map, the `design-reviewer` agent, linked workflows, the example, the docs, the model-routing note, and the behavioral cases use the new names. Earlier changelog entries and `tests/results/` keep the names they were run with.
+
+| Type | Old name | New name |
+| --- | --- | --- |
+| skill (ux) | `run-heuristic-evaluation` | `review-usability` |
+| skill (core) | `decide-plan` | `settle-decisions` |
+| workflow | `fix-or-build-to-merge` | `issue-to-merge` |
+
 ## 0.9.1
 
 - Fixed a broken link in four skills (`review-accessibility`, `run-heuristic-evaluation`, `plan-usability-test`, `review-visual-design`). Each linked to a document in the repository's `docs/` folder, which is missing when a skill is installed alone, for example from a bucket plugin or the skills installer. Each now states the finding-field rule in one line. No skill's method, inputs, or outputs changed.

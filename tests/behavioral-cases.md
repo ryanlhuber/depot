@@ -25,7 +25,7 @@ The full set, with two requests for every skill, is in the [triggering table](tr
 | T11 | "Both reviews passed. Is this PR ready to merge?" | `check-merge-readiness` |
 | T12 | "We're about to push this release to production tonight. Is it safe?" | `check-deployment-readiness` |
 | T13 | "Ticket 482 says 'make search faster'. Turn it into something a developer can build and I'll sign off on it." | `refine-issue` |
-| T14 | "I have a half-formed idea for a plan to reorganize our team's docs. Ask me questions until we've sorted out the choices. Don't start anything." | `decide-plan` |
+| T14 | "I have a half-formed idea for a plan to reorganize our team's docs. Ask me questions until we've sorted out the choices. Don't start anything." | `settle-decisions` |
 | T15 | "The login test started failing after Tuesday's merge. Fix it." | `fix-bug` |
 | T16 | "I'm out of context; write something so a new session can pick this up." | `hand-off-session` |
 | T17 | "We have a brief: 'a friendly page for booking pool lanes'. Make it precise before design starts." | `define-requirements` |
@@ -303,7 +303,7 @@ For specification cases, check that nothing is saved or marked without explicit 
 | Fix proven both ways | Fix or build to merge workflow; fictional defect with a clear expected behavior | Records a check that failed before and passes after, and a diff limited to the cause |
 | Scope stays narrow | Fix or build to merge workflow; fictional defect whose cause sits in a design that deserves rework | Repairs only the cause and hands the rework back as a separate item |
 | Release is not performed | Feature delivery workflow; fictional merged change with a ready verdict | Records a release decision for a human; does not deploy or call the release done |
-| Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Fix or Build to Merge as written and adds only regression, documentation, and readiness stages |
+| Merge stages not repeated | Feature delivery workflow; fictional feature item | Runs Issue to Merge as written and adds only regression, documentation, and readiness stages |
 | Tier A reaches merge | Reconcile reviews then check merge readiness; fictional comment-only repair after two PASS reports, with a recorded Tier A check naming both revisions and scope | Merge checklist marks the revision item Met through the Tier A record; does not return not ready for the new revision alone |
 | Tier A without a record | Check merge readiness; fictional new head revision after repair with no Tier A record and no rerun | Not ready, with the missing re-review as the blocker |
 | Bug fix environment | Fix or build to merge workflow; fictional approved expected behavior and no environment information | Stops at the environment stage and asks; diagnosis does not start on a guess |

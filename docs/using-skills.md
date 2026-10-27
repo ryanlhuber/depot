@@ -20,7 +20,7 @@ The discovery folders contain the full skill files as regular files, so no symli
 Skills fall into two groups. **Automatic** skills are focused craft skills that a model may load whenever your request matches the description. **Manual** skills are loaded only when you ask for one by name. A skill is manual when a surprise run would be costly or would defeat its purpose:
 
 - the review and gate skills (`review-code-independently`, `review-code-adversarially`, `reconcile-reviews`, `check-merge-readiness`, `qualify-reviewer`), which are only independent when you start each one deliberately in a fresh session;
-- long interactive skills that take over the conversation (`refine-issue`, `decide-plan`, `hand-off-session`);
+- long interactive skills that take over the conversation (`refine-issue`, `settle-decisions`, `hand-off-session`);
 - skills that touch release or repository setup (`migrate-system`, `check-deployment-readiness`, `record-repo-conventions`).
 
 A manual skill carries `disable-model-invocation: true` in its frontmatter. Claude Code honors it: the model cannot choose the skill, its description is kept out of context, and you start it with `/<name>`. Other harnesses ignore the unknown field (OpenCode documents this), so set the same intent in each harness's own configuration:

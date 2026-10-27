@@ -18,7 +18,7 @@ General skills for working well with AI agents in any domain.
 
 ### Decisions
 
-- [Decide Plan](core/decide-plan/SKILL.md): resolves a plan's open decisions one question at a time, with options and a recommendation, and ends in an explicit confirmation.
+- [Settle Decisions](core/settle-decisions/SKILL.md): resolves a plan's open decisions one question at a time, with options and a recommendation, and ends in an explicit confirmation.
 
 ### Continuity
 
@@ -87,7 +87,7 @@ Learning about users and judging whether an experience works for them, to inform
 ### Evaluation
 
 - [Review Accessibility](ux/review-accessibility/SKILL.md)
-- [Run Heuristic Evaluation](ux/run-heuristic-evaluation/SKILL.md)
+- [Review Usability](ux/review-usability/SKILL.md)
 
 ### Content
 

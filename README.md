@@ -22,7 +22,7 @@ Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin 
 
 | Plugin | Skills | Always-on tokens (approx.) |
 | --- | --- | --- |
-| `depot-core` | 5 general skills, including `route-work` and `decide-plan` | 395 |
+| `depot-core` | 5 general skills, including `route-work` and `settle-decisions` | 395 |
 | `depot-plan` | 11 planning skills, including `refine-issue` (needs `depot-core`, installed with it) | 905 |
 | `depot-ux` | 12 UX skills | 935 |
 | `depot-ui` | 7 UI skills | 525 |
@@ -93,7 +93,7 @@ General skills for working well with AI agents in any domain: authoring skills, 
 | Area | Skills |
 | --- | --- |
 | Authoring | [write-skill](skills/core/write-skill/SKILL.md) |
-| Decisions | [decide-plan](skills/core/decide-plan/SKILL.md) |
+| Decisions | [settle-decisions](skills/core/settle-decisions/SKILL.md) |
 | Continuity | [hand-off-session](skills/core/hand-off-session/SKILL.md) |
 | Routing | [route-work](skills/core/route-work/SKILL.md) |
 | Tuning | [qualify-reviewer](skills/core/qualify-reviewer/SKILL.md) |
@@ -119,7 +119,7 @@ Learning about users and judging whether an experience works for them, to inform
 | --- | --- |
 | Research | • [compare-patterns](skills/ux/compare-patterns/SKILL.md)<br>• [draft-personas](skills/ux/draft-personas/SKILL.md)<br>• [write-user-interview-guide](skills/ux/write-user-interview-guide/SKILL.md)<br>• [synthesize-research](skills/ux/synthesize-research/SKILL.md)<br>• [plan-usability-test](skills/ux/plan-usability-test/SKILL.md) |
 | Definition | • [define-requirements](skills/ux/define-requirements/SKILL.md)<br>• [map-user-flow](skills/ux/map-user-flow/SKILL.md)<br>• [map-user-journey](skills/ux/map-user-journey/SKILL.md)<br>• [design-navigation](skills/ux/design-navigation/SKILL.md) |
-| Evaluation | • [run-heuristic-evaluation](skills/ux/run-heuristic-evaluation/SKILL.md)<br>• [review-accessibility](skills/ux/review-accessibility/SKILL.md) |
+| Evaluation | • [review-usability](skills/ux/review-usability/SKILL.md)<br>• [review-accessibility](skills/ux/review-accessibility/SKILL.md) |
 | Content | [write-microcopy](skills/ux/write-microcopy/SKILL.md) |
 
 ### UI
@@ -181,8 +181,8 @@ A workflow assigns skills and agents to ordered stages with handoffs, validation
 - [Backlog to Roadmap](workflows/backlog-to-roadmap.md): cleans and re-ranks an existing backlog, then turns it into a now/next/later roadmap with confidence stated, plus an optional status report.
 - [Brief to Requirements](workflows/brief-to-requirements.md): turns a vague brief into traceable requirements, user and solution findings, task flows, and a content structure.
 - [Design to Validation](workflows/design-to-validation.md): takes a design through expert review, a targeted test plan, analyzed session results, and recorded decisions.
-- [Fix or Build to Merge](workflows/fix-or-build-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, one independent review for ordinary changes or two for high-risk ones, bounded repairs, and a verified human merge.
-- [Feature to Release](workflows/feature-to-release.md): wraps Fix or Build to Merge with regression review, documentation, release-readiness, and a human release decision.
+- [Issue to Merge](workflows/issue-to-merge.md): takes one feature or defect from an approved specification through build or a proven minimal repair, regression review for defects, one independent review for ordinary changes or two for high-risk ones, bounded repairs, and a verified human merge.
+- [Feature to Release](workflows/feature-to-release.md): wraps Issue to Merge with regression review, documentation, release-readiness, and a human release decision.
 - [Spec to UI](workflows/spec-to-ui.md): turns an approved interface specification into structure, states, responsive behavior, and tokens, then checks the build against the specification.
 
 ## Start with one skill
@@ -213,6 +213,30 @@ By bucket:
 - **Workflows** coordinate stages, handoffs, validation, and completion toward a larger outcome.
 
 The canonical definitions, dependency rules, and classification guide are in the [core artifact architecture](docs/core-artifact-architecture.md).
+
+## Naming
+
+The shape of a name tells you the artifact type.
+
+| Artifact | Shape | Examples |
+| --- | --- | --- |
+| Skill | `verb-object` | `fix-bug`, `draft-issues`, `review-usability` |
+| Agent | `domain-role` | `backlog-owner`, `merge-gatekeeper` |
+| Workflow | `input-to-output` | `goal-to-backlog`, `issue-to-merge` |
+
+**Skills** start with a verb and name what they act on. Prefer three words or fewer. Use a plural object when the skill handles a set (`draft-issues`) and a singular one for a single item (`fix-bug`). A bare verb is fine when the verb alone is the established term (`refactor`). Use the same verb for the same kind of work:
+
+- `write`, `draft`, `define`, `specify`, `implement`: produce something.
+- `review`: judge one thing against a standard or specification.
+- `audit`: sweep a whole area for findings.
+- `check`: verify preconditions and return ready or not ready.
+- `map`, `sequence`: map relationships and put work in order.
+
+Skill names are unique across buckets and carry no bucket prefix; the plugin name supplies it (`/depot-dev:fix-bug`).
+
+**Agents** are a domain plus a role: `<domain>-<role>`. The role is one of `owner` (holds the decisions in an area), `planner`, `reviewer`, or `gatekeeper` (holds a go or no-go gate). Reuse a listed role before adding a new one. The file name matches the `name` in its frontmatter.
+
+**Workflows** name the artifact they start from and the artifact they end with: two nouns joined by `to`. Use no verbs and no "or". Matching ends make chains visible: `goal-to-backlog` ends in a backlog, and `backlog-to-roadmap` starts from one.
 
 ## Repository map
 

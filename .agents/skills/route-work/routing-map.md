@@ -8,7 +8,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
-| A vague plan with hidden branches | S `decide-plan` | W `goal-to-backlog` once decided |
+| A vague plan with hidden branches | S `settle-decisions` | W `goal-to-backlog` once decided |
 | A long session to pause or pass on | S `hand-off-session` | |
 | A repeated task to make reusable | S `write-skill` | S `qualify-reviewer` if it judges others |
 | A model or reviewer to trust with a review role | S `qualify-reviewer` | |
@@ -25,7 +25,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | A need to show direction | S `write-roadmap` | W `backlog-to-roadmap` |
 | A need to report real progress | S `report-status` | |
 | Too much scope for a limit, or something that looks overbuilt | S `simplify-scope` | S `prioritize-backlog` |
-| A request to make buildable | S `refine-issue` | W `fix-or-build-to-merge` |
+| A request to make buildable | S `refine-issue` | W `issue-to-merge` |
 
 ## UX (informs the interface)
 
@@ -38,7 +38,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | Findability or navigation problems | S `design-navigation` | |
 | A need to see how others solve it | S `compare-patterns` | |
 | Interface text to write or tighten | S `write-microcopy` | |
-| A design to review | A `design-reviewer` | S `run-heuristic-evaluation`, S `review-accessibility`, S `review-visual-design` |
+| A design to review | A `design-reviewer` | S `review-usability`, S `review-accessibility`, S `review-visual-design` |
 
 ## UI (interface design to handoff)
 
@@ -69,15 +69,15 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | --- | --- | --- |
 | A new repo that agents will work in | S `record-repo-conventions` | |
 | An approved spec to implement | S `build-feature` | S `review-regressions` |
-| A feature to take to release | W `feature-to-release` | W `fix-or-build-to-merge` |
+| A feature to take to release | W `feature-to-release` | W `issue-to-merge` |
 | A reproducible defect | S `fix-bug` | S `review-regressions` |
-| A reported defect to fix and merge | W `fix-or-build-to-merge` | S `fix-bug` |
+| A reported defect to fix and merge | W `issue-to-merge` | S `fix-bug` |
 | Working code that is hard to change | S `refactor` | S `audit-tech-debt` |
 | A system that must move to a new state | S `migrate-system` | S `check-deployment-readiness` |
 | A change to review | S `review-code-independently` | S `review-code-adversarially` |
 | Two or more review reports | S `reconcile-reviews` | A `merge-gatekeeper` |
 | A reviewed change about to merge | S `check-merge-readiness` | A `merge-gatekeeper` |
-| One change, spec to merge | W `fix-or-build-to-merge` | |
+| One change, spec to merge | W `issue-to-merge` | |
 | A change that might have broken something | S `review-regressions` | S `review-code-independently` |
 | A change ready to go live | S `check-deployment-readiness` | S `check-merge-readiness` |
 | A security question about an area | S `audit-security` | S `audit-dependencies` |
