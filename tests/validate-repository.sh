@@ -6,7 +6,8 @@
 # links, skills missing from the indexes, indexed skills that do not exist,
 # workflows missing from the workflow index, agents that name no skills, name a
 # skill that does not exist, or link to a skill, agents missing from or wrongly
-# listed in their indexes, router map entries that do not exist or artifacts the
+# listed in their indexes, README skill, agent, and workflow counts that disagree
+# with the repository, router map entries that do not exist or artifacts the
 # router map omits, symlinks, and out-of-sync .agents/ and .claude/ copies.
 # Warns on: recommended sections that are absent and skills over 120 lines. The
 # authoring standards make sections and length guidance, not compliance rules.
@@ -167,6 +168,36 @@ done < <(grep -oE '\]\([a-z0-9-]+\.md\)' agents/README.md | sed 's|^](||; s|\.md
 while IFS= read -r indexed; do
   [ -f "agents/$indexed.md" ] || fail "README.md lists an agent that does not exist: $indexed"
 done < <(grep -oE '\]\(agents/[a-z0-9-]+\.md\)' README.md | sed 's|^](agents/||; s|\.md)$||' | sort -u)
+
+# --- README counts -----------------------------------------------------------
+# README.md states how many skills, agents, and workflows the repository holds, and
+# its plugin table gives a skill count per bucket. Compare them with the repository
+# so a count cannot go stale unnoticed.
+workflow_count=0
+for workflow in workflows/*.md; do
+  [ -e "$workflow" ] || continue
+  [ "${workflow##*/}" = README.md ] && continue
+  workflow_count=$((workflow_count + 1))
+done
+claimed="$(sed -n 's/.*It holds \([0-9][0-9]*\) skills, \([0-9][0-9]*\) agents, and \([0-9][0-9]*\) workflows.*/\1 \2 \3/p' README.md | head -n 1)"
+if [ -z "$claimed" ]; then
+  fail 'README.md must state "It holds N skills, N agents, and N workflows"'
+elif [ "$claimed" != "$count $agent_count $workflow_count" ]; then
+  fail "README.md says it holds $claimed (skills, agents, workflows); the repository has $count $agent_count $workflow_count"
+fi
+for bucket_dir in skills/*/; do
+  bucket="$(basename "$bucket_dir")"
+  actual=0
+  for skill_dir in "$bucket_dir"*/; do
+    [ -f "${skill_dir}SKILL.md" ] && actual=$((actual + 1))
+  done
+  row="$(sed -n 's/^| `depot-'"$bucket"'` | \([0-9][0-9]*\) .*/\1/p' README.md | head -n 1)"
+  if [ -z "$row" ]; then
+    fail "README.md plugin table has no skill count for depot-$bucket"
+  elif [ "$row" != "$actual" ]; then
+    fail "README.md plugin table says depot-$bucket has $row skills; skills/$bucket has $actual"
+  fi
+done
 
 # --- router map ----------------------------------------------------------------
 # skills/core/route-work/routing-map.md may recommend only artifacts that exist, and
