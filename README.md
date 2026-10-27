@@ -4,6 +4,14 @@ One library of small, composable agent skills for taking work from an idea to a 
 
 A project is a project. Nothing here switches modes between a weekend prototype and a long-lived product; each skill scales its rigor to the risk and size of the change in front of it, so a small project that grows needs no rework.
 
+## Quick start (Claude Code, one developer)
+
+1. Install three bucket plugins: `claude plugin marketplace add ryanlhuber/depot`, then `claude plugin install depot-core@depot`, `claude plugin install depot-plan@depot`, and `claude plugin install depot-dev@depot`.
+2. Run `/depot-dev:record-repo-conventions` once in your project.
+3. Describe your situation to `/depot-core:route-work` and do what it recommends.
+
+For an ordinary change, the review needs one reviewer; a different model family than the builder is preferred, and a fresh same-family session is allowed and recorded as a limitation. Other agents, other plugin sets, and the full plugin are below; the [getting started guide](docs/getting-started.md) has the rest.
+
 ## Get the skills
 
 Pick one method per agent, because installing by plugin and by installer gives you every skill twice. A plugin updates through its marketplace; the installer copies editable files into your project, and you update them yourself.
@@ -41,7 +49,7 @@ Skills are namespaced by the bucket plugin, for example `/depot-dev:fix-bug`. `r
 
 </details>
 
-<details open>
+<details>
 <summary><strong>Codex plugin</strong> (skills; updates through the marketplace)</summary>
 
 ```sh

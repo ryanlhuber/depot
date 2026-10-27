@@ -12,8 +12,8 @@ Each role below is its own table. Models are ordered best first for that job, so
 
 1. Start from the role the step needs.
 2. Take the first model in that role's table that you can use on your current plans.
-3. For independent reviews (for example in `issue-to-merge`), builder, first reviewer, and adversarial reviewer must come from three different families. Skip any model whose family is already used in the set, and take the next row. Versions of one family do not count.
-4. If you cannot reach three families, say so rather than substituting a second model from one family.
+3. For independent reviews (for example in `issue-to-merge`), prefer the builder and each reviewer to come from different families. The standard path needs three (builder, first reviewer, adversarial reviewer); the light path prefers two. Skip any model whose family is already used in the set, and take the next row. Versions of one family do not count as a different family.
+4. If you cannot reach the families a step needs, say so. On the standard path with fewer than three families, stop and ask. On the light path, use a fresh session of the strongest model you can reach, ideally a different model or tier than the builder, with none of the builder's context, and label it a same-family review. Never present a second model from one family as a different family.
 5. Keep the strongest model for decisions and reviews, and run scoped, well-specified build steps on a cheaper one.
 6. To protect usage limits, spend `high` effort only on review and decision steps; lower the effort of the build step before lowering the review's.
 7. Switch models at stage boundaries, after writing a handoff note.

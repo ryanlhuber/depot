@@ -2,6 +2,17 @@
 
 This directory records what actually happened when cases from [behavioral-cases.md](../behavioral-cases.md) were run. It is evidence about the skills, not part of them: nothing here is read by a skill, and no skill instruction depends on it. A case with no result here has not been run.
 
+## What is and is not shown
+
+Read this before the results files. It summarizes them; where it and a results file disagree, the results file is right.
+
+- **Shown, with limits:** choosing the right skill from its name and description. The 70-request holdout was run on Claude Haiku and on five other model families, one run each, with author-written requests and answers. The skill sets were also checked after the renames.
+- **Shown, with limits:** that workflows and agents stop where they should and follow their stage rules. The 26 workflow cases and the review-path cases were run once each by Claude subagents, the same family that wrote the skills, read-only, judged by the author against fixtures the author wrote.
+- **Shown, narrowly:** that the delivery workflow can be followed on real code. One scratch repository, a 25-line library with one seeded defect, same-family builder and reviewers, the independence rule waived on purpose. It shows the mechanics, not reliability on a real project.
+- **Not shown:** that depot improves output quality, completion rate, time, or cost compared with no depot. No baseline run exists. [The evaluation plan](../evaluation-plan.md) describes how to measure it.
+- **Not shown:** that a different-family reviewer catches more than a same-family one, or that the light review path is as safe as the standard path. The only evidence on either is the single scratch run above.
+- **Not run:** cases added after the last results file. A case with no row here has not been run, and the [changelog](../../CHANGELOG.md) entry that added or changed it says so.
+
 ## Rules
 
 - Record only runs that happened. Never fill in a verdict from expectation, from reading the skill, or from a similar run.
