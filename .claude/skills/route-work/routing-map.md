@@ -8,7 +8,6 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
-| A vague plan with hidden branches | S `settle-decisions` | W `goal-to-backlog` once decided |
 | A long session to pause or pass on | S `hand-off-session` | |
 | A repeated task to make reusable | S `write-skill` | S `qualify-reviewer` if it judges others |
 | A model or reviewer to trust with a review role | S `qualify-reviewer` | |
@@ -18,6 +17,7 @@ Kinds: **S** skill, **A** agent, **W** workflow.
 | If the user has... | Start with | Then / alternates |
 | --- | --- | --- |
 | A goal that is not yet precise | S `frame-problem` | S `map-assumptions` |
+| A vague plan with hidden branches | S `settle-decisions` | W `goal-to-backlog` once decided |
 | A frame to turn into a plan | A `delivery-planner` or W `goal-to-backlog` | S `define-epics`, S `draft-issues` |
 | An idea to test with the smallest slice of work | W `idea-to-poc` | S `simplify-scope` |
 | Epics or items needing an order | S `sequence-work` | S `prioritize-backlog` |
