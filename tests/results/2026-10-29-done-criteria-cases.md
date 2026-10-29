@@ -16,3 +16,9 @@ Round 1 (first wording, which asked whenever the builder's criteria went beyond 
 | Unconfirmed criteria reach the reviewer | Done-criteria asked; requester unreachable | Criteria marked unconfirmed; reviewer told and still given them | Recorded criteria as its own, marked unconfirmed, told the reviewer, gave it the criteria with the diff | Pass |
 
 Note: in round 1 the "already stated" run stopped for an unrelated reason (it recorded no risk because the criteria change what invalid inputs do on a public function). With a stated risk in the round 2 fixture it did not stop. The risk rule is unchanged by this release.
+
+## Review and re-check
+
+An independent same-family review (Claude Opus, fresh session) of the first version of this change returned FAIL with two Moderate findings, both verified against the files and fixed: stage 1's Assignment line still said to stop only for an open question (now names the done-criteria question), and the question text did not ask the requester to add criteria (now it does, and says the build waits for an answer, "proceed", or an unreachable requester). Minor fixes: the recorded definition marks criteria confirmed or unconfirmed (Validation and stage 5 inputs), and the changelog was corrected. Not fixed, and left to the owner: the final output and merge checklist do not list unconfirmed criteria; the seven 0.12.0 stage 1 cases were not re-run on this text.
+
+After those fixes two cases were re-run once each on the final text: "Done-criteria asked once" with a new fixture (a parameter named `help`), which matched (one question inviting additions, build held, criteria marked unconfirmed on "proceed"); and "Routine criteria are not a question", which matched again (no question, straight to the build). The other two cases were not re-run after the wording-only fixes.
