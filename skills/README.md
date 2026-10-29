@@ -16,10 +16,6 @@ General skills for working well with AI agents in any domain.
 
 - [Write Skill](core/write-skill/SKILL.md): creates or revises one portable skill with a description that triggers correctly, clear inputs, an actionable process, checks, and tested behavior.
 
-### Decisions
-
-- [Settle Decisions](core/settle-decisions/SKILL.md): resolves a plan's open decisions one question at a time, with options and a recommendation, and ends in an explicit confirmation.
-
 ### Continuity
 
 - [Hand Off Session](core/hand-off-session/SKILL.md): condenses current work into a self-contained note so a fresh session, agent, or person can continue without the conversation.
@@ -40,6 +36,10 @@ Turning a goal into a plan before a change exists, through to an approved specif
 
 - [Frame Problem](plan/frame-problem/SKILL.md): turns a vague goal into a one-page frame of the problem, users, constraints, non-goals, observable success measures, assumptions, and open questions.
 - [Map Assumptions](plan/map-assumptions/SKILL.md): lists the premises a plan rests on, rates impact and evidence separately, and names the cheapest test or decision for each risky one.
+
+### Decisions
+
+- [Settle Decisions](plan/settle-decisions/SKILL.md): resolves a plan's open decisions one question at a time, with options and a recommendation, and ends in an explicit confirmation.
 
 ### Structure
 
