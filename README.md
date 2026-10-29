@@ -30,8 +30,8 @@ Or, inside a session: `/plugin marketplace add ryanlhuber/depot`, then `/plugin 
 
 | Plugin | Skills | Always-on tokens (approx.) |
 | --- | --- | --- |
-| `depot-core` | 5 general skills, including `route-work` and `settle-decisions` | 395 |
-| `depot-plan` | 11 planning skills, including `refine-issue` (needs `depot-core`, installed with it) | 905 |
+| `depot-core` | 4 general skills, including `route-work` | 315 |
+| `depot-plan` | 12 planning skills, including `refine-issue` and `settle-decisions` | 985 |
 | `depot-ux` | 12 UX skills | 935 |
 | `depot-ui` | 7 UI skills | 525 |
 | `depot-frontend` | 6 front-end skills | 490 |
@@ -138,23 +138,23 @@ Skills live in six buckets. The [skills index](skills/README.md) has one-line de
 
 ### Core
 
-General skills for working well with AI agents in any domain: authoring skills, interviewing for decisions, handing work between sessions, qualifying reviewers, and choosing where to start.
+General skills for working well with AI agents in any domain: authoring skills, handing work between sessions, qualifying reviewers, and choosing where to start.
 
 | Area | Skills |
 | --- | --- |
 | Authoring | [write-skill](skills/core/write-skill/SKILL.md) |
-| Decisions | [settle-decisions](skills/core/settle-decisions/SKILL.md) |
 | Continuity | [hand-off-session](skills/core/hand-off-session/SKILL.md) |
 | Routing | [route-work](skills/core/route-work/SKILL.md) |
 | Tuning | [qualify-reviewer](skills/core/qualify-reviewer/SKILL.md) |
 
 ### Plan
 
-Turning a goal into a plan before a change exists: framing the problem, slicing outcomes into draft work items, ordering them, ranking and trimming what to build next, keeping the backlog honest, and refining each item into an approved specification. Plans propose and owners decide; every item states one observable done signal, and size bands order items against each other without implying time estimates.
+Turning a goal into a plan before a change exists: framing the problem, settling open decisions, slicing outcomes into draft work items, ordering them, ranking and trimming what to build next, keeping the backlog honest, and refining each item into an approved specification. Plans propose and owners decide; every item states one observable done signal, and size bands order items against each other without implying time estimates.
 
 | Stage | Skills |
 | --- | --- |
 | Framing | • [frame-problem](skills/plan/frame-problem/SKILL.md)<br>• [map-assumptions](skills/plan/map-assumptions/SKILL.md) |
+| Decisions | [settle-decisions](skills/plan/settle-decisions/SKILL.md) |
 | Structure | • [define-epics](skills/plan/define-epics/SKILL.md)<br>• [draft-issues](skills/plan/draft-issues/SKILL.md)<br>• [sequence-work](skills/plan/sequence-work/SKILL.md) |
 | Prioritization | [prioritize-backlog](skills/plan/prioritize-backlog/SKILL.md) |
 | Scope | [simplify-scope](skills/plan/simplify-scope/SKILL.md) |
