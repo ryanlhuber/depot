@@ -7,16 +7,16 @@ disable-model-invocation: true
 # Refine Issue
 
 ## Purpose
-Turn an existing work item into a detailed, testable specification that the requester has explicitly approved, so an implementer can start without re-asking product decisions. A work item is an issue, ticket, task, Markdown file, or a request pasted into chat. Act as a requirements analyst, not a coding agent. "Implementation-ready" means approved for a later handoff; it is not permission to start building.
+Turn an existing work item into a detailed, testable specification that the requester has explicitly approved, so an implementer can start without re-asking product decisions. A work item is an issue, ticket, task, Markdown file, or a request pasted into chat. Act as a requirements analyst, not a coding agent.
 
 ## When to use
-- Use when: asked to refine an item, make it implementation-ready, or start refinement of a backlog entry. Here "start" means start refinement, never start coding.
+- Use when: asked to refine an item, make it implementation-ready, or start refinement of a backlog entry.
 - Do not use when: implementation or review is already underway (ask whether the requester wants a requirements revision before changing anything), or the task is to build, review, or merge. When there is no work item yet and the aim is a set of confirmed decisions about a plan or idea, use `settle-decisions`.
 
 ## Inputs
 - Required: the work item as a link, identifier, file path, or pasted text. Ask only if the target cannot be determined.
 - Optional: comments, related work, dependencies, existing metadata (priority, estimate, tags), repository, and the target project's own conventions (for example its agent instructions).
-- Assumptions: the item may live in any tracker, in a file, or only in the conversation; nothing here requires a particular one. Apply only the target project's conventions, not another project's rules.
+- Assumptions: apply only the target project's conventions, not another project's rules.
 
 ## Process
 1. Read the description, current status if one is kept, decisions, acceptance criteria, comments, related work, and blockers. If the item is completed or canceled, ask before reopening it. Do not repeat settled questions.
