@@ -23,12 +23,22 @@ Repository structure (SURFACE-1) and technology-specific integrations are also o
 - Preserve necessary context, safety, accessibility, and failure behavior while avoiding context cost that does not improve decisions or execution.
 - Use **must** for binding requirements, **should** for recommendations with possible justified exceptions, and **may** for optional behavior.
 
+## Scope bar
+
+A new or changed rule, skill, agent, or workflow must clear both parts:
+
+1. **Observed failure.** It cites something that went wrong in a real run: what was run, what the artifact did, and what was expected. A hypothetical improvement does not clear this part. Editorial fixes and corrections to safety or accessibility guidance are exempt.
+2. **No existing owner.** The behavior does not compose from or extend an existing artifact, is not tool- or harness-specific (that belongs in `integrations/`), and is not a tweak for one person's workflow.
+
+Size does not change the bar. A new skill needs the owner's approval. Record the failure that justified added text in the changelog, so the text can be questioned if that failure no longer applies.
+
 ## Contribution lifecycle
 
 ### 1. Frame the contribution
 
 Before substantial work, record what is relevant to review:
 
+- the observed failure that justifies the change (see the scope bar);
 - the user or contributor problem and intended outcome;
 - why the change belongs in depot;
 - the proposed artifact type or documentation scope;
@@ -219,6 +229,7 @@ A contribution is ready only when its relevant gates pass. Applicability and dep
 - Removes duplicated background, motivational prose, redundant examples, and exhaustive low-value edge cases.
 - Links to canonical ownership instead of restating it.
 - Never sacrifices necessary context, evidence, safety, accessibility, or failure behavior to meet an arbitrary length target.
+- Passes the cut test: delete a sentence and ask whether an agent's behavior would change. If not, it stays deleted. Settle a disagreement by running the relevant behavioral case, not by arguing.
 
 ### Maintainability
 
@@ -233,6 +244,7 @@ This copyable outline is proportional guidance, not a mandatory schema. Merge or
 
 ```markdown
 ## Problem and outcome
+- Observed failure (what was run, what happened, what was expected):
 - Problem:
 - Intended user outcome:
 
