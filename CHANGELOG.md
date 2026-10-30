@@ -8,7 +8,7 @@ The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent,
 
 - Removed seven sentences from `refine-issue` and `route-work` that restated a rule stated elsewhere in the same skill (about 100 words in total). Behavior is meant to be unchanged.
 - Why: the new scope bar and cut test in the contribution standards. Each cut was a statement another section already makes: the Rules, Process step 6, or Checks.
-- Not yet verified: the related behavioral cases (nine for `refine-issue`, ten for the router) have not been re-run on this text.
+- Verified: the 19 related behavioral cases (nine `refine-issue`, ten router) were run once each on the trimmed text and matched; see [the results](tests/results/2026-10-29-trim-0.14.1-cases.md). Single runs, same model family as the author, author-judged.
 
 ## 0.14.0
 
