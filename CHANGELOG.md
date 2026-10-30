@@ -4,6 +4,12 @@ User-visible changes to depot: skills, agents, workflows, install steps, and the
 
 The version is `MAJOR.MINOR.PATCH`: MAJOR for a renamed or removed skill, agent, or workflow; MINOR for a new one or a change in behavior; PATCH for wording and fixes that do not change behavior. While the version is below 1.0.0, a rename or removal bumps MINOR instead.
 
+## 0.14.1
+
+- Removed seven sentences from `refine-issue` and `route-work` that restated a rule stated elsewhere in the same skill (about 100 words in total). Behavior is meant to be unchanged.
+- Why: the new scope bar and cut test in the contribution standards. Each cut was a statement another section already makes: the Rules, Process step 6, or Checks.
+- Verified: the 19 related behavioral cases (nine `refine-issue`, ten router) were run once each on the trimmed text and matched; see [the results](tests/results/2026-10-29-trim-0.14.1-cases.md). Single runs, same model family as the author, author-judged.
+
 ## 0.14.0
 
 - **Changed:** `issue-to-merge` stage 1 now has the builder write the done-criteria it will build and review against, and ask the requester once, before the build, when the report states no acceptance criteria and a criterion would change what the fix does beyond the report's stated behavior (a rule generalized from one example, how invalid or edge inputs behave, behavior that must stay). The question goes in the same message as any real open question and carries a recommendation; "proceed" is a valid answer. Routine criteria (a test that fails before and passes after, nothing else changed, the same pattern checked elsewhere) are recorded without asking, and a report whose own words, documentation, or tests already settle every criterion needs no question. If the requester cannot be reached, or says to proceed, the criteria are recorded as the builder's own, marked unconfirmed, and the reviewer is told. The reviewer is told whether the criteria are confirmed. This adds one possible question to a stage 1 that 0.12.0 had made quieter; the narrowing to criteria that change the fix is meant to keep it rare. Ryan may veto this extra question.

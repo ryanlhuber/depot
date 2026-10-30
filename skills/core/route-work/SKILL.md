@@ -6,7 +6,7 @@ description: "Recommends which skill, agent, or workflow fits the situation, and
 # Route Work
 
 ## Purpose
-Turn a described situation into a short, justified recommendation: the one artifact to start with, what to chain after it, and a small set of models with an effort level for each step. The router chooses; it never does the work.
+Turn a described situation into a short, justified recommendation: the one artifact to start with, what to chain after it, and a small set of models with an effort level for each step.
 
 ## When to use
 - Use when: the user describes a goal, a stuck point, or a stage ("I have a vague idea", "this change needs review") and has not named a skill; or asks "what should I use?" or "what's next?".
@@ -15,7 +15,7 @@ Turn a described situation into a short, justified recommendation: the one artif
 ## Inputs
 - Required: the user's situation in their own words.
 - Optional: what already exists (spec, design, diff, backlog), the repository, which plans or models the user can use, and a model table.
-- Model table: a Markdown table of roles, models, families, and effort levels. The user supplies it, the project's instructions name it, or it is found at `integrations/model-routing/models.md` in a checkout of the library. It is not bundled with this skill, so an install of the router alone has the routing map but no table.
+- Model table: a Markdown table of roles, models, families, and effort levels. The user supplies it, the project's instructions name it, or it is found at `integrations/model-routing/models.md` in a checkout of the library.
 - Assumptions: the routing map sits next to this skill. It lists library artifacts that may not be installed in the user's project.
 
 ## Process
@@ -31,7 +31,7 @@ Turn a described situation into a short, justified recommendation: the one artif
 - Required: recommend only artifacts that exist in the routing map. A name that is not in the map is not a recommendation.
 - Required: the router never runs the recommended artifact and never reproduces its method. If a recommended artifact is not installed in the user's project, say so and point to the library; do not perform its work.
 - Required: never name a model that is not in a table the user supplied or the project provides.
-- Required: when a workflow requires or prefers independent parties, carry that requirement or preference into the model advice; never suggest two versions of one family as distinct families, and label a same-family review as one.
+- Required: when a workflow requires or prefers independent parties, carry that requirement or preference into the model advice; never suggest two versions of one family as distinct families.
 - Recommended: set effort by step type, never by project size: `low` for scoped, well-specified build steps, `medium` for planning and synthesis, `high` for architecture, security, and final review steps.
 - Recommended: prefer the cheaper model for scoped, well-specified steps and keep the strongest model for decisions and reviews.
 - Recommended: keep the whole answer to roughly 10 lines.
@@ -46,4 +46,3 @@ Return: the one-sentence goal; the primary artifact and why; up to two follow-up
 
 ## Completion criteria
 - The user can start the primary artifact from the answer alone.
-- All names exist and the model advice is complete for each step, or the gap is stated.
